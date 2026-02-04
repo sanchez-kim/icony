@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Palette, Download, Heart, Search, Zap } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface OnboardingModalProps {
   isOpen: boolean;
@@ -8,37 +9,38 @@ interface OnboardingModalProps {
 
 export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
+  const { t } = useLanguage();
 
   const steps = [
     {
       icon: Search,
-      title: '아이콘 검색 및 선택',
-      description: '2,000개 이상의 아이콘을 검색하고, 원하는 아이콘을 클릭하여 선택하세요.',
-      tip: '카테고리 필터를 사용하면 더 빠르게 찾을 수 있습니다!',
+      title: t.onboarding.steps[0].title,
+      description: t.onboarding.steps[0].description,
+      tip: t.onboarding.steps[0].tip,
     },
     {
       icon: Palette,
-      title: '색상 커스터마이징',
-      description: '색상 스와치를 선택하거나, 커스텀 색상 피커로 원하는 색상을 만드세요.',
-      tip: '최근 사용한 색상과 팔레트를 저장할 수 있습니다.',
+      title: t.onboarding.steps[1].title,
+      description: t.onboarding.steps[1].description,
+      tip: t.onboarding.steps[1].tip,
     },
     {
       icon: Zap,
-      title: '크기 조정',
-      description: '16px부터 512px까지 슬라이더로 조정하거나 프리셋 버튼을 사용하세요.',
-      tip: '직접 숫자를 입력할 수도 있습니다!',
+      title: t.onboarding.steps[2].title,
+      description: t.onboarding.steps[2].description,
+      tip: t.onboarding.steps[2].tip,
     },
     {
       icon: Download,
-      title: '다운로드 & 공유',
-      description: 'PNG 또는 SVG 형식으로 다운로드하거나, 클립보드에 복사, 또는 공유 링크를 생성하세요.',
-      tip: '공유 링크를 사용하면 설정을 저장하고 공유할 수 있습니다.',
+      title: t.onboarding.steps[3].title,
+      description: t.onboarding.steps[3].description,
+      tip: t.onboarding.steps[3].tip,
     },
     {
       icon: Heart,
-      title: '즐겨찾기 & 히스토리',
-      description: '자주 사용하는 아이콘을 즐겨찾기에 추가하고, 최근 사용한 아이콘을 빠르게 찾으세요.',
-      tip: '즐겨찾기와 최근 아이콘은 자동으로 저장됩니다.',
+      title: t.onboarding.steps[4].title,
+      description: t.onboarding.steps[4].description,
+      tip: t.onboarding.steps[4].tip,
     },
   ];
 
@@ -127,14 +129,14 @@ export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
                 onClick={handlePrev}
                 className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium transition-colors"
               >
-                이전
+                {t.onboarding.buttons.previous}
               </button>
             ) : (
               <button
                 onClick={handleSkip}
                 className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium transition-colors"
               >
-                건너뛰기
+                {t.onboarding.buttons.skip}
               </button>
             )}
 
@@ -146,7 +148,7 @@ export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
               onClick={handleNext}
               className="px-6 py-2 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              {currentStep < steps.length - 1 ? '다음' : '시작하기'}
+              {currentStep < steps.length - 1 ? t.onboarding.buttons.next : t.onboarding.buttons.start}
             </button>
           </div>
         </div>

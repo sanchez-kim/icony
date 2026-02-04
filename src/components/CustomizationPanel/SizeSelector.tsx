@@ -1,10 +1,12 @@
 import { useIconContext } from '../../context/IconContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
 
 const SIZES = [32, 64, 128, 256];
 
 export function SizeSelector() {
   const { size, setSize } = useIconContext();
+  const { t } = useLanguage();
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSize(Number(e.target.value));
@@ -20,7 +22,7 @@ export function SizeSelector() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Size</label>
+        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">{t.ui.size}</label>
         <div className="flex items-center gap-2">
           <input
             type="number"

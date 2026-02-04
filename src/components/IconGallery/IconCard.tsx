@@ -5,6 +5,7 @@ import { LucideIcon, Star } from 'lucide-react';
 import { Icon } from '../../types';
 import { cn } from '../../utils/cn';
 import { useIconContext } from '../../context/IconContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface IconCardProps {
   icon: Icon;
@@ -18,6 +19,7 @@ export const IconCard = React.memo(function IconCard({
   onClick,
 }: IconCardProps) {
   const { isFavorite, toggleFavorite } = useIconContext();
+  const { t } = useLanguage();
   const favorite = isFavorite(icon.id);
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
@@ -49,7 +51,7 @@ export const IconCard = React.memo(function IconCard({
           }
         }}
         className="absolute top-1 right-1 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-opacity duration-200 focus:outline-none cursor-pointer"
-        aria-label={favorite ? 'Remove from favorites' : 'Add to favorites'}
+        aria-label={favorite ? t.ui.removeFromFavorites : t.ui.addToFavorites}
       >
         <Star
           size={14}

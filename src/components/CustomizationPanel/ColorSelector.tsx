@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { ChevronDown, ChevronUp, Pipette } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { SwatchPicker } from './SwatchPicker';
 import { PaletteSaver } from './PaletteSaver';
 import toast from 'react-hot-toast';
 
 export function ColorSelector() {
   const { color, setColor } = useIconContext();
+  const { t } = useLanguage();
   const [showPicker, setShowPicker] = useState(false);
   const [eyeDropperSupported, setEyeDropperSupported] = useState(false);
 
@@ -28,7 +30,7 @@ export function ColorSelector() {
 
   const handleEyeDropper = async () => {
     if (!eyeDropperSupported) {
-      toast.error('EyeDropper API is not supported in this browser. Please use Chrome, Edge, or Opera.');
+      toast.error(t.toast.eyeDropperNotSupported);
       return;
     }
 
@@ -37,12 +39,12 @@ export function ColorSelector() {
       const eyeDropper = new window.EyeDropper();
       const result = await eyeDropper.open();
       setColor(result.sRGBHex);
-      toast.success(`Color picked: ${result.sRGBHex}`);
+      toast.success(t.toast.colorPicked);
     } catch (err: any) {
       // User cancelled or error occurred
       if (err.name !== 'AbortError') {
         console.error('EyeDropper error:', err);
-        toast.error('Failed to pick color from screen');
+        toast.error(t.toast.failedToPickColor);
       }
     }
   };
@@ -50,7 +52,7 @@ export function ColorSelector() {
   return (
     <div className="space-y-4">
       <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-        Color
+        {t.ui.color}
       </label>
 
       <SwatchPicker selectedColor={color} onColorSelect={setColor} />
@@ -63,11 +65,11 @@ export function ColorSelector() {
       >
         {showPicker ? (
           <>
-            <ChevronUp size={16} /> Hide Custom Picker
+            <ChevronUp size={16} /> {t.ui.hideCustomPicker}
           </>
         ) : (
           <>
-            <ChevronDown size={16} /> Show Custom Picker
+            <ChevronDown size={16} /> {t.ui.showCustomPicker}
           </>
         )}
       </button>
@@ -79,7 +81,7 @@ export function ColorSelector() {
             <div
               className="w-11 h-11 rounded-lg border-2 border-gray-300 dark:border-gray-600 flex-shrink-0 shadow-sm"
               style={{ backgroundColor: color }}
-              aria-label="Current color"
+              aria-label={t.ui.currentColor}
             />
             <input
               type="text"
@@ -93,26 +95,26 @@ export function ColorSelector() {
               onClick={handleEyeDropper}
               className="px-4 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               disabled={!eyeDropperSupported}
-              title={eyeDropperSupported ? "Pick color from screen" : "EyeDropper not supported in this browser"}
+              title={t.ui.pick}
             >
               <Pipette size={16} className="text-white" />
-              <span className="text-sm font-medium text-white">Pick</span>
+              <span className="text-sm font-medium text-white">{t.ui.pick}</span>
             </button>
           </div>
           {!eyeDropperSupported && (
             <div className="mt-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
               <p className="text-xs text-yellow-800 dark:text-yellow-200 font-semibold mb-1">
-                EyeDropper not available
+                {t.eyeDropper.notAvailable}
               </p>
               <p className="text-xs text-yellow-700 dark:text-yellow-300">
-                Screen color picker requires:
+                {t.eyeDropper.requirements}
               </p>
               <ul className="mt-1 text-xs text-yellow-700 dark:text-yellow-300 list-disc list-inside space-y-0.5">
-                <li>Chrome, Edge, or Opera browser</li>
-                <li>HTTPS or localhost access</li>
+                <li>{t.eyeDropper.browser}</li>
+                <li>{t.eyeDropper.https}</li>
               </ul>
               <p className="mt-2 text-xs text-yellow-600 dark:text-yellow-400">
-                💡 Try: <code className="bg-yellow-100 dark:bg-yellow-900/40 px-1 rounded">http://localhost:5173</code> instead of IP address
+                💡 {t.eyeDropper.tryLocalhost} <code className="bg-yellow-100 dark:bg-yellow-900/40 px-1 rounded">http://localhost:5173</code>
               </p>
             </div>
           )}

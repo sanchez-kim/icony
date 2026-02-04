@@ -1,5 +1,6 @@
 import { Star, Clock } from 'lucide-react';
 import { Icon } from '../../types';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface CategoryFilterProps {
   icons: Icon[];
@@ -8,6 +9,7 @@ interface CategoryFilterProps {
 }
 
 export function CategoryFilter({ icons, selectedCategory, onCategoryChange }: CategoryFilterProps) {
+  const { t } = useLanguage();
   // Get unique categories and count icons in each
   const categoryCounts = icons.reduce((acc, icon) => {
     const category = icon.category || 'other';
@@ -67,7 +69,7 @@ export function CategoryFilter({ icons, selectedCategory, onCategoryChange }: Ca
           }`}
         >
           <Star size={12} className={selectedCategory === 'favorites' ? 'fill-white' : ''} />
-          Favorites
+          {t.ui.favorites}
         </button>
         <button
           onClick={() => onCategoryChange('recent')}
@@ -78,7 +80,7 @@ export function CategoryFilter({ icons, selectedCategory, onCategoryChange }: Ca
           }`}
         >
           <Clock size={12} />
-          Recent
+          {t.ui.recent}
         </button>
         {sortedCategories.slice(0, 5).map(({ category, count }) => (
           <button

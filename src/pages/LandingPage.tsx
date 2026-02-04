@@ -10,46 +10,51 @@ import {
   ArrowRight,
   Check
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { ThemeToggle } from '../components/ThemeToggle';
 
 export function LandingPage() {
+  const { t } = useLanguage();
+
   const features = [
     {
       icon: Palette,
-      title: 'Customize Colors',
-      description: 'Choose any color with our intuitive color picker and see real-time preview',
+      title: t.landing.features.customizeColors.title,
+      description: t.landing.features.customizeColors.description,
     },
     {
       icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Instant icon preview and download with optimized performance',
+      title: t.landing.features.lightningFast.title,
+      description: t.landing.features.lightningFast.description,
     },
     {
       icon: Download,
-      title: 'Multiple Formats',
-      description: 'Export your icons as PNG or SVG in any size from 16px to 512px',
+      title: t.landing.features.multipleFormats.title,
+      description: t.landing.features.multipleFormats.description,
     },
     {
       icon: Heart,
-      title: 'Save Favorites',
-      description: 'Mark your favorite icons and access them quickly anytime',
+      title: t.landing.features.saveFavorites.title,
+      description: t.landing.features.saveFavorites.description,
     },
     {
       icon: Clock,
-      title: 'Recent History',
-      description: 'Automatically tracks your recently used icons for easy access',
+      title: t.landing.features.recentHistory.title,
+      description: t.landing.features.recentHistory.description,
     },
     {
       icon: FileCode,
-      title: 'Developer Friendly',
-      description: 'Clean SVG code optimized for web and mobile applications',
+      title: t.landing.features.developerFriendly.title,
+      description: t.landing.features.developerFriendly.description,
     },
   ];
 
   const stats = [
-    { value: '2,000+', label: 'Icons Available' },
-    { value: '100%', label: 'Free Forever' },
-    { value: '512px', label: 'Max Resolution' },
-    { value: '67', label: 'Categories' },
+    { value: '2,000+', label: t.landing.stats.icons },
+    { value: '100%', label: t.landing.stats.free },
+    { value: '512px', label: t.landing.stats.resolution },
+    { value: '67', label: t.landing.stats.categories },
   ];
 
   return (
@@ -69,12 +74,16 @@ export function LandingPage() {
               Icony
             </span>
           </div>
-          <Link
-            to="/app"
-            className="px-6 py-2.5 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 shadow-md hover:shadow-lg"
-          >
-            Launch App
-          </Link>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <Link
+              to="/app"
+              className="px-6 py-2.5 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              {t.landing.header.launchApp}
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -83,20 +92,19 @@ export function LandingPage() {
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
             <Sparkles size={16} />
-            <span>Free Icon Customization Tool</span>
+            <span>{t.landing.tagline}</span>
           </div>
 
-          <h1 className="text-6xl font-bold text-gray-900 leading-tight">
-            Customize Icons
+          <h1 className="text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+            {t.landing.hero.title}
             <br />
             <span className="bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
-              In Seconds
+              {t.landing.hero.subtitle}
             </span>
           </h1>
 
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Choose from 2,000+ professional icons, customize colors and sizes,
-            then download instantly in PNG or SVG format. Perfect for designers and developers.
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            {t.landing.hero.description}
           </p>
 
           <div className="flex items-center justify-center gap-4 pt-4">
@@ -104,14 +112,14 @@ export function LandingPage() {
               to="/app"
               className="group flex items-center gap-2 px-8 py-4 bg-primary-600 text-white rounded-xl font-bold text-lg hover:bg-primary-700 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
             >
-              <span>Get Started Free</span>
+              <span>{t.landing.hero.getStarted}</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href="#features"
-              className="px-8 py-4 bg-white text-gray-700 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-200 shadow-lg border-2 border-gray-200"
+              className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-lg border-2 border-gray-200 dark:border-gray-700"
             >
-              Learn More
+              {t.landing.hero.learnMore}
             </a>
           </div>
 
@@ -130,11 +138,11 @@ export function LandingPage() {
       {/* Features Section */}
       <section id="features" className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Everything You Need
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t.landing.features.title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Powerful features designed to make icon customization effortless
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {t.landing.features.subtitle}
           </p>
         </div>
 
@@ -165,18 +173,18 @@ export function LandingPage() {
       <section className="container mx-auto px-6 py-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-3xl shadow-2xl my-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Simple 3-Step Process
+            {t.landing.howItWorks.title}
           </h2>
           <p className="text-xl text-primary-100 max-w-2xl mx-auto">
-            Get your customized icon in just three easy steps
+            {t.landing.howItWorks.subtitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
-            { step: '1', title: 'Choose Icon', desc: 'Browse 2,000+ icons across 67 categories' },
-            { step: '2', title: 'Customize', desc: 'Pick colors, adjust size, preview instantly' },
-            { step: '3', title: 'Download', desc: 'Export as PNG or SVG in any size' },
+            { step: '1', title: t.landing.howItWorks.step1.title, desc: t.landing.howItWorks.step1.description },
+            { step: '2', title: t.landing.howItWorks.step2.title, desc: t.landing.howItWorks.step2.description },
+            { step: '3', title: t.landing.howItWorks.step3.title, desc: t.landing.howItWorks.step3.description },
           ].map((item, index) => (
             <div key={index} className="text-center">
               <div className="w-16 h-16 bg-white text-primary-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-xl">
@@ -191,26 +199,26 @@ export function LandingPage() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 py-20 text-center">
-        <div className="max-w-3xl mx-auto space-y-8 p-12 bg-white rounded-3xl shadow-2xl border border-gray-100">
-          <h2 className="text-4xl font-bold text-gray-900">
-            Ready to Get Started?
+        <div className="max-w-3xl mx-auto space-y-8 p-12 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+            {t.landing.cta.title}
           </h2>
-          <p className="text-xl text-gray-600">
-            Join thousands of designers and developers customizing icons with Icony
+          <p className="text-xl text-gray-600 dark:text-gray-400">
+            {t.landing.cta.description}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
               <Check className="text-green-500" size={20} />
-              <span>No signup required</span>
+              <span>{t.landing.cta.noSignup}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
               <Check className="text-green-500" size={20} />
-              <span>100% free forever</span>
+              <span>{t.landing.cta.free}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
               <Check className="text-green-500" size={20} />
-              <span>Instant download</span>
+              <span>{t.landing.cta.instant}</span>
             </div>
           </div>
 
@@ -218,14 +226,14 @@ export function LandingPage() {
             to="/app"
             className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-primary-700 to-accent-700 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 shadow-xl"
           >
-            <span>Start Customizing Now</span>
+            <span>{t.landing.cta.startNow}</span>
             <ArrowRight size={20} />
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-6 py-12 border-t border-gray-200">
+      <footer className="container mx-auto px-6 py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="flex flex-col items-center gap-6">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-500">
@@ -235,18 +243,18 @@ export function LandingPage() {
                 <circle cx="24" cy="24" r="3" fill="white"/>
               </svg>
             </div>
-            <span className="text-lg font-bold text-gray-700">Icony</span>
+            <span className="text-lg font-bold text-gray-700 dark:text-gray-300">Icony</span>
           </div>
 
-          <p className="text-gray-600 text-sm text-center">
-            2,000+ icons • Free forever • Made with ❤️ for designers and developers
+          <p className="text-gray-600 dark:text-gray-400 text-sm text-center">
+            {t.landing.footer.tagline}
           </p>
 
           <div className="text-center">
-            <p className="text-xs text-gray-500 mb-1">
-              Icons provided by:
+            <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">
+              {t.landing.footer.iconsBy}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
               <a
                 href="https://fontawesome.com"
                 target="_blank"

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Save, Trash2 } from 'lucide-react';
 import { StorageManager } from '../../utils/storage';
+import { useLanguage } from '../../context/LanguageContext';
 import toast from 'react-hot-toast';
 
 interface PaletteSaverProps {
@@ -9,6 +10,7 @@ interface PaletteSaverProps {
 }
 
 export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps) {
+  const { t } = useLanguage();
   const [palettes, setPalettes] = useState(StorageManager.getPalettes());
   const [paletteName, setPaletteName] = useState('');
   const [showSaveInput, setShowSaveInput] = useState(false);
@@ -17,12 +19,12 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
 
   const handleSavePalette = () => {
     if (!paletteName.trim()) {
-      toast.error('Please enter a palette name');
+      toast.error(t.toast.enterPaletteName);
       return;
     }
 
     if (recentColors.length === 0) {
-      toast.error('No colors to save');
+      toast.error(t.toast.noColorsToSave);
       return;
     }
 
@@ -30,13 +32,13 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
     setPalettes(StorageManager.getPalettes());
     setPaletteName('');
     setShowSaveInput(false);
-    toast.success('Palette saved!');
+    toast.success(t.toast.paletteSaved);
   };
 
   const handleDeletePalette = (name: string) => {
     StorageManager.deletePalette(name);
     setPalettes(StorageManager.getPalettes());
-    toast.success('Palette deleted');
+    toast.success(t.toast.paletteDeleted);
   };
 
   if (palettes.length === 0 && !showSaveInput) {
@@ -46,7 +48,7 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
         className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
       >
         <Save size={14} />
-        <span>Save Recent Colors as Palette</span>
+        <span>{t.ui.saveRecentColors}</span>
       </button>
     );
   }
@@ -60,14 +62,14 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
             value={paletteName}
             onChange={(e) => setPaletteName(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSavePalette()}
-            placeholder="Palette name..."
+            placeholder={t.ui.paletteName}
             className="flex-1 px-3 py-2 text-sm border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           <button
             onClick={handleSavePalette}
             className="px-3 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
           >
-            Save
+            {t.ui.save}
           </button>
           <button
             onClick={() => {
@@ -76,7 +78,7 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
             }}
             className="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-sm font-medium"
           >
-            Cancel
+            {t.ui.cancel}
           </button>
         </div>
       )}
@@ -87,14 +89,14 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
           className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
         >
           <Save size={14} />
-          <span>Save Recent Colors as Palette</span>
+          <span>{t.ui.saveRecentColors}</span>
         </button>
       )}
 
       {palettes.length > 0 && (
         <div className="space-y-2">
           <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400">
-            Saved Palettes
+            {t.ui.savedPalettes}
           </label>
           {palettes.map((palette) => (
             <div
@@ -108,7 +110,7 @@ export function PaletteSaver({ currentColor, onColorSelect }: PaletteSaverProps)
                 <button
                   onClick={() => handleDeletePalette(palette.name)}
                   className="p-1 text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors"
-                  aria-label="Delete palette"
+                  aria-label={t.ui.delete}
                 >
                   <Trash2 size={14} />
                 </button>
