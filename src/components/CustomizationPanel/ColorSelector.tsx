@@ -1,20 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { ChevronDown, ChevronUp, Pipette } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
 import { SwatchPicker } from './SwatchPicker';
 import { PaletteSaver } from './PaletteSaver';
+import toast from 'react-hot-toast';
 
 export function ColorSelector() {
   const { color, setColor } = useIconContext();
   const [showPicker, setShowPicker] = useState(false);
-  const [eyeDropperSupported, setEyeDropperSupported] = useState(
-    typeof window !== 'undefined' && 'EyeDropper' in window
-  );
+  const [eyeDropperSupported, setEyeDropperSupported] = useState(false);
+
+  useEffect(() => {
+    // Check EyeDropper support on mount
+    if (typeof window !== 'undefined' && 'EyeDropper' in window) {
+      setEyeDropperSupported(true);
+      console.log('✅ EyeDropper API is supported');
+    } else {
+      console.log('❌ EyeDropper API is NOT supported');
+      console.log('Browser:', navigator.userAgent);
+      console.log('Current URL:', window.location.href);
+      console.log('Is HTTPS or localhost?', window.location.protocol === 'https:' || window.location.hostname === 'localhost');
+      console.log('\n💡 Solution: EyeDropper API requires HTTPS or localhost.');
+      console.log('Try accessing via: http://localhost:5173 instead of IP address');
+    }
+  }, []);
 
   const handleEyeDropper = async () => {
     if (!eyeDropperSupported) {
-      alert('EyeDropper API is not supported in this browser. Please use Chrome, Edge, or Opera.');
+      toast.error('EyeDropper API is not supported in this browser. Please use Chrome, Edge, or Opera.');
       return;
     }
 
@@ -23,9 +37,13 @@ export function ColorSelector() {
       const eyeDropper = new window.EyeDropper();
       const result = await eyeDropper.open();
       setColor(result.sRGBHex);
-    } catch (err) {
+      toast.success(`Color picked: ${result.sRGBHex}`);
+    } catch (err: any) {
       // User cancelled or error occurred
-      console.log('EyeDropper cancelled or error:', err);
+      if (err.name !== 'AbortError') {
+        console.error('EyeDropper error:', err);
+        toast.error('Failed to pick color from screen');
+      }
     }
   };
 
@@ -82,9 +100,21 @@ export function ColorSelector() {
             </button>
           </div>
           {!eyeDropperSupported && (
-            <p className="mt-2 text-xs text-gray-500">
-              Screen color picker is available in Chrome, Edge, and Opera browsers
-            </p>
+            <div className="mt-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+              <p className="text-xs text-yellow-800 dark:text-yellow-200 font-semibold mb-1">
+                EyeDropper not available
+              </p>
+              <p className="text-xs text-yellow-700 dark:text-yellow-300">
+                Screen color picker requires:
+              </p>
+              <ul className="mt-1 text-xs text-yellow-700 dark:text-yellow-300 list-disc list-inside space-y-0.5">
+                <li>Chrome, Edge, or Opera browser</li>
+                <li>HTTPS or localhost access</li>
+              </ul>
+              <p className="mt-2 text-xs text-yellow-600 dark:text-yellow-400">
+                💡 Try: <code className="bg-yellow-100 dark:bg-yellow-900/40 px-1 rounded">http://localhost:5173</code> instead of IP address
+              </p>
+            </div>
           )}
         </div>
       )}

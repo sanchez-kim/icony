@@ -1,16 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useIconContext } from '../context/IconContext';
-import { useTheme } from '../context/ThemeContext';
-import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { Header } from '../components/Header';
 import { MainLayout } from '../components/Layout/MainLayout';
-import toast from 'react-hot-toast';
+import { OnboardingModal } from '../components/OnboardingModal';
 
 export function AppPage() {
   const [searchParams] = useSearchParams();
-  const { downloadPng, downloadSvg, copyToClipboard, selectedIcon, toggleFavorite, icons, selectIcon, setColor, setSize } = useIconContext();
-  const { toggleTheme } = useTheme();
+  const { icons, selectIcon, setColor, setSize } = useIconContext();
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
+  // Check if onboarding has been completed
+  useEffect(() => {
+    const hasCompletedOnboarding = localStorage.getItem('icony_onboarding_completed');
+    if (!hasCompletedOnboarding) {
+      setShowOnboarding(true);
+    }
+  }, []);
 
   // Load state from URL parameters
   useEffect(() => {
@@ -37,67 +43,43 @@ export function AppPage() {
     }
   }, [searchParams, icons, selectIcon, setColor, setSize]);
 
-  useKeyboardShortcuts([
-    {
-      key: 'd',
-      ctrl: true,
-      action: downloadPng,
-      description: 'Download PNG',
-    },
-    {
-      key: 's',
-      ctrl: true,
-      action: downloadSvg,
-      description: 'Download SVG',
-    },
-    {
-      key: 'c',
-      ctrl: true,
-      action: copyToClipboard,
-      description: 'Copy to clipboard',
-    },
-    {
-      key: 'd',
-      action: toggleTheme,
-      description: 'Toggle dark mode',
-    },
-    {
-      key: 'f',
-      action: () => {
-        if (selectedIcon) {
-          toggleFavorite(selectedIcon.id);
-        } else {
-          toast.error('Select an icon first');
-        }
-      },
-      description: 'Toggle favorite',
-    },
-    {
-      key: '?',
-      shift: true,
-      action: () => {
-        toast(
-          <div className="text-sm">
-            <div className="font-bold mb-2">Keyboard Shortcuts</div>
-            <div className="space-y-1 text-xs">
-              <div><kbd>Ctrl+D</kbd> Download PNG</div>
-              <div><kbd>Ctrl+S</kbd> Download SVG</div>
-              <div><kbd>Ctrl+C</kbd> Copy to clipboard</div>
-              <div><kbd>D</kbd> Toggle dark mode</div>
-              <div><kbd>F</kbd> Toggle favorite</div>
-            </div>
-          </div>,
-          { duration: 5000 }
-        );
-      },
-      description: 'Show shortcuts',
-    },
-  ]);
+  const handleHelpClick = () => {
+    setShowOnboarding(true);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
-      <Header />
-      <MainLayout />
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors flex flex-col">
+      <Header onHelpClick={handleHelpClick} />
+      <div className="flex-1">
+        <MainLayout />
+      </div>
+      <footer className="container mx-auto px-6 py-8 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transition-colors">
+        <div className="flex flex-col items-center gap-3">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            Icons provided by:
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-400">
+            <a
+              href="https://fontawesome.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              Font Awesome Free 6.7.2 (CC BY 4.0)
+            </a>
+            <span className="text-gray-400">•</span>
+            <a
+              href="https://lucide.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              Lucide Icons (ISC License)
+            </a>
+          </div>
+        </div>
+      </footer>
+      <OnboardingModal isOpen={showOnboarding} onClose={() => setShowOnboarding(false)} />
     </div>
   );
 }

@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
+import { HelpCircle } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
-export function Header() {
+interface HeaderProps {
+  onHelpClick?: () => void;
+}
+
+export function Header({ onHelpClick }: HeaderProps) {
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md border-b border-gray-200 dark:border-gray-800 transition-colors">
       <div className="container mx-auto px-6 py-5">
@@ -29,6 +34,16 @@ export function Header() {
           </Link>
 
           <div className="flex items-center gap-4">
+            {onHelpClick && (
+              <button
+                onClick={onHelpClick}
+                className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-label="Help"
+                title="Show tutorial"
+              >
+                <HelpCircle size={20} />
+              </button>
+            )}
             <ThemeToggle />
             <Link
               to="/"

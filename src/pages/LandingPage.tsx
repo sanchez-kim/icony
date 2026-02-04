@@ -226,7 +226,7 @@ export function LandingPage() {
 
       {/* Footer */}
       <footer className="container mx-auto px-6 py-12 border-t border-gray-200">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col items-center gap-6">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-500">
               <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none">
@@ -237,9 +237,35 @@ export function LandingPage() {
             </div>
             <span className="text-lg font-bold text-gray-700">Icony</span>
           </div>
-          <p className="text-gray-600 text-sm">
+
+          <p className="text-gray-600 text-sm text-center">
             2,000+ icons • Free forever • Made with ❤️ for designers and developers
           </p>
+
+          <div className="text-center">
+            <p className="text-xs text-gray-500 mb-1">
+              Icons provided by:
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500">
+              <a
+                href="https://fontawesome.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-600 transition-colors"
+              >
+                Font Awesome Free 6.7.2 (CC BY 4.0)
+              </a>
+              <span className="text-gray-400">•</span>
+              <a
+                href="https://lucide.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-600 transition-colors"
+              >
+                Lucide Icons (ISC License)
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

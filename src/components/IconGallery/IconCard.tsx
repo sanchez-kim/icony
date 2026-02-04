@@ -38,9 +38,17 @@ export const IconCard = React.memo(function IconCard({
       aria-label={`Select ${icon.name} icon`}
       aria-pressed={selected}
     >
-      <button
+      <span
         onClick={handleFavoriteClick}
-        className="absolute top-1 right-1 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-opacity duration-200 focus:outline-none"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleFavoriteClick(e as any);
+          }
+        }}
+        className="absolute top-1 right-1 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-opacity duration-200 focus:outline-none cursor-pointer"
         aria-label={favorite ? 'Remove from favorites' : 'Add to favorites'}
       >
         <Star
@@ -50,7 +58,7 @@ export const IconCard = React.memo(function IconCard({
             favorite ? 'fill-yellow-400 text-yellow-400' : 'text-gray-400'
           )}
         />
-      </button>
+      </span>
       {icon.type === 'lucide' ? (
         React.createElement(icon.component as LucideIcon, {
           className: 'w-full h-full text-gray-700',

@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "license": "MIT",
+  "description": "A modern icon customization tool with 2,000+ icons, color customization, and multiple export formats",
+  "author": "Icony Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/icony.git"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
