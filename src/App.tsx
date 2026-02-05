@@ -5,6 +5,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { LandingPage } from './pages/LandingPage';
 import { AppPage } from './pages/AppPage';
+import { TermsPage } from './pages/TermsPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route
               path="/app"
               element={

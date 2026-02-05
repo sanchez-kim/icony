@@ -58,9 +58,9 @@ export function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-100 via-purple-50 to-accent-100">
+    <div className="min-h-screen bg-gradient-to-br from-primary-100 via-purple-50 to-accent-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
       {/* Header */}
-      <header className="container mx-auto px-6 py-6">
+      <header className="container mx-auto px-6 py-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl mt-4 transition-colors">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-500 shadow-lg">
@@ -90,7 +90,7 @@ export function LandingPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold transition-colors">
             <Sparkles size={16} />
             <span>{t.landing.tagline}</span>
           </div>
@@ -126,9 +126,9 @@ export function LandingPage() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
-                <div className="text-3xl font-bold text-primary-600">{stat.value}</div>
-                <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
+              <div key={index} className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+                <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">{stat.value}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -152,15 +152,15 @@ export function LandingPage() {
             return (
               <div
                 key={index}
-                className="group p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-accent-500 dark:from-primary-600 dark:to-accent-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Icon className="text-white" size={28} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -170,7 +170,7 @@ export function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="container mx-auto px-6 py-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-3xl shadow-2xl my-20">
+      <section className="container mx-auto px-6 py-20 bg-gradient-to-br from-primary-500 to-accent-500 dark:from-primary-700 dark:to-accent-700 rounded-3xl shadow-2xl my-20 transition-colors">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
             {t.landing.howItWorks.title}
@@ -250,28 +250,39 @@ export function LandingPage() {
             {t.landing.footer.tagline}
           </p>
 
-          <div className="text-center">
-            <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">
-              {t.landing.footer.iconsBy}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
-              <a
-                href="https://fontawesome.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-600 transition-colors"
+          <div className="text-center space-y-3">
+            <div>
+              <Link
+                to="/terms"
+                className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"
               >
-                Font Awesome Free 6.7.2 (CC BY 4.0)
-              </a>
-              <span className="text-gray-400">•</span>
-              <a
-                href="https://lucide.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-600 transition-colors"
-              >
-                Lucide Icons (ISC License)
-              </a>
+                {t.language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
+              </Link>
+            </div>
+
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">
+                {t.landing.footer.iconsBy}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
+                <a
+                  href="https://fontawesome.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-600 transition-colors"
+                >
+                  Font Awesome Free 6.7.2 (CC BY 4.0)
+                </a>
+                <span className="text-gray-400">•</span>
+                <a
+                  href="https://lucide.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-600 transition-colors"
+                >
+                  Lucide Icons (ISC License)
+                </a>
+              </div>
             </div>
           </div>
         </div>

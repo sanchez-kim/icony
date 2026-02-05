@@ -45,7 +45,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
         {filteredIcons.length} {filteredIcons.length === 1 ? 'icon' : 'icons'} found
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3 max-h-[650px] overflow-y-auto pr-2 custom-scrollbar p-1">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 max-h-[650px] overflow-y-auto pr-2 custom-scrollbar p-1">
         {filteredIcons.map((icon) => (
           <IconCard
             key={icon.id}
