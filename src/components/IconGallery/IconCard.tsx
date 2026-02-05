@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { LucideIcon, Star } from 'lucide-react';
+import { Icon as TablerIconType } from '@tabler/icons-react';
+import { Icon as PhosphorIconType } from 'phosphor-react';
 import { Icon } from '../../types';
 import { cn } from '../../utils/cn';
 import { useIconContext } from '../../context/IconContext';
@@ -63,13 +65,23 @@ export const IconCard = React.memo(function IconCard({
       </span>
       {icon.type === 'lucide' ? (
         React.createElement(icon.component as LucideIcon, {
-          className: 'w-full h-full text-gray-700',
+          className: 'w-full h-full text-gray-700 dark:text-gray-300',
           strokeWidth: 1.5,
+        })
+      ) : icon.type === 'tabler' ? (
+        React.createElement(icon.component as TablerIconType, {
+          className: 'w-full h-full text-gray-700 dark:text-gray-300',
+          stroke: 1.5,
+        })
+      ) : icon.type === 'phosphor' ? (
+        React.createElement(icon.component as PhosphorIconType, {
+          className: 'w-full h-full text-gray-700 dark:text-gray-300',
+          weight: 'regular',
         })
       ) : (
         <FontAwesomeIcon
           icon={icon.component as IconDefinition}
-          className="w-full h-full text-gray-700"
+          className="w-full h-full text-gray-700 dark:text-gray-300"
         />
       )}
     </button>

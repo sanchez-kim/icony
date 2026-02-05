@@ -98,6 +98,8 @@ import {
 } from 'lucide-react';
 import { Icon } from '../types';
 import { fontAwesomeIcons } from './fontawesome-icons';
+import { tablerIcons } from './tabler-icons';
+import { phosphorIcons } from './phosphor-icons';
 
 const lucideIcons: Icon[] = [
   // UI & Navigation
@@ -815,5 +817,10 @@ const lucideIcons: Icon[] = [
   },
 ];
 
-// Combine Lucide and FontAwesome icons
-export const icons: Icon[] = [...lucideIcons, ...fontAwesomeIcons];
+// Combine Lucide, FontAwesome, Tabler, and Phosphor icons
+export const icons: Icon[] = [
+  ...lucideIcons,
+  ...fontAwesomeIcons,
+  ...tablerIcons,
+  ...phosphorIcons,
+];

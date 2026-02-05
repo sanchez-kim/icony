@@ -8,8 +8,8 @@ export function StrokeWeightSelector() {
   const { strokeWeight, setStrokeWeight, selectedIcon } = useIconContext();
   const { t } = useLanguage();
 
-  // Only show for Lucide icons (stroke-based icons)
-  if (!selectedIcon || selectedIcon.type !== 'lucide') {
+  // Only show for stroke-based icons (Lucide, Tabler, Phosphor)
+  if (!selectedIcon || selectedIcon.type === 'fontawesome') {
     return null;
   }
 
@@ -79,8 +79,8 @@ export function StrokeWeightSelector() {
 
       <p className="text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
         💡 {t.language === 'ko'
-          ? 'Stroke weight는 Lucide 아이콘만 지원됩니다. Font Awesome 아이콘은 선택 시 표시되지 않습니다.'
-          : 'Stroke weight is only available for Lucide icons. Font Awesome icons do not support stroke customization.'}
+          ? 'Stroke weight는 Lucide, Tabler, Phosphor 아이콘에서 사용할 수 있습니다. Font Awesome 아이콘은 선 두께 조정을 지원하지 않습니다.'
+          : 'Stroke weight is available for Lucide, Tabler, and Phosphor icons. Font Awesome icons do not support stroke customization.'}
       </p>
     </div>
   );
