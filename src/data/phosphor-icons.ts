@@ -10,8 +10,8 @@ import {
   GithubLogo, LinkedinLogo, TwitterLogo, FacebookLogo, InstagramLogo,
   YoutubeLogo, Lock, LockOpen, Eye, EyeSlash,
   ThumbsUp, ThumbsDown, ChatCircle, PaperPlaneTilt, Bookmark,
-  Tag, Clock, MapPin, Globe, Wifi,
-  WifiSlash, Battery, BatteryCharging, DeviceMobile, Laptop,
+  Tag, Clock, MapPin, Globe, WifiHigh,
+  WifiX, Battery, BatteryCharging, DeviceMobile, Laptop,
   Monitor, Printer, FloppyDisk, Cloud, CloudArrowUp,
   CloudArrowDown, Lightning, Target, TrendingUp, TrendingDown,
   ChartBar, ChartPie, Activity, ShoppingCart, CreditCard,
@@ -485,7 +485,7 @@ export const phosphorIcons: Icon[] = [
     category: 'network',
     tags: ['wireless', 'internet', 'connection'],
     type: 'phosphor',
-    component: Wifi,
+    component: WifiHigh,
   },
   {
     id: 'phosphor-wifi-slash',
@@ -493,7 +493,7 @@ export const phosphorIcons: Icon[] = [
     category: 'network',
     tags: ['offline', 'disconnected', 'no-internet'],
     type: 'phosphor',
-    component: WifiSlash,
+    component: WifiX,
   },
   {
     id: 'phosphor-database',
