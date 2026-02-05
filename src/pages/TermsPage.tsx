@@ -59,9 +59,14 @@ export function TermsPage() {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. 아이콘 라이선스</h2>
                   <p className="leading-relaxed mb-3">본 서비스에서 제공하는 아이콘은 다음 라이선스를 따릅니다:</p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Font Awesome Free 6.7.2</strong>: CC BY 4.0 라이선스 - 상업적 이용 시 출처 표기 필요</li>
+                    <li><strong>Font Awesome Free 6.7.2</strong>: CC BY 4.0 라이선스 - 상업적 이용 시 출처 표기 필수</li>
                     <li><strong>Lucide Icons</strong>: ISC 라이선스 - 자유로운 사용 가능</li>
+                    <li><strong>Tabler Icons</strong>: MIT 라이선스 - 자유로운 사용 가능 (출처 표기 권장)</li>
+                    <li><strong>Phosphor Icons</strong>: MIT 라이선스 - 자유로운 사용 가능 (출처 표기 권장)</li>
                   </ul>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                    ⚠️ Font Awesome 아이콘 사용 시에는 반드시 출처를 표기해야 합니다. 나머지 라이브러리는 출처 표기가 필수는 아니지만 권장됩니다.
+                  </p>
                 </div>
 
                 <div>
@@ -69,7 +74,8 @@ export function TermsPage() {
                   <p className="leading-relaxed mb-3">사용자는 다음 사항에 동의합니다:</p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li>다운로드한 아이콘의 라이선스 조건을 준수할 것</li>
-                    <li>Font Awesome 아이콘 사용 시 적절한 출처 표기를 할 것</li>
+                    <li>Font Awesome 아이콘 사용 시 적절한 출처 표기를 할 것 (필수)</li>
+                    <li>MIT/ISC 라이선스 아이콘 사용 시 라이선스 조항을 준수할 것</li>
                     <li>본 서비스를 악의적인 목적으로 사용하지 않을 것</li>
                   </ul>
                 </div>
@@ -129,7 +135,12 @@ export function TermsPage() {
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li><strong>Font Awesome Free 6.7.2</strong>: CC BY 4.0 License - Attribution required for commercial use</li>
                     <li><strong>Lucide Icons</strong>: ISC License - Free to use</li>
+                    <li><strong>Tabler Icons</strong>: MIT License - Free to use (attribution recommended)</li>
+                    <li><strong>Phosphor Icons</strong>: MIT License - Free to use (attribution recommended)</li>
                   </ul>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                    ⚠️ Attribution is required when using Font Awesome icons. For other libraries, attribution is recommended but not mandatory.
+                  </p>
                 </div>
 
                 <div>
@@ -137,7 +148,8 @@ export function TermsPage() {
                   <p className="leading-relaxed mb-3">Users agree to:</p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li>Comply with the license terms of downloaded icons</li>
-                    <li>Provide proper attribution when using Font Awesome icons</li>
+                    <li>Provide proper attribution when using Font Awesome icons (required)</li>
+                    <li>Comply with MIT/ISC license terms when using other icon libraries</li>
                     <li>Not use the service for malicious purposes</li>
                   </ul>
                 </div>

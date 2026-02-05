@@ -280,7 +280,25 @@ export function LandingPage() {
                   rel="noopener noreferrer"
                   className="hover:text-primary-600 transition-colors"
                 >
-                  Lucide Icons (ISC License)
+                  Lucide Icons (ISC)
+                </a>
+                <span className="text-gray-400">•</span>
+                <a
+                  href="https://tabler.io/icons"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-600 transition-colors"
+                >
+                  Tabler Icons (MIT)
+                </a>
+                <span className="text-gray-400">•</span>
+                <a
+                  href="https://phosphoricons.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-600 transition-colors"
+                >
+                  Phosphor Icons (MIT)
                 </a>
               </div>
             </div>

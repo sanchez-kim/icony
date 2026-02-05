@@ -19,11 +19,13 @@ interface IconContextValue {
   selectedIcon: Icon | null;
   color: string;
   size: number;
+  strokeWeight: number;
   favorites: string[];
   recentIcons: string[];
   selectIcon: (icon: Icon) => void;
   setColor: (color: string) => void;
   setSize: (size: number) => void;
+  setStrokeWeight: (weight: number) => void;
   toggleFavorite: (iconId: string) => void;
   isFavorite: (iconId: string) => boolean;
   downloadPng: () => Promise<void>;
@@ -39,6 +41,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
   const [color, setColor] = useState('#000000');
   const [size, setSize] = useState(128);
+  const [strokeWeight, setStrokeWeight] = useState(2);
   const [isExporting, setIsExporting] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [recentIcons, setRecentIcons] = useState<string[]>([]);
@@ -173,11 +176,13 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     selectedIcon,
     color,
     size,
+    strokeWeight,
     favorites,
     recentIcons,
     selectIcon,
     setColor: handleSetColor,
     setSize,
+    setStrokeWeight,
     toggleFavorite,
     isFavorite,
     downloadPng,

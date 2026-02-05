@@ -52,7 +52,7 @@ const BACKGROUND_OPTIONS: BackgroundOption[] = [
 ];
 
 export function IconPreview() {
-  const { selectedIcon, color, size } = useIconContext();
+  const { selectedIcon, color, size, strokeWeight } = useIconContext();
   const [background, setBackground] = useState<string>('light');
 
   if (!selectedIcon) return null;
@@ -104,7 +104,7 @@ export function IconPreview() {
           React.createElement(selectedIcon.component as LucideIcon, {
             size,
             color,
-            strokeWidth: 2,
+            strokeWidth: strokeWeight,
             className: 'transition-all duration-300',
           })
         ) : (

@@ -4,6 +4,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { IconPreview } from './IconPreview';
 import { ColorSelector } from './ColorSelector';
 import { SizeSelector } from './SizeSelector';
+import { StrokeWeightSelector } from './StrokeWeightSelector';
 import { ExportButtons } from './ExportButtons';
 
 export function CustomizationPanel() {
@@ -32,6 +33,9 @@ export function CustomizationPanel() {
       </div>
       <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
         <SizeSelector />
+      </div>
+      <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
+        <StrokeWeightSelector />
       </div>
       <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
         <ExportButtons />
