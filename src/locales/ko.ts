@@ -127,7 +127,7 @@ export const ko = {
     selectIcon: '커스터마이징할 아이콘 선택',
     selectIconDesc: '갤러리에서 수천 개의 아이콘 중 선택',
     color: '색상',
-    size: '크기',
+    size: '이미지 크기',
     export: '내보내기',
     showCustomPicker: '커스텀 피커 표시',
     hideCustomPicker: '커스텀 피커 숨기기',

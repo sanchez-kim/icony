@@ -26,17 +26,20 @@ export function CustomizationPanel() {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-10 space-y-8 transition-colors">
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-10 space-y-6 transition-colors">
+      {/* Icon Preview */}
       <IconPreview />
+
+      {/* Controls Grid - 3 columns */}
       <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
-        <ColorSelector />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <ColorSelector />
+          <SizeSelector />
+          <StrokeWeightSelector />
+        </div>
       </div>
-      <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
-        <SizeSelector />
-      </div>
-      <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
-        <StrokeWeightSelector />
-      </div>
+
+      {/* Export Buttons */}
       <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
         <ExportButtons />
       </div>

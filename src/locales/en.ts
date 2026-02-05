@@ -127,7 +127,7 @@ export const en = {
     selectIcon: 'Select an icon to customize',
     selectIconDesc: 'Choose from thousands of icons in the gallery',
     color: 'Color',
-    size: 'Size',
+    size: 'Image Size',
     export: 'Export',
     showCustomPicker: 'Show Custom Picker',
     hideCustomPicker: 'Hide Custom Picker',
