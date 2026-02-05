@@ -5,7 +5,7 @@ export const ko = {
     hero: {
       title: '아이콘 커스터마이징',
       subtitle: '단 몇 초만에',
-      description: '2,000개 이상의 전문 아이콘 중에서 선택하고, 색상과 크기를 커스터마이징한 뒤, PNG 또는 SVG 형식으로 즉시 다운로드하세요. 디자이너와 개발자를 위한 완벽한 도구입니다.',
+      description: '수천 개의 전문 아이콘 중에서 선택하고, 색상과 크기를 커스터마이징한 뒤, PNG 또는 SVG 형식으로 즉시 다운로드하세요. 디자이너와 개발자를 위한 완벽한 도구입니다.',
       getStarted: '무료로 시작하기',
       learnMore: '자세히 알아보기',
     },
@@ -48,7 +48,7 @@ export const ko = {
       subtitle: '단 3단계로 커스터마이징된 아이콘 받기',
       step1: {
         title: '아이콘 선택',
-        description: '67개 카테고리에서 2,000개 이상의 아이콘 탐색',
+        description: '67개 카테고리에서 수천 개의 아이콘 탐색',
       },
       step2: {
         title: '커스터마이징',
@@ -81,7 +81,7 @@ export const ko = {
     steps: [
       {
         title: '아이콘 검색 및 선택',
-        description: '2,000개 이상의 아이콘을 검색하고, 원하는 아이콘을 클릭하여 선택하세요.',
+        description: '수천 개의 아이콘을 검색하고, 원하는 아이콘을 클릭하여 선택하세요.',
         tip: '카테고리 필터를 사용하면 더 빠르게 찾을 수 있습니다!',
       },
       {
@@ -116,16 +116,16 @@ export const ko = {
   // Header
   header: {
     appName: 'Icony',
-    subtitle: '2,000개 이상의 아이콘 커스터마이징',
+    subtitle: '수천 개의 아이콘 커스터마이징',
     backToHome: '← 홈으로 돌아가기',
     help: '도움말',
   },
 
   // Main UI
   ui: {
-    searchPlaceholder: '2,000개 이상의 아이콘 검색...',
+    searchPlaceholder: '수천 개의 아이콘 검색...',
     selectIcon: '커스터마이징할 아이콘 선택',
-    selectIconDesc: '갤러리에서 2,000개 이상의 아이콘 중 선택',
+    selectIconDesc: '갤러리에서 수천 개의 아이콘 중 선택',
     color: '색상',
     size: '크기',
     export: '내보내기',

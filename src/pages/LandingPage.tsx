@@ -51,7 +51,7 @@ export function LandingPage() {
   ];
 
   const stats = [
-    { value: '2,000+', label: t.landing.stats.icons },
+    { value: t.language === 'ko' ? '수천 개' : 'Thousands', label: t.landing.stats.icons },
     { value: '100%', label: t.landing.stats.free },
     { value: '512px', label: t.landing.stats.resolution },
     { value: '67', label: t.landing.stats.categories },

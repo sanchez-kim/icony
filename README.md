@@ -9,7 +9,8 @@
 ## Features
 
 ### Core Features
-- **2,000+ Icons**: Comprehensive library with Lucide (96) and Font Awesome Free (1,983) icons
+- **2,000+ Icons**: Growing library with Lucide, Font Awesome Free, Tabler, and Phosphor icons
+- **Stroke Weight Customization**: Adjust line thickness for stroke-based icons (Lucide, Tabler, Phosphor)
 - **67 Categories**: Organized by official Font Awesome categories (UI, Arrows, Business, etc.)
 - **Multiple Export Formats**: Download as PNG or SVG
 - **Smart Search & Filter**: Real-time search with category filtering
@@ -77,7 +78,7 @@ npm run preview
 
 ## Usage
 
-1. **Browse Icons**: Search through 2,000+ icons or filter by 67 categories
+1. **Browse Icons**: Search through our growing icon library or filter by 67 categories
 2. **Select Icon**: Click any icon from the gallery
 3. **Customize Color**:
    - Choose from preset swatches
@@ -250,18 +251,5 @@ All icon copyrights belong to their respective owners.
 
 For detailed documentation, see the [docs](./docs) directory:
 
-### Design Documentation
-- [Architecture](./docs/design/architecture.md) - System architecture
-- [Components](./docs/design/components.md) - Component specifications
-- [Technical Specifications](./docs/design/technical-specs.md) - TypeScript types and APIs
-- [Implementation Guide](./docs/design/implementation-guide.md) - Step-by-step guide
-- [User Flows](./docs/design/user-flows.md) - User scenarios
-
-### Guides
-- [Quick Start](./docs/guides/QUICK_START.md) - Get started quickly
-- [Project Organization](./docs/guides/PROJECT_ORGANIZATION.md) - Project structure
-- [Deployment](./docs/guides/DEPLOYMENT.md) - Deploy to production
-
-### Other
-- [Documentation Index](./docs/README.md) - All documentation
-- [Changelog](./docs/CHANGELOG.md) - Version history
+- [Tabler & Phosphor Integration Guide](./docs/TABLER_PHOSPHOR_INTEGRATION.md) - Adding new icon libraries
+- [Scripts Documentation](./docs/SCRIPTS.md) - Icon generation scripts

@@ -5,7 +5,7 @@ export const en = {
     hero: {
       title: 'Customize Icons',
       subtitle: 'In Seconds',
-      description: 'Choose from 2,000+ professional icons, customize colors and sizes, then download instantly in PNG or SVG format. Perfect for designers and developers.',
+      description: 'Choose from thousands of professional icons, customize colors and sizes, then download instantly in PNG or SVG format. Perfect for designers and developers.',
       getStarted: 'Get Started Free',
       learnMore: 'Learn More',
     },
@@ -48,7 +48,7 @@ export const en = {
       subtitle: 'Get your customized icon in just three easy steps',
       step1: {
         title: 'Choose Icon',
-        description: 'Browse 2,000+ icons across 67 categories',
+        description: 'Browse thousands of icons across 67 categories',
       },
       step2: {
         title: 'Customize',
@@ -81,7 +81,7 @@ export const en = {
     steps: [
       {
         title: 'Search & Select Icon',
-        description: 'Search through 2,000+ icons and click to select the one you want.',
+        description: 'Search through thousands of icons and click to select the one you want.',
         tip: 'Use category filters to find icons faster!',
       },
       {
@@ -116,16 +116,16 @@ export const en = {
   // Header
   header: {
     appName: 'Icony',
-    subtitle: 'Customize 2,000+ icons',
+    subtitle: 'Customize thousands of icons',
     backToHome: '← Back to Home',
     help: 'Help',
   },
 
   // Main UI
   ui: {
-    searchPlaceholder: 'Search 2,000+ icons...',
+    searchPlaceholder: 'Search thousands of icons...',
     selectIcon: 'Select an icon to customize',
-    selectIconDesc: 'Choose from 2,000+ icons in the gallery',
+    selectIconDesc: 'Choose from thousands of icons in the gallery',
     color: 'Color',
     size: 'Size',
     export: 'Export',
