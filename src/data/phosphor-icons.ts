@@ -11,15 +11,15 @@ import {
   YoutubeLogo, Lock, LockOpen, Eye, EyeSlash,
   ThumbsUp, ThumbsDown, ChatCircle, PaperPlaneTilt, Bookmark,
   Tag, Clock, MapPin, Globe, WifiHigh,
-  WifiX, Battery, BatteryCharging, DeviceMobile, Laptop,
+  WifiX, BatteryFull, BatteryCharging, DeviceMobile, Laptop,
   Monitor, Printer, FloppyDisk, Cloud, CloudArrowUp,
-  CloudArrowDown, Lightning, Target, TrendingUp, TrendingDown,
+  CloudArrowDown, Lightning, Target, TrendUp, TrendDown,
   ChartBar, ChartPie, Activity, ShoppingCart, CreditCard,
   CurrencyDollar, Gift, Medal, Users, UserPlus,
   UserMinus, WarningCircle, Warning, Info, Question,
   CheckCircle, XCircle, ArrowsClockwise, ArrowClockwise, ArrowCounterClockwise,
   Play, Pause, Stop, SpeakerHigh, SpeakerLow,
-  SpeakerSlash, Database, Server, Coffee, Aperture,
+  SpeakerSlash, Database, HardDrives, Coffee, Aperture,
 } from 'phosphor-react';
 import { Icon } from '../types';
 
@@ -507,9 +507,9 @@ export const phosphorIcons: Icon[] = [
     id: 'phosphor-server',
     name: 'Server',
     category: 'network',
-    tags: ['backend', 'infrastructure', 'host'],
+    tags: ['backend', 'infrastructure', 'host', 'storage'],
     type: 'phosphor',
-    component: Server,
+    component: HardDrives,
   },
 
   // Development
@@ -687,7 +687,7 @@ export const phosphorIcons: Icon[] = [
     category: 'analytics',
     tags: ['increase', 'growth', 'arrow', 'up'],
     type: 'phosphor',
-    component: TrendingUp,
+    component: TrendUp,
   },
   {
     id: 'phosphor-trending-down',
@@ -695,7 +695,7 @@ export const phosphorIcons: Icon[] = [
     category: 'analytics',
     tags: ['decrease', 'decline', 'arrow', 'down'],
     type: 'phosphor',
-    component: TrendingDown,
+    component: TrendDown,
   },
   {
     id: 'phosphor-activity',
@@ -721,7 +721,7 @@ export const phosphorIcons: Icon[] = [
     category: 'system',
     tags: ['power', 'charge', 'energy'],
     type: 'phosphor',
-    component: Battery,
+    component: BatteryFull,
   },
   {
     id: 'phosphor-battery-charging',
