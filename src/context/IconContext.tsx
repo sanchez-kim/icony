@@ -14,6 +14,9 @@ import { ClipboardManager } from '../services/clipboardManager';
 import { ExportManager } from '../services/exportManager';
 import { StorageManager } from '../utils/storage';
 
+type IconLibrary = 'all' | 'fontawesome' | 'lucide' | 'tabler' | 'phosphor';
+type SortOption = 'name-asc' | 'name-desc' | 'recent' | 'popular';
+
 interface IconContextValue {
   icons: Icon[];
   selectedIcon: Icon | null;
@@ -22,10 +25,14 @@ interface IconContextValue {
   strokeWeight: number;
   favorites: string[];
   recentIcons: string[];
+  selectedLibrary: IconLibrary;
+  sortBy: SortOption;
   selectIcon: (icon: Icon) => void;
   setColor: (color: string) => void;
   setSize: (size: number) => void;
   setStrokeWeight: (weight: number) => void;
+  setSelectedLibrary: (library: IconLibrary) => void;
+  setSortBy: (sort: SortOption) => void;
   toggleFavorite: (iconId: string) => void;
   isFavorite: (iconId: string) => boolean;
   downloadPng: () => Promise<void>;
@@ -42,6 +49,8 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
   const [color, setColor] = useState('#000000');
   const [size, setSize] = useState(128);
   const [strokeWeight, setStrokeWeight] = useState(2);
+  const [selectedLibrary, setSelectedLibrary] = useState<IconLibrary>('all');
+  const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [isExporting, setIsExporting] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [recentIcons, setRecentIcons] = useState<string[]>([]);
@@ -177,12 +186,16 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     color,
     size,
     strokeWeight,
+    selectedLibrary,
+    sortBy,
     favorites,
     recentIcons,
     selectIcon,
     setColor: handleSetColor,
     setSize,
     setStrokeWeight,
+    setSelectedLibrary,
+    setSortBy,
     toggleFavorite,
     isFavorite,
     downloadPng,
