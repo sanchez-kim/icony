@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { LucideIcon } from 'lucide-react';
-import { Icon as TablerIconType } from '@tabler/icons-react';
-import { Icon as PhosphorIconType } from 'phosphor-react';
 import { useIconContext } from '../../context/IconContext';
 import { cn } from '../../utils/cn';
 
@@ -110,14 +108,14 @@ export function IconPreview() {
             className: 'transition-all duration-300',
           })
         ) : selectedIcon.type === 'tabler' ? (
-          React.createElement(selectedIcon.component as TablerIconType, {
+          React.createElement(selectedIcon.component as React.ComponentType<any>, {
             size,
             color,
             stroke: strokeWeight,
             className: 'transition-all duration-300',
           })
         ) : selectedIcon.type === 'phosphor' ? (
-          React.createElement(selectedIcon.component as PhosphorIconType, {
+          React.createElement(selectedIcon.component as React.ComponentType<any>, {
             size,
             color,
             weight: strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light',
