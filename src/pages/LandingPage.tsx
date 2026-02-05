@@ -13,9 +13,22 @@ import {
 import { useLanguage } from '../context/LanguageContext';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { ThemeToggle } from '../components/ThemeToggle';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useCounterAnimation } from '../hooks/useCounterAnimation';
 
 export function LandingPage() {
   const { t } = useLanguage();
+
+  // Scroll animations for different sections
+  const heroAnimation = useScrollAnimation({ threshold: 0.2 });
+  const statsAnimation = useScrollAnimation({ threshold: 0.3 });
+  const featuresAnimation = useScrollAnimation({ threshold: 0.1 });
+  const howItWorksAnimation = useScrollAnimation({ threshold: 0.2 });
+  const ctaAnimation = useScrollAnimation({ threshold: 0.3 });
+
+  // Counter animations for stats (activated when visible)
+  const iconCount = useCounterAnimation({ end: 2000, duration: 2000, isActive: statsAnimation.isVisible });
+  const categoryCount = useCounterAnimation({ end: 67, duration: 1500, isActive: statsAnimation.isVisible });
 
   const features = [
     {
@@ -51,7 +64,7 @@ export function LandingPage() {
   ];
 
   const stats = [
-    { value: t.language === 'ko' ? '수천 개' : 'Thousands', label: t.landing.stats.icons },
+    { value: t.language === 'ko' ? '2,000+' : '2,000+', label: t.landing.stats.icons },
     { value: '100%', label: t.landing.stats.free },
     { value: '512px', label: t.landing.stats.resolution },
     { value: '67', label: t.landing.stats.categories },
@@ -89,7 +102,12 @@ export function LandingPage() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div
+          ref={heroAnimation.ref}
+          className={`max-w-4xl mx-auto space-y-8 transition-all duration-1000 ${
+            heroAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold transition-colors">
             <Sparkles size={16} />
             <span>{t.landing.tagline}</span>
@@ -124,19 +142,44 @@ export function LandingPage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-3xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
-                <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{stat.label}</div>
-              </div>
-            ))}
+          <div
+            ref={statsAnimation.ref}
+            className={`grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-3xl mx-auto transition-all duration-1000 ${
+              statsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            {stats.map((stat, index) => {
+              // Use animated counter for numeric values
+              let displayValue = stat.value;
+              if (index === 0 && statsAnimation.isVisible) {
+                displayValue = `${iconCount.toLocaleString()}+`;
+              } else if (index === 3 && statsAnimation.isVisible) {
+                displayValue = categoryCount.toString();
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors overflow-hidden hover:scale-105 transform duration-300"
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 break-words">{displayValue}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1 break-words">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container mx-auto px-6 py-20">
+      <section
+        id="features"
+        ref={featuresAnimation.ref}
+        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
+          featuresAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t.landing.features.title}
@@ -170,7 +213,12 @@ export function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="container mx-auto px-6 py-20 bg-gradient-to-br from-primary-500 to-accent-500 dark:from-primary-700 dark:to-accent-700 rounded-3xl shadow-2xl my-20 transition-colors">
+      <section
+        ref={howItWorksAnimation.ref}
+        className={`container mx-auto px-6 py-20 bg-gradient-to-br from-primary-500 to-accent-500 dark:from-primary-700 dark:to-accent-700 rounded-3xl shadow-2xl my-20 transition-all duration-1000 ${
+          howItWorksAnimation.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+      >
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
             {t.landing.howItWorks.title}
@@ -199,7 +247,12 @@ export function LandingPage() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 py-20 text-center">
-        <div className="max-w-3xl mx-auto space-y-8 p-12 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700">
+        <div
+          ref={ctaAnimation.ref}
+          className={`max-w-3xl mx-auto space-y-8 p-12 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 transition-all duration-1000 ${
+            ctaAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
             {t.landing.cta.title}
           </h2>
