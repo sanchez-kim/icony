@@ -36,29 +36,13 @@ export function SizeSelector() {
         </div>
       </div>
 
-      <div className="space-y-3">
-        <input
-          type="range"
-          min="16"
-          max="512"
-          value={size}
-          onChange={handleSliderChange}
-          className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
-          aria-label="Icon size slider"
-        />
-        <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 px-1">
-          <span>16px</span>
-          <span>512px</span>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-4 gap-2">
         {SIZES.map((s) => (
           <button
             key={s}
             onClick={() => setSize(s)}
             className={cn(
-              'px-4 py-3 rounded-lg border-2 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+              'px-2 py-2 rounded-lg border-2 font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
               size === s
                 ? 'border-primary-600 bg-primary-600 text-white shadow-lg'
                 : 'border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 text-gray-700 dark:text-gray-300 hover:shadow-md'
