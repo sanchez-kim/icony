@@ -108,7 +108,8 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
       const blob = await renderer.iconToPng(
         selectedIcon,
         size,
-        color
+        color,
+        strokeWeight
       );
 
       const filename = exporter.generateFilename(selectedIcon, color, size, 'png');
@@ -121,7 +122,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setIsExporting(false);
     }
-  }, [selectedIcon, size, color, renderer, exporter]);
+  }, [selectedIcon, size, color, strokeWeight, renderer, exporter]);
 
   // Download SVG
   const downloadSvg = useCallback(async () => {
@@ -135,7 +136,8 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
       const blob = await renderer.iconToSvg(
         selectedIcon,
         size,
-        color
+        color,
+        strokeWeight
       );
 
       const filename = exporter.generateFilename(selectedIcon, color, size, 'svg');
@@ -148,7 +150,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setIsExporting(false);
     }
-  }, [selectedIcon, size, color, renderer, exporter]);
+  }, [selectedIcon, size, color, strokeWeight, renderer, exporter]);
 
   // Copy to clipboard
   const copyToClipboard = useCallback(async () => {
@@ -167,7 +169,8 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
       const blob = await renderer.iconToPng(
         selectedIcon,
         size,
-        color
+        color,
+        strokeWeight
       );
 
       await clipboard.copyImage(blob);
@@ -178,7 +181,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setIsExporting(false);
     }
-  }, [selectedIcon, size, color, renderer, clipboard]);
+  }, [selectedIcon, size, color, strokeWeight, renderer, clipboard]);
 
   const value: IconContextValue = {
     icons,
