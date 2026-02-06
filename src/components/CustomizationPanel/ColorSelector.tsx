@@ -75,7 +75,7 @@ export function ColorSelector() {
       </button>
 
       {showPicker && (
-        <div className="p-5 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-sm">
+        <div className="flex flex-col p-5 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-sm">
           <HexColorPicker color={color} onChange={setColor} />
           <div className="mt-4 flex items-center gap-2">
             <div
@@ -87,18 +87,18 @@ export function ColorSelector() {
               type="text"
               value={color}
               onChange={(e) => setColor(e.target.value)}
-              className="flex-1 px-3 py-2.5 border border-gray-300 dark:border-gray-700 rounded-lg font-mono text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+              className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg font-mono text-xs bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
               placeholder="#000000"
               pattern="^#[0-9A-Fa-f]{6}$"
             />
             <button
               onClick={handleEyeDropper}
-              className="w-11 h-11 bg-primary-600 text-white rounded-lg hover:bg-primary-700 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center flex-shrink-0"
+              className="w-11 h-11 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center flex-shrink-0"
               disabled={!eyeDropperSupported}
               title={t.ui.pick}
               aria-label={t.ui.pick}
             >
-              <Pipette size={18} className="text-white" />
+              <Pipette size={18} className="text-gray-700 dark:text-gray-300" />
             </button>
           </div>
           {!eyeDropperSupported && (
