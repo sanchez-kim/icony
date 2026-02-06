@@ -33,3 +33,5 @@ scripts/.archive/
 *.txt
 !package.json
 !tsconfig.json
+
+temp/

@@ -93,12 +93,12 @@ export function ColorSelector() {
             />
             <button
               onClick={handleEyeDropper}
-              className="px-3 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 flex-shrink-0"
+              className="w-11 h-11 bg-primary-600 text-white rounded-lg hover:bg-primary-700 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center flex-shrink-0"
               disabled={!eyeDropperSupported}
               title={t.ui.pick}
+              aria-label={t.ui.pick}
             >
-              <Pipette size={14} className="text-white" />
-              <span className="text-xs font-medium text-white whitespace-nowrap">{t.ui.pick}</span>
+              <Pipette size={18} className="text-white" />
             </button>
           </div>
           {!eyeDropperSupported && (
