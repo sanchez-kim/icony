@@ -228,8 +228,11 @@ export class IconRenderer {
    * Convert SVG Blob to PNG Blob using Canvas API
    */
   private async svgBlobToPng(svgBlob: Blob, size: number, strokeWeight: number = 2): Promise<Blob> {
-    // Add padding to prevent clipping - more padding for thicker strokes
-    const padding = Math.max(20, strokeWeight * 4);
+    // Add generous padding to prevent clipping - more padding for thicker strokes
+    // Using percentage-based padding for better scaling with larger icons
+    const paddingPercent = 0.15; // 15% padding on each side
+    const strokePadding = strokeWeight * 6;
+    const padding = Math.max(size * paddingPercent, strokePadding);
     const canvasSize = size + padding * 2;
 
     // Create canvas with padding
