@@ -11,6 +11,53 @@ interface IconCardProps {
   onClick: () => void;
 }
 
+/**
+ * Renders the icon component with props appropriate for the library.
+ * Falls back to a generic render (className only) for unknown libraries
+ * so new libraries work without code changes.
+ */
+function renderIconComponent(
+  icon: Icon,
+  className: string,
+): React.ReactElement | null {
+  const comp = icon.component;
+  // Detect placeholder (will have displayName or be the skeleton fn)
+  const name = (comp as any).displayName ?? (comp as any).name ?? '';
+  if (name === 'IconPlaceholder') {
+    return (
+      <div className={cn(className, 'rounded bg-gray-200 dark:bg-gray-700 animate-pulse')} />
+    );
+  }
+
+  const type = icon.type as string;
+
+  if (type === 'lucide') {
+    return React.createElement(comp as LucideIcon, {
+      className,
+      strokeWidth: 1.5,
+    });
+  }
+
+  if (type === 'tabler') {
+    return React.createElement(comp as React.ComponentType<any>, {
+      className,
+      stroke: 1.5,
+    });
+  }
+
+  if (type === 'phosphor') {
+    return React.createElement(comp as React.ComponentType<any>, {
+      className,
+      weight: 'regular',
+    });
+  }
+
+  // heroicons, bootstrap, radix, and any future library
+  return React.createElement(comp as React.ComponentType<any>, {
+    className,
+  });
+}
+
 export const IconCard = React.memo(function IconCard({
   icon,
   selected,
@@ -59,22 +106,7 @@ export const IconCard = React.memo(function IconCard({
           )}
         />
       </span>
-      {icon.type === 'lucide' ? (
-        React.createElement(icon.component as LucideIcon, {
-          className: 'w-full h-full text-gray-700 dark:text-gray-300',
-          strokeWidth: 1.5,
-        })
-      ) : icon.type === 'tabler' ? (
-        React.createElement(icon.component as React.ComponentType<any>, {
-          className: 'w-full h-full text-gray-700 dark:text-gray-300',
-          stroke: 1.5,
-        })
-      ) : (
-        React.createElement(icon.component as React.ComponentType<any>, {
-          className: 'w-full h-full text-gray-700 dark:text-gray-300',
-          weight: 'regular',
-        })
-      )}
+      {renderIconComponent(icon, 'w-full h-full text-gray-700 dark:text-gray-300')}
     </button>
   );
 });

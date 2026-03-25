@@ -33,7 +33,7 @@ export class IconRenderer {
           stroke: strokeWeight,
         })
       );
-    } else {
+    } else if (iconData.type === 'phosphor') {
       // Render Phosphor icon to SVG string
       const weight = strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
       svgString = renderToString(
@@ -41,6 +41,15 @@ export class IconRenderer {
           size,
           color,
           weight,
+        })
+      );
+    } else {
+      // heroicons, bootstrap, radix — pass size and color as generic props
+      svgString = renderToString(
+        createElement(iconData.component as React.ComponentType<any>, {
+          width: size,
+          height: size,
+          color,
         })
       );
     }
@@ -64,8 +73,11 @@ export class IconRenderer {
       return this.lucideIconToPng(iconData.component as LucideIcon, size, color, strokeWeight);
     } else if (iconData.type === 'tabler') {
       return this.tablerIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
-    } else {
+    } else if (iconData.type === 'phosphor') {
       return this.phosphorIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
+    } else {
+      // heroicons, bootstrap, radix — generic renderer
+      return this.genericIconToPng(iconData.component as React.ComponentType<any>, size, color);
     }
   }
 
@@ -151,6 +163,29 @@ export class IconRenderer {
 
     // 3. Convert to PNG via Canvas
     return this.svgBlobToPng(svgBlob, size, strokeWeight);
+  }
+
+  /**
+   * Generic PNG renderer for heroicons, bootstrap, radix and future libraries
+   */
+  private async genericIconToPng(
+    IconComponent: React.ComponentType<any>,
+    size: number,
+    color: string,
+  ): Promise<Blob> {
+    const svgString = renderToString(
+      createElement(IconComponent, {
+        width: size,
+        height: size,
+        color,
+      })
+    );
+
+    const svgBlob = new Blob([svgString], {
+      type: 'image/svg+xml;charset=utf-8',
+    });
+
+    return this.svgBlobToPng(svgBlob, size, 2);
   }
 
   /**

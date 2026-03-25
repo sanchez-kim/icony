@@ -5,10 +5,13 @@ import React, {
   useCallback,
   useMemo,
   useEffect,
+  useRef,
 } from 'react';
 import toast from 'react-hot-toast';
 import { Icon } from '../types';
-import { icons as iconData } from '../data/icons';
+import { IconDescriptor, LibraryKey } from '../types/icon';
+import { allDescriptors } from '../data/descriptors';
+import { loadLibrary } from '../data/icon-registry';
 import { IconRenderer } from '../services/iconRenderer';
 import { ClipboardManager } from '../services/clipboardManager';
 import { ExportManager } from '../services/exportManager';
@@ -16,6 +19,36 @@ import { StorageManager } from '../utils/storage';
 
 type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'heroicons' | 'bootstrap' | 'radix';
 type SortOption = 'name-asc' | 'name-desc' | 'recent' | 'popular';
+
+// Placeholder component rendered while the real component is still loading
+function IconPlaceholder() {
+  return (
+    <div className="w-full h-full rounded bg-gray-200 dark:bg-gray-700 animate-pulse" />
+  );
+}
+
+/**
+ * Converts an IconDescriptor into a legacy Icon shape.
+ * If the library has already been loaded into the cache the real component
+ * is embedded; otherwise a lightweight placeholder is used and the icon is
+ * updated once loading completes.
+ */
+function descriptorToIcon(
+  descriptor: IconDescriptor,
+  componentMap: Map<string, React.ComponentType<any>>,
+): Icon {
+  const cacheKey = `${descriptor.library}::${descriptor.componentName}`;
+  const component = componentMap.get(cacheKey) ?? IconPlaceholder;
+  return {
+    id: descriptor.id,
+    name: descriptor.name,
+    category: descriptor.category,
+    tags: descriptor.tags,
+    // Map 'library' → 'type' for backward-compat (legacy Icon uses IconType)
+    type: descriptor.library as any,
+    component,
+  };
+}
 
 interface IconContextValue {
   icons: Icon[];
@@ -44,7 +77,17 @@ interface IconContextValue {
 const IconContext = createContext<IconContextValue | undefined>(undefined);
 
 export function IconProvider({ children }: { children: React.ReactNode }) {
-  const [icons] = useState<Icon[]>(iconData);
+  // Component cache: "library::componentName" → React.ComponentType
+  const componentMapRef = useRef<Map<string, React.ComponentType<any>>>(new Map());
+
+  // All descriptors (metadata only, no components) — stable reference
+  const descriptors = useMemo(() => allDescriptors, []);
+
+  // Icons state — starts as placeholders, gets updated as libraries load
+  const [icons, setIcons] = useState<Icon[]>(() =>
+    descriptors.map((d) => descriptorToIcon(d, componentMapRef.current)),
+  );
+
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
   const [color, setColor] = useState('#000000');
   const [size, setSize] = useState(128);
@@ -60,6 +103,44 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     setFavorites(StorageManager.getFavorites());
     setRecentIcons(StorageManager.getRecentIcons());
   }, []);
+
+  // ── Lazy library loading ──────────────────────────────────────────────────
+  // Load all three libraries on mount; update the icon list as each resolves.
+  useEffect(() => {
+    const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor'];
+
+    for (const libKey of librariesToLoad) {
+      loadLibrary(libKey).then((components) => {
+        const map = componentMapRef.current;
+
+        // Add every exported component to the cache
+        for (const [name, comp] of Object.entries(components)) {
+          if (typeof comp === 'function') {
+            map.set(`${libKey}::${name}`, comp as React.ComponentType<any>);
+          }
+        }
+
+        // Rebuild only the icons that belong to this library
+        setIcons((prev) => {
+          const next = [...prev];
+          for (let i = 0; i < next.length; i++) {
+            const desc = descriptors[i];
+            if (desc.library === libKey) {
+              const cacheKey = `${libKey}::${desc.componentName}`;
+              const comp = map.get(cacheKey);
+              if (comp) {
+                next[i] = { ...next[i], component: comp };
+              }
+            }
+          }
+          return next;
+        });
+      }).catch((err) => {
+        console.error(`[IconContext] Failed to load library "${libKey}":`, err);
+      });
+    }
+    // descriptors is a stable useMemo value — safe dep
+  }, [descriptors]);
 
   // Service instances
   const renderer = useMemo(() => new IconRenderer(), []);

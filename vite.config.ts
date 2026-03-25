@@ -81,7 +81,8 @@ export default defineConfig({
           }
 
           if (id.includes('node_modules/react-bootstrap-icons/')) {
-            // react-bootstrap-icons: Bootstrap 아이콘 (향후 추가 예정)
+            // react-bootstrap-icons: Bootstrap 아이콘
+            // react 재참조로 인한 circular chunk 방지 — vendor-react 이후에 선언
             return 'icons-bootstrap';
           }
 
