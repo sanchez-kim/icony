@@ -14,7 +14,7 @@ import { ClipboardManager } from '../services/clipboardManager';
 import { ExportManager } from '../services/exportManager';
 import { StorageManager } from '../utils/storage';
 
-type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor';
+type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'heroicons' | 'bootstrap' | 'radix';
 type SortOption = 'name-asc' | 'name-desc' | 'recent' | 'popular';
 
 interface IconContextValue {

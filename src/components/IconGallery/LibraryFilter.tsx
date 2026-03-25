@@ -1,7 +1,7 @@
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 
-type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor';
+type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'heroicons' | 'bootstrap' | 'radix';
 
 interface LibraryOption {
   id: IconLibrary;
@@ -14,6 +14,9 @@ const LIBRARY_OPTIONS: LibraryOption[] = [
   { id: 'lucide', name: 'Lucide', nameKo: 'Lucide' },
   { id: 'tabler', name: 'Tabler', nameKo: 'Tabler' },
   { id: 'phosphor', name: 'Phosphor', nameKo: 'Phosphor' },
+  { id: 'heroicons', name: 'Heroicons', nameKo: 'Heroicons' },
+  { id: 'bootstrap', name: 'Bootstrap', nameKo: 'Bootstrap' },
+  { id: 'radix', name: 'Radix', nameKo: 'Radix' },
 ];
 
 export function LibraryFilter() {

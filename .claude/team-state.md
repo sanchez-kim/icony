@@ -36,7 +36,9 @@
 | TASK-01: 아이콘 스키마 재설계 | agent-alpha | ✅ done | icon.ts, libraries.ts, icon-registry.ts, useIconLibrary.ts, lucide-descriptors.ts |
 | TASK-02: Vite 코드스플리팅 최적화 | agent-beta | ✅ done | vite.config.ts 9개 청크 분리, 빌드 성공 4.74s |
 | TASK-03: 한국어-영어 태그 매핑 | agent-gamma | ✅ done | ko-search-map.ts(375개 KO항목), en-synonyms.ts(412개 동의어), useIconSearch.ts 업데이트 |
-| TASK-04: Font Awesome 완전 제거 | agent-delta | 🔄 in_progress | package.json, fontawesome-icons.ts stub, icons.ts 정리 |
+| TASK-04: Font Awesome 완전 제거 | agent-delta | ✅ done | package.json 5개 패키지 제거, 17개 파일 정리, npm install 완료 |
+| TASK-05~07: 기존 라이브러리 전량 확장 | agent-epsilon | 🔄 in_progress | 스크립트 생성 후 Lucide/Tabler/Phosphor 전체 descriptor 생성 |
+| TASK-08~09: 신규 라이브러리 통합 | agent-zeta | 🔄 in_progress | heroicons, bootstrap-icons, radix-icons 설치 및 descriptor 생성 |
 
 ## 완료된 작업
 - 비즈니스 패널 분석 완료 (SEO, 수익화, 검색 UX 전략 수립)

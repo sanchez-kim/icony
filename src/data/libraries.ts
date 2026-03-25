@@ -51,7 +51,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     version: '2.x',
     url: 'https://heroicons.com',
     iconCount: 292,
-    available: false,
+    available: true,
   },
   bootstrap: {
     key: 'bootstrap',
@@ -61,7 +61,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     version: '1.x',
     url: 'https://icons.getbootstrap.com',
     iconCount: 2000,
-    available: false,
+    available: true,
   },
   radix: {
     key: 'radix',
@@ -71,7 +71,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     version: '1.x',
     url: 'https://www.radix-ui.com/icons',
     iconCount: 318,
-    available: false,
+    available: true,
   },
   remix: {
     key: 'remix',

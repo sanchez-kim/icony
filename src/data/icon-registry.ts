@@ -39,7 +39,22 @@ async function loadPhosphor(): Promise<LibraryComponents> {
   return mod as unknown as LibraryComponents;
 }
 
-// Stubs for libraries not yet installed — returns empty map with clear error
+async function loadHeroicons(): Promise<LibraryComponents> {
+  const mod = await import('@heroicons/react/24/outline');
+  return mod as unknown as LibraryComponents;
+}
+
+async function loadBootstrap(): Promise<LibraryComponents> {
+  const mod = await import('react-bootstrap-icons');
+  return mod as unknown as LibraryComponents;
+}
+
+async function loadRadix(): Promise<LibraryComponents> {
+  const mod = await import('@radix-ui/react-icons');
+  return mod as unknown as LibraryComponents;
+}
+
+// Stub for libraries not yet installed — returns empty map with clear error
 async function loadUnavailable(key: LibraryKey): Promise<LibraryComponents> {
   console.warn(`[icon-registry] Library "${key}" is not yet available in this build.`);
   return {};
@@ -74,8 +89,14 @@ export async function loadLibrary(key: LibraryKey): Promise<LibraryComponents> {
       components = await loadPhosphor();
       break;
     case 'heroicons':
+      components = await loadHeroicons();
+      break;
     case 'bootstrap':
+      components = await loadBootstrap();
+      break;
     case 'radix':
+      components = await loadRadix();
+      break;
     case 'remix':
       components = await loadUnavailable(key);
       break;
