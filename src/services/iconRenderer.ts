@@ -1,9 +1,7 @@
 import { renderToString } from 'react-dom/server';
 import { LucideIcon } from 'lucide-react';
 import { createElement } from 'react';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { icon } from '@fortawesome/fontawesome-svg-core';
-import { Icon, IconType } from '../types';
+import { Icon } from '../types';
 
 export class IconRenderer {
   /**
@@ -35,7 +33,7 @@ export class IconRenderer {
           stroke: strokeWeight,
         })
       );
-    } else if (iconData.type === 'phosphor') {
+    } else {
       // Render Phosphor icon to SVG string
       const weight = strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
       svgString = renderToString(
@@ -45,11 +43,6 @@ export class IconRenderer {
           weight,
         })
       );
-    } else {
-      // Generate FontAwesome SVG
-      const abstractIcon = icon(iconData.component as IconDefinition);
-      const svgElement = abstractIcon.abstract[0] as any;
-      svgString = this.buildFontAwesomeSVG(svgElement, size, color);
     }
 
     // Create SVG Blob
@@ -71,10 +64,8 @@ export class IconRenderer {
       return this.lucideIconToPng(iconData.component as LucideIcon, size, color, strokeWeight);
     } else if (iconData.type === 'tabler') {
       return this.tablerIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
-    } else if (iconData.type === 'phosphor') {
-      return this.phosphorIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
     } else {
-      return this.fontAwesomeIconToPng(iconData.component as IconDefinition, size, color);
+      return this.phosphorIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
     }
   }
 
@@ -160,68 +151,6 @@ export class IconRenderer {
 
     // 3. Convert to PNG via Canvas
     return this.svgBlobToPng(svgBlob, size, strokeWeight);
-  }
-
-  /**
-   * Convert FontAwesome icon to PNG Blob
-   */
-  private async fontAwesomeIconToPng(
-    iconDefinition: IconDefinition,
-    size: number,
-    color: string
-  ): Promise<Blob> {
-    // Generate FontAwesome SVG
-    const abstractIcon = icon(iconDefinition);
-    const svgElement = abstractIcon.abstract[0] as any;
-
-    // Build SVG string with custom color and size
-    const svgString = this.buildFontAwesomeSVG(svgElement, size, color);
-
-    // Create SVG Blob
-    const svgBlob = new Blob([svgString], {
-      type: 'image/svg+xml;charset=utf-8',
-    });
-
-    // Convert to PNG via Canvas
-    return this.svgBlobToPng(svgBlob, size);
-  }
-
-  /**
-   * Build FontAwesome SVG string with custom attributes
-   */
-  private buildFontAwesomeSVG(element: any, size: number, color: string): string {
-    const { tag, attributes, children } = element;
-
-    // Build attributes string
-    let attrs = '';
-    if (attributes) {
-      Object.keys(attributes).forEach((key) => {
-        if (key === 'fill') {
-          attrs += ` fill="${color}"`;
-        } else if (key === 'viewBox') {
-          attrs += ` viewBox="${attributes[key]}"`;
-        } else {
-          attrs += ` ${key}="${attributes[key]}"`;
-        }
-      });
-    }
-
-    // Add size and xmlns
-    attrs += ` width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg"`;
-
-    // Build children recursively
-    let childrenStr = '';
-    if (children && children.length > 0) {
-      children.forEach((child: any) => {
-        if (typeof child === 'string') {
-          childrenStr += child;
-        } else {
-          childrenStr += this.buildFontAwesomeSVG(child, size, color);
-        }
-      });
-    }
-
-    return `<${tag}${attrs}>${childrenStr}</${tag}>`;
   }
 
   /**

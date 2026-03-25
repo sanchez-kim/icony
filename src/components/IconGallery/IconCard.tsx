@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { LucideIcon, Star } from 'lucide-react';
 import { Icon } from '../../types';
 import { cn } from '../../utils/cn';
@@ -71,16 +69,11 @@ export const IconCard = React.memo(function IconCard({
           className: 'w-full h-full text-gray-700 dark:text-gray-300',
           stroke: 1.5,
         })
-      ) : icon.type === 'phosphor' ? (
+      ) : (
         React.createElement(icon.component as React.ComponentType<any>, {
           className: 'w-full h-full text-gray-700 dark:text-gray-300',
           weight: 'regular',
         })
-      ) : (
-        <FontAwesomeIcon
-          icon={icon.component as IconDefinition}
-          className="w-full h-full text-gray-700 dark:text-gray-300"
-        />
       )}
     </button>
   );

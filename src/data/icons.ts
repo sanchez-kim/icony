@@ -97,7 +97,6 @@ import {
   VolumeX,
 } from 'lucide-react';
 import { Icon } from '../types';
-import { fontAwesomeIcons } from './fontawesome-icons';
 import { tablerIcons } from './tabler-icons';
 import { phosphorIcons } from './phosphor-icons';
 
@@ -817,10 +816,9 @@ const lucideIcons: Icon[] = [
   },
 ];
 
-// Combine Lucide, FontAwesome, Tabler, and Phosphor icons
+// Combine Lucide, Tabler, and Phosphor icons
 export const icons: Icon[] = [
   ...lucideIcons,
-  ...fontAwesomeIcons,
   ...tablerIcons,
   ...phosphorIcons,
 ];

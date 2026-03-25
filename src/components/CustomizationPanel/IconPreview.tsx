@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { LucideIcon } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
 import { cn } from '../../utils/cn';
@@ -114,23 +112,13 @@ export function IconPreview() {
             stroke: strokeWeight,
             className: 'transition-all duration-300',
           })
-        ) : selectedIcon.type === 'phosphor' ? (
+        ) : (
           React.createElement(selectedIcon.component as React.ComponentType<any>, {
             size,
             color,
             weight: strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light',
             className: 'transition-all duration-300',
           })
-        ) : (
-          <FontAwesomeIcon
-            icon={selectedIcon.component as IconDefinition}
-            style={{
-              width: size,
-              height: size,
-              color: color,
-            }}
-            className="transition-all duration-300"
-          />
         )}
       </div>
     </div>

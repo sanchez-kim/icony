@@ -88,15 +88,6 @@ export function AppPage() {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
                 <a
-                  href="https://fontawesome.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-600 transition-colors"
-                >
-                  Font Awesome Free 6.7.2 (CC BY 4.0)
-                </a>
-                <span className="text-gray-400">•</span>
-                <a
                   href="https://lucide.dev"
                   target="_blank"
                   rel="noopener noreferrer"

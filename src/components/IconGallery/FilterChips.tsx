@@ -3,7 +3,6 @@ import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 
 const LIBRARY_NAMES: Record<string, { en: string; ko: string }> = {
-  fontawesome: { en: 'Font Awesome', ko: 'Font Awesome' },
   lucide: { en: 'Lucide', ko: 'Lucide' },
   tabler: { en: 'Tabler', ko: 'Tabler' },
   phosphor: { en: 'Phosphor', ko: 'Phosphor' },

@@ -1,7 +1,7 @@
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 
-type IconLibrary = 'all' | 'fontawesome' | 'lucide' | 'tabler' | 'phosphor';
+type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor';
 
 interface LibraryOption {
   id: IconLibrary;
@@ -11,7 +11,6 @@ interface LibraryOption {
 
 const LIBRARY_OPTIONS: LibraryOption[] = [
   { id: 'all', name: 'All Libraries', nameKo: '전체' },
-  { id: 'fontawesome', name: 'Font Awesome', nameKo: 'Font Awesome' },
   { id: 'lucide', name: 'Lucide', nameKo: 'Lucide' },
   { id: 'tabler', name: 'Tabler', nameKo: 'Tabler' },
   { id: 'phosphor', name: 'Phosphor', nameKo: 'Phosphor' },
