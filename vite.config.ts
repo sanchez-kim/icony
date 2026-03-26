@@ -80,9 +80,6 @@ export default defineConfig({
             return 'icons-heroicons';
           }
 
-          // react-bootstrap-icons: forwardRef를 내부 사용하므로 manual chunk 제외
-          // → Rollup이 dynamic import()를 감지해 자동 분리하며 React 인스턴스 공유 정상화
-
           if (id.includes('node_modules/@radix-ui/react-icons/')) {
             return 'icons-radix';
           }

@@ -122,16 +122,13 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
       ]).then(([descriptors, components]) => {
         const map = componentMapRef.current;
 
-        // Cache all components from this library.
-        // React components can be functions (function components / class components)
-        // OR objects with $$typeof (forwardRef, memo) — Tabler, Phosphor, Heroicons
-        // all use forwardRef so typeof returns 'object', not 'function'.
+        // Only cache actual React-renderable components.
+        // All modern icon libraries (Lucide, Tabler, Phosphor, Heroicons, etc.)
+        // wrap icons with React.forwardRef, which sets $$typeof on the object.
+        // Plain utility functions (createLucideIcon, createReactComponent, etc.)
+        // do NOT have $$typeof and must be excluded to prevent render crashes.
         for (const [name, comp] of Object.entries(components)) {
-          const t = typeof comp;
-          const isComponent =
-            (t === 'function') ||
-            (t === 'object' && comp !== null && !!(comp as any).$$typeof);
-          if (isComponent) {
+          if (comp != null && !!(comp as any).$$typeof) {
             map.set(`${libKey}::${name}`, comp as React.ComponentType<any>);
           }
         }
