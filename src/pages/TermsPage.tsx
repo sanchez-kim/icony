@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { ThemeToggle } from '../components/ThemeToggle';
+import { IconyLogo } from '../components/IconyLogo';
 
 export function TermsPage() {
   const { language } = useLanguage();
@@ -13,13 +14,7 @@ export function TermsPage() {
         <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-500 shadow-md">
-                <svg className="w-6 h-6" viewBox="0 0 48 48" fill="none">
-                  <circle cx="24" cy="24" r="12" fill="white"/>
-                  <circle cx="24" cy="24" r="6" fill="#3B82F6"/>
-                  <circle cx="24" cy="24" r="3" fill="white"/>
-                </svg>
-              </div>
+              <IconyLogo size={40} />
               <div>
                 <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
                   Icony
@@ -57,15 +52,45 @@ export function TermsPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. 아이콘 라이선스</h2>
-                  <p className="leading-relaxed mb-3">본 서비스에서 제공하는 아이콘은 다음 라이선스를 따릅니다:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Font Awesome Free 6.7.2</strong>: CC BY 4.0 라이선스 - 상업적 이용 시 출처 표기 필수</li>
-                    <li><strong>Lucide Icons</strong>: ISC 라이선스 - 자유로운 사용 가능</li>
-                    <li><strong>Tabler Icons</strong>: MIT 라이선스 - 자유로운 사용 가능 (출처 표기 권장)</li>
-                    <li><strong>Phosphor Icons</strong>: MIT 라이선스 - 자유로운 사용 가능 (출처 표기 권장)</li>
-                  </ul>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                    ⚠️ Font Awesome 아이콘 사용 시에는 반드시 출처를 표기해야 합니다. 나머지 라이브러리는 출처 표기가 필수는 아니지만 권장됩니다.
+                  <p className="leading-relaxed mb-4">
+                    본 서비스에서 제공하는 모든 아이콘은 <strong>MIT 또는 ISC 라이선스</strong>를 따릅니다.
+                    이는 상업적 이용, 수정, 배포 모두 가능하며, 출처 표기가 법적으로 요구되지 않습니다.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border-collapse">
+                      <thead>
+                        <tr className="bg-gray-50 dark:bg-gray-800">
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">라이브러리</th>
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">라이선스</th>
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">상업적 이용</th>
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">출처 표기</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { name: 'Lucide Icons', url: 'https://lucide.dev', license: 'ISC' },
+                          { name: 'Tabler Icons', url: 'https://tabler.io/icons', license: 'MIT' },
+                          { name: 'Phosphor Icons', url: 'https://phosphoricons.com', license: 'MIT' },
+                          { name: 'Heroicons', url: 'https://heroicons.com', license: 'MIT' },
+                          { name: 'Bootstrap Icons', url: 'https://icons.getbootstrap.com', license: 'MIT' },
+                          { name: 'Radix Icons', url: 'https://www.radix-ui.com/icons', license: 'MIT' },
+                        ].map((lib) => (
+                          <tr key={lib.name} className="border-b border-gray-100 dark:border-gray-800">
+                            <td className="p-3 border border-gray-200 dark:border-gray-700">
+                              <a href={lib.url} target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">{lib.name}</a>
+                            </td>
+                            <td className="p-3 border border-gray-200 dark:border-gray-700">
+                              <span className="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-semibold">{lib.license}</span>
+                            </td>
+                            <td className="p-3 border border-gray-200 dark:border-gray-700 text-green-600 dark:text-green-400 font-medium">✓ 가능</td>
+                            <td className="p-3 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400">권장 (필수 아님)</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
+                    ℹ️ MIT/ISC 라이선스는 상업적 프로젝트 포함 어디서든 자유롭게 사용할 수 있습니다. 출처 표기는 법적 의무가 아니지만 오픈소스 생태계 기여 차원에서 권장됩니다.
                   </p>
                 </div>
 
@@ -73,9 +98,8 @@ export function TermsPage() {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. 사용자 책임</h2>
                   <p className="leading-relaxed mb-3">사용자는 다음 사항에 동의합니다:</p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>다운로드한 아이콘의 라이선스 조건을 준수할 것</li>
-                    <li>Font Awesome 아이콘 사용 시 적절한 출처 표기를 할 것 (필수)</li>
-                    <li>MIT/ISC 라이선스 아이콘 사용 시 라이선스 조항을 준수할 것</li>
+                    <li>다운로드한 아이콘의 해당 라이선스(MIT/ISC) 조건을 준수할 것</li>
+                    <li>아이콘을 재배포할 경우 원본 라이선스 파일을 함께 포함할 것</li>
                     <li>본 서비스를 악의적인 목적으로 사용하지 않을 것</li>
                   </ul>
                 </div>
@@ -112,7 +136,7 @@ export function TermsPage() {
 
                 <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    최종 업데이트: 2026년 2월 5일
+                    최종 업데이트: 2026년 3월 26일
                   </p>
                 </div>
               </section>
@@ -131,15 +155,45 @@ export function TermsPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. Icon Licenses</h2>
-                  <p className="leading-relaxed mb-3">Icons provided through this service are licensed under:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Font Awesome Free 6.7.2</strong>: CC BY 4.0 License - Attribution required for commercial use</li>
-                    <li><strong>Lucide Icons</strong>: ISC License - Free to use</li>
-                    <li><strong>Tabler Icons</strong>: MIT License - Free to use (attribution recommended)</li>
-                    <li><strong>Phosphor Icons</strong>: MIT License - Free to use (attribution recommended)</li>
-                  </ul>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                    ⚠️ Attribution is required when using Font Awesome icons. For other libraries, attribution is recommended but not mandatory.
+                  <p className="leading-relaxed mb-4">
+                    All icons provided through this service are licensed under <strong>MIT or ISC licenses</strong>.
+                    This permits commercial use, modification, and redistribution. Attribution is not legally required.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border-collapse">
+                      <thead>
+                        <tr className="bg-gray-50 dark:bg-gray-800">
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">Library</th>
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">License</th>
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">Commercial Use</th>
+                          <th className="text-left p-3 border border-gray-200 dark:border-gray-700 font-semibold text-gray-900 dark:text-white">Attribution</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { name: 'Lucide Icons', url: 'https://lucide.dev', license: 'ISC' },
+                          { name: 'Tabler Icons', url: 'https://tabler.io/icons', license: 'MIT' },
+                          { name: 'Phosphor Icons', url: 'https://phosphoricons.com', license: 'MIT' },
+                          { name: 'Heroicons', url: 'https://heroicons.com', license: 'MIT' },
+                          { name: 'Bootstrap Icons', url: 'https://icons.getbootstrap.com', license: 'MIT' },
+                          { name: 'Radix Icons', url: 'https://www.radix-ui.com/icons', license: 'MIT' },
+                        ].map((lib) => (
+                          <tr key={lib.name} className="border-b border-gray-100 dark:border-gray-800">
+                            <td className="p-3 border border-gray-200 dark:border-gray-700">
+                              <a href={lib.url} target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">{lib.name}</a>
+                            </td>
+                            <td className="p-3 border border-gray-200 dark:border-gray-700">
+                              <span className="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-semibold">{lib.license}</span>
+                            </td>
+                            <td className="p-3 border border-gray-200 dark:border-gray-700 text-green-600 dark:text-green-400 font-medium">✓ Allowed</td>
+                            <td className="p-3 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400">Encouraged, not required</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
+                    ℹ️ MIT/ISC licenses allow free use in any project, including commercial ones. Attribution is not a legal requirement, but is appreciated to support the open-source community.
                   </p>
                 </div>
 
@@ -147,9 +201,8 @@ export function TermsPage() {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. User Responsibilities</h2>
                   <p className="leading-relaxed mb-3">Users agree to:</p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Comply with the license terms of downloaded icons</li>
-                    <li>Provide proper attribution when using Font Awesome icons (required)</li>
-                    <li>Comply with MIT/ISC license terms when using other icon libraries</li>
+                    <li>Comply with the applicable MIT/ISC license terms for downloaded icons</li>
+                    <li>Include the original license file when redistributing icons</li>
                     <li>Not use the service for malicious purposes</li>
                   </ul>
                 </div>
@@ -186,7 +239,7 @@ export function TermsPage() {
 
                 <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Last Updated: February 5, 2026
+                    Last Updated: March 26, 2026
                   </p>
                 </div>
               </section>

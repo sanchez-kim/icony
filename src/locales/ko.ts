@@ -68,7 +68,7 @@ export const ko = {
       startNow: '지금 바로 커스터마이징',
     },
     footer: {
-      tagline: '디자이너와 개발자를 위해 ❤️로 만들었습니다',
+      tagline: '9,000개 이상의 오픈소스 아이콘. 무료로 사용하세요.',
       iconsBy: '아이콘 제공:',
     },
     header: {

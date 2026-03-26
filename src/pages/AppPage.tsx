@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Header } from '../components/Header';
 import { MainLayout } from '../components/Layout/MainLayout';
 import { OnboardingModal } from '../components/OnboardingModal';
+import { IconyLogo } from '../components/IconyLogo';
 
 export function AppPage() {
   const [searchParams] = useSearchParams();
@@ -58,13 +59,7 @@ export function AppPage() {
       <footer className="container mx-auto px-6 py-12 border-t border-gray-200 dark:border-gray-800 transition-colors">
         <div className="flex flex-col items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-500">
-              <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="12" fill="white"/>
-                <circle cx="24" cy="24" r="6" fill="#3B82F6"/>
-                <circle cx="24" cy="24" r="3" fill="white"/>
-              </svg>
-            </div>
+            <IconyLogo size={32} />
             <span className="text-lg font-bold text-gray-700 dark:text-gray-300">Icony</span>
           </div>
 
@@ -87,32 +82,17 @@ export function AppPage() {
                 {t.landing.footer.iconsBy}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
-                <a
-                  href="https://lucide.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-600 transition-colors"
-                >
-                  Lucide Icons (ISC)
-                </a>
+                <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Lucide (ISC)</a>
                 <span className="text-gray-400">•</span>
-                <a
-                  href="https://tabler.io/icons"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-600 transition-colors"
-                >
-                  Tabler Icons (MIT)
-                </a>
+                <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Tabler (MIT)</a>
                 <span className="text-gray-400">•</span>
-                <a
-                  href="https://phosphoricons.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-600 transition-colors"
-                >
-                  Phosphor Icons (MIT)
-                </a>
+                <a href="https://phosphoricons.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Phosphor (MIT)</a>
+                <span className="text-gray-400">•</span>
+                <a href="https://heroicons.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Heroicons (MIT)</a>
+                <span className="text-gray-400">•</span>
+                <a href="https://icons.getbootstrap.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Bootstrap Icons (MIT)</a>
+                <span className="text-gray-400">•</span>
+                <a href="https://www.radix-ui.com/icons" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Radix Icons (MIT)</a>
               </div>
             </div>
           </div>

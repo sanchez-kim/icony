@@ -68,7 +68,7 @@ export const en = {
       startNow: 'Start Customizing Now',
     },
     footer: {
-      tagline: 'Made with ❤️ for designers and developers',
+      tagline: '9,000+ open-source icons. Free to use.',
       iconsBy: 'Icons provided by:',
     },
     header: {

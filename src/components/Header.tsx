@@ -3,6 +3,7 @@ import { HelpCircle } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useLanguage } from '../context/LanguageContext';
+import { IconyLogo } from './IconyLogo';
 
 interface HeaderProps {
   onHelpClick?: () => void;
@@ -15,17 +16,7 @@ export function Header({ onHelpClick }: HeaderProps) {
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-500 shadow-md">
-              <svg
-                className="w-6 h-6"
-                viewBox="0 0 48 48"
-                fill="none"
-              >
-                <circle cx="24" cy="24" r="12" fill="white"/>
-                <circle cx="24" cy="24" r="6" fill="#3B82F6"/>
-                <circle cx="24" cy="24" r="3" fill="white"/>
-              </svg>
-            </div>
+            <IconyLogo size={40} />
             <div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
                 {t.header.appName}
