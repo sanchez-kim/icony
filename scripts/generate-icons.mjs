@@ -229,8 +229,8 @@ function generateLucide() {
     // Only keep PascalCase names — actual icon components start with uppercase.
     // Utility exports like createLucideIcon, defaultAttributes start with lowercase.
     if (!/^[A-Z]/.test(n)) continue;
-    // Skip known non-icon type/helper exports
-    if (/^(LucideIcon|LucideProps|IconNode|SVGAttributes)/.test(n)) continue;
+    // Skip known non-icon type/helper exports and the generic "Icon" utility
+    if (/^(LucideIcon|LucideProps|IconNode|SVGAttributes|Icon)$/.test(n)) continue;
     // Skip alias exports (e.g. HomeIcon is an alias of Home — same component)
     if (n.endsWith('Icon') && n.length > 4) continue;
     names.push(n);
