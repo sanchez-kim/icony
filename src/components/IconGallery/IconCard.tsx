@@ -76,7 +76,7 @@ export const IconCard = React.memo(function IconCard({
     <button
       onClick={onClick}
       className={cn(
-        'relative group p-4 border-2 rounded-xl transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+        'relative group h-20 w-full flex items-center justify-center border-2 rounded-xl transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
         selected
           ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-lg ring-2 ring-primary-400'
           : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50/50 dark:hover:bg-primary-900/20'
@@ -106,7 +106,7 @@ export const IconCard = React.memo(function IconCard({
           )}
         />
       </span>
-      {renderIconComponent(icon, 'w-full h-full text-gray-700 dark:text-gray-300')}
+      {renderIconComponent(icon, 'w-9 h-9 text-gray-700 dark:text-gray-300')}
     </button>
   );
 });

@@ -26,7 +26,7 @@ export function CustomizationPanel() {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-10 space-y-6 transition-colors">
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-6 space-y-6 transition-colors">
       {/* Icon Preview */}
       <IconPreview />
 

@@ -57,13 +57,13 @@ export function StrokeWeightSelector() {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-5 gap-1.5">
         {STROKE_WEIGHTS.map((weight) => (
           <button
             key={weight}
             onClick={() => setStrokeWeight(weight)}
             className={cn(
-              'px-3 py-2 rounded-lg border-2 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-sm',
+              'py-2 rounded-lg border-2 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-xs whitespace-nowrap overflow-hidden',
               strokeWeight === weight
                 ? 'border-primary-600 bg-primary-600 text-white shadow-lg'
                 : 'border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 text-gray-700 dark:text-gray-300 hover:shadow-md'

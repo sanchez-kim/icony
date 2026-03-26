@@ -13,7 +13,7 @@ interface IconGalleryProps {
   searchQuery: string;
 }
 
-const ITEM_HEIGHT = 88; // px — card height + gap
+const ITEM_HEIGHT = 92; // px — card height (80px) + gap (12px)
 
 export function IconGallery({ searchQuery }: IconGalleryProps) {
   const { icons, selectedIcon, selectIcon, favorites, recentIcons, selectedLibrary, sortBy } = useIconContext();
@@ -31,10 +31,10 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
     const observer = new ResizeObserver((entries) => {
       const width = entries[0]?.contentRect.width ?? 0;
       let c = 2;
-      if (width >= 1536) c = 6;
-      else if (width >= 1280) c = 5;
-      else if (width >= 1024) c = 4;
-      else if (width >= 768) c = 3;
+      if (width >= 960) c = 6;
+      else if (width >= 700) c = 5;
+      else if (width >= 520) c = 4;
+      else if (width >= 360) c = 3;
       setCols(c);
     });
     observer.observe(scrollEl);
