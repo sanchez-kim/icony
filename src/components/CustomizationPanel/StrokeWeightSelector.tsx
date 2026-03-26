@@ -6,7 +6,7 @@ const STROKE_WEIGHTS = [1, 1.5, 2, 2.5, 3];
 
 export function StrokeWeightSelector() {
   const { strokeWeight, setStrokeWeight, selectedIcon } = useIconContext();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   if (!selectedIcon) {
     return null;
@@ -20,7 +20,7 @@ export function StrokeWeightSelector() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-          {t.language === 'ko' ? '선 두께' : 'Stroke Weight'}
+          {language === 'ko' ? '선 두께' : 'Stroke Weight'}
         </label>
         <div className="flex items-center gap-2">
           <input
@@ -52,8 +52,8 @@ export function StrokeWeightSelector() {
           aria-label="Stroke weight slider"
         />
         <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 px-1">
-          <span>{t.language === 'ko' ? '얇게' : 'Thin'}</span>
-          <span>{t.language === 'ko' ? '두껍게' : 'Bold'}</span>
+          <span>{language === 'ko' ? '얇게' : 'Thin'}</span>
+          <span>{language === 'ko' ? '두껍게' : 'Bold'}</span>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export function StrokeWeightSelector() {
       </div>
 
       <p className="text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
-        💡 {t.language === 'ko'
+        💡 {language === 'ko'
           ? 'Stroke weight는 Lucide, Tabler, Phosphor 아이콘에서 사용할 수 있습니다.'
           : 'Stroke weight is available for Lucide, Tabler, and Phosphor icons.'}
       </p>

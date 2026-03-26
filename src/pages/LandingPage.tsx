@@ -17,7 +17,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useCounterAnimation } from '../hooks/useCounterAnimation';
 
 export function LandingPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Scroll animations for different sections
   const heroAnimation = useScrollAnimation({ threshold: 0.2 });
@@ -64,7 +64,7 @@ export function LandingPage() {
   ];
 
   const stats = [
-    { value: t.language === 'ko' ? '2,000+' : '2,000+', label: t.landing.stats.icons },
+    { value: language === 'ko' ? '2,000+' : '2,000+', label: t.landing.stats.icons },
     { value: '100%', label: t.landing.stats.free },
     { value: '512px', label: t.landing.stats.resolution },
     { value: '67', label: t.landing.stats.categories },
@@ -309,7 +309,7 @@ export function LandingPage() {
                 to="/terms"
                 className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"
               >
-                {t.language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
+                {language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
               </Link>
             </div>
 

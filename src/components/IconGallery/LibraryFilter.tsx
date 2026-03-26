@@ -21,7 +21,7 @@ const LIBRARY_OPTIONS: LibraryOption[] = [
 
 export function LibraryFilter() {
   const { selectedLibrary, setSelectedLibrary, icons } = useIconContext();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Count icons per library
   const libraryCounts = icons.reduce((acc, icon) => {
@@ -34,7 +34,7 @@ export function LibraryFilter() {
   return (
     <div className="space-y-2">
       <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-        {t.language === 'ko' ? '아이콘 라이브러리' : 'Icon Library'}
+        {language === 'ko' ? '아이콘 라이브러리' : 'Icon Library'}
       </label>
       <div className="flex flex-wrap gap-2">
         {LIBRARY_OPTIONS.map((option) => {
@@ -51,7 +51,7 @@ export function LibraryFilter() {
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-400 shadow'
               }`}
             >
-              <span>{t.language === 'ko' ? option.nameKo : option.name}</span>
+              <span>{language === 'ko' ? option.nameKo : option.name}</span>
               <span className={`text-xs ${isSelected ? 'text-primary-100' : 'text-gray-500 dark:text-gray-400'}`}>
                 ({count})
               </span>

@@ -10,7 +10,7 @@ const LIBRARY_NAMES: Record<string, { en: string; ko: string }> = {
 
 export function FilterChips() {
   const { selectedLibrary, setSelectedLibrary, sortBy, setSortBy } = useIconContext();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const hasActiveFilters = selectedLibrary !== 'all' || sortBy !== 'name-asc';
 
@@ -26,13 +26,13 @@ export function FilterChips() {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
-        {t.language === 'ko' ? '활성 필터:' : 'Active Filters:'}
+        {language === 'ko' ? '활성 필터:' : 'Active Filters:'}
       </span>
 
       {selectedLibrary !== 'all' && (
         <div className="flex items-center gap-1.5 px-3 py-1.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-xs font-semibold">
           <span>
-            {t.language === 'ko'
+            {language === 'ko'
               ? LIBRARY_NAMES[selectedLibrary]?.ko
               : LIBRARY_NAMES[selectedLibrary]?.en}
           </span>
@@ -49,7 +49,7 @@ export function FilterChips() {
       {sortBy !== 'name-asc' && (
         <div className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs font-semibold">
           <span>
-            {t.language === 'ko'
+            {language === 'ko'
               ? sortBy === 'name-desc' ? '이름 (하-가)'
                 : sortBy === 'popular' ? '즐겨찾기 우선'
                 : '최근 사용'
@@ -72,7 +72,7 @@ export function FilterChips() {
           onClick={handleClearAll}
           className="px-3 py-1.5 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 underline transition-colors"
         >
-          {t.language === 'ko' ? '모두 지우기' : 'Clear All'}
+          {language === 'ko' ? '모두 지우기' : 'Clear All'}
         </button>
       )}
     </div>

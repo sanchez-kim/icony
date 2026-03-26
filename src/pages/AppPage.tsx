@@ -9,7 +9,7 @@ import { OnboardingModal } from '../components/OnboardingModal';
 export function AppPage() {
   const [searchParams] = useSearchParams();
   const { icons, selectIcon, setColor, setSize } = useIconContext();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showOnboarding, setShowOnboarding] = useState(false);
 
   // Check if onboarding has been completed
@@ -78,7 +78,7 @@ export function AppPage() {
                 href="/terms"
                 className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"
               >
-                {t.language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
+                {language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
               </a>
             </div>
 

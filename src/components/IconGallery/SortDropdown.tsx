@@ -19,14 +19,14 @@ const SORT_OPTIONS: SortOptionItem[] = [
 
 export function SortDropdown() {
   const { sortBy, setSortBy } = useIconContext();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const currentSort = SORT_OPTIONS.find((opt) => opt.id === sortBy);
 
   return (
     <div className="space-y-2">
       <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-        {t.language === 'ko' ? '정렬' : 'Sort By'}
+        {language === 'ko' ? '정렬' : 'Sort By'}
       </label>
       <div className="relative inline-block">
         <select
@@ -36,7 +36,7 @@ export function SortDropdown() {
         >
           {SORT_OPTIONS.map((option) => (
             <option key={option.id} value={option.id}>
-              {t.language === 'ko' ? option.nameKo : option.name}
+              {language === 'ko' ? option.nameKo : option.name}
             </option>
           ))}
         </select>

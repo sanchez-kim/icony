@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useIconContext } from '../../context/IconContext';
 import { useIconSearch } from '../../hooks/useIconSearch';
@@ -19,13 +19,15 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
   const { icons, selectedIcon, selectIcon, favorites, recentIcons, selectedLibrary, sortBy } = useIconContext();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
+  // ── Scroll element as state so virtualizer re-initialises when DOM mounts ──
+  const [scrollEl, setScrollEl] = useState<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   // ── Measure container width to derive column count ─────────────────────────
-  const containerRef = useRef<HTMLDivElement>(null);
   const [cols, setCols] = useState(4);
 
   useEffect(() => {
-    const node = containerRef.current;
-    if (!node) return;
+    if (!scrollEl) return;
     const observer = new ResizeObserver((entries) => {
       const width = entries[0]?.contentRect.width ?? 0;
       let c = 2;
@@ -35,9 +37,9 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
       else if (width >= 768) c = 3;
       setCols(c);
     });
-    observer.observe(node);
+    observer.observe(scrollEl);
     return () => observer.disconnect();
-  }, []);
+  }, [scrollEl]);
 
   // ── Filtering pipeline (same logic as before) ─────────────────────────────
   const searchFiltered = useIconSearch(icons, searchQuery);
@@ -102,7 +104,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
 
   const rowVirtualizer = useVirtualizer({
     count: rowCount,
-    getScrollElement: () => containerRef.current,
+    getScrollElement: () => scrollEl,
     estimateSize: () => ITEM_HEIGHT,
     overscan: 3,
   });
@@ -136,7 +138,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
 
       {/* Virtualized icon grid */}
       <div
-        ref={containerRef}
+        ref={(node) => { setScrollEl(node); containerRef.current = node; }}
         className="max-h-[650px] overflow-y-auto pr-2 custom-scrollbar p-1"
       >
         {filteredIcons.length === 0 ? (
