@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useCallback } from 'react';
+import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useIconContext } from '../../context/IconContext';
 import { useIconSearch } from '../../hooks/useIconSearch';
@@ -13,19 +13,18 @@ interface IconGalleryProps {
   searchQuery: string;
 }
 
-// Number of columns at each breakpoint — must match Tailwind grid classes below
-const COLS_DEFAULT = 6; // 2xl
-const ITEM_HEIGHT = 88; // px — matches p-4 card + gap
+const ITEM_HEIGHT = 88; // px — card height + gap
 
 export function IconGallery({ searchQuery }: IconGalleryProps) {
   const { icons, selectedIcon, selectIcon, favorites, recentIcons, selectedLibrary, sortBy } = useIconContext();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  // ── Measure the grid container to derive column count dynamically ─────────
+  // ── Measure container width to derive column count ─────────────────────────
   const containerRef = useRef<HTMLDivElement>(null);
-  const [cols, setCols] = useState(COLS_DEFAULT);
+  const [cols, setCols] = useState(4);
 
-  const onResize = useCallback((node: HTMLDivElement | null) => {
+  useEffect(() => {
+    const node = containerRef.current;
     if (!node) return;
     const observer = new ResizeObserver((entries) => {
       const width = entries[0]?.contentRect.width ?? 0;
@@ -37,16 +36,8 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
       setCols(c);
     });
     observer.observe(node);
-    (node as any).__resizeObserver = observer;
+    return () => observer.disconnect();
   }, []);
-
-  const setContainerRef = useCallback((node: HTMLDivElement | null) => {
-    if ((containerRef as any).current?.__resizeObserver) {
-      (containerRef as any).current.__resizeObserver.disconnect();
-    }
-    (containerRef as any).current = node;
-    if (node) onResize(node);
-  }, [onResize]);
 
   // ── Filtering pipeline (same logic as before) ─────────────────────────────
   const searchFiltered = useIconSearch(icons, searchQuery);
@@ -145,7 +136,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
 
       {/* Virtualized icon grid */}
       <div
-        ref={setContainerRef}
+        ref={containerRef}
         className="max-h-[650px] overflow-y-auto pr-2 custom-scrollbar p-1"
       >
         {filteredIcons.length === 0 ? (

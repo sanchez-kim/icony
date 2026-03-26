@@ -107,7 +107,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
   // ── Lazy library loading ──────────────────────────────────────────────────
   // Load all three libraries on mount; update the icon list as each resolves.
   useEffect(() => {
-    const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor'];
+    const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor', 'heroicons', 'bootstrap', 'radix'];
 
     for (const libKey of librariesToLoad) {
       loadLibrary(libKey).then((components) => {

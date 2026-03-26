@@ -19,26 +19,42 @@ import type { IconDescriptor, LibraryKey } from '../types/icon';
 import { lucideIconsFull } from './lucide-icons-full';
 import { tablerIconsFull } from './tabler-icons-full';
 import { phosphorIconsFull } from './phosphor-icons-full';
+import { heroiconsDescriptors } from './heroicons-descriptors';
+import { bootstrapDescriptors } from './bootstrap-icons-descriptors';
+import { radixDescriptors } from './radix-icons-descriptors';
 
 // ---------------------------------------------------------------------------
 // Public exports
 // ---------------------------------------------------------------------------
 
-export { lucideIconsFull, tablerIconsFull, phosphorIconsFull };
+export {
+  lucideIconsFull,
+  tablerIconsFull,
+  phosphorIconsFull,
+  heroiconsDescriptors,
+  bootstrapDescriptors,
+  radixDescriptors,
+};
 
 /** All descriptors across every available library */
 export const allDescriptors: IconDescriptor[] = [
   ...lucideIconsFull,
   ...tablerIconsFull,
   ...phosphorIconsFull,
+  ...heroiconsDescriptors,
+  ...bootstrapDescriptors,
+  ...radixDescriptors,
 ];
 
 /** Lookup descriptors by library key */
 export function getDescriptorsByLibrary(key: LibraryKey): IconDescriptor[] {
   switch (key) {
-    case 'lucide':   return lucideIconsFull;
-    case 'tabler':   return tablerIconsFull;
-    case 'phosphor': return phosphorIconsFull;
-    default:         return [];
+    case 'lucide':    return lucideIconsFull;
+    case 'tabler':    return tablerIconsFull;
+    case 'phosphor':  return phosphorIconsFull;
+    case 'heroicons': return heroiconsDescriptors;
+    case 'bootstrap': return bootstrapDescriptors;
+    case 'radix':     return radixDescriptors;
+    default:          return [];
   }
 }
