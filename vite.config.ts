@@ -80,14 +80,10 @@ export default defineConfig({
             return 'icons-heroicons';
           }
 
-          if (id.includes('node_modules/react-bootstrap-icons/')) {
-            // react-bootstrap-icons: Bootstrap 아이콘
-            // react 재참조로 인한 circular chunk 방지 — vendor-react 이후에 선언
-            return 'icons-bootstrap';
-          }
+          // react-bootstrap-icons: forwardRef를 내부 사용하므로 manual chunk 제외
+          // → Rollup이 dynamic import()를 감지해 자동 분리하며 React 인스턴스 공유 정상화
 
           if (id.includes('node_modules/@radix-ui/react-icons/')) {
-            // @radix-ui/react-icons: Radix UI 아이콘 (향후 추가 예정)
             return 'icons-radix';
           }
 
