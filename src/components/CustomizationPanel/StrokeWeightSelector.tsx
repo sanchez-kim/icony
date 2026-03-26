@@ -3,18 +3,30 @@ import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
 
 const STROKE_WEIGHTS = [1, 1.5, 2, 2.5, 3];
+const STROKE_SUPPORTED_LIBS = ['lucide', 'tabler', 'phosphor'];
 
 export function StrokeWeightSelector() {
   const { strokeWeight, setStrokeWeight, selectedIcon } = useIconContext();
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
-  if (!selectedIcon) {
-    return null;
+  if (!selectedIcon) return null;
+
+  const supportsStroke = STROKE_SUPPORTED_LIBS.includes(selectedIcon.type as string);
+
+  if (!supportsStroke) {
+    return (
+      <div className="space-y-2">
+        <label className="block text-sm font-semibold text-gray-400 dark:text-gray-600">
+          {language === 'ko' ? '선 두께' : 'Stroke Weight'}
+        </label>
+        <p className="text-xs text-gray-400 dark:text-gray-600 bg-gray-50 dark:bg-gray-800/50 p-3 rounded-lg border border-gray-200 dark:border-gray-700">
+          {language === 'ko'
+            ? '이 아이콘은 선 두께를 지원하지 않습니다.\n(Lucide, Tabler, Phosphor만 지원)'
+            : 'This icon does not support stroke weight.\n(Lucide, Tabler, Phosphor only)'}
+        </p>
+      </div>
+    );
   }
-
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setStrokeWeight(Number(e.target.value));
-  };
 
   return (
     <div className="space-y-4">
@@ -22,22 +34,18 @@ export function StrokeWeightSelector() {
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
           {language === 'ko' ? '선 두께' : 'Stroke Weight'}
         </label>
-        <div className="flex items-center gap-2">
-          <input
-            type="number"
-            min="0.5"
-            max="4"
-            step="0.1"
-            value={strokeWeight}
-            onChange={(e) => {
-              const value = Number(e.target.value);
-              if (value >= 0.5 && value <= 4) {
-                setStrokeWeight(value);
-              }
-            }}
-            className="w-20 px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 text-center font-medium"
-          />
-        </div>
+        <input
+          type="number"
+          min="0.5"
+          max="4"
+          step="0.1"
+          value={strokeWeight}
+          onChange={(e) => {
+            const value = Number(e.target.value);
+            if (value >= 0.5 && value <= 4) setStrokeWeight(value);
+          }}
+          className="w-20 px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 text-center font-medium"
+        />
       </div>
 
       <div className="space-y-3">
@@ -47,7 +55,7 @@ export function StrokeWeightSelector() {
           max="4"
           step="0.1"
           value={strokeWeight}
-          onChange={handleSliderChange}
+          onChange={(e) => setStrokeWeight(Number(e.target.value))}
           className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
           aria-label="Stroke weight slider"
         />
@@ -75,12 +83,6 @@ export function StrokeWeightSelector() {
           </button>
         ))}
       </div>
-
-      <p className="text-xs text-gray-500 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
-        💡 {language === 'ko'
-          ? 'Stroke weight는 Lucide, Tabler, Phosphor 아이콘에서 사용할 수 있습니다.'
-          : 'Stroke weight is available for Lucide, Tabler, and Phosphor icons.'}
-      </p>
     </div>
   );
 }

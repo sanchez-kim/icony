@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import { LucideIcon } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
+
+const LIBRARY_INFO: Record<string, { name: string; license: string; url: string }> = {
+  lucide:    { name: 'Lucide Icons',     license: 'ISC', url: 'https://lucide.dev' },
+  tabler:    { name: 'Tabler Icons',     license: 'MIT', url: 'https://tabler.io/icons' },
+  phosphor:  { name: 'Phosphor Icons',   license: 'MIT', url: 'https://phosphoricons.com' },
+  heroicons: { name: 'Heroicons',        license: 'MIT', url: 'https://heroicons.com' },
+  bootstrap: { name: 'Bootstrap Icons',  license: 'MIT', url: 'https://icons.getbootstrap.com' },
+  radix:     { name: 'Radix Icons',      license: 'MIT', url: 'https://www.radix-ui.com/icons' },
+};
 
 type BackgroundOption = {
   id: string;
@@ -51,16 +61,36 @@ const BACKGROUND_OPTIONS: BackgroundOption[] = [
 
 export function IconPreview() {
   const { selectedIcon, color, size, strokeWeight } = useIconContext();
+  const { language } = useLanguage();
   const [background, setBackground] = useState<string>('light');
 
   if (!selectedIcon) return null;
 
   const selectedBg = BACKGROUND_OPTIONS.find((bg) => bg.id === background);
+  const libInfo = LIBRARY_INFO[selectedIcon.type as string];
 
   return (
     <div className="flex flex-col items-center space-y-6">
-      <div className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-        {selectedIcon.name}
+      <div className="flex flex-col items-center gap-1.5">
+        <div className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+          {selectedIcon.name}
+        </div>
+        {libInfo && (
+          <a
+            href={libInfo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
+            title={language === 'ko' ? '라이브러리 페이지 열기' : 'Open library page'}
+          >
+            <span className="text-xs font-medium text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+              {libInfo.name}
+            </span>
+            <span className="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 font-semibold">
+              {libInfo.license}
+            </span>
+          </a>
+        )}
       </div>
 
       <div className="flex items-center gap-2 flex-wrap justify-center">
