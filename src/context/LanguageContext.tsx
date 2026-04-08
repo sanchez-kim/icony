@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { ko } from '../locales/ko';
 import { en } from '../locales/en';

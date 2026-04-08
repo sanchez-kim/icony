@@ -4,11 +4,14 @@ const STORAGE_KEYS = {
   RECENT_COLORS: 'icony_recent_colors',
 } as const;
 
+const isServer = typeof window === 'undefined';
+
 export class StorageManager {
   /**
    * Get favorites from localStorage
    */
   static getFavorites(): string[] {
+    if (isServer) return [];
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.FAVORITES);
       return stored ? JSON.parse(stored) : [];
@@ -22,6 +25,7 @@ export class StorageManager {
    * Add icon to favorites
    */
   static addFavorite(iconId: string): void {
+    if (isServer) return;
     try {
       const favorites = this.getFavorites();
       if (!favorites.includes(iconId)) {
@@ -37,6 +41,7 @@ export class StorageManager {
    * Remove icon from favorites
    */
   static removeFavorite(iconId: string): void {
+    if (isServer) return;
     try {
       const favorites = this.getFavorites();
       const filtered = favorites.filter((id) => id !== iconId);
@@ -57,6 +62,7 @@ export class StorageManager {
    * Get recent icons
    */
   static getRecentIcons(): string[] {
+    if (isServer) return [];
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.RECENT_ICONS);
       return stored ? JSON.parse(stored) : [];
@@ -70,6 +76,7 @@ export class StorageManager {
    * Add icon to recent history (max 10)
    */
   static addRecentIcon(iconId: string): void {
+    if (isServer) return;
     try {
       let recent = this.getRecentIcons();
       // Remove if already exists
@@ -88,6 +95,7 @@ export class StorageManager {
    * Get recent colors
    */
   static getRecentColors(): string[] {
+    if (isServer) return [];
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.RECENT_COLORS);
       return stored ? JSON.parse(stored) : [];
@@ -101,6 +109,7 @@ export class StorageManager {
    * Add color to recent history (max 8)
    */
   static addRecentColor(color: string): void {
+    if (isServer) return;
     try {
       let recent = this.getRecentColors();
       // Remove if already exists
@@ -119,6 +128,7 @@ export class StorageManager {
    * Get saved color palettes
    */
   static getPalettes(): Array<{ name: string; colors: string[] }> {
+    if (isServer) return [];
     try {
       const stored = localStorage.getItem('icony_palettes');
       return stored ? JSON.parse(stored) : [];
@@ -132,6 +142,7 @@ export class StorageManager {
    * Save a color palette
    */
   static savePalette(name: string, colors: string[]): void {
+    if (isServer) return;
     try {
       const palettes = this.getPalettes();
       // Check if palette with same name exists
@@ -151,6 +162,7 @@ export class StorageManager {
    * Delete a color palette
    */
   static deletePalette(name: string): void {
+    if (isServer) return;
     try {
       const palettes = this.getPalettes();
       const filtered = palettes.filter((p) => p.name !== name);
