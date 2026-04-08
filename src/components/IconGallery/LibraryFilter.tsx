@@ -1,3 +1,5 @@
+'use client';
+
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 

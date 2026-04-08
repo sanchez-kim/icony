@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { LucideIcon, Star } from 'lucide-react';
 import { Icon } from '../../types';

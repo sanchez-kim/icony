@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { SearchBar } from '../IconGallery/SearchBar';
 import { IconGallery } from '../IconGallery/IconGallery';

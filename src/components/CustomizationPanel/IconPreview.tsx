@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { LucideIcon } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';

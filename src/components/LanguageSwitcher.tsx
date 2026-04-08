@@ -1,3 +1,5 @@
+'use client';
+
 import { useLanguage, Language } from '../context/LanguageContext';
 import { Globe } from 'lucide-react';
 

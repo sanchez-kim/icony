@@ -1,3 +1,5 @@
+'use client';
+
 import { Star, Clock } from 'lucide-react';
 import { Icon } from '../../types';
 import { useLanguage } from '../../context/LanguageContext';

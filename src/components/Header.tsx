@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { HelpCircle } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';

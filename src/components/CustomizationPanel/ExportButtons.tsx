@@ -1,3 +1,5 @@
+'use client';
+
 import { Download, Copy, Loader2, Share2 } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -19,7 +21,13 @@ export function ExportButtons() {
       size: size.toString(),
     });
 
-    const url = `${window.location.origin}/app?${params.toString()}`;
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const url = `${origin}/app?${params.toString()}`;
+
+    if (typeof navigator === 'undefined' || !navigator.clipboard) {
+      toast.error('Failed to copy link');
+      return;
+    }
 
     navigator.clipboard.writeText(url).then(() => {
       toast.success(t.toast.linkCopied);

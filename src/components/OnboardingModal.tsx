@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { X, Palette, Download, Heart, Search, Zap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';

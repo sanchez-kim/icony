@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { Save, Trash2 } from 'lucide-react';
 import { StorageManager } from '../../utils/storage';

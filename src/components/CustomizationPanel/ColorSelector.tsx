@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { ChevronDown, ChevronUp, Pipette } from 'lucide-react';
@@ -18,7 +20,7 @@ export function ColorSelector() {
     if (typeof window !== 'undefined' && 'EyeDropper' in window) {
       setEyeDropperSupported(true);
       console.log('✅ EyeDropper API is supported');
-    } else {
+    } else if (typeof window !== 'undefined') {
       console.log('❌ EyeDropper API is NOT supported');
       console.log('Browser:', navigator.userAgent);
       console.log('Current URL:', window.location.href);

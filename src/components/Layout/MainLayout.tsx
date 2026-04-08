@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import { Sidebar } from './Sidebar';
 import { CustomizationPanel } from '../CustomizationPanel/CustomizationPanel';
@@ -5,6 +7,7 @@ import { CustomizationPanel } from '../CustomizationPanel/CustomizationPanel';
 export function MainLayout() {
   const [leftWidth, setLeftWidth] = useState<number>(() => {
     // Load saved width from localStorage, default to 65%
+    if (typeof window === 'undefined') return 65;
     const saved = localStorage.getItem('icony_layout_width');
     return saved ? parseFloat(saved) : 65;
   });
