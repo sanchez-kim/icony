@@ -163,7 +163,7 @@ export function usePreloadLibraries(enabled = true): void {
     // Fire-and-forget — errors are silently swallowed here since this is
     // just cache warming; real error handling happens in useIconLibrary.
     preloadLibraries(keys).catch((err) => {
-      console.warn('[usePreloadLibraries] Preload failed:', err);
+      console.debug('[usePreloadLibraries] Preload failed:', err);
     });
   }, [enabled]);
 }

@@ -67,7 +67,7 @@ async function loadRadix(): Promise<LibraryComponents> {
 
 // Stub for libraries not yet installed — returns empty map with clear error
 async function loadUnavailable(key: LibraryKey): Promise<LibraryComponents> {
-  console.warn(`[icon-registry] Library "${key}" is not yet available in this build.`);
+  console.debug(`[icon-registry] Library "${key}" is not yet available in this build.`);
   return {};
 }
 

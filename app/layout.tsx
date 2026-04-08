@@ -54,12 +54,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Providers>{children}</Providers>
-        <Script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "f247e4eb8b3d406ab383463d62f1abcd"}'
-          strategy="afterInteractive"
-        />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "f247e4eb8b3d406ab383463d62f1abcd"}'
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

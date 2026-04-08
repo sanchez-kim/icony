@@ -16,17 +16,8 @@ export function ColorSelector() {
   const [eyeDropperSupported, setEyeDropperSupported] = useState(false);
 
   useEffect(() => {
-    // Check EyeDropper support on mount
     if (typeof window !== 'undefined' && 'EyeDropper' in window) {
       setEyeDropperSupported(true);
-      console.log('✅ EyeDropper API is supported');
-    } else if (typeof window !== 'undefined') {
-      console.log('❌ EyeDropper API is NOT supported');
-      console.log('Browser:', navigator.userAgent);
-      console.log('Current URL:', window.location.href);
-      console.log('Is HTTPS or localhost?', window.location.protocol === 'https:' || window.location.hostname === 'localhost');
-      console.log('\n💡 Solution: EyeDropper API requires HTTPS or localhost.');
-      console.log('Try accessing via: http://localhost:5173 instead of IP address');
     }
   }, []);
 
