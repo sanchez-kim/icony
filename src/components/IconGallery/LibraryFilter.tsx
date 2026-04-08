@@ -1,7 +1,7 @@
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 
-type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'heroicons' | 'bootstrap' | 'radix';
+type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'phosphor-fill' | 'heroicons' | 'heroicons-solid' | 'bootstrap' | 'radix';
 
 interface LibraryOption {
   id: IconLibrary;
@@ -10,13 +10,15 @@ interface LibraryOption {
 }
 
 const LIBRARY_OPTIONS: LibraryOption[] = [
-  { id: 'all', name: 'All Libraries', nameKo: '전체' },
-  { id: 'lucide', name: 'Lucide', nameKo: 'Lucide' },
-  { id: 'tabler', name: 'Tabler', nameKo: 'Tabler' },
-  { id: 'phosphor', name: 'Phosphor', nameKo: 'Phosphor' },
-  { id: 'heroicons', name: 'Heroicons', nameKo: 'Heroicons' },
-  { id: 'bootstrap', name: 'Bootstrap', nameKo: 'Bootstrap' },
-  { id: 'radix', name: 'Radix', nameKo: 'Radix' },
+  { id: 'all',            name: 'All Libraries',      nameKo: '전체' },
+  { id: 'lucide',         name: 'Lucide',              nameKo: 'Lucide' },
+  { id: 'tabler',         name: 'Tabler',              nameKo: 'Tabler' },
+  { id: 'phosphor',       name: 'Phosphor',            nameKo: 'Phosphor' },
+  { id: 'phosphor-fill',  name: 'Phosphor Filled',     nameKo: 'Phosphor (채움)' },
+  { id: 'heroicons',      name: 'Heroicons',           nameKo: 'Heroicons' },
+  { id: 'heroicons-solid',name: 'Heroicons Solid',     nameKo: 'Heroicons (솔리드)' },
+  { id: 'bootstrap',      name: 'Bootstrap',           nameKo: 'Bootstrap' },
+  { id: 'radix',          name: 'Radix',               nameKo: 'Radix' },
 ];
 
 export function LibraryFilter() {

@@ -18,7 +18,9 @@ async function loadDescriptors(key: LibraryKey): Promise<IconDescriptor[]> {
     case 'lucide':    return (await import('../data/lucide-icons-full')).lucideIconsFull;
     case 'tabler':    return (await import('../data/tabler-icons-full')).tablerIconsFull;
     case 'phosphor':  return (await import('../data/phosphor-icons-full')).phosphorIconsFull;
+    case 'phosphor-fill': return (await import('../data/phosphor-fill-descriptors')).phosphorFillDescriptors;
     case 'heroicons': return (await import('../data/heroicons-descriptors')).heroiconsDescriptors;
+    case 'heroicons-solid': return (await import('../data/heroicons-solid-descriptors')).heroiconsSolidDescriptors;
     case 'bootstrap': return (await import('../data/bootstrap-icons-descriptors')).bootstrapDescriptors;
     case 'radix':     return (await import('../data/radix-icons-descriptors')).radixDescriptors;
     default:          return [];
@@ -29,7 +31,7 @@ import { ClipboardManager } from '../services/clipboardManager';
 import { ExportManager } from '../services/exportManager';
 import { StorageManager } from '../utils/storage';
 
-type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'heroicons' | 'bootstrap' | 'radix';
+type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'phosphor-fill' | 'heroicons' | 'heroicons-solid' | 'bootstrap' | 'radix';
 type SortOption = 'name-asc' | 'name-desc' | 'recent' | 'popular';
 
 // Placeholder component rendered while the real component is still loading
@@ -113,7 +115,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
 
   // ── Lazy loading: descriptors + components together per library ───────────
   useEffect(() => {
-    const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor', 'heroicons', 'bootstrap', 'radix'];
+    const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor', 'phosphor-fill', 'heroicons', 'heroicons-solid', 'bootstrap', 'radix'];
 
     for (const libKey of librariesToLoad) {
       Promise.all([

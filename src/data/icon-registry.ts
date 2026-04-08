@@ -39,8 +39,19 @@ async function loadPhosphor(): Promise<LibraryComponents> {
   return mod as unknown as LibraryComponents;
 }
 
+// phosphor-fill reuses the same components — weight="fill" is set at render time
+async function loadPhosphorFill(): Promise<LibraryComponents> {
+  const mod = await import('phosphor-react');
+  return mod as unknown as LibraryComponents;
+}
+
 async function loadHeroicons(): Promise<LibraryComponents> {
   const mod = await import('@heroicons/react/24/outline');
+  return mod as unknown as LibraryComponents;
+}
+
+async function loadHeroiconsSolid(): Promise<LibraryComponents> {
+  const mod = await import('@heroicons/react/24/solid');
   return mod as unknown as LibraryComponents;
 }
 
@@ -88,8 +99,14 @@ export async function loadLibrary(key: LibraryKey): Promise<LibraryComponents> {
     case 'phosphor':
       components = await loadPhosphor();
       break;
+    case 'phosphor-fill':
+      components = await loadPhosphorFill();
+      break;
     case 'heroicons':
       components = await loadHeroicons();
+      break;
+    case 'heroicons-solid':
+      components = await loadHeroiconsSolid();
       break;
     case 'bootstrap':
       components = await loadBootstrap();

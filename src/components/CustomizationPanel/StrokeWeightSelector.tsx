@@ -4,6 +4,10 @@ import { cn } from '../../utils/cn';
 
 const STROKE_WEIGHTS = [1, 1.5, 2, 2.5, 3];
 const STROKE_SUPPORTED_LIBS = ['lucide', 'tabler', 'phosphor'];
+const NO_STROKE_LIBS_MSG: Record<string, { en: string; ko: string }> = {
+  'phosphor-fill':   { en: 'Filled variant — stroke weight does not apply.', ko: '채워진 아이콘 — 선 두께가 적용되지 않습니다.' },
+  'heroicons-solid': { en: 'Solid variant — stroke weight does not apply.', ko: '솔리드 아이콘 — 선 두께가 적용되지 않습니다.' },
+};
 
 export function StrokeWeightSelector() {
   const { strokeWeight, setStrokeWeight, selectedIcon } = useIconContext();
@@ -14,15 +18,18 @@ export function StrokeWeightSelector() {
   const supportsStroke = STROKE_SUPPORTED_LIBS.includes(selectedIcon.type as string);
 
   if (!supportsStroke) {
+    const customMsg = NO_STROKE_LIBS_MSG[selectedIcon.type as string];
     return (
       <div className="space-y-2">
         <label className="block text-sm font-semibold text-gray-400 dark:text-gray-600">
           {language === 'ko' ? '선 두께' : 'Stroke Weight'}
         </label>
         <p className="text-xs text-gray-400 dark:text-gray-600 bg-gray-50 dark:bg-gray-800/50 p-3 rounded-lg border border-gray-200 dark:border-gray-700">
-          {language === 'ko'
-            ? '이 아이콘은 선 두께를 지원하지 않습니다.\n(Lucide, Tabler, Phosphor만 지원)'
-            : 'This icon does not support stroke weight.\n(Lucide, Tabler, Phosphor only)'}
+          {customMsg
+            ? (language === 'ko' ? customMsg.ko : customMsg.en)
+            : (language === 'ko'
+                ? '이 아이콘은 선 두께를 지원하지 않습니다.\n(Lucide, Tabler, Phosphor만 지원)'
+                : 'This icon does not support stroke weight.\n(Lucide, Tabler, Phosphor only)')}
         </p>
       </div>
     );

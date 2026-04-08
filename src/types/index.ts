@@ -45,7 +45,7 @@ export interface Icon {
   name: string;
   category: string;
   tags: string[];
-  type: IconType;
+  type: import('./icon').LibraryKey;
   component: IconComponent;
 }
 

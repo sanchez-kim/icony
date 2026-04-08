@@ -17,7 +17,9 @@ export type LibraryKey =
   | 'lucide'
   | 'tabler'
   | 'phosphor'
+  | 'phosphor-fill'
   | 'heroicons'
+  | 'heroicons-solid'
   | 'bootstrap'
   | 'radix'
   | 'remix';

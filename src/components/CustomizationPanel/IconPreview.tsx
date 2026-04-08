@@ -5,12 +5,14 @@ import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
 
 const LIBRARY_INFO: Record<string, { name: string; license: string; url: string }> = {
-  lucide:    { name: 'Lucide Icons',     license: 'ISC', url: 'https://lucide.dev' },
-  tabler:    { name: 'Tabler Icons',     license: 'MIT', url: 'https://tabler.io/icons' },
-  phosphor:  { name: 'Phosphor Icons',   license: 'MIT', url: 'https://phosphoricons.com' },
-  heroicons: { name: 'Heroicons',        license: 'MIT', url: 'https://heroicons.com' },
-  bootstrap: { name: 'Bootstrap Icons',  license: 'MIT', url: 'https://icons.getbootstrap.com' },
-  radix:     { name: 'Radix Icons',      license: 'MIT', url: 'https://www.radix-ui.com/icons' },
+  lucide:           { name: 'Lucide Icons',          license: 'ISC', url: 'https://lucide.dev' },
+  tabler:           { name: 'Tabler Icons',           license: 'MIT', url: 'https://tabler.io/icons' },
+  phosphor:         { name: 'Phosphor Icons',         license: 'MIT', url: 'https://phosphoricons.com' },
+  'phosphor-fill':  { name: 'Phosphor Icons (Filled)', license: 'MIT', url: 'https://phosphoricons.com' },
+  heroicons:        { name: 'Heroicons',              license: 'MIT', url: 'https://heroicons.com' },
+  'heroicons-solid':{ name: 'Heroicons (Solid)',      license: 'MIT', url: 'https://heroicons.com' },
+  bootstrap:        { name: 'Bootstrap Icons',        license: 'MIT', url: 'https://icons.getbootstrap.com' },
+  radix:            { name: 'Radix Icons',            license: 'MIT', url: 'https://www.radix-ui.com/icons' },
 };
 
 type BackgroundOption = {
@@ -142,11 +144,24 @@ export function IconPreview() {
             stroke: strokeWeight,
             className: 'transition-all duration-300',
           })
-        ) : (
+        ) : selectedIcon.type === 'phosphor-fill' ? (
+          React.createElement(selectedIcon.component as React.ComponentType<any>, {
+            size,
+            color,
+            weight: 'fill',
+            className: 'transition-all duration-300',
+          })
+        ) : selectedIcon.type === 'phosphor' ? (
           React.createElement(selectedIcon.component as React.ComponentType<any>, {
             size,
             color,
             weight: strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light',
+            className: 'transition-all duration-300',
+          })
+        ) : (
+          React.createElement(selectedIcon.component as React.ComponentType<any>, {
+            size,
+            color,
             className: 'transition-all duration-300',
           })
         )}

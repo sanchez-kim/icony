@@ -43,6 +43,16 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     iconCount: 1248,
     available: true,
   },
+  'phosphor-fill': {
+    key: 'phosphor-fill',
+    name: 'Phosphor Icons (Filled)',
+    shortName: 'Phosphor Fill',
+    license: 'MIT',
+    version: '1.x',
+    url: 'https://phosphoricons.com',
+    iconCount: 1047,
+    available: true,
+  },
   heroicons: {
     key: 'heroicons',
     name: 'Heroicons',
@@ -51,6 +61,16 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     version: '2.x',
     url: 'https://heroicons.com',
     iconCount: 292,
+    available: true,
+  },
+  'heroicons-solid': {
+    key: 'heroicons-solid',
+    name: 'Heroicons (Solid)',
+    shortName: 'Heroicons Solid',
+    license: 'MIT',
+    version: '2.x',
+    url: 'https://heroicons.com',
+    iconCount: 175,
     available: true,
   },
   bootstrap: {

@@ -52,7 +52,14 @@ function renderIconComponent(
     });
   }
 
-  // heroicons, bootstrap, radix, and any future library
+  if (type === 'phosphor-fill') {
+    return React.createElement(comp as React.ComponentType<any>, {
+      className,
+      weight: 'fill',
+    });
+  }
+
+  // heroicons, heroicons-solid, bootstrap, radix, and any future library
   return React.createElement(comp as React.ComponentType<any>, {
     className,
   });
