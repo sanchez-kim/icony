@@ -1,11 +1,11 @@
 /**
  * icon-registry.ts - Lazy loading registry for icon libraries
  *
- * Each loadLibrary() call uses a dynamic import so Vite/Rollup can split
- * the library into a separate chunk.  The switch statement is intentional:
- * Vite performs static analysis on `import()` calls and requires the module
- * specifier to be a string literal (or a template with a static prefix).
- * A plain variable inside import() would defeat tree-shaking and chunking.
+ * Each loadLibrary() call uses a dynamic import so Next.js (webpack/Turbopack)
+ * can split the library into a separate chunk.  The switch statement is
+ * intentional: bundlers perform static analysis on `import()` calls and
+ * require the module specifier to be a string literal.  A plain variable
+ * inside import() would defeat tree-shaking and chunking.
  *
  * Usage:
  *   const components = await loadLibrary('lucide');
@@ -88,7 +88,7 @@ export async function loadLibrary(key: LibraryKey): Promise<LibraryComponents> {
 
   let components: LibraryComponents;
 
-  // Static switch required for Vite's static import() analysis
+  // Static switch required for bundler static import() analysis
   switch (key) {
     case 'lucide':
       components = await loadLucide();
