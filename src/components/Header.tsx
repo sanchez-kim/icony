@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { HelpCircle } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -15,7 +15,7 @@ export function Header({ onHelpClick }: HeaderProps) {
     <header className="bg-white dark:bg-gray-900 shadow-md border-b border-gray-200 dark:border-gray-800 transition-colors">
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <IconyLogo size={40} />
             <div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
@@ -41,7 +41,7 @@ export function Header({ onHelpClick }: HeaderProps) {
             <LanguageSwitcher />
             <ThemeToggle />
             <Link
-              to="/"
+              href="/"
               className="px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               {t.header.backToHome}

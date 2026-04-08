@@ -20,6 +20,8 @@ const translations = {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'ko';
+
     // Check localStorage first
     const stored = localStorage.getItem('icony_language');
     if (stored === 'ko' || stored === 'en') {

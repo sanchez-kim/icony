@@ -12,6 +12,8 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'light';
+
     // Check localStorage first
     const stored = localStorage.getItem('icony_theme') as Theme;
     if (stored) {
