@@ -93,16 +93,6 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     iconCount: 318,
     available: true,
   },
-  remix: {
-    key: 'remix',
-    name: 'Remix Icon',
-    shortName: 'Remix',
-    license: 'Apache-2.0',
-    version: '4.x',
-    url: 'https://remixicon.com',
-    iconCount: 2800,
-    available: false,
-  },
 };
 
 // ---------------------------------------------------------------------------
@@ -123,12 +113,6 @@ export function getAllLibraries(): LibraryMeta[] {
 export function isLibraryKey(value: string): value is LibraryKey {
   return value in LIBRARIES;
 }
-
-/**
- * Legacy IconType values used by existing code.
- * Maps the old 'all' sentinel + existing library keys.
- */
-export type LegacyIconLibrary = 'all' | LibraryKey;
 
 /** Display name for a library given its key (falls back gracefully) */
 export function getLibraryDisplayName(key: LibraryKey | 'all', lang: 'en' | 'ko' = 'en'): string {

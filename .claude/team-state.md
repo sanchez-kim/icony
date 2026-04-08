@@ -25,13 +25,13 @@
 ## 진행 중인 작업
 | 작업 | 담당 | 상태 | 비고 |
 |------|------|------|------|
-| TASK-01: Next.js 프로젝트 초기화 | - | pending | App Router, TypeScript, Tailwind |
-| TASK-02: 라우팅 & 레이아웃 구조 | - | pending | layout.tsx, 3 pages |
-| TASK-03: 컨텍스트/훅 포팅 | - | pending | IconContext, ThemeContext, LanguageContext |
-| TASK-04: 컴포넌트 포팅 | - | pending | 22개 컴포넌트 + 'use client' |
-| TASK-05: 아이콘 코드스플리팅 | - | pending | icon-registry.ts → next/dynamic 전략 |
-| TASK-06: SEO 최적화 | - | pending | metadata, sitemap, JSON-LD, robots |
-| TASK-07: 빌드 검증 & 배포 | - | pending | Vercel 배포 테스트 |
+| TASK-01: Next.js 프로젝트 초기화 | agent-alpha | ✅ done | c273e0f |
+| TASK-02: 라우팅 & 레이아웃 구조 | agent-alpha | ✅ done | c273e0f |
+| TASK-03: 컨텍스트/훅 SSR + RRD 제거 | agent-beta | ✅ done | fa414cf |
+| TASK-04: 컴포넌트 'use client' + SSR | agent-delta | ✅ done | 9384f7c |
+| TASK-05: 아이콘 코드스플리팅 | agent-epsilon | ✅ done | 8bd538c, vercel.json 삭제 |
+| TASK-06: SEO 최적화 | agent-zeta | ✅ done | 1cc5288, metadata/sitemap/robots/JSON-LD |
+| TASK-07: 빌드 검증 & 푸시 | leader | ✅ done | 빌드 성공, origin 푸시 완료 |
 
 ## 이전 스프린트 완료 사항
 - Font Awesome 완전 제거 + MIT/ISC 라이브러리 전환

@@ -5,8 +5,7 @@
  * 1. Library-level lazy loading via dynamic imports
  * 2. License metadata per library
  * 3. Korean + English tag support for bilingual search
- * 4. Extensible to future libraries (heroicons, bootstrap-icons, radix, remix-icon)
- * 5. Backward-compatible with existing Icon type (LegacyIcon alias)
+ * 4. Extensible to future libraries
  */
 
 // ---------------------------------------------------------------------------
@@ -21,8 +20,7 @@ export type LibraryKey =
   | 'heroicons'
   | 'heroicons-solid'
   | 'bootstrap'
-  | 'radix'
-  | 'remix';
+  | 'radix';
 
 export type LicenseType = 'MIT' | 'ISC' | 'Apache-2.0' | 'CC-BY-4.0' | 'SIL OFL 1.1';
 
@@ -97,27 +95,6 @@ export interface IconDescriptor {
  * This is what consumers (IconCard, CustomizationPanel, etc.) ultimately use.
  */
 export interface ResolvedIcon extends IconDescriptor {
-  component: React.ComponentType<any>;
-}
-
-// ---------------------------------------------------------------------------
-// Backward-compatibility alias
-// ---------------------------------------------------------------------------
-
-/**
- * LegacyIcon is the original Icon interface shape.
- * Kept so existing code continues to compile while migration proceeds.
- *
- * @deprecated Use ResolvedIcon for new code. LegacyIcon will be removed
- *             once all data files are migrated to IconDescriptor format.
- */
-export interface LegacyIcon {
-  id: string;
-  name: string;
-  category: string;
-  tags: string[];
-  /** Library identifier — maps to LibraryKey */
-  type: LibraryKey;
   component: React.ComponentType<any>;
 }
 

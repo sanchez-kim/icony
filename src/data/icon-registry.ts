@@ -65,12 +65,6 @@ async function loadRadix(): Promise<LibraryComponents> {
   return mod as unknown as LibraryComponents;
 }
 
-// Stub for libraries not yet installed — returns empty map with clear error
-async function loadUnavailable(key: LibraryKey): Promise<LibraryComponents> {
-  console.debug(`[icon-registry] Library "${key}" is not yet available in this build.`);
-  return {};
-}
-
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
@@ -113,9 +107,6 @@ export async function loadLibrary(key: LibraryKey): Promise<LibraryComponents> {
       break;
     case 'radix':
       components = await loadRadix();
-      break;
-    case 'remix':
-      components = await loadUnavailable(key);
       break;
     default: {
       // Exhaustive check — TypeScript will error if a new LibraryKey is added
