@@ -95,6 +95,8 @@ const IconContext = createContext<IconContextValue | undefined>(undefined);
 export function IconProvider({ children }: { children: React.ReactNode }) {
   // Component cache: "library::componentName" → React.ComponentType
   const componentMapRef = useRef<Map<string, React.ComponentType<any>>>(new Map());
+  // Track which libraries have already been loaded (prevents Strict Mode double-load)
+  const loadedLibsRef = useRef<Set<string>>(new Set());
 
   // Icons state — empty initially, populated as each library loads lazily
   const [icons, setIcons] = useState<Icon[]>([]);
@@ -120,6 +122,9 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor', 'phosphor-fill', 'heroicons', 'heroicons-solid', 'bootstrap', 'radix'];
 
     for (const libKey of librariesToLoad) {
+      if (loadedLibsRef.current.has(libKey)) continue;
+      loadedLibsRef.current.add(libKey);
+
       Promise.all([
         loadDescriptors(libKey),
         loadLibrary(libKey),
