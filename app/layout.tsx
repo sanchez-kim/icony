@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -53,6 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+      </head>
+      <body className="m-0 p-0">
         <Providers>{children}</Providers>
         {process.env.NODE_ENV === 'production' && (
           <Script
