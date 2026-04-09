@@ -76,7 +76,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-100 via-purple-50 to-accent-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
       {/* Header */}
-      <header className="container mx-auto px-6 py-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl mt-4 transition-colors">
+      <header className="container mx-auto px-6 py-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl transition-colors">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <IconyLogo size={40} />
