@@ -5,7 +5,7 @@ export const ko = {
     hero: {
       title: '아이콘 커스터마이징',
       subtitle: '단 몇 초만에',
-      description: '수천 개의 전문 아이콘 중에서 선택하고, 색상과 크기를 커스터마이징한 뒤, PNG 또는 SVG 형식으로 즉시 다운로드하세요. 디자이너와 개발자를 위한 완벽한 도구입니다.',
+      description: '10,000개 이상의 전문 아이콘 중에서 선택하고, 색상과 크기를 커스터마이징한 뒤, PNG 또는 SVG 형식으로 즉시 다운로드하세요. 디자이너와 개발자를 위한 완벽한 도구입니다.',
       getStarted: '무료로 시작하기',
       learnMore: '자세히 알아보기',
     },
@@ -48,7 +48,7 @@ export const ko = {
       subtitle: '단 3단계로 커스터마이징된 아이콘 받기',
       step1: {
         title: '아이콘 선택',
-        description: '67개 카테고리에서 수천 개의 아이콘 탐색',
+        description: '33개 카테고리에서 10,000개 이상의 아이콘 탐색',
       },
       step2: {
         title: '커스터마이징',
@@ -68,8 +68,11 @@ export const ko = {
       startNow: '지금 바로 커스터마이징',
     },
     footer: {
-      tagline: '9,000개 이상의 오픈소스 아이콘. 무료로 사용하세요.',
-      iconsBy: '아이콘 제공:',
+      tagline: '10,000개 이상의 오픈소스 아이콘을 무료로 커스터마이징하세요.',
+      iconsBy: '아이콘 제공',
+      links: '링크',
+      terms: '이용 약관',
+      copyright: '모든 아이콘은 오픈소스입니다.',
     },
     header: {
       launchApp: '앱 시작하기',

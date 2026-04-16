@@ -20,7 +20,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     license: 'ISC',
     version: '0.462.0',
     url: 'https://lucide.dev',
-    iconCount: 1500,
+    iconCount: 1539,
     available: true,
   },
   tabler: {
@@ -30,7 +30,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     license: 'MIT',
     version: '3.x',
     url: 'https://tabler.io/icons',
-    iconCount: 5500,
+    iconCount: 5986,
     available: true,
   },
   phosphor: {
@@ -40,7 +40,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     license: 'MIT',
     version: '1.x',
     url: 'https://phosphoricons.com',
-    iconCount: 1248,
+    iconCount: 1047,
     available: true,
   },
   'phosphor-fill': {
@@ -60,7 +60,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     license: 'MIT',
     version: '2.x',
     url: 'https://heroicons.com',
-    iconCount: 292,
+    iconCount: 175,
     available: true,
   },
   'heroicons-solid': {
@@ -80,7 +80,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     license: 'MIT',
     version: '1.x',
     url: 'https://icons.getbootstrap.com',
-    iconCount: 2000,
+    iconCount: 325,
     available: true,
   },
   radix: {
@@ -90,7 +90,7 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     license: 'MIT',
     version: '1.x',
     url: 'https://www.radix-ui.com/icons',
-    iconCount: 318,
+    iconCount: 218,
     available: true,
   },
 };

@@ -5,7 +5,7 @@ export const en = {
     hero: {
       title: 'Customize Icons',
       subtitle: 'In Seconds',
-      description: 'Choose from thousands of professional icons, customize colors and sizes, then download instantly in PNG or SVG format. Perfect for designers and developers.',
+      description: 'Choose from 10,000+ professional icons, customize colors and sizes, then download instantly in PNG or SVG format. Perfect for designers and developers.',
       getStarted: 'Get Started Free',
       learnMore: 'Learn More',
     },
@@ -48,7 +48,7 @@ export const en = {
       subtitle: 'Get your customized icon in just three easy steps',
       step1: {
         title: 'Choose Icon',
-        description: 'Browse thousands of icons across 67 categories',
+        description: 'Browse 10,000+ icons across 33 categories',
       },
       step2: {
         title: 'Customize',
@@ -68,8 +68,11 @@ export const en = {
       startNow: 'Start Customizing Now',
     },
     footer: {
-      tagline: '9,000+ open-source icons. Free to use.',
-      iconsBy: 'Icons provided by:',
+      tagline: 'Customize 10,000+ open-source icons for free.',
+      iconsBy: 'Icons by',
+      links: 'Links',
+      terms: 'Terms & Conditions',
+      copyright: 'All icons are open-source.',
     },
     header: {
       launchApp: 'Launch App',

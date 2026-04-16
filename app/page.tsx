@@ -30,8 +30,8 @@ export default function LandingPage() {
   const ctaAnimation = useScrollAnimation({ threshold: 0.3 });
 
   // Counter animations for stats (activated when visible)
-  const iconCount = useCounterAnimation({ end: 2000, duration: 2000, isActive: statsAnimation.isVisible });
-  const categoryCount = useCounterAnimation({ end: 67, duration: 1500, isActive: statsAnimation.isVisible });
+  const iconCount = useCounterAnimation({ end: 10, duration: 1500, isActive: statsAnimation.isVisible });
+  const categoryCount = useCounterAnimation({ end: 33, duration: 1200, isActive: statsAnimation.isVisible });
 
   const features = [
     {
@@ -67,10 +67,10 @@ export default function LandingPage() {
   ];
 
   const stats = [
-    { value: language === 'ko' ? '2,000+' : '2,000+', label: t.landing.stats.icons },
+    { value: '10K+', label: t.landing.stats.icons },
     { value: '100%', label: t.landing.stats.free },
     { value: '512px', label: t.landing.stats.resolution },
-    { value: '67', label: t.landing.stats.categories },
+    { value: '33', label: t.landing.stats.categories },
   ];
 
   return (
@@ -149,7 +149,7 @@ export default function LandingPage() {
               // Use animated counter for numeric values
               let displayValue = stat.value;
               if (index === 0 && statsAnimation.isVisible) {
-                displayValue = `${iconCount.toLocaleString()}+`;
+                displayValue = `${iconCount}K+`;
               } else if (index === 3 && statsAnimation.isVisible) {
                 displayValue = categoryCount.toString();
               }
@@ -284,43 +284,70 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="container mx-auto px-6 py-12 border-t border-gray-200 dark:border-gray-800">
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex items-center gap-3">
-            <IconyLogo size={32} />
-            <span className="text-lg font-bold text-gray-700 dark:text-gray-300">Icony</span>
-          </div>
-
-          <p className="text-gray-600 dark:text-gray-400 text-sm text-center">
-            {t.landing.footer.tagline}
-          </p>
-
-          <div className="text-center space-y-3">
-            <div>
-              <Link
-                href="/terms"
-                className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"
-              >
-                {language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
-              </Link>
+        <div className="max-w-6xl mx-auto">
+          {/* Top row */}
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
+            {/* Brand */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <IconyLogo size={32} />
+                <span className="text-lg font-bold text-gray-700 dark:text-gray-300">Icony</span>
+              </div>
+              <p className="text-sm text-gray-500 dark:text-gray-500 max-w-xs">
+                {t.landing.footer.tagline}
+              </p>
             </div>
 
-            <div>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">
-                {t.landing.footer.iconsBy}
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
-                <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Lucide (ISC)</a>
-                <span className="text-gray-400">•</span>
-                <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Tabler (MIT)</a>
-                <span className="text-gray-400">•</span>
-                <a href="https://phosphoricons.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Phosphor (MIT)</a>
-                <span className="text-gray-400">•</span>
-                <a href="https://heroicons.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Heroicons (MIT)</a>
-                <span className="text-gray-400">•</span>
-                <a href="https://icons.getbootstrap.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Bootstrap Icons (MIT)</a>
-                <span className="text-gray-400">•</span>
-                <a href="https://www.radix-ui.com/icons" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">Radix Icons (MIT)</a>
-              </div>
+            {/* Links */}
+            <div className="flex flex-col gap-2">
+              <h4 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+                {t.landing.footer.links}
+              </h4>
+              <Link
+                href="/icon-libraries"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {language === 'ko' ? '아이콘 라이브러리' : 'Icon Libraries'}
+              </Link>
+              <Link
+                href="/about"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {language === 'ko' ? '소개' : 'About'}
+              </Link>
+              <Link
+                href="/faq"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/terms"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {t.landing.footer.terms}
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom row */}
+          <div className="pt-6 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-gray-400 dark:text-gray-600">
+              © {new Date().getFullYear()} Icony · {t.landing.footer.copyright}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs text-gray-400 dark:text-gray-600">
+              <span>{t.landing.footer.iconsBy}:</span>
+              <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Lucide</a>
+              <span>·</span>
+              <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Tabler</a>
+              <span>·</span>
+              <a href="https://phosphoricons.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Phosphor</a>
+              <span>·</span>
+              <a href="https://heroicons.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Heroicons</a>
+              <span>·</span>
+              <a href="https://icons.getbootstrap.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Bootstrap</a>
+              <span>·</span>
+              <a href="https://www.radix-ui.com/icons" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Radix</a>
             </div>
           </div>
         </div>
