@@ -227,6 +227,38 @@ export default function AboutPage() {
             </Link>
           </div>
         </section>
+
+        {/* Support */}
+        <section className="mb-4">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 text-center">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              {language === 'ko' ? '개발을 응원해주세요' : 'Support the Project'}
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-500 mb-6 max-w-md mx-auto">
+              {language === 'ko'
+                ? 'Icony는 혼자 개발하고 운영합니다. 후원은 서비스를 유지하고 더 나은 기능을 만드는 데 큰 힘이 됩니다.'
+                : 'Icony is built and maintained by one person. Your support helps keep it running and improving.'}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://buymeacoffee.com/sanchezkim7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 rounded-xl font-semibold text-sm transition-colors shadow-sm"
+              >
+                ☕ {language === 'ko' ? '커피 한 잔 사주기' : 'Buy Me a Coffee'}
+              </a>
+              <a
+                href="https://github.com/sponsors/sanchez-kim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-xl font-semibold text-sm transition-colors shadow-sm"
+              >
+                ♥ {language === 'ko' ? 'GitHub 후원' : 'GitHub Sponsor'}
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
