@@ -37,3 +37,7 @@ scripts/.archive/
 !tsconfig.json
 
 temp/
+
+# Auto-generated files
+next-env.d.ts
+tsconfig.tsbuildinfo
