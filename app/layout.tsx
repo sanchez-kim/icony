@@ -55,12 +55,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         {process.env.NODE_ENV === 'production' && (
-          <Script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "f247e4eb8b3d406ab383463d62f1abcd"}'
-            strategy="afterInteractive"
-          />
+          <>
+            <Script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4776602848700794"
+              crossOrigin="anonymous"
+              strategy="afterInteractive"
+            />
+            <Script
+              defer
+              src="https://static.cloudflareinsights.com/beacon.min.js"
+              data-cf-beacon='{"token": "f247e4eb8b3d406ab383463d62f1abcd"}'
+              strategy="afterInteractive"
+            />
+          </>
         )}
       </body>
     </html>

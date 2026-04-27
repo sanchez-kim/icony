@@ -35,6 +35,7 @@ scripts/.archive/
 *.txt
 !package.json
 !tsconfig.json
+!public/ads.txt
 
 temp/
 
