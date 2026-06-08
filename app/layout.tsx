@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   icons: { icon: '/favicon.svg' },
+  other: {
+    'google-adsense-account': 'ca-pub-4776602848700794',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
