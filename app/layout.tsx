@@ -4,7 +4,7 @@ import { Providers } from '../src/components/Providers';
 import '../src/index.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://icony.vercel.app'),
+  metadataBase: new URL('https://iconyapp.com'),
   title: {
     default: 'Icony - Free Icon Customizer & Exporter',
     template: '%s | Icony',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     alternateLocale: 'en_US',
-    url: 'https://icony.vercel.app',
+    url: 'https://iconyapp.com',
     siteName: 'Icony',
     title: 'Icony - Free Icon Customizer & Exporter',
     description: 'Customize and export 10,000+ open-source icons. Change colors, sizes, stroke weights. Free PNG & SVG.',
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
               name: 'Icony',
-              url: 'https://icony.vercel.app',
+              url: 'https://iconyapp.com',
               description: 'Customize and export 10,000+ open-source icons',
               applicationCategory: 'DesignApplication',
               operatingSystem: 'Web',

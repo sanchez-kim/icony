@@ -327,6 +327,12 @@ export default function LandingPage() {
               >
                 {t.landing.footer.terms}
               </Link>
+              <Link
+                href="/privacy"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {language === 'ko' ? '개인정보처리방침' : 'Privacy Policy'}
+              </Link>
             </div>
           </div>
 

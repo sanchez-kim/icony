@@ -79,6 +79,13 @@ function AppPageInner() {
               >
                 {language === 'ko' ? '이용 약관' : 'Terms & Conditions'}
               </Link>
+              <span className="mx-2 text-gray-300 dark:text-gray-700">·</span>
+              <Link
+                href="/privacy"
+                className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"
+              >
+                {language === 'ko' ? '개인정보처리방침' : 'Privacy Policy'}
+              </Link>
             </div>
 
             <div>

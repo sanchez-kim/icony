@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { ALL_LIBRARY_SLUGS } from '../src/data/library-content';
 
-const BASE_URL = 'https://icony.vercel.app';
+const BASE_URL = 'https://iconyapp.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const libraryPages: MetadataRoute.Sitemap = ALL_LIBRARY_SLUGS.map((slug) => ({
@@ -19,5 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/faq`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/terms`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
   ];
 }
