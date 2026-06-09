@@ -2,7 +2,9 @@
 
 import { useState, useMemo, useRef, useEffect, useDeferredValue } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { CheckSquare, X, FileArchive, Loader2 } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { useIconSearch } from '../../hooks/useIconSearch';
 import { IconCard } from './IconCard';
 import { CategoryFilter } from './CategoryFilter';
@@ -18,8 +20,14 @@ interface IconGalleryProps {
 const ITEM_HEIGHT = 92; // px — card height (80px) + gap (12px)
 
 export function IconGallery({ searchQuery }: IconGalleryProps) {
-  const { icons, selectedIcon, selectIcon, favorites, recentIcons, selectedLibrary, sortBy } = useIconContext();
+  const {
+    icons, selectedIcon, selectIcon, favorites, recentIcons, selectedLibrary, sortBy,
+    selectionMode, toggleSelectionMode, selectedIds, toggleSelected, clearSelected, isSelected,
+    downloadZip, isExporting,
+  } = useIconContext();
+  const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [zipFormat, setZipFormat] = useState<'svg' | 'png'>('svg');
 
   // ── Scroll element as state so virtualizer re-initialises when DOM mounts ──
   const [scrollEl, setScrollEl] = useState<HTMLDivElement | null>(null);
@@ -138,10 +146,69 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
         onCategoryChange={setSelectedCategory}
       />
 
-      {/* Results Count */}
-      <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
-        {filteredIcons.length} {filteredIcons.length === 1 ? 'icon' : 'icons'} found
+      {/* Results Count + Selection toggle */}
+      <div className="flex items-center justify-between gap-3">
+        <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
+          {filteredIcons.length} {filteredIcons.length === 1 ? 'icon' : 'icons'} found
+        </div>
+        <button
+          onClick={toggleSelectionMode}
+          aria-pressed={selectionMode}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 ${
+            selectionMode
+              ? 'bg-primary-600 text-white shadow'
+              : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+          }`}
+        >
+          {selectionMode ? <X size={14} /> : <CheckSquare size={14} />}
+          <span>{t.ui.select}</span>
+        </button>
       </div>
+
+      {/* Batch export bar */}
+      {selectionMode && (
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 p-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800">
+          <span className="text-sm font-semibold text-primary-700 dark:text-primary-300">
+            {language === 'ko' ? `${selectedIds.length}개 선택됨` : `${selectedIds.length} selected`}
+          </span>
+
+          {/* Format toggle */}
+          <div className="flex rounded-lg overflow-hidden border border-primary-300 dark:border-primary-700">
+            {(['svg', 'png'] as const).map((fmt) => (
+              <button
+                key={fmt}
+                onClick={() => setZipFormat(fmt)}
+                className={`px-3 py-1.5 text-xs font-bold uppercase transition-colors ${
+                  zipFormat === fmt
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/40'
+                }`}
+              >
+                {fmt}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 ml-auto">
+            {selectedIds.length > 0 && (
+              <button
+                onClick={clearSelected}
+                className="px-3 py-1.5 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              >
+                {t.ui.clearSelection}
+              </button>
+            )}
+            <button
+              onClick={() => downloadZip(zipFormat)}
+              disabled={selectedIds.length === 0 || isExporting}
+              className="flex items-center gap-1.5 px-4 py-1.5 bg-primary-600 text-white rounded-lg text-xs font-bold hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              {isExporting ? <Loader2 size={14} className="animate-spin" /> : <FileArchive size={14} />}
+              <span>{t.ui.exportZip}</span>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Virtualized icon grid */}
       <div
@@ -185,7 +252,11 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
                       key={icon.id}
                       icon={icon}
                       selected={selectedIcon?.id === icon.id}
-                      onClick={() => selectIcon(icon)}
+                      selectionMode={selectionMode}
+                      batchSelected={isSelected(icon.id)}
+                      onClick={() =>
+                        selectionMode ? toggleSelected(icon.id) : selectIcon(icon)
+                      }
                     />
                   ))}
                 </div>

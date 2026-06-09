@@ -96,6 +96,14 @@ interface IconContextValue {
   copySvgCode: () => Promise<void>;
   copyJsxCode: () => Promise<void>;
   isExporting: boolean;
+  // Batch selection / export
+  selectionMode: boolean;
+  toggleSelectionMode: () => void;
+  selectedIds: string[];
+  toggleSelected: (iconId: string) => void;
+  clearSelected: () => void;
+  isSelected: (iconId: string) => boolean;
+  downloadZip: (format: 'svg' | 'png') => Promise<void>;
 }
 
 const IconContext = createContext<IconContextValue | undefined>(undefined);
@@ -118,6 +126,10 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
   const [isExporting, setIsExporting] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [recentIcons, setRecentIcons] = useState<string[]>([]);
+
+  // Batch selection state
+  const [selectionMode, setSelectionMode] = useState(false);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   // Load favorites and recent icons on mount
   useEffect(() => {
@@ -356,6 +368,66 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     }
   }, [selectedIcon, size, color, strokeWeight, renderer, clipboard]);
 
+  // ── Batch selection / export ──────────────────────────────────────────────
+  const toggleSelectionMode = useCallback(() => {
+    setSelectionMode((on) => {
+      if (on) setSelectedIds([]); // leaving selection mode clears the picks
+      return !on;
+    });
+  }, []);
+
+  const toggleSelected = useCallback((iconId: string) => {
+    setSelectedIds((prev) =>
+      prev.includes(iconId) ? prev.filter((id) => id !== iconId) : [...prev, iconId],
+    );
+  }, []);
+
+  const clearSelected = useCallback(() => setSelectedIds([]), []);
+
+  const isSelected = useCallback((iconId: string) => selectedIds.includes(iconId), [selectedIds]);
+
+  const downloadZip = useCallback(async (format: 'svg' | 'png') => {
+    if (selectedIds.length === 0) {
+      toast.error('Select icons to export');
+      return;
+    }
+
+    setIsExporting(true);
+    try {
+      const { default: JSZip } = await import('jszip');
+      const zip = new JSZip();
+
+      // Preserve gallery order; guarantee unique, readable filenames.
+      const chosen = icons.filter((i) => selectedIds.includes(i.id));
+      const used = new Set<string>();
+
+      for (const icon of chosen) {
+        let base = icon.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        if (!base) base = icon.id;
+        let filename = `${base}.${format}`;
+        let n = 1;
+        while (used.has(filename)) filename = `${base}-${n++}.${format}`;
+        used.add(filename);
+
+        if (format === 'svg') {
+          zip.file(filename, renderer.iconToSvgString(icon, size, color, strokeWeight));
+        } else {
+          const blob = await renderer.iconToPng(icon, size, color, strokeWeight);
+          zip.file(filename, blob);
+        }
+      }
+
+      const content = await zip.generateAsync({ type: 'blob' });
+      exporter.download(content, `icony-${chosen.length}-icons.zip`);
+      toast.success(`Exported ${chosen.length} icons!`);
+    } catch (error) {
+      console.error('ZIP export failed:', error);
+      toast.error('Export failed');
+    } finally {
+      setIsExporting(false);
+    }
+  }, [selectedIds, icons, size, color, strokeWeight, renderer, exporter]);
+
   const value: IconContextValue = {
     icons,
     selectedIcon,
@@ -380,6 +452,13 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     copySvgCode,
     copyJsxCode,
     isExporting,
+    selectionMode,
+    toggleSelectionMode,
+    selectedIds,
+    toggleSelected,
+    clearSelected,
+    isSelected,
+    downloadZip,
   };
 
   return <IconContext.Provider value={value}>{children}</IconContext.Provider>;
