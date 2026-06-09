@@ -9,6 +9,7 @@ import { Header } from '../../src/components/Header';
 import { MainLayout } from '../../src/components/Layout/MainLayout';
 import { OnboardingModal } from '../../src/components/OnboardingModal';
 import { IconyLogo } from '../../src/components/IconyLogo';
+import { ErrorBoundary } from '../../src/components/ErrorBoundary';
 import Link from 'next/link';
 
 function AppPageInner() {
@@ -142,10 +143,12 @@ function AppPageInner() {
 
 export default function AppPage() {
   return (
-    <Suspense>
-      <IconProvider>
-        <AppPageInner />
-      </IconProvider>
-    </Suspense>
+    <ErrorBoundary>
+      <Suspense>
+        <IconProvider>
+          <AppPageInner />
+        </IconProvider>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
