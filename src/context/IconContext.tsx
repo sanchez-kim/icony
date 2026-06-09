@@ -122,18 +122,31 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     setRecentIcons(StorageManager.getRecentIcons());
   }, []);
 
-  // ── Lazy loading: descriptors + components together per library ───────────
+  // ── On-demand library loading ─────────────────────────────────────────────
+  // Loading all 8 libraries (descriptors + full component packages, several MB)
+  // up front blocked first paint and the first search. Instead we load the
+  // default library (Lucide) immediately so the gallery is usable at once, then
+  // stream in the rest during browser idle time so they never compete with the
+  // initial render. The "all" view still fills in progressively.
   useEffect(() => {
-    const librariesToLoad: LibraryKey[] = ['lucide', 'tabler', 'phosphor', 'phosphor-fill', 'heroicons', 'heroicons-solid', 'bootstrap', 'radix'];
+    let cancelled = false;
 
-    for (const libKey of librariesToLoad) {
-      if (loadedLibsRef.current.has(libKey)) continue;
+    const PRIMARY_LIBRARY: LibraryKey = 'lucide';
+    const DEFERRED_LIBRARIES: LibraryKey[] = [
+      'tabler', 'phosphor', 'phosphor-fill', 'heroicons', 'heroicons-solid', 'bootstrap', 'radix',
+    ];
+
+    async function ingestLibrary(libKey: LibraryKey): Promise<void> {
+      if (cancelled || loadedLibsRef.current.has(libKey)) return;
       loadedLibsRef.current.add(libKey);
 
-      Promise.all([
-        loadDescriptors(libKey),
-        loadLibrary(libKey),
-      ]).then(([descriptors, components]) => {
+      try {
+        const [descriptors, components] = await Promise.all([
+          loadDescriptors(libKey),
+          loadLibrary(libKey),
+        ]);
+        if (cancelled) return;
+
         const map = componentMapRef.current;
 
         // Only cache actual React-renderable components.
@@ -147,15 +160,41 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
           }
         }
 
-        // Convert descriptors → icons with resolved components
         const newIcons = descriptors.map((d) => descriptorToIcon(d, map));
-
         // Append to existing icons (each library appends when ready)
         setIcons((prev) => [...prev, ...newIcons]);
-      }).catch((err) => {
+      } catch (err) {
+        // Allow a retry on a later effect run if this library failed
+        loadedLibsRef.current.delete(libKey);
         console.error(`[IconContext] Failed to load library "${libKey}":`, err);
-      });
+      }
     }
+
+    (async () => {
+      // 1. Load the default library first → gallery interactive ASAP
+      await ingestLibrary(PRIMARY_LIBRARY);
+      if (cancelled) return;
+
+      // 2. Stream in the remaining libraries during idle time, one at a time,
+      //    so heavy parses (e.g. Tabler ~6k icons) don't jank the main thread.
+      const loadRestSequentially = () => {
+        DEFERRED_LIBRARIES.reduce(
+          (chain, key) => chain.then(() => (cancelled ? undefined : ingestLibrary(key))),
+          Promise.resolve(),
+        );
+      };
+
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        (window as unknown as { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => void })
+          .requestIdleCallback(loadRestSequentially, { timeout: 2000 });
+      } else {
+        setTimeout(loadRestSequentially, 200);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Service instances
