@@ -89,9 +89,10 @@ export function useIconSearch(icons: Icon[], query: string): Icon[] {
     const scored = icons
       .map((icon) => {
         let totalScore = 0;
-        const lowerName = icon.name.toLowerCase();
-        const lowerTags = icon.tags.map((t) => t.toLowerCase());
-        const lowerCategory = icon.category.toLowerCase();
+        // Precomputed at icon-creation time — no per-keystroke allocation.
+        const lowerName = icon.searchName;
+        const lowerTags = icon.searchTags;
+        const lowerCategory = icon.searchCategory;
 
         const allRawWordsMatch = resolvedTermSets.every((termSet) => {
           // Try every expanded term — use the best matching score for this word
@@ -139,8 +140,8 @@ export function useIconSearch(icons: Icon[], query: string): Icon[] {
     if (scored.length === 0) {
       const fuzzyResults = icons
         .map((icon) => {
-          const lowerName = icon.name.toLowerCase();
-          const lowerTags = icon.tags.map((t) => t.toLowerCase());
+          const lowerName = icon.searchName;
+          const lowerTags = icon.searchTags;
 
           // Use all resolved terms from all word groups for fuzzy matching
           const allTerms = resolvedTermSets.flat();

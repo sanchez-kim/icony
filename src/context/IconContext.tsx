@@ -63,6 +63,11 @@ function descriptorToIcon(
     // Map 'library' → 'type' for backward-compat (legacy Icon uses IconType)
     type: descriptor.library as any,
     component,
+    // Precompute lowercase search fields once, so useIconSearch never has to
+    // re-lowercase 10k+ names/tags on every keystroke.
+    searchName: descriptor.name.toLowerCase(),
+    searchTags: descriptor.tags.map((t) => t.toLowerCase()),
+    searchCategory: descriptor.category.toLowerCase(),
   };
 }
 

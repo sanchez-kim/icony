@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect, useDeferredValue } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useIconContext } from '../../context/IconContext';
 import { useIconSearch } from '../../hooks/useIconSearch';
@@ -43,8 +43,13 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
     return () => observer.disconnect();
   }, [scrollEl]);
 
-  // ── Filtering pipeline (same logic as before) ─────────────────────────────
-  const searchFiltered = useIconSearch(icons, searchQuery);
+  // ── Filtering pipeline ────────────────────────────────────────────────────
+  // useDeferredValue keeps keystrokes responsive: the input updates instantly
+  // while the heavy 10k-icon scan runs against a lagged value that React can
+  // interrupt if the user keeps typing.
+  const deferredQuery = useDeferredValue(searchQuery);
+  const isSearching = deferredQuery !== searchQuery;
+  const searchFiltered = useIconSearch(icons, deferredQuery);
 
   const libraryFiltered = useMemo(() => {
     if (selectedLibrary === 'all') return searchFiltered;
@@ -142,6 +147,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
       <div
         ref={(node) => { setScrollEl(node); containerRef.current = node; }}
         className="max-h-[650px] overflow-y-auto pr-2 custom-scrollbar p-1"
+        style={{ opacity: isSearching ? 0.6 : 1, transition: 'opacity 150ms ease' }}
       >
         {filteredIcons.length === 0 ? (
           <div className="text-center py-16 text-gray-400 dark:text-gray-600">

@@ -27,4 +27,11 @@ export interface Icon {
   tags: string[];
   type: import('./icon').LibraryKey;
   component: IconComponent;
+  /**
+   * Precomputed lowercase search index, built once when the icon is created.
+   * Lets the search hot-loop skip per-keystroke `.toLowerCase()` allocations.
+   */
+  searchName: string;
+  searchTags: string[];
+  searchCategory: string;
 }
