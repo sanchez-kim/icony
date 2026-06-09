@@ -21,16 +21,17 @@ export async function generateMetadata({
   }
 
   const url = `https://iconyapp.com/blog/${post.slug}`;
-
+  // Static page metadata uses the English copy (consistent, global-SEO friendly);
+  // the visible article language follows the in-app language toggle.
   return {
-    title: post.metaTitle,
-    description: post.metaDescription,
+    title: post.metaTitle.en,
+    description: post.metaDescription.en,
     alternates: { canonical: url },
     openGraph: {
       type: 'article',
       url,
-      title: post.metaTitle,
-      description: post.metaDescription,
+      title: post.metaTitle.en,
+      description: post.metaDescription.en,
     },
   };
 }

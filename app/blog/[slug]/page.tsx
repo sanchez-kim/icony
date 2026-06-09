@@ -7,10 +7,12 @@ import { ArrowLeft, ArrowRight, Copy, Check, Clock, Lightbulb } from 'lucide-rea
 import { IconyLogo } from '../../../src/components/IconyLogo';
 import { ThemeToggle } from '../../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../../src/components/LanguageSwitcher';
+import { useLanguage } from '../../../src/context/LanguageContext';
 import {
   getBlogPost,
   CATEGORY_LABEL,
   type BlogBlock,
+  type BlogLang,
   type BlogPost,
 } from '../../../src/data/blog-content';
 
@@ -112,13 +114,19 @@ function Block({ block }: { block: BlogBlock }) {
   }
 }
 
-function formatDate(iso: string): string {
+function formatDate(iso: string, lang: BlogLang): string {
   const d = new Date(iso);
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return d.toLocaleDateString(lang === 'ko' ? 'ko-KR' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 }
 
 export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
+  const { language } = useLanguage();
+  const lang: BlogLang = language === 'ko' ? 'ko' : 'en';
   const post = getBlogPost(slug);
 
   if (!post) notFound();
@@ -127,11 +135,27 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     .map((s) => getBlogPost(s))
     .filter((p): p is BlogPost => Boolean(p));
 
+  const t = {
+    home: lang === 'ko' ? '홈' : 'Home',
+    blog: lang === 'ko' ? '블로그' : 'Blog',
+    allGuides: lang === 'ko' ? '전체 가이드' : 'All Guides',
+    readTime: lang === 'ko' ? `${post.readingMinutes}분 읽기` : `${post.readingMinutes} min read`,
+    updated: lang === 'ko' ? `${formatDate(post.updated, lang)} 업데이트` : `Updated ${formatDate(post.updated, lang)}`,
+    related: lang === 'ko' ? '관련 가이드' : 'Related guides',
+    ctaTitle: lang === 'ko' ? 'Icony에서 사용해 보세요' : 'Try it in Icony',
+    ctaBody:
+      lang === 'ko'
+        ? '10,000개 이상의 오픈소스 아이콘을 검색하고 색·크기·선 두께를 조정한 뒤 SVG·PNG·React 컴포넌트로 복사하거나 다운로드하세요 — 무료.'
+        : 'Search 10,000+ open-source icons, customize color, size, and stroke, then copy or download as SVG, PNG, or a React component — free.',
+    ctaBtn: lang === 'ko' ? '아이콘 커스터마이저 열기' : 'Open the icon customizer',
+  };
+
+  // Structured data uses English (consistent with the page's static metadata).
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: post.title,
-    description: post.metaDescription,
+    headline: post.title.en,
+    description: post.metaDescription.en,
     dateModified: post.updated,
     author: { '@type': 'Organization', name: 'Icony' },
     publisher: { '@type': 'Organization', name: 'Icony' },
@@ -161,7 +185,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                 className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <ArrowLeft size={15} />
-                All Guides
+                {t.allGuides}
               </Link>
             </div>
           </div>
@@ -171,37 +195,37 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
       <main className="container mx-auto px-6 py-12 max-w-3xl">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 mb-8">
-          <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-primary-600 transition-colors">{t.home}</Link>
           <span>/</span>
-          <Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link>
+          <Link href="/blog" className="hover:text-primary-600 transition-colors">{t.blog}</Link>
           <span>/</span>
-          <span className="text-gray-700 dark:text-gray-300 truncate">{post.title}</span>
+          <span className="text-gray-700 dark:text-gray-300 truncate">{post.title[lang]}</span>
         </nav>
 
         {/* Article header */}
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-4 text-sm">
             <span className="px-2.5 py-1 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 font-semibold">
-              {CATEGORY_LABEL[post.category]}
+              {CATEGORY_LABEL[post.category][lang]}
             </span>
             <span className="flex items-center gap-1.5 text-gray-500 dark:text-gray-500">
               <Clock size={14} />
-              {post.readingMinutes} min read
+              {t.readTime}
             </span>
             <span className="text-gray-400 dark:text-gray-600">·</span>
-            <span className="text-gray-500 dark:text-gray-500">Updated {formatDate(post.updated)}</span>
+            <span className="text-gray-500 dark:text-gray-500">{t.updated}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
-            {post.title}
+            {post.title[lang]}
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            {post.description}
+            {post.description[lang]}
           </p>
         </div>
 
         {/* Article body */}
         <article className="mb-12">
-          {post.blocks.map((block, i) => (
+          {post.blocks[lang].map((block, i) => (
             <Block key={i} block={block} />
           ))}
         </article>
@@ -209,15 +233,13 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         {/* CTA */}
         <section className="mb-12">
           <div className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-2">Try it in Icony</h2>
-            <p className="text-white/80 mb-6">
-              Search 10,000+ open-source icons, customize color, size, and stroke, then copy or download as SVG, PNG, or a React component — free.
-            </p>
+            <h2 className="text-2xl font-bold text-white mb-2">{t.ctaTitle}</h2>
+            <p className="text-white/80 mb-6">{t.ctaBody}</p>
             <Link
               href="/app"
               className="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Open the icon customizer
+              {t.ctaBtn}
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -226,7 +248,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         {/* Related */}
         {related.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">Related guides</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">{t.related}</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {related.map((r) => (
                 <Link
@@ -236,10 +258,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                 >
                   <div>
                     <div className="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">
-                      {CATEGORY_LABEL[r.category]}
+                      {CATEGORY_LABEL[r.category][lang]}
                     </div>
                     <div className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug">
-                      {r.title}
+                      {r.title[lang]}
                     </div>
                   </div>
                   <ArrowRight size={16} className="text-gray-400 group-hover:text-primary-500 transition-colors shrink-0 mt-1" />
@@ -258,7 +280,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             <span className="font-semibold">Icony</span>
           </Link>
           <div className="flex items-center gap-6">
-            <Link href="/blog" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">{t.blog}</Link>
             <Link href="/icon-libraries" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Libraries</Link>
             <Link href="/about" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">About</Link>
             <Link href="/terms" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Terms</Link>

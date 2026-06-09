@@ -5,9 +5,24 @@ import { ArrowLeft, ArrowRight, Clock } from 'lucide-react';
 import { IconyLogo } from '../../src/components/IconyLogo';
 import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
-import { BLOG_POSTS, CATEGORY_LABEL } from '../../src/data/blog-content';
+import { useLanguage } from '../../src/context/LanguageContext';
+import { BLOG_POSTS, CATEGORY_LABEL, type BlogLang } from '../../src/data/blog-content';
 
 export default function BlogIndexPage() {
+  const { language } = useLanguage();
+  const lang: BlogLang = language === 'ko' ? 'ko' : 'en';
+
+  const t = {
+    home: lang === 'ko' ? '홈' : 'Home',
+    title: lang === 'ko' ? '블로그' : 'Blog',
+    intro:
+      lang === 'ko'
+        ? '아이콘과 SVG 작업을 위한 실용 가이드·팁·트러블슈팅 — 색상, 크기, React 컴포넌트, 그리고 라이브러리 선택까지.'
+        : 'Practical guides, tips, and troubleshooting for working with icons and SVG — color, sizing, React components, and choosing the right library.',
+    read: lang === 'ko' ? '가이드 읽기' : 'Read guide',
+    min: lang === 'ko' ? '분' : 'min',
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
       {/* Header */}
@@ -26,7 +41,7 @@ export default function BlogIndexPage() {
                 className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <ArrowLeft size={15} />
-                Home
+                {t.home}
               </Link>
             </div>
           </div>
@@ -36,11 +51,8 @@ export default function BlogIndexPage() {
       <main className="container mx-auto px-6 py-12 max-w-4xl">
         {/* Hero */}
         <div className="mb-10">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Blog</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            Practical guides, tips, and troubleshooting for working with icons and SVG —
-            color, sizing, React components, and choosing the right library.
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">{t.title}</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">{t.intro}</p>
         </div>
 
         {/* Post list */}
@@ -53,21 +65,21 @@ export default function BlogIndexPage() {
             >
               <div className="flex items-center gap-2 mb-3 text-xs">
                 <span className="px-2.5 py-1 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 font-semibold">
-                  {CATEGORY_LABEL[post.category]}
+                  {CATEGORY_LABEL[post.category][lang]}
                 </span>
                 <span className="flex items-center gap-1 text-gray-500 dark:text-gray-500">
                   <Clock size={12} />
-                  {post.readingMinutes} min
+                  {post.readingMinutes} {t.min}
                 </span>
               </div>
               <h2 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug mb-2">
-                {post.title}
+                {post.title[lang]}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
-                {post.description}
+                {post.description[lang]}
               </p>
               <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-600 dark:text-primary-400">
-                Read guide
+                {t.read}
                 <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
               </span>
             </Link>
