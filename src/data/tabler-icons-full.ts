@@ -57,7 +57,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Abc",
     library: 'tabler',
     componentName: "IconAbc",
-    category: 'other',
+    category: 'text',
     tags: ["abc"],
   },
   {
@@ -193,7 +193,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments",
     library: 'tabler',
     componentName: "IconAdjustments",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments"],
   },
   {
@@ -201,7 +201,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Alt",
     library: 'tabler',
     componentName: "IconAdjustmentsAlt",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","alt"],
   },
   {
@@ -209,7 +209,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Bolt",
     library: 'tabler',
     componentName: "IconAdjustmentsBolt",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","bolt","lightning","fast","power","energy"],
   },
   {
@@ -273,7 +273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Filled",
     library: 'tabler',
     componentName: "IconAdjustmentsFilled",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","filled"],
   },
   {
@@ -289,7 +289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Horizontal",
     library: 'tabler',
     componentName: "IconAdjustmentsHorizontal",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","horizontal"],
   },
   {
@@ -297,7 +297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Minus",
     library: 'tabler',
     componentName: "IconAdjustmentsMinus",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","minus","remove","delete","subtract"],
   },
   {
@@ -305,7 +305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Off",
     library: 'tabler',
     componentName: "IconAdjustmentsOff",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","off"],
   },
   {
@@ -329,7 +329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Plus",
     library: 'tabler',
     componentName: "IconAdjustmentsPlus",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","plus","add","create","new","insert"],
   },
   {
@@ -337,7 +337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Question",
     library: 'tabler',
     componentName: "IconAdjustmentsQuestion",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","question"],
   },
   {
@@ -353,7 +353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Share",
     library: 'tabler',
     componentName: "IconAdjustmentsShare",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","share","send","distribute","export","social"],
   },
   {
@@ -361,7 +361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments Spark",
     library: 'tabler',
     componentName: "IconAdjustmentsSpark",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments","spark"],
   },
   {
@@ -385,7 +385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Adjustments X",
     library: 'tabler',
     componentName: "IconAdjustmentsX",
-    category: 'other',
+    category: 'ui',
     tags: ["adjustments"],
   },
   {
@@ -737,7 +737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Bottom Center",
     library: 'tabler',
     componentName: "IconAlignBoxBottomCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","bottom","center"],
   },
   {
@@ -745,7 +745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Bottom Center Filled",
     library: 'tabler',
     componentName: "IconAlignBoxBottomCenterFilled",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","bottom","center","filled"],
   },
   {
@@ -785,7 +785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Center Bottom",
     library: 'tabler',
     componentName: "IconAlignBoxCenterBottom",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","center","bottom"],
   },
   {
@@ -809,7 +809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Center Stretch",
     library: 'tabler',
     componentName: "IconAlignBoxCenterStretch",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","center","stretch"],
   },
   {
@@ -817,7 +817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Center Top",
     library: 'tabler',
     componentName: "IconAlignBoxCenterTop",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","center","top"],
   },
   {
@@ -937,7 +937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Top Center",
     library: 'tabler',
     componentName: "IconAlignBoxTopCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","top","center"],
   },
   {
@@ -945,7 +945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Box Top Center Filled",
     library: 'tabler',
     componentName: "IconAlignBoxTopCenterFilled",
-    category: 'other',
+    category: 'text',
     tags: ["align","box","top","center","filled"],
   },
   {
@@ -985,7 +985,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Center",
     library: 'tabler',
     componentName: "IconAlignCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","center"],
   },
   {
@@ -993,7 +993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Align Justified",
     library: 'tabler',
     componentName: "IconAlignJustified",
-    category: 'other',
+    category: 'text',
     tags: ["align","justified"],
   },
   {
@@ -1137,7 +1137,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Ampersand",
     library: 'tabler',
     componentName: "IconAmpersand",
-    category: 'other',
+    category: 'symbols',
     tags: ["ampersand"],
   },
   {
@@ -3353,7 +3353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Asterisk",
     library: 'tabler',
     componentName: "IconAsterisk",
-    category: 'other',
+    category: 'symbols',
     tags: ["asterisk"],
   },
   {
@@ -3361,7 +3361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Asterisk Simple",
     library: 'tabler',
     componentName: "IconAsteriskSimple",
-    category: 'other',
+    category: 'symbols',
     tags: ["asterisk","simple"],
   },
   {
@@ -5273,7 +5273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Bold",
     library: 'tabler',
     componentName: "IconBold",
-    category: 'other',
+    category: 'text',
     tags: ["bold"],
   },
   {
@@ -5281,7 +5281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Bold Off",
     library: 'tabler',
     componentName: "IconBoldOff",
-    category: 'other',
+    category: 'text',
     tags: ["bold","off"],
   },
   {
@@ -5865,7 +5865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Box Align Bottom",
     library: 'tabler',
     componentName: "IconBoxAlignBottom",
-    category: 'other',
+    category: 'text',
     tags: ["box","align","bottom"],
   },
   {
@@ -5873,7 +5873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Box Align Bottom Filled",
     library: 'tabler',
     componentName: "IconBoxAlignBottomFilled",
-    category: 'other',
+    category: 'text',
     tags: ["box","align","bottom","filled"],
   },
   {
@@ -5945,7 +5945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Box Align Top",
     library: 'tabler',
     componentName: "IconBoxAlignTop",
-    category: 'other',
+    category: 'text',
     tags: ["box","align","top"],
   },
   {
@@ -5953,7 +5953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Box Align Top Filled",
     library: 'tabler',
     componentName: "IconBoxAlignTopFilled",
-    category: 'other',
+    category: 'text',
     tags: ["box","align","top","filled"],
   },
   {
@@ -6233,7 +6233,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand4chan",
     library: 'tabler',
     componentName: "IconBrand4chan",
-    category: 'other',
+    category: 'brands',
     tags: ["brand4chan"],
   },
   {
@@ -6241,7 +6241,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Abstract",
     library: 'tabler',
     componentName: "IconBrandAbstract",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","abstract"],
   },
   {
@@ -6249,7 +6249,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe",
     library: 'tabler',
     componentName: "IconBrandAdobe",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","adobe"],
   },
   {
@@ -6257,7 +6257,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe After Effect",
     library: 'tabler',
     componentName: "IconBrandAdobeAfterEffect",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","adobe","after","effect"],
   },
   {
@@ -6265,7 +6265,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe Illustrator",
     library: 'tabler',
     componentName: "IconBrandAdobeIllustrator",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","adobe","illustrator"],
   },
   {
@@ -6273,7 +6273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe Indesign",
     library: 'tabler',
     componentName: "IconBrandAdobeIndesign",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","adobe","indesign"],
   },
   {
@@ -6281,7 +6281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe Photoshop",
     library: 'tabler',
     componentName: "IconBrandAdobePhotoshop",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","adobe","photoshop"],
   },
   {
@@ -6289,7 +6289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe Premiere",
     library: 'tabler',
     componentName: "IconBrandAdobePremiere",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","adobe","premiere"],
   },
   {
@@ -6297,7 +6297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adobe Xd",
     library: 'tabler',
     componentName: "IconBrandAdobeXd",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","adobe","xd"],
   },
   {
@@ -6305,7 +6305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Adonis Js",
     library: 'tabler',
     componentName: "IconBrandAdonisJs",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","adonis","js"],
   },
   {
@@ -6313,7 +6313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Airbnb",
     library: 'tabler',
     componentName: "IconBrandAirbnb",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","airbnb"],
   },
   {
@@ -6321,7 +6321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Airtable",
     library: 'tabler',
     componentName: "IconBrandAirtable",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","airtable"],
   },
   {
@@ -6329,7 +6329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Algolia",
     library: 'tabler',
     componentName: "IconBrandAlgolia",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","algolia"],
   },
   {
@@ -6337,7 +6337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Alipay",
     library: 'tabler',
     componentName: "IconBrandAlipay",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","alipay"],
   },
   {
@@ -6345,7 +6345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Alpine Js",
     library: 'tabler',
     componentName: "IconBrandAlpineJs",
-    category: 'location',
+    category: 'brands',
     tags: ["brand","alpine","js"],
   },
   {
@@ -6353,7 +6353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Amazon",
     library: 'tabler',
     componentName: "IconBrandAmazon",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","amazon"],
   },
   {
@@ -6361,7 +6361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Amd",
     library: 'tabler',
     componentName: "IconBrandAmd",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","amd"],
   },
   {
@@ -6369,7 +6369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Amie",
     library: 'tabler',
     componentName: "IconBrandAmie",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","amie"],
   },
   {
@@ -6377,7 +6377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Amigo",
     library: 'tabler',
     componentName: "IconBrandAmigo",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","amigo"],
   },
   {
@@ -6385,7 +6385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Among Us",
     library: 'tabler',
     componentName: "IconBrandAmongUs",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","among","us"],
   },
   {
@@ -6393,7 +6393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Android",
     library: 'tabler',
     componentName: "IconBrandAndroid",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","android"],
   },
   {
@@ -6401,7 +6401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Angular",
     library: 'tabler',
     componentName: "IconBrandAngular",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","angular"],
   },
   {
@@ -6409,7 +6409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Angular Filled",
     library: 'tabler',
     componentName: "IconBrandAngularFilled",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","angular","filled"],
   },
   {
@@ -6417,7 +6417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ansible",
     library: 'tabler',
     componentName: "IconBrandAnsible",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ansible"],
   },
   {
@@ -6425,7 +6425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ao3",
     library: 'tabler',
     componentName: "IconBrandAo3",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ao3"],
   },
   {
@@ -6433,7 +6433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Appgallery",
     library: 'tabler',
     componentName: "IconBrandAppgallery",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","appgallery"],
   },
   {
@@ -6441,7 +6441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Apple",
     library: 'tabler',
     componentName: "IconBrandApple",
-    category: 'food',
+    category: 'brands',
     tags: ["brand","apple"],
   },
   {
@@ -6449,7 +6449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Apple Arcade",
     library: 'tabler',
     componentName: "IconBrandAppleArcade",
-    category: 'food',
+    category: 'brands',
     tags: ["brand","apple","arcade"],
   },
   {
@@ -6457,7 +6457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Apple Filled",
     library: 'tabler',
     componentName: "IconBrandAppleFilled",
-    category: 'food',
+    category: 'brands',
     tags: ["brand","apple","filled"],
   },
   {
@@ -6465,7 +6465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Apple News",
     library: 'tabler',
     componentName: "IconBrandAppleNews",
-    category: 'food',
+    category: 'brands',
     tags: ["brand","apple","news"],
   },
   {
@@ -6473,7 +6473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Apple Podcast",
     library: 'tabler',
     componentName: "IconBrandApplePodcast",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","apple","podcast"],
   },
   {
@@ -6481,7 +6481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Appstore",
     library: 'tabler',
     componentName: "IconBrandAppstore",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","appstore"],
   },
   {
@@ -6489,7 +6489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Arc",
     library: 'tabler',
     componentName: "IconBrandArc",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","arc"],
   },
   {
@@ -6497,7 +6497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Asana",
     library: 'tabler',
     componentName: "IconBrandAsana",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","asana"],
   },
   {
@@ -6505,7 +6505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Astro",
     library: 'tabler',
     componentName: "IconBrandAstro",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","astro"],
   },
   {
@@ -6513,7 +6513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Auth0",
     library: 'tabler',
     componentName: "IconBrandAuth0",
-    category: 'security',
+    category: 'brands',
     tags: ["brand","auth0"],
   },
   {
@@ -6521,7 +6521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Aws",
     library: 'tabler',
     componentName: "IconBrandAws",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","aws"],
   },
   {
@@ -6529,7 +6529,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Azure",
     library: 'tabler',
     componentName: "IconBrandAzure",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","azure"],
   },
   {
@@ -6537,7 +6537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Backbone",
     library: 'tabler',
     componentName: "IconBrandBackbone",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","backbone"],
   },
   {
@@ -6545,7 +6545,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Badoo",
     library: 'tabler',
     componentName: "IconBrandBadoo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","badoo"],
   },
   {
@@ -6553,7 +6553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Baidu",
     library: 'tabler',
     componentName: "IconBrandBaidu",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","baidu"],
   },
   {
@@ -6561,7 +6561,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bandcamp",
     library: 'tabler',
     componentName: "IconBrandBandcamp",
-    category: 'security',
+    category: 'brands',
     tags: ["brand","bandcamp"],
   },
   {
@@ -6569,7 +6569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bandlab",
     library: 'tabler',
     componentName: "IconBrandBandlab",
-    category: 'security',
+    category: 'brands',
     tags: ["brand","bandlab"],
   },
   {
@@ -6577,7 +6577,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Beats",
     library: 'tabler',
     componentName: "IconBrandBeats",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","beats"],
   },
   {
@@ -6585,7 +6585,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bebo",
     library: 'tabler',
     componentName: "IconBrandBebo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bebo"],
   },
   {
@@ -6593,7 +6593,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Behance",
     library: 'tabler',
     componentName: "IconBrandBehance",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","behance"],
   },
   {
@@ -6601,7 +6601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bilibili",
     library: 'tabler',
     componentName: "IconBrandBilibili",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bilibili"],
   },
   {
@@ -6609,7 +6609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Binance",
     library: 'tabler',
     componentName: "IconBrandBinance",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","binance"],
   },
   {
@@ -6617,7 +6617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bing",
     library: 'tabler',
     componentName: "IconBrandBing",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bing"],
   },
   {
@@ -6625,7 +6625,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bitbucket",
     library: 'tabler',
     componentName: "IconBrandBitbucket",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bitbucket"],
   },
   {
@@ -6633,7 +6633,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bitbucket Filled",
     library: 'tabler',
     componentName: "IconBrandBitbucketFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bitbucket","filled"],
   },
   {
@@ -6641,7 +6641,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Blackberry",
     library: 'tabler',
     componentName: "IconBrandBlackberry",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","blackberry"],
   },
   {
@@ -6649,7 +6649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Blender",
     library: 'tabler',
     componentName: "IconBrandBlender",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","blender"],
   },
   {
@@ -6657,7 +6657,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Blogger",
     library: 'tabler',
     componentName: "IconBrandBlogger",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","blogger"],
   },
   {
@@ -6665,7 +6665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bluesky",
     library: 'tabler',
     componentName: "IconBrandBluesky",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bluesky"],
   },
   {
@@ -6673,7 +6673,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Booking",
     library: 'tabler',
     componentName: "IconBrandBooking",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","booking"],
   },
   {
@@ -6681,7 +6681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bootstrap",
     library: 'tabler',
     componentName: "IconBrandBootstrap",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bootstrap"],
   },
   {
@@ -6689,7 +6689,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bulma",
     library: 'tabler',
     componentName: "IconBrandBulma",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bulma"],
   },
   {
@@ -6697,7 +6697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bumble",
     library: 'tabler',
     componentName: "IconBrandBumble",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bumble"],
   },
   {
@@ -6705,7 +6705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Bunpo",
     library: 'tabler',
     componentName: "IconBrandBunpo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","bunpo"],
   },
   {
@@ -6713,7 +6713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand C Sharp",
     library: 'tabler',
     componentName: "IconBrandCSharp",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sharp"],
   },
   {
@@ -6721,7 +6721,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cake",
     library: 'tabler',
     componentName: "IconBrandCake",
-    category: 'food',
+    category: 'brands',
     tags: ["brand","cake"],
   },
   {
@@ -6729,7 +6729,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cakephp",
     library: 'tabler',
     componentName: "IconBrandCakephp",
-    category: 'food',
+    category: 'brands',
     tags: ["brand","cakephp"],
   },
   {
@@ -6737,7 +6737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Campaignmonitor",
     library: 'tabler',
     componentName: "IconBrandCampaignmonitor",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","campaignmonitor"],
   },
   {
@@ -6745,7 +6745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Carbon",
     library: 'tabler',
     componentName: "IconBrandCarbon",
-    category: 'transportation',
+    category: 'brands',
     tags: ["brand","carbon"],
   },
   {
@@ -6753,7 +6753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cashapp",
     library: 'tabler',
     componentName: "IconBrandCashapp",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","cashapp"],
   },
   {
@@ -6761,7 +6761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Chrome",
     library: 'tabler',
     componentName: "IconBrandChrome",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","chrome"],
   },
   {
@@ -6769,7 +6769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cinema4d",
     library: 'tabler',
     componentName: "IconBrandCinema4d",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","cinema4d"],
   },
   {
@@ -6777,7 +6777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Citymapper",
     library: 'tabler',
     componentName: "IconBrandCitymapper",
-    category: 'buildings',
+    category: 'brands',
     tags: ["brand","citymapper"],
   },
   {
@@ -6785,7 +6785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cloudflare",
     library: 'tabler',
     componentName: "IconBrandCloudflare",
-    category: 'network',
+    category: 'brands',
     tags: ["brand","cloudflare"],
   },
   {
@@ -6793,7 +6793,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Codecov",
     library: 'tabler',
     componentName: "IconBrandCodecov",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","codecov"],
   },
   {
@@ -6801,7 +6801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Codepen",
     library: 'tabler',
     componentName: "IconBrandCodepen",
-    category: 'education',
+    category: 'brands',
     tags: ["brand","codepen"],
   },
   {
@@ -6809,7 +6809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Codesandbox",
     library: 'tabler',
     componentName: "IconBrandCodesandbox",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","codesandbox"],
   },
   {
@@ -6817,7 +6817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cohost",
     library: 'tabler',
     componentName: "IconBrandCohost",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","cohost"],
   },
   {
@@ -6825,7 +6825,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Coinbase",
     library: 'tabler',
     componentName: "IconBrandCoinbase",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","coinbase"],
   },
   {
@@ -6833,7 +6833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Comedy Central",
     library: 'tabler',
     componentName: "IconBrandComedyCentral",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","comedy","central"],
   },
   {
@@ -6841,7 +6841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Coreos",
     library: 'tabler',
     componentName: "IconBrandCoreos",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","coreos"],
   },
   {
@@ -6849,7 +6849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Couchdb",
     library: 'tabler',
     componentName: "IconBrandCouchdb",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","couchdb"],
   },
   {
@@ -6857,7 +6857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Couchsurfing",
     library: 'tabler',
     componentName: "IconBrandCouchsurfing",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","couchsurfing"],
   },
   {
@@ -6865,7 +6865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cpp",
     library: 'tabler',
     componentName: "IconBrandCpp",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","cpp"],
   },
   {
@@ -6873,7 +6873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Craft",
     library: 'tabler',
     componentName: "IconBrandCraft",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","craft"],
   },
   {
@@ -6881,7 +6881,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Crunchbase",
     library: 'tabler',
     componentName: "IconBrandCrunchbase",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","crunchbase"],
   },
   {
@@ -6889,7 +6889,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Css3",
     library: 'tabler',
     componentName: "IconBrandCss3",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","css3"],
   },
   {
@@ -6897,7 +6897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ctemplar",
     library: 'tabler',
     componentName: "IconBrandCtemplar",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ctemplar"],
   },
   {
@@ -6905,7 +6905,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cucumber",
     library: 'tabler',
     componentName: "IconBrandCucumber",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","cucumber"],
   },
   {
@@ -6913,7 +6913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cupra",
     library: 'tabler',
     componentName: "IconBrandCupra",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","cupra"],
   },
   {
@@ -6921,7 +6921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Cypress",
     library: 'tabler',
     componentName: "IconBrandCypress",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","cypress"],
   },
   {
@@ -6929,7 +6929,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand D3",
     library: 'tabler',
     componentName: "IconBrandD3",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","d3"],
   },
   {
@@ -6937,7 +6937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Databricks",
     library: 'tabler',
     componentName: "IconBrandDatabricks",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","databricks"],
   },
   {
@@ -6945,7 +6945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Days Counter",
     library: 'tabler',
     componentName: "IconBrandDaysCounter",
-    category: 'time',
+    category: 'brands',
     tags: ["brand","days","counter"],
   },
   {
@@ -6953,7 +6953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Dcos",
     library: 'tabler',
     componentName: "IconBrandDcos",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","dcos"],
   },
   {
@@ -6961,7 +6961,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Debian",
     library: 'tabler',
     componentName: "IconBrandDebian",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","debian"],
   },
   {
@@ -6969,7 +6969,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Deezer",
     library: 'tabler',
     componentName: "IconBrandDeezer",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","deezer"],
   },
   {
@@ -6977,7 +6977,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Deliveroo",
     library: 'tabler',
     componentName: "IconBrandDeliveroo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","deliveroo"],
   },
   {
@@ -6985,7 +6985,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Deno",
     library: 'tabler',
     componentName: "IconBrandDeno",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","deno"],
   },
   {
@@ -6993,7 +6993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Denodo",
     library: 'tabler',
     componentName: "IconBrandDenodo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","denodo"],
   },
   {
@@ -7001,7 +7001,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Deviantart",
     library: 'tabler',
     componentName: "IconBrandDeviantart",
-    category: 'sports',
+    category: 'brands',
     tags: ["brand","deviantart"],
   },
   {
@@ -7009,7 +7009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Digg",
     library: 'tabler',
     componentName: "IconBrandDigg",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","digg"],
   },
   {
@@ -7017,7 +7017,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Dingtalk",
     library: 'tabler',
     componentName: "IconBrandDingtalk",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","dingtalk"],
   },
   {
@@ -7025,7 +7025,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Discord",
     library: 'tabler',
     componentName: "IconBrandDiscord",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","discord"],
   },
   {
@@ -7033,7 +7033,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Discord Filled",
     library: 'tabler',
     componentName: "IconBrandDiscordFilled",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","discord","filled"],
   },
   {
@@ -7041,7 +7041,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Disney",
     library: 'tabler',
     componentName: "IconBrandDisney",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","disney"],
   },
   {
@@ -7049,7 +7049,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Disqus",
     library: 'tabler',
     componentName: "IconBrandDisqus",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","disqus"],
   },
   {
@@ -7057,7 +7057,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Django",
     library: 'tabler',
     componentName: "IconBrandDjango",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","django"],
   },
   {
@@ -7065,7 +7065,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Docker",
     library: 'tabler',
     componentName: "IconBrandDocker",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","docker"],
   },
   {
@@ -7073,7 +7073,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Doctrine",
     library: 'tabler',
     componentName: "IconBrandDoctrine",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","doctrine"],
   },
   {
@@ -7081,7 +7081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Dolby Digital",
     library: 'tabler',
     componentName: "IconBrandDolbyDigital",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","dolby","digital"],
   },
   {
@@ -7089,7 +7089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Douban",
     library: 'tabler',
     componentName: "IconBrandDouban",
-    category: 'security',
+    category: 'brands',
     tags: ["brand","douban"],
   },
   {
@@ -7097,7 +7097,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Dribbble",
     library: 'tabler',
     componentName: "IconBrandDribbble",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","dribbble"],
   },
   {
@@ -7105,7 +7105,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Dribbble Filled",
     library: 'tabler',
     componentName: "IconBrandDribbbleFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","dribbble","filled"],
   },
   {
@@ -7113,7 +7113,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Dropbox",
     library: 'tabler',
     componentName: "IconBrandDropbox",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","dropbox"],
   },
   {
@@ -7121,7 +7121,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Drops",
     library: 'tabler',
     componentName: "IconBrandDrops",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","drops"],
   },
   {
@@ -7129,7 +7129,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Drupal",
     library: 'tabler',
     componentName: "IconBrandDrupal",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","drupal"],
   },
   {
@@ -7137,7 +7137,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Edge",
     library: 'tabler',
     componentName: "IconBrandEdge",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","edge"],
   },
   {
@@ -7145,7 +7145,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Elastic",
     library: 'tabler',
     componentName: "IconBrandElastic",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","elastic"],
   },
   {
@@ -7153,7 +7153,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Electronic Arts",
     library: 'tabler',
     componentName: "IconBrandElectronicArts",
-    category: 'science',
+    category: 'brands',
     tags: ["brand","electronic","arts"],
   },
   {
@@ -7161,7 +7161,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ember",
     library: 'tabler',
     componentName: "IconBrandEmber",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ember"],
   },
   {
@@ -7169,7 +7169,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Envato",
     library: 'tabler',
     componentName: "IconBrandEnvato",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","envato"],
   },
   {
@@ -7177,7 +7177,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Etsy",
     library: 'tabler',
     componentName: "IconBrandEtsy",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","etsy"],
   },
   {
@@ -7185,7 +7185,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Evernote",
     library: 'tabler',
     componentName: "IconBrandEvernote",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","evernote"],
   },
   {
@@ -7193,7 +7193,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Facebook",
     library: 'tabler',
     componentName: "IconBrandFacebook",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","facebook"],
   },
   {
@@ -7201,7 +7201,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Facebook Filled",
     library: 'tabler',
     componentName: "IconBrandFacebookFilled",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","facebook","filled"],
   },
   {
@@ -7209,7 +7209,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Feedly",
     library: 'tabler',
     componentName: "IconBrandFeedly",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","feedly"],
   },
   {
@@ -7217,7 +7217,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Figma",
     library: 'tabler',
     componentName: "IconBrandFigma",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","figma"],
   },
   {
@@ -7225,7 +7225,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Filezilla",
     library: 'tabler',
     componentName: "IconBrandFilezilla",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","filezilla"],
   },
   {
@@ -7233,7 +7233,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Finder",
     library: 'tabler',
     componentName: "IconBrandFinder",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","finder"],
   },
   {
@@ -7241,7 +7241,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Firebase",
     library: 'tabler',
     componentName: "IconBrandFirebase",
-    category: 'transportation',
+    category: 'brands',
     tags: ["brand","firebase"],
   },
   {
@@ -7249,7 +7249,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Firefox",
     library: 'tabler',
     componentName: "IconBrandFirefox",
-    category: 'transportation',
+    category: 'brands',
     tags: ["brand","firefox"],
   },
   {
@@ -7257,7 +7257,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Fiverr",
     library: 'tabler',
     componentName: "IconBrandFiverr",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","fiverr"],
   },
   {
@@ -7265,7 +7265,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Flickr",
     library: 'tabler',
     componentName: "IconBrandFlickr",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","flickr"],
   },
   {
@@ -7273,7 +7273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Flightradar24",
     library: 'tabler',
     componentName: "IconBrandFlightradar24",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","flightradar24"],
   },
   {
@@ -7281,7 +7281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Flipboard",
     library: 'tabler',
     componentName: "IconBrandFlipboard",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","flipboard"],
   },
   {
@@ -7289,7 +7289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Flutter",
     library: 'tabler',
     componentName: "IconBrandFlutter",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","flutter"],
   },
   {
@@ -7297,7 +7297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Fortnite",
     library: 'tabler',
     componentName: "IconBrandFortnite",
-    category: 'buildings',
+    category: 'brands',
     tags: ["brand","fortnite"],
   },
   {
@@ -7305,7 +7305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Foursquare",
     library: 'tabler',
     componentName: "IconBrandFoursquare",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","foursquare"],
   },
   {
@@ -7313,7 +7313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Framer",
     library: 'tabler',
     componentName: "IconBrandFramer",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","framer"],
   },
   {
@@ -7321,7 +7321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Framer Motion",
     library: 'tabler',
     componentName: "IconBrandFramerMotion",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","framer","motion"],
   },
   {
@@ -7329,7 +7329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Funimation",
     library: 'tabler',
     componentName: "IconBrandFunimation",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","funimation"],
   },
   {
@@ -7337,7 +7337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Gatsby",
     library: 'tabler',
     componentName: "IconBrandGatsby",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","gatsby"],
   },
   {
@@ -7345,7 +7345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Git",
     library: 'tabler',
     componentName: "IconBrandGit",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","git"],
   },
   {
@@ -7353,7 +7353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Github",
     library: 'tabler',
     componentName: "IconBrandGithub",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","github"],
   },
   {
@@ -7361,7 +7361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Github Copilot",
     library: 'tabler',
     componentName: "IconBrandGithubCopilot",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","github","copilot"],
   },
   {
@@ -7369,7 +7369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Github Filled",
     library: 'tabler',
     componentName: "IconBrandGithubFilled",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","github","filled"],
   },
   {
@@ -7377,7 +7377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Gitlab",
     library: 'tabler',
     componentName: "IconBrandGitlab",
-    category: 'medical',
+    category: 'brands',
     tags: ["brand","gitlab"],
   },
   {
@@ -7385,7 +7385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Gmail",
     library: 'tabler',
     componentName: "IconBrandGmail",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","gmail"],
   },
   {
@@ -7393,7 +7393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Golang",
     library: 'tabler',
     componentName: "IconBrandGolang",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","golang"],
   },
   {
@@ -7401,7 +7401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google",
     library: 'tabler',
     componentName: "IconBrandGoogle",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","google"],
   },
   {
@@ -7409,7 +7409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Analytics",
     library: 'tabler',
     componentName: "IconBrandGoogleAnalytics",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","google","analytics","data","statistics","metrics","insights"],
   },
   {
@@ -7417,7 +7417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Big Query",
     library: 'tabler',
     componentName: "IconBrandGoogleBigQuery",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","google","big","query"],
   },
   {
@@ -7425,7 +7425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Drive",
     library: 'tabler',
     componentName: "IconBrandGoogleDrive",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","google","drive"],
   },
   {
@@ -7433,7 +7433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Filled",
     library: 'tabler',
     componentName: "IconBrandGoogleFilled",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","google","filled"],
   },
   {
@@ -7441,7 +7441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Fit",
     library: 'tabler',
     componentName: "IconBrandGoogleFit",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","google","fit"],
   },
   {
@@ -7449,7 +7449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Home",
     library: 'tabler',
     componentName: "IconBrandGoogleHome",
-    category: 'buildings',
+    category: 'brands',
     tags: ["brand","google","home","house","homepage","main","dashboard"],
   },
   {
@@ -7457,7 +7457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Maps",
     library: 'tabler',
     componentName: "IconBrandGoogleMaps",
-    category: 'transportation',
+    category: 'brands',
     tags: ["brand","google","maps"],
   },
   {
@@ -7465,7 +7465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google One",
     library: 'tabler',
     componentName: "IconBrandGoogleOne",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","google","one"],
   },
   {
@@ -7473,7 +7473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Photos",
     library: 'tabler',
     componentName: "IconBrandGooglePhotos",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","google","photos"],
   },
   {
@@ -7481,7 +7481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Play",
     library: 'tabler',
     componentName: "IconBrandGooglePlay",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","google","play","start","run","media","video"],
   },
   {
@@ -7489,7 +7489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Google Podcasts",
     library: 'tabler',
     componentName: "IconBrandGooglePodcasts",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","google","podcasts"],
   },
   {
@@ -7497,7 +7497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Grammarly",
     library: 'tabler',
     componentName: "IconBrandGrammarly",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","grammarly"],
   },
   {
@@ -7505,7 +7505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Graphql",
     library: 'tabler',
     componentName: "IconBrandGraphql",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","graphql"],
   },
   {
@@ -7513,7 +7513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Gravatar",
     library: 'tabler',
     componentName: "IconBrandGravatar",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","gravatar"],
   },
   {
@@ -7521,7 +7521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Grindr",
     library: 'tabler',
     componentName: "IconBrandGrindr",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","grindr"],
   },
   {
@@ -7529,7 +7529,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Guardian",
     library: 'tabler',
     componentName: "IconBrandGuardian",
-    category: 'security',
+    category: 'brands',
     tags: ["brand","guardian"],
   },
   {
@@ -7537,7 +7537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Gumroad",
     library: 'tabler',
     componentName: "IconBrandGumroad",
-    category: 'transportation',
+    category: 'brands',
     tags: ["brand","gumroad"],
   },
   {
@@ -7545,7 +7545,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Hackerrank",
     library: 'tabler',
     componentName: "IconBrandHackerrank",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","hackerrank"],
   },
   {
@@ -7553,7 +7553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Hbo",
     library: 'tabler',
     componentName: "IconBrandHbo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","hbo"],
   },
   {
@@ -7561,7 +7561,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Headlessui",
     library: 'tabler',
     componentName: "IconBrandHeadlessui",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","headlessui"],
   },
   {
@@ -7569,7 +7569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Hexo",
     library: 'tabler',
     componentName: "IconBrandHexo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","hexo"],
   },
   {
@@ -7577,7 +7577,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Hipchat",
     library: 'tabler',
     componentName: "IconBrandHipchat",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","hipchat"],
   },
   {
@@ -7585,7 +7585,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Html5",
     library: 'tabler',
     componentName: "IconBrandHtml5",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","html5"],
   },
   {
@@ -7593,7 +7593,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Inertia",
     library: 'tabler',
     componentName: "IconBrandInertia",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","inertia"],
   },
   {
@@ -7601,7 +7601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Instagram",
     library: 'tabler',
     componentName: "IconBrandInstagram",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","instagram"],
   },
   {
@@ -7609,7 +7609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Instagram Filled",
     library: 'tabler',
     componentName: "IconBrandInstagramFilled",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","instagram","filled"],
   },
   {
@@ -7617,7 +7617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Intercom",
     library: 'tabler',
     componentName: "IconBrandIntercom",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","intercom"],
   },
   {
@@ -7625,7 +7625,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Itch",
     library: 'tabler',
     componentName: "IconBrandItch",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","itch"],
   },
   {
@@ -7633,7 +7633,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Javascript",
     library: 'tabler',
     componentName: "IconBrandJavascript",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","javascript"],
   },
   {
@@ -7641,7 +7641,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Juejin",
     library: 'tabler',
     componentName: "IconBrandJuejin",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","juejin"],
   },
   {
@@ -7649,7 +7649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Kako Talk",
     library: 'tabler',
     componentName: "IconBrandKakoTalk",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","kako","talk"],
   },
   {
@@ -7657,7 +7657,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Kbin",
     library: 'tabler',
     componentName: "IconBrandKbin",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","kbin"],
   },
   {
@@ -7665,7 +7665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Kick",
     library: 'tabler',
     componentName: "IconBrandKick",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","kick"],
   },
   {
@@ -7673,7 +7673,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Kick Filled",
     library: 'tabler',
     componentName: "IconBrandKickFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","kick","filled"],
   },
   {
@@ -7681,7 +7681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Kickstarter",
     library: 'tabler',
     componentName: "IconBrandKickstarter",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","kickstarter"],
   },
   {
@@ -7689,7 +7689,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Kotlin",
     library: 'tabler',
     componentName: "IconBrandKotlin",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","kotlin"],
   },
   {
@@ -7697,7 +7697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Laravel",
     library: 'tabler',
     componentName: "IconBrandLaravel",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","laravel"],
   },
   {
@@ -7705,7 +7705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Lastfm",
     library: 'tabler',
     componentName: "IconBrandLastfm",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","lastfm"],
   },
   {
@@ -7713,7 +7713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Leetcode",
     library: 'tabler',
     componentName: "IconBrandLeetcode",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","leetcode"],
   },
   {
@@ -7721,7 +7721,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Letterboxd",
     library: 'tabler',
     componentName: "IconBrandLetterboxd",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","letterboxd"],
   },
   {
@@ -7729,7 +7729,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Line",
     library: 'tabler',
     componentName: "IconBrandLine",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","line"],
   },
   {
@@ -7737,7 +7737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Linkedin",
     library: 'tabler',
     componentName: "IconBrandLinkedin",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","linkedin"],
   },
   {
@@ -7745,7 +7745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Linkedin Filled",
     library: 'tabler',
     componentName: "IconBrandLinkedinFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","linkedin","filled"],
   },
   {
@@ -7753,7 +7753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Linktree",
     library: 'tabler',
     componentName: "IconBrandLinktree",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","linktree"],
   },
   {
@@ -7761,7 +7761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Linqpad",
     library: 'tabler',
     componentName: "IconBrandLinqpad",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","linqpad"],
   },
   {
@@ -7769,7 +7769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Livewire",
     library: 'tabler',
     componentName: "IconBrandLivewire",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","livewire"],
   },
   {
@@ -7777,7 +7777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Loom",
     library: 'tabler',
     componentName: "IconBrandLoom",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","loom"],
   },
   {
@@ -7785,7 +7785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mailgun",
     library: 'tabler',
     componentName: "IconBrandMailgun",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","mailgun"],
   },
   {
@@ -7793,7 +7793,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mantine",
     library: 'tabler',
     componentName: "IconBrandMantine",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","mantine"],
   },
   {
@@ -7801,7 +7801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mastercard",
     library: 'tabler',
     componentName: "IconBrandMastercard",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","mastercard"],
   },
   {
@@ -7809,7 +7809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mastodon",
     library: 'tabler',
     componentName: "IconBrandMastodon",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","mastodon"],
   },
   {
@@ -7817,7 +7817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Matrix",
     library: 'tabler',
     componentName: "IconBrandMatrix",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","matrix"],
   },
   {
@@ -7825,7 +7825,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mcdonalds",
     library: 'tabler',
     componentName: "IconBrandMcdonalds",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","mcdonalds"],
   },
   {
@@ -7833,7 +7833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Medium",
     library: 'tabler',
     componentName: "IconBrandMedium",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","medium"],
   },
   {
@@ -7841,7 +7841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Meetup",
     library: 'tabler',
     componentName: "IconBrandMeetup",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","meetup"],
   },
   {
@@ -7849,7 +7849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mercedes",
     library: 'tabler',
     componentName: "IconBrandMercedes",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","mercedes"],
   },
   {
@@ -7857,7 +7857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Messenger",
     library: 'tabler',
     componentName: "IconBrandMessenger",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","messenger"],
   },
   {
@@ -7865,7 +7865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Messenger Filled",
     library: 'tabler',
     componentName: "IconBrandMessengerFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","messenger","filled"],
   },
   {
@@ -7873,7 +7873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Meta",
     library: 'tabler',
     componentName: "IconBrandMeta",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","meta"],
   },
   {
@@ -7881,7 +7881,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Metabrainz",
     library: 'tabler',
     componentName: "IconBrandMetabrainz",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","metabrainz"],
   },
   {
@@ -7889,7 +7889,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Minecraft",
     library: 'tabler',
     componentName: "IconBrandMinecraft",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","minecraft"],
   },
   {
@@ -7897,7 +7897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Miniprogram",
     library: 'tabler',
     componentName: "IconBrandMiniprogram",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","miniprogram"],
   },
   {
@@ -7905,7 +7905,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mixpanel",
     library: 'tabler',
     componentName: "IconBrandMixpanel",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","mixpanel"],
   },
   {
@@ -7913,7 +7913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Monday",
     library: 'tabler',
     componentName: "IconBrandMonday",
-    category: 'time',
+    category: 'brands',
     tags: ["brand","monday"],
   },
   {
@@ -7921,7 +7921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mongodb",
     library: 'tabler',
     componentName: "IconBrandMongodb",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","mongodb"],
   },
   {
@@ -7929,7 +7929,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand My Oppo",
     library: 'tabler',
     componentName: "IconBrandMyOppo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","my","oppo"],
   },
   {
@@ -7937,7 +7937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Mysql",
     library: 'tabler',
     componentName: "IconBrandMysql",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","mysql"],
   },
   {
@@ -7945,7 +7945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand National Geographic",
     library: 'tabler',
     componentName: "IconBrandNationalGeographic",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","national","geographic"],
   },
   {
@@ -7953,7 +7953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nem",
     library: 'tabler',
     componentName: "IconBrandNem",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","nem"],
   },
   {
@@ -7961,7 +7961,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Netbeans",
     library: 'tabler',
     componentName: "IconBrandNetbeans",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","netbeans"],
   },
   {
@@ -7969,7 +7969,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Netease Music",
     library: 'tabler',
     componentName: "IconBrandNeteaseMusic",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","netease","music","audio","song","sound","melody"],
   },
   {
@@ -7977,7 +7977,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Netflix",
     library: 'tabler',
     componentName: "IconBrandNetflix",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","netflix"],
   },
   {
@@ -7985,7 +7985,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nexo",
     library: 'tabler',
     componentName: "IconBrandNexo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","nexo"],
   },
   {
@@ -7993,7 +7993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nextcloud",
     library: 'tabler',
     componentName: "IconBrandNextcloud",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","nextcloud"],
   },
   {
@@ -8001,7 +8001,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nextjs",
     library: 'tabler',
     componentName: "IconBrandNextjs",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","nextjs"],
   },
   {
@@ -8009,7 +8009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nodejs",
     library: 'tabler',
     componentName: "IconBrandNodejs",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","nodejs"],
   },
   {
@@ -8017,7 +8017,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nord Vpn",
     library: 'tabler',
     componentName: "IconBrandNordVpn",
-    category: 'network',
+    category: 'brands',
     tags: ["brand","nord","vpn"],
   },
   {
@@ -8025,7 +8025,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Notion",
     library: 'tabler',
     componentName: "IconBrandNotion",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","notion"],
   },
   {
@@ -8033,7 +8033,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Npm",
     library: 'tabler',
     componentName: "IconBrandNpm",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","npm"],
   },
   {
@@ -8041,7 +8041,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nuxt",
     library: 'tabler',
     componentName: "IconBrandNuxt",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","nuxt"],
   },
   {
@@ -8049,7 +8049,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Nytimes",
     library: 'tabler',
     componentName: "IconBrandNytimes",
-    category: 'time',
+    category: 'brands',
     tags: ["brand","nytimes"],
   },
   {
@@ -8057,7 +8057,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Oauth",
     library: 'tabler',
     componentName: "IconBrandOauth",
-    category: 'security',
+    category: 'brands',
     tags: ["brand","oauth"],
   },
   {
@@ -8065,7 +8065,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Office",
     library: 'tabler',
     componentName: "IconBrandOffice",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","office"],
   },
   {
@@ -8073,7 +8073,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ok Ru",
     library: 'tabler',
     componentName: "IconBrandOkRu",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ok","ru"],
   },
   {
@@ -8081,7 +8081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Onedrive",
     library: 'tabler',
     componentName: "IconBrandOnedrive",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","onedrive"],
   },
   {
@@ -8089,7 +8089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Onlyfans",
     library: 'tabler',
     componentName: "IconBrandOnlyfans",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","onlyfans"],
   },
   {
@@ -8097,7 +8097,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Open Source",
     library: 'tabler',
     componentName: "IconBrandOpenSource",
-    category: 'education',
+    category: 'brands',
     tags: ["brand","open","source"],
   },
   {
@@ -8105,7 +8105,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Open Source Filled",
     library: 'tabler',
     componentName: "IconBrandOpenSourceFilled",
-    category: 'education',
+    category: 'brands',
     tags: ["brand","open","source","filled"],
   },
   {
@@ -8113,7 +8113,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Openai",
     library: 'tabler',
     componentName: "IconBrandOpenai",
-    category: 'education',
+    category: 'brands',
     tags: ["brand","openai"],
   },
   {
@@ -8121,7 +8121,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Openvpn",
     library: 'tabler',
     componentName: "IconBrandOpenvpn",
-    category: 'network',
+    category: 'brands',
     tags: ["brand","openvpn"],
   },
   {
@@ -8129,7 +8129,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Opera",
     library: 'tabler',
     componentName: "IconBrandOpera",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","opera"],
   },
   {
@@ -8137,7 +8137,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Opera Filled",
     library: 'tabler',
     componentName: "IconBrandOperaFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","opera","filled"],
   },
   {
@@ -8145,7 +8145,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pagekit",
     library: 'tabler',
     componentName: "IconBrandPagekit",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","pagekit"],
   },
   {
@@ -8153,7 +8153,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Parsinta",
     library: 'tabler',
     componentName: "IconBrandParsinta",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","parsinta"],
   },
   {
@@ -8161,7 +8161,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Patreon",
     library: 'tabler',
     componentName: "IconBrandPatreon",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","patreon"],
   },
   {
@@ -8169,7 +8169,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Patreon Filled",
     library: 'tabler',
     componentName: "IconBrandPatreonFilled",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","patreon","filled"],
   },
   {
@@ -8177,7 +8177,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Paypal",
     library: 'tabler',
     componentName: "IconBrandPaypal",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","paypal"],
   },
   {
@@ -8185,7 +8185,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Paypal Filled",
     library: 'tabler',
     componentName: "IconBrandPaypalFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","paypal","filled"],
   },
   {
@@ -8193,7 +8193,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Paypay",
     library: 'tabler',
     componentName: "IconBrandPaypay",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","paypay"],
   },
   {
@@ -8201,7 +8201,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Peanut",
     library: 'tabler',
     componentName: "IconBrandPeanut",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","peanut"],
   },
   {
@@ -8209,7 +8209,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pepsi",
     library: 'tabler',
     componentName: "IconBrandPepsi",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","pepsi"],
   },
   {
@@ -8217,7 +8217,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Php",
     library: 'tabler',
     componentName: "IconBrandPhp",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","php"],
   },
   {
@@ -8225,7 +8225,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Picsart",
     library: 'tabler',
     componentName: "IconBrandPicsart",
-    category: 'sports',
+    category: 'brands',
     tags: ["brand","picsart"],
   },
   {
@@ -8233,7 +8233,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pinterest",
     library: 'tabler',
     componentName: "IconBrandPinterest",
-    category: 'location',
+    category: 'brands',
     tags: ["brand","pinterest"],
   },
   {
@@ -8241,7 +8241,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pinterest Filled",
     library: 'tabler',
     componentName: "IconBrandPinterestFilled",
-    category: 'location',
+    category: 'brands',
     tags: ["brand","pinterest","filled"],
   },
   {
@@ -8249,7 +8249,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Planetscale",
     library: 'tabler',
     componentName: "IconBrandPlanetscale",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","planetscale"],
   },
   {
@@ -8257,7 +8257,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pnpm",
     library: 'tabler',
     componentName: "IconBrandPnpm",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","pnpm"],
   },
   {
@@ -8265,7 +8265,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pocket",
     library: 'tabler',
     componentName: "IconBrandPocket",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","pocket"],
   },
   {
@@ -8273,7 +8273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Polymer",
     library: 'tabler',
     componentName: "IconBrandPolymer",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","polymer"],
   },
   {
@@ -8281,7 +8281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Powershell",
     library: 'tabler',
     componentName: "IconBrandPowershell",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","powershell"],
   },
   {
@@ -8289,7 +8289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Printables",
     library: 'tabler',
     componentName: "IconBrandPrintables",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","printables"],
   },
   {
@@ -8297,7 +8297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Prisma",
     library: 'tabler',
     componentName: "IconBrandPrisma",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","prisma"],
   },
   {
@@ -8305,7 +8305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Producthunt",
     library: 'tabler',
     componentName: "IconBrandProducthunt",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","producthunt"],
   },
   {
@@ -8313,7 +8313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pushbullet",
     library: 'tabler',
     componentName: "IconBrandPushbullet",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","pushbullet"],
   },
   {
@@ -8321,7 +8321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Pushover",
     library: 'tabler',
     componentName: "IconBrandPushover",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","pushover"],
   },
   {
@@ -8329,7 +8329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Python",
     library: 'tabler',
     componentName: "IconBrandPython",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","python"],
   },
   {
@@ -8337,7 +8337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Qq",
     library: 'tabler',
     componentName: "IconBrandQq",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","qq"],
   },
   {
@@ -8345,7 +8345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Radix Ui",
     library: 'tabler',
     componentName: "IconBrandRadixUi",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","radix","ui"],
   },
   {
@@ -8353,7 +8353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand React",
     library: 'tabler',
     componentName: "IconBrandReact",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","react"],
   },
   {
@@ -8361,7 +8361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand React Native",
     library: 'tabler',
     componentName: "IconBrandReactNative",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","react","native"],
   },
   {
@@ -8369,7 +8369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Reason",
     library: 'tabler',
     componentName: "IconBrandReason",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","reason"],
   },
   {
@@ -8377,7 +8377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Reddit",
     library: 'tabler',
     componentName: "IconBrandReddit",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","reddit"],
   },
   {
@@ -8385,7 +8385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Redhat",
     library: 'tabler',
     componentName: "IconBrandRedhat",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","redhat"],
   },
   {
@@ -8393,7 +8393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Redux",
     library: 'tabler',
     componentName: "IconBrandRedux",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","redux"],
   },
   {
@@ -8401,7 +8401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Revolut",
     library: 'tabler',
     componentName: "IconBrandRevolut",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","revolut"],
   },
   {
@@ -8409,7 +8409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Rumble",
     library: 'tabler',
     componentName: "IconBrandRumble",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","rumble"],
   },
   {
@@ -8417,7 +8417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Rust",
     library: 'tabler',
     componentName: "IconBrandRust",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","rust"],
   },
   {
@@ -8425,7 +8425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Safari",
     library: 'tabler',
     componentName: "IconBrandSafari",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","safari"],
   },
   {
@@ -8433,7 +8433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Samsungpass",
     library: 'tabler',
     componentName: "IconBrandSamsungpass",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","samsungpass"],
   },
   {
@@ -8441,7 +8441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sass",
     library: 'tabler',
     componentName: "IconBrandSass",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sass"],
   },
   {
@@ -8449,7 +8449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sentry",
     library: 'tabler',
     componentName: "IconBrandSentry",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sentry"],
   },
   {
@@ -8457,7 +8457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sharik",
     library: 'tabler',
     componentName: "IconBrandSharik",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sharik"],
   },
   {
@@ -8465,7 +8465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Shazam",
     library: 'tabler',
     componentName: "IconBrandShazam",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","shazam"],
   },
   {
@@ -8473,7 +8473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Shopee",
     library: 'tabler',
     componentName: "IconBrandShopee",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","shopee"],
   },
   {
@@ -8481,7 +8481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sketch",
     library: 'tabler',
     componentName: "IconBrandSketch",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sketch"],
   },
   {
@@ -8489,7 +8489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sketch Filled",
     library: 'tabler',
     componentName: "IconBrandSketchFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sketch","filled"],
   },
   {
@@ -8497,7 +8497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Skype",
     library: 'tabler',
     componentName: "IconBrandSkype",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","skype"],
   },
   {
@@ -8505,7 +8505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Slack",
     library: 'tabler',
     componentName: "IconBrandSlack",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","slack"],
   },
   {
@@ -8513,7 +8513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Snapchat",
     library: 'tabler',
     componentName: "IconBrandSnapchat",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","snapchat"],
   },
   {
@@ -8521,7 +8521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Snapchat Filled",
     library: 'tabler',
     componentName: "IconBrandSnapchatFilled",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","snapchat","filled"],
   },
   {
@@ -8529,7 +8529,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Snapseed",
     library: 'tabler',
     componentName: "IconBrandSnapseed",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","snapseed"],
   },
   {
@@ -8537,7 +8537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Snowflake",
     library: 'tabler',
     componentName: "IconBrandSnowflake",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","snowflake"],
   },
   {
@@ -8545,7 +8545,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Socket Io",
     library: 'tabler',
     componentName: "IconBrandSocketIo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","socket","io"],
   },
   {
@@ -8553,7 +8553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Solidjs",
     library: 'tabler',
     componentName: "IconBrandSolidjs",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","solidjs"],
   },
   {
@@ -8561,7 +8561,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Soundcloud",
     library: 'tabler',
     componentName: "IconBrandSoundcloud",
-    category: 'media',
+    category: 'brands',
     tags: ["brand","soundcloud"],
   },
   {
@@ -8569,7 +8569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Spacehey",
     library: 'tabler',
     componentName: "IconBrandSpacehey",
-    category: 'science',
+    category: 'brands',
     tags: ["brand","spacehey"],
   },
   {
@@ -8577,7 +8577,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Speedtest",
     library: 'tabler',
     componentName: "IconBrandSpeedtest",
-    category: 'medical',
+    category: 'brands',
     tags: ["brand","speedtest"],
   },
   {
@@ -8585,7 +8585,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Spotify",
     library: 'tabler',
     componentName: "IconBrandSpotify",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","spotify"],
   },
   {
@@ -8593,7 +8593,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Spotify Filled",
     library: 'tabler',
     componentName: "IconBrandSpotifyFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","spotify","filled"],
   },
   {
@@ -8601,7 +8601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Stackoverflow",
     library: 'tabler',
     componentName: "IconBrandStackoverflow",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","stackoverflow"],
   },
   {
@@ -8609,7 +8609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Stackshare",
     library: 'tabler',
     componentName: "IconBrandStackshare",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","stackshare"],
   },
   {
@@ -8617,7 +8617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Steam",
     library: 'tabler',
     componentName: "IconBrandSteam",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","steam"],
   },
   {
@@ -8625,7 +8625,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Steam Filled",
     library: 'tabler',
     componentName: "IconBrandSteamFilled",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","steam","filled"],
   },
   {
@@ -8633,7 +8633,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Stocktwits",
     library: 'tabler',
     componentName: "IconBrandStocktwits",
-    category: 'business',
+    category: 'brands',
     tags: ["brand","stocktwits"],
   },
   {
@@ -8641,7 +8641,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Storj",
     library: 'tabler',
     componentName: "IconBrandStorj",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","storj"],
   },
   {
@@ -8649,7 +8649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Storybook",
     library: 'tabler',
     componentName: "IconBrandStorybook",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","storybook"],
   },
   {
@@ -8657,7 +8657,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Storytel",
     library: 'tabler',
     componentName: "IconBrandStorytel",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","storytel"],
   },
   {
@@ -8665,7 +8665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Strava",
     library: 'tabler',
     componentName: "IconBrandStrava",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","strava"],
   },
   {
@@ -8673,7 +8673,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Stripe",
     library: 'tabler',
     componentName: "IconBrandStripe",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","stripe"],
   },
   {
@@ -8681,7 +8681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Stripe Filled",
     library: 'tabler',
     componentName: "IconBrandStripeFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","stripe","filled"],
   },
   {
@@ -8689,7 +8689,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sublime Text",
     library: 'tabler',
     componentName: "IconBrandSublimeText",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sublime","text"],
   },
   {
@@ -8697,7 +8697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Sugarizer",
     library: 'tabler',
     componentName: "IconBrandSugarizer",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","sugarizer"],
   },
   {
@@ -8705,7 +8705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Supabase",
     library: 'tabler',
     componentName: "IconBrandSupabase",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","supabase"],
   },
   {
@@ -8713,7 +8713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Superhuman",
     library: 'tabler',
     componentName: "IconBrandSuperhuman",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","superhuman"],
   },
   {
@@ -8721,7 +8721,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Supernova",
     library: 'tabler',
     componentName: "IconBrandSupernova",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","supernova"],
   },
   {
@@ -8729,7 +8729,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Surfshark",
     library: 'tabler',
     componentName: "IconBrandSurfshark",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","surfshark"],
   },
   {
@@ -8737,7 +8737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Svelte",
     library: 'tabler',
     componentName: "IconBrandSvelte",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","svelte"],
   },
   {
@@ -8745,7 +8745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Swift",
     library: 'tabler',
     componentName: "IconBrandSwift",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","swift"],
   },
   {
@@ -8753,7 +8753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Symfony",
     library: 'tabler',
     componentName: "IconBrandSymfony",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","symfony"],
   },
   {
@@ -8761,7 +8761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tabler",
     library: 'tabler',
     componentName: "IconBrandTabler",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","tabler"],
   },
   {
@@ -8769,7 +8769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tabler Filled",
     library: 'tabler',
     componentName: "IconBrandTablerFilled",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","tabler","filled"],
   },
   {
@@ -8777,7 +8777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tabnine",
     library: 'tabler',
     componentName: "IconBrandTabnine",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","tabnine"],
   },
   {
@@ -8785,7 +8785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tailwind",
     library: 'tabler',
     componentName: "IconBrandTailwind",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","tailwind"],
   },
   {
@@ -8793,7 +8793,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Taobao",
     library: 'tabler',
     componentName: "IconBrandTaobao",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","taobao"],
   },
   {
@@ -8801,7 +8801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Teams",
     library: 'tabler',
     componentName: "IconBrandTeams",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","teams"],
   },
   {
@@ -8809,7 +8809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ted",
     library: 'tabler',
     componentName: "IconBrandTed",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ted"],
   },
   {
@@ -8817,7 +8817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Telegram",
     library: 'tabler',
     componentName: "IconBrandTelegram",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","telegram"],
   },
   {
@@ -8825,7 +8825,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Terraform",
     library: 'tabler',
     componentName: "IconBrandTerraform",
-    category: 'files',
+    category: 'brands',
     tags: ["brand","terraform"],
   },
   {
@@ -8833,7 +8833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tesla",
     library: 'tabler',
     componentName: "IconBrandTesla",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tesla"],
   },
   {
@@ -8841,7 +8841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tether",
     library: 'tabler',
     componentName: "IconBrandTether",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tether"],
   },
   {
@@ -8849,7 +8849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Thingiverse",
     library: 'tabler',
     componentName: "IconBrandThingiverse",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","thingiverse"],
   },
   {
@@ -8857,7 +8857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Threads",
     library: 'tabler',
     componentName: "IconBrandThreads",
-    category: 'education',
+    category: 'brands',
     tags: ["brand","threads"],
   },
   {
@@ -8865,7 +8865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Threejs",
     library: 'tabler',
     componentName: "IconBrandThreejs",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","threejs"],
   },
   {
@@ -8873,7 +8873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tidal",
     library: 'tabler',
     componentName: "IconBrandTidal",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","tidal"],
   },
   {
@@ -8881,7 +8881,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tiktok",
     library: 'tabler',
     componentName: "IconBrandTiktok",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tiktok"],
   },
   {
@@ -8889,7 +8889,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tiktok Filled",
     library: 'tabler',
     componentName: "IconBrandTiktokFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tiktok","filled"],
   },
   {
@@ -8897,7 +8897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tinder",
     library: 'tabler',
     componentName: "IconBrandTinder",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tinder"],
   },
   {
@@ -8905,7 +8905,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tinder Filled",
     library: 'tabler',
     componentName: "IconBrandTinderFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tinder","filled"],
   },
   {
@@ -8913,7 +8913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Topbuzz",
     library: 'tabler',
     componentName: "IconBrandTopbuzz",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","topbuzz"],
   },
   {
@@ -8921,7 +8921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Torchain",
     library: 'tabler',
     componentName: "IconBrandTorchain",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","torchain"],
   },
   {
@@ -8929,7 +8929,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Toyota",
     library: 'tabler',
     componentName: "IconBrandToyota",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","toyota"],
   },
   {
@@ -8937,7 +8937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Trello",
     library: 'tabler',
     componentName: "IconBrandTrello",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","trello"],
   },
   {
@@ -8945,7 +8945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tripadvisor",
     library: 'tabler',
     componentName: "IconBrandTripadvisor",
-    category: 'devices',
+    category: 'brands',
     tags: ["brand","tripadvisor"],
   },
   {
@@ -8953,7 +8953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tumblr",
     library: 'tabler',
     componentName: "IconBrandTumblr",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tumblr"],
   },
   {
@@ -8961,7 +8961,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Tumblr Filled",
     library: 'tabler',
     componentName: "IconBrandTumblrFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","tumblr","filled"],
   },
   {
@@ -8969,7 +8969,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Twilio",
     library: 'tabler',
     componentName: "IconBrandTwilio",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","twilio"],
   },
   {
@@ -8977,7 +8977,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Twitch",
     library: 'tabler',
     componentName: "IconBrandTwitch",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","twitch"],
   },
   {
@@ -8985,7 +8985,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Twitter",
     library: 'tabler',
     componentName: "IconBrandTwitter",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","twitter"],
   },
   {
@@ -8993,7 +8993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Twitter Filled",
     library: 'tabler',
     componentName: "IconBrandTwitterFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","twitter","filled"],
   },
   {
@@ -9001,7 +9001,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Typescript",
     library: 'tabler',
     componentName: "IconBrandTypescript",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","typescript"],
   },
   {
@@ -9009,7 +9009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Uber",
     library: 'tabler',
     componentName: "IconBrandUber",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","uber"],
   },
   {
@@ -9017,7 +9017,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ubuntu",
     library: 'tabler',
     componentName: "IconBrandUbuntu",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","ubuntu"],
   },
   {
@@ -9025,7 +9025,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Unity",
     library: 'tabler',
     componentName: "IconBrandUnity",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","unity"],
   },
   {
@@ -9033,7 +9033,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Unsplash",
     library: 'tabler',
     componentName: "IconBrandUnsplash",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","unsplash"],
   },
   {
@@ -9041,7 +9041,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Upwork",
     library: 'tabler',
     componentName: "IconBrandUpwork",
-    category: 'arrows',
+    category: 'brands',
     tags: ["brand","upwork"],
   },
   {
@@ -9049,7 +9049,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Valorant",
     library: 'tabler',
     componentName: "IconBrandValorant",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","valorant"],
   },
   {
@@ -9057,7 +9057,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vercel",
     library: 'tabler',
     componentName: "IconBrandVercel",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vercel"],
   },
   {
@@ -9065,7 +9065,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vercel Filled",
     library: 'tabler',
     componentName: "IconBrandVercelFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vercel","filled"],
   },
   {
@@ -9073,7 +9073,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vimeo",
     library: 'tabler',
     componentName: "IconBrandVimeo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vimeo"],
   },
   {
@@ -9081,7 +9081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vimeo Filled",
     library: 'tabler',
     componentName: "IconBrandVimeoFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vimeo","filled"],
   },
   {
@@ -9089,7 +9089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vinted",
     library: 'tabler',
     componentName: "IconBrandVinted",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vinted"],
   },
   {
@@ -9097,7 +9097,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Visa",
     library: 'tabler',
     componentName: "IconBrandVisa",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","visa"],
   },
   {
@@ -9105,7 +9105,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Visual Studio",
     library: 'tabler',
     componentName: "IconBrandVisualStudio",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","visual","studio"],
   },
   {
@@ -9113,7 +9113,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vite",
     library: 'tabler',
     componentName: "IconBrandVite",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vite"],
   },
   {
@@ -9121,7 +9121,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vivaldi",
     library: 'tabler',
     componentName: "IconBrandVivaldi",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vivaldi"],
   },
   {
@@ -9129,7 +9129,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vk",
     library: 'tabler',
     componentName: "IconBrandVk",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vk"],
   },
   {
@@ -9137,7 +9137,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vlc",
     library: 'tabler',
     componentName: "IconBrandVlc",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vlc"],
   },
   {
@@ -9145,7 +9145,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Volkswagen",
     library: 'tabler',
     componentName: "IconBrandVolkswagen",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","volkswagen"],
   },
   {
@@ -9153,7 +9153,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vsco",
     library: 'tabler',
     componentName: "IconBrandVsco",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","vsco"],
   },
   {
@@ -9161,7 +9161,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vscode",
     library: 'tabler',
     componentName: "IconBrandVscode",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","vscode"],
   },
   {
@@ -9169,7 +9169,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Vue",
     library: 'tabler',
     componentName: "IconBrandVue",
-    category: 'code',
+    category: 'brands',
     tags: ["brand","vue"],
   },
   {
@@ -9177,7 +9177,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Walmart",
     library: 'tabler',
     componentName: "IconBrandWalmart",
-    category: 'sports',
+    category: 'brands',
     tags: ["brand","walmart"],
   },
   {
@@ -9185,7 +9185,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Waze",
     library: 'tabler',
     componentName: "IconBrandWaze",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","waze"],
   },
   {
@@ -9193,7 +9193,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Webflow",
     library: 'tabler',
     componentName: "IconBrandWebflow",
-    category: 'network',
+    category: 'brands',
     tags: ["brand","webflow"],
   },
   {
@@ -9201,7 +9201,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Wechat",
     library: 'tabler',
     componentName: "IconBrandWechat",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","wechat"],
   },
   {
@@ -9209,7 +9209,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Weibo",
     library: 'tabler',
     componentName: "IconBrandWeibo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","weibo"],
   },
   {
@@ -9217,7 +9217,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Weibo Filled",
     library: 'tabler',
     componentName: "IconBrandWeiboFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","weibo","filled"],
   },
   {
@@ -9225,7 +9225,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Whatsapp",
     library: 'tabler',
     componentName: "IconBrandWhatsapp",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","whatsapp"],
   },
   {
@@ -9233,7 +9233,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Whatsapp Filled",
     library: 'tabler',
     componentName: "IconBrandWhatsappFilled",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","whatsapp","filled"],
   },
   {
@@ -9241,7 +9241,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Wikipedia",
     library: 'tabler',
     componentName: "IconBrandWikipedia",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","wikipedia"],
   },
   {
@@ -9249,7 +9249,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Windows",
     library: 'tabler',
     componentName: "IconBrandWindows",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","windows"],
   },
   {
@@ -9257,7 +9257,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Windows Filled",
     library: 'tabler',
     componentName: "IconBrandWindowsFilled",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","windows","filled"],
   },
   {
@@ -9265,7 +9265,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Windy",
     library: 'tabler',
     componentName: "IconBrandWindy",
-    category: 'nature',
+    category: 'brands',
     tags: ["brand","windy"],
   },
   {
@@ -9273,7 +9273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Wish",
     library: 'tabler',
     componentName: "IconBrandWish",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","wish"],
   },
   {
@@ -9281,7 +9281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Wix",
     library: 'tabler',
     componentName: "IconBrandWix",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","wix"],
   },
   {
@@ -9289,7 +9289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Wordpress",
     library: 'tabler',
     componentName: "IconBrandWordpress",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","wordpress"],
   },
   {
@@ -9297,7 +9297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand X",
     library: 'tabler',
     componentName: "IconBrandX",
-    category: 'other',
+    category: 'brands',
     tags: ["brand"],
   },
   {
@@ -9305,7 +9305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand X Filled",
     library: 'tabler',
     componentName: "IconBrandXFilled",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","filled"],
   },
   {
@@ -9313,7 +9313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Xamarin",
     library: 'tabler',
     componentName: "IconBrandXamarin",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","xamarin"],
   },
   {
@@ -9321,7 +9321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Xbox",
     library: 'tabler',
     componentName: "IconBrandXbox",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","xbox"],
   },
   {
@@ -9329,7 +9329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Xdeep",
     library: 'tabler',
     componentName: "IconBrandXdeep",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","xdeep"],
   },
   {
@@ -9337,7 +9337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Xing",
     library: 'tabler',
     componentName: "IconBrandXing",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","xing"],
   },
   {
@@ -9345,7 +9345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Yahoo",
     library: 'tabler',
     componentName: "IconBrandYahoo",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","yahoo"],
   },
   {
@@ -9353,7 +9353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Yandex",
     library: 'tabler',
     componentName: "IconBrandYandex",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","yandex"],
   },
   {
@@ -9361,7 +9361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Yarn",
     library: 'tabler',
     componentName: "IconBrandYarn",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","yarn"],
   },
   {
@@ -9369,7 +9369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Yatse",
     library: 'tabler',
     componentName: "IconBrandYatse",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","yatse"],
   },
   {
@@ -9377,7 +9377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Ycombinator",
     library: 'tabler',
     componentName: "IconBrandYcombinator",
-    category: 'communication',
+    category: 'brands',
     tags: ["brand","ycombinator"],
   },
   {
@@ -9385,7 +9385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Youtube",
     library: 'tabler',
     componentName: "IconBrandYoutube",
-    category: 'science',
+    category: 'brands',
     tags: ["brand","youtube"],
   },
   {
@@ -9393,7 +9393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Youtube Filled",
     library: 'tabler',
     componentName: "IconBrandYoutubeFilled",
-    category: 'science',
+    category: 'brands',
     tags: ["brand","youtube","filled"],
   },
   {
@@ -9401,7 +9401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Youtube Kids",
     library: 'tabler',
     componentName: "IconBrandYoutubeKids",
-    category: 'users',
+    category: 'brands',
     tags: ["brand","youtube","kids"],
   },
   {
@@ -9409,7 +9409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zalando",
     library: 'tabler',
     componentName: "IconBrandZalando",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","zalando"],
   },
   {
@@ -9417,7 +9417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zapier",
     library: 'tabler',
     componentName: "IconBrandZapier",
-    category: 'network',
+    category: 'brands',
     tags: ["brand","zapier"],
   },
   {
@@ -9425,7 +9425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zeit",
     library: 'tabler',
     componentName: "IconBrandZeit",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","zeit"],
   },
   {
@@ -9433,7 +9433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zhihu",
     library: 'tabler',
     componentName: "IconBrandZhihu",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","zhihu"],
   },
   {
@@ -9441,7 +9441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zoom",
     library: 'tabler',
     componentName: "IconBrandZoom",
-    category: 'ui',
+    category: 'brands',
     tags: ["brand","zoom"],
   },
   {
@@ -9449,7 +9449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zulip",
     library: 'tabler',
     componentName: "IconBrandZulip",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","zulip"],
   },
   {
@@ -9457,7 +9457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Brand Zwift",
     library: 'tabler',
     componentName: "IconBrandZwift",
-    category: 'other',
+    category: 'brands',
     tags: ["brand","zwift"],
   },
   {
@@ -15809,7 +15809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Components",
     library: 'tabler',
     componentName: "IconComponents",
-    category: 'other',
+    category: 'ui',
     tags: ["components"],
   },
   {
@@ -15817,7 +15817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Components Off",
     library: 'tabler',
     componentName: "IconComponentsOff",
-    category: 'other',
+    category: 'ui',
     tags: ["components","off"],
   },
   {
@@ -15825,7 +15825,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cone",
     library: 'tabler',
     componentName: "IconCone",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone"],
   },
   {
@@ -15833,7 +15833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cone2",
     library: 'tabler',
     componentName: "IconCone2",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone2"],
   },
   {
@@ -15841,7 +15841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cone2 Filled",
     library: 'tabler',
     componentName: "IconCone2Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone2","filled"],
   },
   {
@@ -15849,7 +15849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cone Filled",
     library: 'tabler',
     componentName: "IconConeFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone","filled"],
   },
   {
@@ -15857,7 +15857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cone Off",
     library: 'tabler',
     componentName: "IconConeOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone","off"],
   },
   {
@@ -15865,7 +15865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cone Plus",
     library: 'tabler',
     componentName: "IconConePlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone","plus","add","create","new","insert"],
   },
   {
@@ -16649,7 +16649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube",
     library: 'tabler',
     componentName: "IconCube",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube"],
   },
   {
@@ -16657,7 +16657,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube3d Sphere",
     library: 'tabler',
     componentName: "IconCube3dSphere",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube3d","sphere"],
   },
   {
@@ -16665,7 +16665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube3d Sphere Off",
     library: 'tabler',
     componentName: "IconCube3dSphereOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube3d","sphere","off"],
   },
   {
@@ -16673,7 +16673,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube Off",
     library: 'tabler',
     componentName: "IconCubeOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube","off"],
   },
   {
@@ -16681,7 +16681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube Plus",
     library: 'tabler',
     componentName: "IconCubePlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube","plus","add","create","new","insert"],
   },
   {
@@ -16697,7 +16697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube Spark",
     library: 'tabler',
     componentName: "IconCubeSpark",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube","spark"],
   },
   {
@@ -16705,7 +16705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cube Unfolded",
     library: 'tabler',
     componentName: "IconCubeUnfolded",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube","unfolded"],
   },
   {
@@ -17329,7 +17329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cylinder",
     library: 'tabler',
     componentName: "IconCylinder",
-    category: 'other',
+    category: 'shapes',
     tags: ["cylinder"],
   },
   {
@@ -17337,7 +17337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cylinder Off",
     library: 'tabler',
     componentName: "IconCylinderOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["cylinder","off"],
   },
   {
@@ -17345,7 +17345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Cylinder Plus",
     library: 'tabler',
     componentName: "IconCylinderPlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["cylinder","plus","add","create","new","insert"],
   },
   {
@@ -19489,7 +19489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Diamond",
     library: 'tabler',
     componentName: "IconDiamond",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond"],
   },
   {
@@ -19497,7 +19497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Diamond Filled",
     library: 'tabler',
     componentName: "IconDiamondFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond","filled"],
   },
   {
@@ -19505,7 +19505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Diamond Off",
     library: 'tabler',
     componentName: "IconDiamondOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond","off"],
   },
   {
@@ -19513,7 +19513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Diamonds",
     library: 'tabler',
     componentName: "IconDiamonds",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamonds"],
   },
   {
@@ -19521,7 +19521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Diamonds Filled",
     library: 'tabler',
     componentName: "IconDiamondsFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamonds","filled"],
   },
   {
@@ -19905,7 +19905,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Dots",
     library: 'tabler',
     componentName: "IconDots",
-    category: 'other',
+    category: 'ui',
     tags: ["dots"],
   },
   {
@@ -19937,7 +19937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Dots Vertical",
     library: 'tabler',
     componentName: "IconDotsVertical",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","vertical"],
   },
   {
@@ -20793,7 +20793,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "External Link",
     library: 'tabler',
     componentName: "IconExternalLink",
-    category: 'other',
+    category: 'ui',
     tags: ["external","link","url","connect","chain","href"],
   },
   {
@@ -20801,7 +20801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "External Link Off",
     library: 'tabler',
     componentName: "IconExternalLinkOff",
-    category: 'other',
+    category: 'ui',
     tags: ["external","link","off","url","connect","chain","href"],
   },
   {
@@ -23841,7 +23841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Agender",
     library: 'tabler',
     componentName: "IconGenderAgender",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","agender"],
   },
   {
@@ -23849,7 +23849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Androgyne",
     library: 'tabler',
     componentName: "IconGenderAndrogyne",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","androgyne"],
   },
   {
@@ -23857,7 +23857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Bigender",
     library: 'tabler',
     componentName: "IconGenderBigender",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","bigender"],
   },
   {
@@ -23889,7 +23889,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Female",
     library: 'tabler',
     componentName: "IconGenderFemale",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","female"],
   },
   {
@@ -23897,7 +23897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Femme",
     library: 'tabler',
     componentName: "IconGenderFemme",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","femme"],
   },
   {
@@ -23913,7 +23913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Genderless",
     library: 'tabler',
     componentName: "IconGenderGenderless",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","genderless"],
   },
   {
@@ -23921,7 +23921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Genderqueer",
     library: 'tabler',
     componentName: "IconGenderGenderqueer",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","genderqueer"],
   },
   {
@@ -23937,7 +23937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Intergender",
     library: 'tabler',
     componentName: "IconGenderIntergender",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","intergender"],
   },
   {
@@ -23945,7 +23945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Male",
     library: 'tabler',
     componentName: "IconGenderMale",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","male"],
   },
   {
@@ -23953,7 +23953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Neutrois",
     library: 'tabler',
     componentName: "IconGenderNeutrois",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","neutrois"],
   },
   {
@@ -23961,7 +23961,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Third",
     library: 'tabler',
     componentName: "IconGenderThird",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","third"],
   },
   {
@@ -23969,7 +23969,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Transgender",
     library: 'tabler',
     componentName: "IconGenderTransgender",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","transgender"],
   },
   {
@@ -23977,7 +23977,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Gender Trasvesti",
     library: 'tabler',
     componentName: "IconGenderTrasvesti",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","trasvesti"],
   },
   {
@@ -24753,7 +24753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Hash",
     library: 'tabler',
     componentName: "IconHash",
-    category: 'other',
+    category: 'symbols',
     tags: ["hash"],
   },
   {
@@ -25217,7 +25217,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Help Square",
     library: 'tabler',
     componentName: "IconHelpSquare",
-    category: 'other',
+    category: 'shapes',
     tags: ["help","square","support","question","faq","assist"],
   },
   {
@@ -25225,7 +25225,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Help Square Filled",
     library: 'tabler',
     componentName: "IconHelpSquareFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["help","square","filled","support","question","faq","assist"],
   },
   {
@@ -25233,7 +25233,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Help Square Rounded",
     library: 'tabler',
     componentName: "IconHelpSquareRounded",
-    category: 'other',
+    category: 'shapes',
     tags: ["help","square","rounded","support","question","faq","assist"],
   },
   {
@@ -25241,7 +25241,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Help Square Rounded Filled",
     library: 'tabler',
     componentName: "IconHelpSquareRoundedFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["help","square","rounded","filled","support","question","faq","assist"],
   },
   {
@@ -25265,7 +25265,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Hemisphere",
     library: 'tabler',
     componentName: "IconHemisphere",
-    category: 'other',
+    category: 'shapes',
     tags: ["hemisphere"],
   },
   {
@@ -25273,7 +25273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Hemisphere Off",
     library: 'tabler',
     componentName: "IconHemisphereOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["hemisphere","off"],
   },
   {
@@ -25281,7 +25281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Hemisphere Plus",
     library: 'tabler',
     componentName: "IconHemispherePlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["hemisphere","plus","add","create","new","insert"],
   },
   {
@@ -26769,7 +26769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Indent Decrease",
     library: 'tabler',
     componentName: "IconIndentDecrease",
-    category: 'other',
+    category: 'text',
     tags: ["indent","decrease"],
   },
   {
@@ -26777,7 +26777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Indent Increase",
     library: 'tabler',
     componentName: "IconIndentIncrease",
-    category: 'other',
+    category: 'text',
     tags: ["indent","increase"],
   },
   {
@@ -26857,7 +26857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Info Square",
     library: 'tabler',
     componentName: "IconInfoSquare",
-    category: 'other',
+    category: 'shapes',
     tags: ["info","square","information","detail","about","help"],
   },
   {
@@ -26865,7 +26865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Info Square Filled",
     library: 'tabler',
     componentName: "IconInfoSquareFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["info","square","filled","information","detail","about","help"],
   },
   {
@@ -26873,7 +26873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Info Square Rounded",
     library: 'tabler',
     componentName: "IconInfoSquareRounded",
-    category: 'other',
+    category: 'shapes',
     tags: ["info","square","rounded","information","detail","about","help"],
   },
   {
@@ -26881,7 +26881,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Info Square Rounded Filled",
     library: 'tabler',
     componentName: "IconInfoSquareRoundedFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["info","square","rounded","filled","information","detail","about","help"],
   },
   {
@@ -27201,7 +27201,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Italic",
     library: 'tabler',
     componentName: "IconItalic",
-    category: 'other',
+    category: 'text',
     tags: ["italic"],
   },
   {
@@ -27705,7 +27705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Difference",
     library: 'tabler',
     componentName: "IconLayersDifference",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","difference"],
   },
   {
@@ -27713,7 +27713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Intersect",
     library: 'tabler',
     componentName: "IconLayersIntersect",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","intersect"],
   },
   {
@@ -27721,7 +27721,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Intersect2",
     library: 'tabler',
     componentName: "IconLayersIntersect2",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","intersect2"],
   },
   {
@@ -27729,7 +27729,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Linked",
     library: 'tabler',
     componentName: "IconLayersLinked",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","linked"],
   },
   {
@@ -27737,7 +27737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Off",
     library: 'tabler',
     componentName: "IconLayersOff",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","off"],
   },
   {
@@ -27761,7 +27761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Subtract",
     library: 'tabler',
     componentName: "IconLayersSubtract",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","subtract"],
   },
   {
@@ -27769,7 +27769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Layers Union",
     library: 'tabler',
     componentName: "IconLayersUnion",
-    category: 'other',
+    category: 'ui',
     tags: ["layers","union"],
   },
   {
@@ -28393,7 +28393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter A",
     library: 'tabler',
     componentName: "IconLetterA",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28409,7 +28409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter B",
     library: 'tabler',
     componentName: "IconLetterB",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28425,7 +28425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter C",
     library: 'tabler',
     componentName: "IconLetterC",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28441,7 +28441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter Case",
     library: 'tabler',
     componentName: "IconLetterCase",
-    category: 'other',
+    category: 'text',
     tags: ["letter","case"],
   },
   {
@@ -28449,7 +28449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter Case Lower",
     library: 'tabler',
     componentName: "IconLetterCaseLower",
-    category: 'other',
+    category: 'text',
     tags: ["letter","case","lower"],
   },
   {
@@ -28473,7 +28473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter D",
     library: 'tabler',
     componentName: "IconLetterD",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28489,7 +28489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter E",
     library: 'tabler',
     componentName: "IconLetterE",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28505,7 +28505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter F",
     library: 'tabler',
     componentName: "IconLetterF",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28521,7 +28521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter G",
     library: 'tabler',
     componentName: "IconLetterG",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28537,7 +28537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter H",
     library: 'tabler',
     componentName: "IconLetterH",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28553,7 +28553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter I",
     library: 'tabler',
     componentName: "IconLetterI",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28569,7 +28569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter J",
     library: 'tabler',
     componentName: "IconLetterJ",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28585,7 +28585,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter K",
     library: 'tabler',
     componentName: "IconLetterK",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28601,7 +28601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter L",
     library: 'tabler',
     componentName: "IconLetterL",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28617,7 +28617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter M",
     library: 'tabler',
     componentName: "IconLetterM",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28633,7 +28633,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter N",
     library: 'tabler',
     componentName: "IconLetterN",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28649,7 +28649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter O",
     library: 'tabler',
     componentName: "IconLetterO",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28665,7 +28665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter P",
     library: 'tabler',
     componentName: "IconLetterP",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28681,7 +28681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter Q",
     library: 'tabler',
     componentName: "IconLetterQ",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28697,7 +28697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter R",
     library: 'tabler',
     componentName: "IconLetterR",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28713,7 +28713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter S",
     library: 'tabler',
     componentName: "IconLetterS",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28737,7 +28737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter T",
     library: 'tabler',
     componentName: "IconLetterT",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28753,7 +28753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter U",
     library: 'tabler',
     componentName: "IconLetterU",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28769,7 +28769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter V",
     library: 'tabler',
     componentName: "IconLetterV",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28785,7 +28785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter W",
     library: 'tabler',
     componentName: "IconLetterW",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28801,7 +28801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter X",
     library: 'tabler',
     componentName: "IconLetterX",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28817,7 +28817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter Y",
     library: 'tabler',
     componentName: "IconLetterY",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28833,7 +28833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Letter Z",
     library: 'tabler',
     componentName: "IconLetterZ",
-    category: 'other',
+    category: 'text',
     tags: ["letter"],
   },
   {
@@ -28985,7 +28985,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Link",
     library: 'tabler',
     componentName: "IconLink",
-    category: 'other',
+    category: 'ui',
     tags: ["link","url","connect","chain","href"],
   },
   {
@@ -28993,7 +28993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Link Minus",
     library: 'tabler',
     componentName: "IconLinkMinus",
-    category: 'other',
+    category: 'ui',
     tags: ["link","minus","url","connect","chain","href","remove","delete","subtract"],
   },
   {
@@ -29001,7 +29001,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Link Off",
     library: 'tabler',
     componentName: "IconLinkOff",
-    category: 'other',
+    category: 'ui',
     tags: ["link","off","url","connect","chain","href"],
   },
   {
@@ -29009,7 +29009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Link Plus",
     library: 'tabler',
     componentName: "IconLinkPlus",
-    category: 'other',
+    category: 'ui',
     tags: ["link","plus","url","connect","chain","href","add","create","new","insert"],
   },
   {
@@ -31737,7 +31737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Meter Cube",
     library: 'tabler',
     componentName: "IconMeterCube",
-    category: 'other',
+    category: 'shapes',
     tags: ["meter","cube"],
   },
   {
@@ -31745,7 +31745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Meter Square",
     library: 'tabler',
     componentName: "IconMeterSquare",
-    category: 'other',
+    category: 'shapes',
     tags: ["meter","square"],
   },
   {
@@ -32073,7 +32073,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Angry",
     library: 'tabler',
     componentName: "IconMoodAngry",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","angry"],
   },
   {
@@ -32081,7 +32081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Angry Filled",
     library: 'tabler',
     componentName: "IconMoodAngryFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","angry","filled"],
   },
   {
@@ -32089,7 +32089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Annoyed",
     library: 'tabler',
     componentName: "IconMoodAnnoyed",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","annoyed"],
   },
   {
@@ -32097,7 +32097,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Annoyed2",
     library: 'tabler',
     componentName: "IconMoodAnnoyed2",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","annoyed2"],
   },
   {
@@ -32137,7 +32137,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Confuzed",
     library: 'tabler',
     componentName: "IconMoodConfuzed",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","confuzed"],
   },
   {
@@ -32145,7 +32145,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Confuzed Filled",
     library: 'tabler',
     componentName: "IconMoodConfuzedFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","confuzed","filled"],
   },
   {
@@ -32169,7 +32169,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Cry",
     library: 'tabler',
     componentName: "IconMoodCry",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","cry"],
   },
   {
@@ -32185,7 +32185,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Edit",
     library: 'tabler',
     componentName: "IconMoodEdit",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","edit","modify","change","update","write"],
   },
   {
@@ -32193,7 +32193,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Empty",
     library: 'tabler',
     componentName: "IconMoodEmpty",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","empty"],
   },
   {
@@ -32201,7 +32201,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Empty Filled",
     library: 'tabler',
     componentName: "IconMoodEmptyFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","empty","filled"],
   },
   {
@@ -32281,7 +32281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Minus",
     library: 'tabler',
     componentName: "IconMoodMinus",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","minus","remove","delete","subtract"],
   },
   {
@@ -32289,7 +32289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Nerd",
     library: 'tabler',
     componentName: "IconMoodNerd",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","nerd"],
   },
   {
@@ -32297,7 +32297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Nervous",
     library: 'tabler',
     componentName: "IconMoodNervous",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","nervous"],
   },
   {
@@ -32305,7 +32305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Neutral",
     library: 'tabler',
     componentName: "IconMoodNeutral",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","neutral"],
   },
   {
@@ -32313,7 +32313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Neutral Filled",
     library: 'tabler',
     componentName: "IconMoodNeutralFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","neutral","filled"],
   },
   {
@@ -32321,7 +32321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Off",
     library: 'tabler',
     componentName: "IconMoodOff",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","off"],
   },
   {
@@ -32337,7 +32337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Plus",
     library: 'tabler',
     componentName: "IconMoodPlus",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","plus","add","create","new","insert"],
   },
   {
@@ -32345,7 +32345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Puzzled",
     library: 'tabler',
     componentName: "IconMoodPuzzled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","puzzled"],
   },
   {
@@ -32353,7 +32353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sad",
     library: 'tabler',
     componentName: "IconMoodSad",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sad"],
   },
   {
@@ -32361,7 +32361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sad2",
     library: 'tabler',
     componentName: "IconMoodSad2",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sad2"],
   },
   {
@@ -32369,7 +32369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sad Dizzy",
     library: 'tabler',
     componentName: "IconMoodSadDizzy",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sad","dizzy"],
   },
   {
@@ -32377,7 +32377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sad Filled",
     library: 'tabler',
     componentName: "IconMoodSadFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sad","filled"],
   },
   {
@@ -32385,7 +32385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sad Squint",
     library: 'tabler',
     componentName: "IconMoodSadSquint",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sad","squint"],
   },
   {
@@ -32401,7 +32401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Share",
     library: 'tabler',
     componentName: "IconMoodShare",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","share","send","distribute","export","social"],
   },
   {
@@ -32409,7 +32409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sick",
     library: 'tabler',
     componentName: "IconMoodSick",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sick"],
   },
   {
@@ -32417,7 +32417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Silence",
     library: 'tabler',
     componentName: "IconMoodSilence",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","silence"],
   },
   {
@@ -32425,7 +32425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Sing",
     library: 'tabler',
     componentName: "IconMoodSing",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","sing"],
   },
   {
@@ -32433,7 +32433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Smile",
     library: 'tabler',
     componentName: "IconMoodSmile",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","smile"],
   },
   {
@@ -32441,7 +32441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Smile Beam",
     library: 'tabler',
     componentName: "IconMoodSmileBeam",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","smile","beam"],
   },
   {
@@ -32449,7 +32449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Smile Dizzy",
     library: 'tabler',
     componentName: "IconMoodSmileDizzy",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","smile","dizzy"],
   },
   {
@@ -32457,7 +32457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Smile Filled",
     library: 'tabler',
     componentName: "IconMoodSmileFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","smile","filled"],
   },
   {
@@ -32465,7 +32465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Spark",
     library: 'tabler',
     componentName: "IconMoodSpark",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","spark"],
   },
   {
@@ -32473,7 +32473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Surprised",
     library: 'tabler',
     componentName: "IconMoodSurprised",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","surprised"],
   },
   {
@@ -32481,7 +32481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Tongue",
     library: 'tabler',
     componentName: "IconMoodTongue",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","tongue"],
   },
   {
@@ -32505,7 +32505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Unamused",
     library: 'tabler',
     componentName: "IconMoodUnamused",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","unamused"],
   },
   {
@@ -32537,7 +32537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Wrrr",
     library: 'tabler',
     componentName: "IconMoodWrrr",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","wrrr"],
   },
   {
@@ -32545,7 +32545,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Wrrr Filled",
     library: 'tabler',
     componentName: "IconMoodWrrrFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","wrrr","filled"],
   },
   {
@@ -32553,7 +32553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood X",
     library: 'tabler',
     componentName: "IconMoodX",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood"],
   },
   {
@@ -32561,7 +32561,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Mood Xd",
     library: 'tabler',
     componentName: "IconMoodXd",
-    category: 'other',
+    category: 'symbols',
     tags: ["mood","xd"],
   },
   {
@@ -33361,7 +33361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number",
     library: 'tabler',
     componentName: "IconNumber",
-    category: 'other',
+    category: 'text',
     tags: ["number"],
   },
   {
@@ -33369,7 +33369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number0",
     library: 'tabler',
     componentName: "IconNumber0",
-    category: 'other',
+    category: 'text',
     tags: ["number0"],
   },
   {
@@ -33385,7 +33385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number1",
     library: 'tabler',
     componentName: "IconNumber1",
-    category: 'other',
+    category: 'text',
     tags: ["number1"],
   },
   {
@@ -33393,7 +33393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number10",
     library: 'tabler',
     componentName: "IconNumber10",
-    category: 'other',
+    category: 'text',
     tags: ["number10"],
   },
   {
@@ -33417,7 +33417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number11",
     library: 'tabler',
     componentName: "IconNumber11",
-    category: 'other',
+    category: 'text',
     tags: ["number11"],
   },
   {
@@ -33433,7 +33433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number123",
     library: 'tabler',
     componentName: "IconNumber123",
-    category: 'other',
+    category: 'text',
     tags: ["number123"],
   },
   {
@@ -33513,7 +33513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number2",
     library: 'tabler',
     componentName: "IconNumber2",
-    category: 'other',
+    category: 'text',
     tags: ["number2"],
   },
   {
@@ -33609,7 +33609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number3",
     library: 'tabler',
     componentName: "IconNumber3",
-    category: 'other',
+    category: 'text',
     tags: ["number3"],
   },
   {
@@ -33705,7 +33705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number4",
     library: 'tabler',
     componentName: "IconNumber4",
-    category: 'other',
+    category: 'text',
     tags: ["number4"],
   },
   {
@@ -33801,7 +33801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number5",
     library: 'tabler',
     componentName: "IconNumber5",
-    category: 'other',
+    category: 'text',
     tags: ["number5"],
   },
   {
@@ -33897,7 +33897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number6",
     library: 'tabler',
     componentName: "IconNumber6",
-    category: 'other',
+    category: 'text',
     tags: ["number6"],
   },
   {
@@ -33993,7 +33993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number7",
     library: 'tabler',
     componentName: "IconNumber7",
-    category: 'other',
+    category: 'text',
     tags: ["number7"],
   },
   {
@@ -34089,7 +34089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number8",
     library: 'tabler',
     componentName: "IconNumber8",
-    category: 'other',
+    category: 'text',
     tags: ["number8"],
   },
   {
@@ -34185,7 +34185,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Number9",
     library: 'tabler',
     componentName: "IconNumber9",
-    category: 'other',
+    category: 'text',
     tags: ["number9"],
   },
   {
@@ -34281,7 +34281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Numbers",
     library: 'tabler',
     componentName: "IconNumbers",
-    category: 'other',
+    category: 'text',
     tags: ["numbers"],
   },
   {
@@ -34481,7 +34481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Oval",
     library: 'tabler',
     componentName: "IconOval",
-    category: 'other',
+    category: 'shapes',
     tags: ["oval"],
   },
   {
@@ -34489,7 +34489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Oval Filled",
     library: 'tabler',
     componentName: "IconOvalFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["oval","filled"],
   },
   {
@@ -34497,7 +34497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Oval Vertical",
     library: 'tabler',
     componentName: "IconOvalVertical",
-    category: 'other',
+    category: 'shapes',
     tags: ["oval","vertical"],
   },
   {
@@ -34505,7 +34505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Oval Vertical Filled",
     library: 'tabler',
     componentName: "IconOvalVerticalFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["oval","vertical","filled"],
   },
   {
@@ -38329,7 +38329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette",
     library: 'tabler',
     componentName: "IconRosette",
-    category: 'other',
+    category: 'shapes',
     tags: ["rosette"],
   },
   {
@@ -38337,7 +38337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Asterisk",
     library: 'tabler',
     componentName: "IconRosetteAsterisk",
-    category: 'other',
+    category: 'symbols',
     tags: ["rosette","asterisk"],
   },
   {
@@ -38393,7 +38393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Filled",
     library: 'tabler',
     componentName: "IconRosetteFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["rosette","filled"],
   },
   {
@@ -38401,7 +38401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number0",
     library: 'tabler',
     componentName: "IconRosetteNumber0",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number0"],
   },
   {
@@ -38409,7 +38409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number1",
     library: 'tabler',
     componentName: "IconRosetteNumber1",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number1"],
   },
   {
@@ -38417,7 +38417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number2",
     library: 'tabler',
     componentName: "IconRosetteNumber2",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number2"],
   },
   {
@@ -38425,7 +38425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number3",
     library: 'tabler',
     componentName: "IconRosetteNumber3",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number3"],
   },
   {
@@ -38433,7 +38433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number4",
     library: 'tabler',
     componentName: "IconRosetteNumber4",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number4"],
   },
   {
@@ -38441,7 +38441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number5",
     library: 'tabler',
     componentName: "IconRosetteNumber5",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number5"],
   },
   {
@@ -38449,7 +38449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number6",
     library: 'tabler',
     componentName: "IconRosetteNumber6",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number6"],
   },
   {
@@ -38457,7 +38457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number7",
     library: 'tabler',
     componentName: "IconRosetteNumber7",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number7"],
   },
   {
@@ -38465,7 +38465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number8",
     library: 'tabler',
     componentName: "IconRosetteNumber8",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number8"],
   },
   {
@@ -38473,7 +38473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Rosette Number9",
     library: 'tabler',
     componentName: "IconRosetteNumber9",
-    category: 'other',
+    category: 'text',
     tags: ["rosette","number9"],
   },
   {
@@ -40913,7 +40913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Sphere",
     library: 'tabler',
     componentName: "IconSphere",
-    category: 'other',
+    category: 'shapes',
     tags: ["sphere"],
   },
   {
@@ -40921,7 +40921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Sphere Off",
     library: 'tabler',
     componentName: "IconSphereOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["sphere","off"],
   },
   {
@@ -40929,7 +40929,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Sphere Plus",
     library: 'tabler',
     componentName: "IconSpherePlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["sphere","plus","add","create","new","insert"],
   },
   {
@@ -41009,7 +41009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square",
     library: 'tabler',
     componentName: "IconSquare",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -41081,7 +41081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Asterisk",
     library: 'tabler',
     componentName: "IconSquareAsterisk",
-    category: 'other',
+    category: 'symbols',
     tags: ["square","asterisk"],
   },
   {
@@ -41089,7 +41089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Asterisk Filled",
     library: 'tabler',
     componentName: "IconSquareAsteriskFilled",
-    category: 'other',
+    category: 'symbols',
     tags: ["square","asterisk","filled"],
   },
   {
@@ -41241,7 +41241,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Dashed",
     library: 'tabler',
     componentName: "IconSquareDashed",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","dashed"],
   },
   {
@@ -41249,7 +41249,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Dot",
     library: 'tabler',
     componentName: "IconSquareDot",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","dot"],
   },
   {
@@ -41257,7 +41257,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Dot Filled",
     library: 'tabler',
     componentName: "IconSquareDotFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","dot","filled"],
   },
   {
@@ -41265,7 +41265,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F0",
     library: 'tabler',
     componentName: "IconSquareF0",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f0"],
   },
   {
@@ -41273,7 +41273,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F0 Filled",
     library: 'tabler',
     componentName: "IconSquareF0Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f0","filled"],
   },
   {
@@ -41281,7 +41281,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F1",
     library: 'tabler',
     componentName: "IconSquareF1",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f1"],
   },
   {
@@ -41289,7 +41289,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F1 Filled",
     library: 'tabler',
     componentName: "IconSquareF1Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f1","filled"],
   },
   {
@@ -41297,7 +41297,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F2",
     library: 'tabler',
     componentName: "IconSquareF2",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f2"],
   },
   {
@@ -41305,7 +41305,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F2 Filled",
     library: 'tabler',
     componentName: "IconSquareF2Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f2","filled"],
   },
   {
@@ -41313,7 +41313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F3",
     library: 'tabler',
     componentName: "IconSquareF3",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f3"],
   },
   {
@@ -41321,7 +41321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F3 Filled",
     library: 'tabler',
     componentName: "IconSquareF3Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f3","filled"],
   },
   {
@@ -41329,7 +41329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F4",
     library: 'tabler',
     componentName: "IconSquareF4",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f4"],
   },
   {
@@ -41337,7 +41337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F4 Filled",
     library: 'tabler',
     componentName: "IconSquareF4Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f4","filled"],
   },
   {
@@ -41345,7 +41345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F5",
     library: 'tabler',
     componentName: "IconSquareF5",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f5"],
   },
   {
@@ -41353,7 +41353,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F5 Filled",
     library: 'tabler',
     componentName: "IconSquareF5Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f5","filled"],
   },
   {
@@ -41361,7 +41361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F6",
     library: 'tabler',
     componentName: "IconSquareF6",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f6"],
   },
   {
@@ -41369,7 +41369,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F6 Filled",
     library: 'tabler',
     componentName: "IconSquareF6Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f6","filled"],
   },
   {
@@ -41377,7 +41377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F7",
     library: 'tabler',
     componentName: "IconSquareF7",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f7"],
   },
   {
@@ -41385,7 +41385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F7 Filled",
     library: 'tabler',
     componentName: "IconSquareF7Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f7","filled"],
   },
   {
@@ -41393,7 +41393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F8",
     library: 'tabler',
     componentName: "IconSquareF8",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f8"],
   },
   {
@@ -41401,7 +41401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F8 Filled",
     library: 'tabler',
     componentName: "IconSquareF8Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f8","filled"],
   },
   {
@@ -41409,7 +41409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F9",
     library: 'tabler',
     componentName: "IconSquareF9",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f9"],
   },
   {
@@ -41417,7 +41417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square F9 Filled",
     library: 'tabler',
     componentName: "IconSquareF9Filled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","f9","filled"],
   },
   {
@@ -41425,7 +41425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Filled",
     library: 'tabler',
     componentName: "IconSquareFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","filled"],
   },
   {
@@ -41449,7 +41449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Half",
     library: 'tabler',
     componentName: "IconSquareHalf",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","half"],
   },
   {
@@ -41465,7 +41465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter A",
     library: 'tabler',
     componentName: "IconSquareLetterA",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41473,7 +41473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter A Filled",
     library: 'tabler',
     componentName: "IconSquareLetterAFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41481,7 +41481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter B",
     library: 'tabler',
     componentName: "IconSquareLetterB",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41489,7 +41489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter B Filled",
     library: 'tabler',
     componentName: "IconSquareLetterBFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41497,7 +41497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter C",
     library: 'tabler',
     componentName: "IconSquareLetterC",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41505,7 +41505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter C Filled",
     library: 'tabler',
     componentName: "IconSquareLetterCFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41513,7 +41513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter D",
     library: 'tabler',
     componentName: "IconSquareLetterD",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41521,7 +41521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter D Filled",
     library: 'tabler',
     componentName: "IconSquareLetterDFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41529,7 +41529,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter E",
     library: 'tabler',
     componentName: "IconSquareLetterE",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41537,7 +41537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter E Filled",
     library: 'tabler',
     componentName: "IconSquareLetterEFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41545,7 +41545,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter F",
     library: 'tabler',
     componentName: "IconSquareLetterF",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41553,7 +41553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter F Filled",
     library: 'tabler',
     componentName: "IconSquareLetterFFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41561,7 +41561,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter G",
     library: 'tabler',
     componentName: "IconSquareLetterG",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41569,7 +41569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter G Filled",
     library: 'tabler',
     componentName: "IconSquareLetterGFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41577,7 +41577,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter H",
     library: 'tabler',
     componentName: "IconSquareLetterH",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41585,7 +41585,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter H Filled",
     library: 'tabler',
     componentName: "IconSquareLetterHFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41593,7 +41593,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter I",
     library: 'tabler',
     componentName: "IconSquareLetterI",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41601,7 +41601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter I Filled",
     library: 'tabler',
     componentName: "IconSquareLetterIFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41609,7 +41609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter J",
     library: 'tabler',
     componentName: "IconSquareLetterJ",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41617,7 +41617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter J Filled",
     library: 'tabler',
     componentName: "IconSquareLetterJFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41625,7 +41625,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter K",
     library: 'tabler',
     componentName: "IconSquareLetterK",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41633,7 +41633,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter K Filled",
     library: 'tabler',
     componentName: "IconSquareLetterKFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41641,7 +41641,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter L",
     library: 'tabler',
     componentName: "IconSquareLetterL",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41649,7 +41649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter L Filled",
     library: 'tabler',
     componentName: "IconSquareLetterLFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41657,7 +41657,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter M",
     library: 'tabler',
     componentName: "IconSquareLetterM",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41665,7 +41665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter M Filled",
     library: 'tabler',
     componentName: "IconSquareLetterMFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41673,7 +41673,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter N",
     library: 'tabler',
     componentName: "IconSquareLetterN",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41681,7 +41681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter N Filled",
     library: 'tabler',
     componentName: "IconSquareLetterNFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41689,7 +41689,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter O",
     library: 'tabler',
     componentName: "IconSquareLetterO",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41697,7 +41697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter O Filled",
     library: 'tabler',
     componentName: "IconSquareLetterOFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41705,7 +41705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter P",
     library: 'tabler',
     componentName: "IconSquareLetterP",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41713,7 +41713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter P Filled",
     library: 'tabler',
     componentName: "IconSquareLetterPFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41721,7 +41721,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter Q",
     library: 'tabler',
     componentName: "IconSquareLetterQ",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41729,7 +41729,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter Q Filled",
     library: 'tabler',
     componentName: "IconSquareLetterQFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41737,7 +41737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter R",
     library: 'tabler',
     componentName: "IconSquareLetterR",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41745,7 +41745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter R Filled",
     library: 'tabler',
     componentName: "IconSquareLetterRFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41753,7 +41753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter S",
     library: 'tabler',
     componentName: "IconSquareLetterS",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41761,7 +41761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter S Filled",
     library: 'tabler',
     componentName: "IconSquareLetterSFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41769,7 +41769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter T",
     library: 'tabler',
     componentName: "IconSquareLetterT",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41777,7 +41777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter T Filled",
     library: 'tabler',
     componentName: "IconSquareLetterTFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41785,7 +41785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter U",
     library: 'tabler',
     componentName: "IconSquareLetterU",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41793,7 +41793,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter U Filled",
     library: 'tabler',
     componentName: "IconSquareLetterUFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41801,7 +41801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter V",
     library: 'tabler',
     componentName: "IconSquareLetterV",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41809,7 +41809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter V Filled",
     library: 'tabler',
     componentName: "IconSquareLetterVFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41817,7 +41817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter W",
     library: 'tabler',
     componentName: "IconSquareLetterW",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41825,7 +41825,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter W Filled",
     library: 'tabler',
     componentName: "IconSquareLetterWFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41833,7 +41833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter X",
     library: 'tabler',
     componentName: "IconSquareLetterX",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41841,7 +41841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter X Filled",
     library: 'tabler',
     componentName: "IconSquareLetterXFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41849,7 +41849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter Y",
     library: 'tabler',
     componentName: "IconSquareLetterY",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41857,7 +41857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter Y Filled",
     library: 'tabler',
     componentName: "IconSquareLetterYFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41865,7 +41865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter Z",
     library: 'tabler',
     componentName: "IconSquareLetterZ",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter"],
   },
   {
@@ -41873,7 +41873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Letter Z Filled",
     library: 'tabler',
     componentName: "IconSquareLetterZFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","letter","filled"],
   },
   {
@@ -41881,7 +41881,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Minus",
     library: 'tabler',
     componentName: "IconSquareMinus",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","minus","remove","delete","subtract"],
   },
   {
@@ -41889,7 +41889,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Minus2",
     library: 'tabler',
     componentName: "IconSquareMinus2",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","minus2"],
   },
   {
@@ -41897,7 +41897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Minus Filled",
     library: 'tabler',
     componentName: "IconSquareMinusFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","minus","filled","remove","delete","subtract"],
   },
   {
@@ -41905,7 +41905,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number0",
     library: 'tabler',
     componentName: "IconSquareNumber0",
-    category: 'other',
+    category: 'text',
     tags: ["square","number0"],
   },
   {
@@ -41913,7 +41913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number0 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber0Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number0","filled"],
   },
   {
@@ -41921,7 +41921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number1",
     library: 'tabler',
     componentName: "IconSquareNumber1",
-    category: 'other',
+    category: 'text',
     tags: ["square","number1"],
   },
   {
@@ -41929,7 +41929,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number1 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber1Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number1","filled"],
   },
   {
@@ -41937,7 +41937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number2",
     library: 'tabler',
     componentName: "IconSquareNumber2",
-    category: 'other',
+    category: 'text',
     tags: ["square","number2"],
   },
   {
@@ -41945,7 +41945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number2 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber2Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number2","filled"],
   },
   {
@@ -41953,7 +41953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number3",
     library: 'tabler',
     componentName: "IconSquareNumber3",
-    category: 'other',
+    category: 'text',
     tags: ["square","number3"],
   },
   {
@@ -41961,7 +41961,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number3 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber3Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number3","filled"],
   },
   {
@@ -41969,7 +41969,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number4",
     library: 'tabler',
     componentName: "IconSquareNumber4",
-    category: 'other',
+    category: 'text',
     tags: ["square","number4"],
   },
   {
@@ -41977,7 +41977,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number4 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber4Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number4","filled"],
   },
   {
@@ -41985,7 +41985,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number5",
     library: 'tabler',
     componentName: "IconSquareNumber5",
-    category: 'other',
+    category: 'text',
     tags: ["square","number5"],
   },
   {
@@ -41993,7 +41993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number5 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber5Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number5","filled"],
   },
   {
@@ -42001,7 +42001,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number6",
     library: 'tabler',
     componentName: "IconSquareNumber6",
-    category: 'other',
+    category: 'text',
     tags: ["square","number6"],
   },
   {
@@ -42009,7 +42009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number6 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber6Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number6","filled"],
   },
   {
@@ -42017,7 +42017,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number7",
     library: 'tabler',
     componentName: "IconSquareNumber7",
-    category: 'other',
+    category: 'text',
     tags: ["square","number7"],
   },
   {
@@ -42025,7 +42025,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number7 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber7Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number7","filled"],
   },
   {
@@ -42033,7 +42033,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number8",
     library: 'tabler',
     componentName: "IconSquareNumber8",
-    category: 'other',
+    category: 'text',
     tags: ["square","number8"],
   },
   {
@@ -42041,7 +42041,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number8 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber8Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number8","filled"],
   },
   {
@@ -42049,7 +42049,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number9",
     library: 'tabler',
     componentName: "IconSquareNumber9",
-    category: 'other',
+    category: 'text',
     tags: ["square","number9"],
   },
   {
@@ -42057,7 +42057,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Number9 Filled",
     library: 'tabler',
     componentName: "IconSquareNumber9Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","number9","filled"],
   },
   {
@@ -42065,7 +42065,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Off",
     library: 'tabler',
     componentName: "IconSquareOff",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","off"],
   },
   {
@@ -42081,7 +42081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Plus",
     library: 'tabler',
     componentName: "IconSquarePlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","plus","add","create","new","insert"],
   },
   {
@@ -42089,7 +42089,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Plus2",
     library: 'tabler',
     componentName: "IconSquarePlus2",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","plus2"],
   },
   {
@@ -42097,7 +42097,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Root",
     library: 'tabler',
     componentName: "IconSquareRoot",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","root"],
   },
   {
@@ -42105,7 +42105,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Root2",
     library: 'tabler',
     componentName: "IconSquareRoot2",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","root2"],
   },
   {
@@ -42161,7 +42161,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded",
     library: 'tabler',
     componentName: "IconSquareRounded",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded"],
   },
   {
@@ -42377,7 +42377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","filled"],
   },
   {
@@ -42385,7 +42385,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter A",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterA",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42393,7 +42393,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter A Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterAFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42401,7 +42401,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter B",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterB",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42409,7 +42409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter B Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterBFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42417,7 +42417,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter C",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterC",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42425,7 +42425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter C Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterCFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42433,7 +42433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter D",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterD",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42441,7 +42441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter D Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterDFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42449,7 +42449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter E",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterE",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42457,7 +42457,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter E Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterEFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42465,7 +42465,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter F",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterF",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42473,7 +42473,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter F Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterFFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42481,7 +42481,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter G",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterG",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42489,7 +42489,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter G Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterGFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42497,7 +42497,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter H",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterH",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42505,7 +42505,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter H Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterHFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42513,7 +42513,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter I",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterI",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42521,7 +42521,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter I Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterIFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42529,7 +42529,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter J",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterJ",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42537,7 +42537,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter J Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterJFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42545,7 +42545,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter K",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterK",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42553,7 +42553,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter K Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterKFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42561,7 +42561,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter L",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterL",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42569,7 +42569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter L Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterLFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42577,7 +42577,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter M",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterM",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42585,7 +42585,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter M Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterMFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42593,7 +42593,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter N",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterN",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42601,7 +42601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter N Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterNFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42609,7 +42609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter O",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterO",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42617,7 +42617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter O Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterOFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42625,7 +42625,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter P",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterP",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42633,7 +42633,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter P Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterPFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42641,7 +42641,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter Q",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterQ",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42649,7 +42649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter Q Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterQFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42657,7 +42657,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter R",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterR",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42665,7 +42665,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter R Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterRFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42673,7 +42673,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter S",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterS",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42681,7 +42681,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter S Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterSFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42689,7 +42689,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter T",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterT",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42697,7 +42697,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter T Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterTFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42705,7 +42705,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter U",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterU",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42713,7 +42713,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter U Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterUFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42721,7 +42721,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter V",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterV",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42729,7 +42729,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter V Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterVFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42737,7 +42737,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter W",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterW",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42745,7 +42745,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter W Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterWFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42753,7 +42753,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter X",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterX",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42761,7 +42761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter X Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterXFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42769,7 +42769,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter Y",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterY",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42777,7 +42777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter Y Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterYFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42785,7 +42785,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter Z",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterZ",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter"],
   },
   {
@@ -42793,7 +42793,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Letter Z Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedLetterZFilled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","letter","filled"],
   },
   {
@@ -42801,7 +42801,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Minus",
     library: 'tabler',
     componentName: "IconSquareRoundedMinus",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","minus","remove","delete","subtract"],
   },
   {
@@ -42809,7 +42809,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Minus2",
     library: 'tabler',
     componentName: "IconSquareRoundedMinus2",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","minus2"],
   },
   {
@@ -42817,7 +42817,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Minus Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedMinusFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","minus","filled","remove","delete","subtract"],
   },
   {
@@ -42825,7 +42825,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number0",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber0",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number0"],
   },
   {
@@ -42833,7 +42833,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number0 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber0Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number0","filled"],
   },
   {
@@ -42841,7 +42841,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number1",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber1",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number1"],
   },
   {
@@ -42849,7 +42849,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number1 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber1Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number1","filled"],
   },
   {
@@ -42857,7 +42857,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number2",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber2",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number2"],
   },
   {
@@ -42865,7 +42865,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number2 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber2Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number2","filled"],
   },
   {
@@ -42873,7 +42873,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number3",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber3",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number3"],
   },
   {
@@ -42881,7 +42881,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number3 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber3Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number3","filled"],
   },
   {
@@ -42889,7 +42889,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number4",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber4",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number4"],
   },
   {
@@ -42897,7 +42897,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number4 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber4Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number4","filled"],
   },
   {
@@ -42905,7 +42905,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number5",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber5",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number5"],
   },
   {
@@ -42913,7 +42913,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number5 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber5Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number5","filled"],
   },
   {
@@ -42921,7 +42921,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number6",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber6",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number6"],
   },
   {
@@ -42929,7 +42929,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number6 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber6Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number6","filled"],
   },
   {
@@ -42937,7 +42937,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number7",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber7",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number7"],
   },
   {
@@ -42945,7 +42945,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number7 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber7Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number7","filled"],
   },
   {
@@ -42953,7 +42953,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number8",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber8",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number8"],
   },
   {
@@ -42961,7 +42961,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number8 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber8Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number8","filled"],
   },
   {
@@ -42969,7 +42969,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number9",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber9",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number9"],
   },
   {
@@ -42977,7 +42977,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Number9 Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedNumber9Filled",
-    category: 'other',
+    category: 'text',
     tags: ["square","rounded","number9","filled"],
   },
   {
@@ -42993,7 +42993,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Plus",
     library: 'tabler',
     componentName: "IconSquareRoundedPlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","plus","add","create","new","insert"],
   },
   {
@@ -43001,7 +43001,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Plus2",
     library: 'tabler',
     componentName: "IconSquareRoundedPlus2",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","plus2"],
   },
   {
@@ -43009,7 +43009,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded Plus Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedPlusFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","plus","filled","add","create","new","insert"],
   },
   {
@@ -43017,7 +43017,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded X",
     library: 'tabler',
     componentName: "IconSquareRoundedX",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded"],
   },
   {
@@ -43025,7 +43025,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square Rounded X Filled",
     library: 'tabler',
     componentName: "IconSquareRoundedXFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","rounded","filled"],
   },
   {
@@ -43049,7 +43049,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square X",
     library: 'tabler',
     componentName: "IconSquareX",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -43057,7 +43057,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Square X Filled",
     library: 'tabler',
     componentName: "IconSquareXFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","filled"],
   },
   {
@@ -43065,7 +43065,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Squares",
     library: 'tabler',
     componentName: "IconSquares",
-    category: 'other',
+    category: 'shapes',
     tags: ["squares"],
   },
   {
@@ -43081,7 +43081,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Squares Filled",
     library: 'tabler',
     componentName: "IconSquaresFilled",
-    category: 'other',
+    category: 'shapes',
     tags: ["squares","filled"],
   },
   {
@@ -43097,7 +43097,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack",
     library: 'tabler',
     componentName: "IconStack",
-    category: 'other',
+    category: 'ui',
     tags: ["stack"],
   },
   {
@@ -43105,7 +43105,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack2",
     library: 'tabler',
     componentName: "IconStack2",
-    category: 'other',
+    category: 'ui',
     tags: ["stack2"],
   },
   {
@@ -43113,7 +43113,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack2 Filled",
     library: 'tabler',
     componentName: "IconStack2Filled",
-    category: 'other',
+    category: 'ui',
     tags: ["stack2","filled"],
   },
   {
@@ -43121,7 +43121,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack3",
     library: 'tabler',
     componentName: "IconStack3",
-    category: 'other',
+    category: 'ui',
     tags: ["stack3"],
   },
   {
@@ -43129,7 +43129,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack3 Filled",
     library: 'tabler',
     componentName: "IconStack3Filled",
-    category: 'other',
+    category: 'ui',
     tags: ["stack3","filled"],
   },
   {
@@ -43153,7 +43153,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack Filled",
     library: 'tabler',
     componentName: "IconStackFilled",
-    category: 'other',
+    category: 'ui',
     tags: ["stack","filled"],
   },
   {
@@ -43169,7 +43169,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack Front",
     library: 'tabler',
     componentName: "IconStackFront",
-    category: 'other',
+    category: 'ui',
     tags: ["stack","front"],
   },
   {
@@ -43185,7 +43185,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Stack Pop",
     library: 'tabler',
     componentName: "IconStackPop",
-    category: 'other',
+    category: 'ui',
     tags: ["stack","pop"],
   },
   {
@@ -43425,7 +43425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Strikethrough",
     library: 'tabler',
     componentName: "IconStrikethrough",
-    category: 'other',
+    category: 'text',
     tags: ["strikethrough"],
   },
   {
@@ -44313,7 +44313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Caption",
     library: 'tabler',
     componentName: "IconTextCaption",
-    category: 'other',
+    category: 'text',
     tags: ["text","caption"],
   },
   {
@@ -44329,7 +44329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Decrease",
     library: 'tabler',
     componentName: "IconTextDecrease",
-    category: 'other',
+    category: 'text',
     tags: ["text","decrease"],
   },
   {
@@ -44361,7 +44361,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Increase",
     library: 'tabler',
     componentName: "IconTextIncrease",
-    category: 'other',
+    category: 'text',
     tags: ["text","increase"],
   },
   {
@@ -44377,7 +44377,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Plus",
     library: 'tabler',
     componentName: "IconTextPlus",
-    category: 'other',
+    category: 'text',
     tags: ["text","plus","add","create","new","insert"],
   },
   {
@@ -44409,7 +44409,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Size",
     library: 'tabler',
     componentName: "IconTextSize",
-    category: 'other',
+    category: 'text',
     tags: ["text","size"],
   },
   {
@@ -44425,7 +44425,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Wrap",
     library: 'tabler',
     componentName: "IconTextWrap",
-    category: 'other',
+    category: 'text',
     tags: ["text","wrap"],
   },
   {
@@ -44433,7 +44433,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Wrap Column",
     library: 'tabler',
     componentName: "IconTextWrapColumn",
-    category: 'other',
+    category: 'text',
     tags: ["text","wrap","column"],
   },
   {
@@ -44441,7 +44441,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Text Wrap Disabled",
     library: 'tabler',
     componentName: "IconTextWrapDisabled",
-    category: 'other',
+    category: 'text',
     tags: ["text","wrap","disabled"],
   },
   {
@@ -44449,7 +44449,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Texture",
     library: 'tabler',
     componentName: "IconTexture",
-    category: 'other',
+    category: 'text',
     tags: ["texture"],
   },
   {
@@ -45313,7 +45313,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Trash",
     library: 'tabler',
     componentName: "IconTrash",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","delete","remove","bin","garbage"],
   },
   {
@@ -45321,7 +45321,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Trash Filled",
     library: 'tabler',
     componentName: "IconTrashFilled",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","filled","delete","remove","bin","garbage"],
   },
   {
@@ -45329,7 +45329,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Trash Off",
     library: 'tabler',
     componentName: "IconTrashOff",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","off","delete","remove","bin","garbage"],
   },
   {
@@ -45337,7 +45337,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Trash X",
     library: 'tabler',
     componentName: "IconTrashX",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","delete","remove","bin","garbage"],
   },
   {
@@ -45345,7 +45345,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Trash X Filled",
     library: 'tabler',
     componentName: "IconTrashXFilled",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","filled","delete","remove","bin","garbage"],
   },
   {
@@ -45761,7 +45761,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Underline",
     library: 'tabler',
     componentName: "IconUnderline",
-    category: 'other',
+    category: 'text',
     tags: ["underline"],
   },
   {
@@ -45777,7 +45777,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Unlink",
     library: 'tabler',
     componentName: "IconUnlink",
-    category: 'other',
+    category: 'ui',
     tags: ["unlink"],
   },
   {
@@ -47569,7 +47569,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Aquarius",
     library: 'tabler',
     componentName: "IconZodiacAquarius",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","aquarius"],
   },
   {
@@ -47577,7 +47577,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Aries",
     library: 'tabler',
     componentName: "IconZodiacAries",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","aries"],
   },
   {
@@ -47593,7 +47593,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Capricorn",
     library: 'tabler',
     componentName: "IconZodiacCapricorn",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","capricorn"],
   },
   {
@@ -47601,7 +47601,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Gemini",
     library: 'tabler',
     componentName: "IconZodiacGemini",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","gemini"],
   },
   {
@@ -47609,7 +47609,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Leo",
     library: 'tabler',
     componentName: "IconZodiacLeo",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","leo"],
   },
   {
@@ -47617,7 +47617,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Libra",
     library: 'tabler',
     componentName: "IconZodiacLibra",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","libra"],
   },
   {
@@ -47625,7 +47625,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Pisces",
     library: 'tabler',
     componentName: "IconZodiacPisces",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","pisces"],
   },
   {
@@ -47641,7 +47641,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Scorpio",
     library: 'tabler',
     componentName: "IconZodiacScorpio",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","scorpio"],
   },
   {
@@ -47649,7 +47649,7 @@ export const tablerIconsFull: IconDescriptor[] = [
     name: "Zodiac Taurus",
     library: 'tabler',
     componentName: "IconZodiacTaurus",
-    category: 'other',
+    category: 'symbols',
     tags: ["zodiac","taurus"],
   },
   {

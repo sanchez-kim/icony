@@ -97,7 +97,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Bottom",
     library: 'phosphor',
     componentName: "AlignBottom",
-    category: 'other',
+    category: 'text',
     tags: ["align","bottom"],
   },
   {
@@ -105,7 +105,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Bottom Simple",
     library: 'phosphor',
     componentName: "AlignBottomSimple",
-    category: 'other',
+    category: 'text',
     tags: ["align","bottom","simple"],
   },
   {
@@ -113,7 +113,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Center Horizontal",
     library: 'phosphor',
     componentName: "AlignCenterHorizontal",
-    category: 'other',
+    category: 'text',
     tags: ["align","center","horizontal"],
   },
   {
@@ -121,7 +121,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Center Horizontal Simple",
     library: 'phosphor',
     componentName: "AlignCenterHorizontalSimple",
-    category: 'other',
+    category: 'text',
     tags: ["align","center","horizontal","simple"],
   },
   {
@@ -129,7 +129,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Center Vertical",
     library: 'phosphor',
     componentName: "AlignCenterVertical",
-    category: 'other',
+    category: 'text',
     tags: ["align","center","vertical"],
   },
   {
@@ -137,7 +137,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Center Vertical Simple",
     library: 'phosphor',
     componentName: "AlignCenterVerticalSimple",
-    category: 'other',
+    category: 'text',
     tags: ["align","center","vertical","simple"],
   },
   {
@@ -177,7 +177,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Top",
     library: 'phosphor',
     componentName: "AlignTop",
-    category: 'other',
+    category: 'text',
     tags: ["align","top"],
   },
   {
@@ -185,7 +185,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Align Top Simple",
     library: 'phosphor',
     componentName: "AlignTopSimple",
-    category: 'other',
+    category: 'text',
     tags: ["align","top","simple"],
   },
   {
@@ -1073,7 +1073,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Asterisk",
     library: 'phosphor',
     componentName: "Asterisk",
-    category: 'other',
+    category: 'symbols',
     tags: ["asterisk"],
   },
   {
@@ -1081,7 +1081,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Asterisk Simple",
     library: 'phosphor',
     componentName: "AsteriskSimple",
-    category: 'other',
+    category: 'symbols',
     tags: ["asterisk","simple"],
   },
   {
@@ -1569,7 +1569,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Brandy",
     library: 'phosphor',
     componentName: "Brandy",
-    category: 'other',
+    category: 'brands',
     tags: ["brandy"],
   },
   {
@@ -2697,7 +2697,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Cube",
     library: 'phosphor',
     componentName: "Cube",
-    category: 'other',
+    category: 'shapes',
     tags: ["cube"],
   },
   {
@@ -2833,7 +2833,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Cylinder",
     library: 'phosphor',
     componentName: "Cylinder",
-    category: 'other',
+    category: 'shapes',
     tags: ["cylinder"],
   },
   {
@@ -2921,7 +2921,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Diamond",
     library: 'phosphor',
     componentName: "Diamond",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond"],
   },
   {
@@ -2929,7 +2929,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Diamonds Four",
     library: 'phosphor',
     componentName: "DiamondsFour",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamonds","four"],
   },
   {
@@ -3025,7 +3025,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Nine",
     library: 'phosphor',
     componentName: "DotsNine",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","nine"],
   },
   {
@@ -3033,7 +3033,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Six",
     library: 'phosphor',
     componentName: "DotsSix",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","six"],
   },
   {
@@ -3041,7 +3041,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Six Vertical",
     library: 'phosphor',
     componentName: "DotsSixVertical",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","six","vertical"],
   },
   {
@@ -3049,7 +3049,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Three",
     library: 'phosphor',
     componentName: "DotsThree",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","three"],
   },
   {
@@ -3073,7 +3073,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Three Outline",
     library: 'phosphor',
     componentName: "DotsThreeOutline",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","three","outline"],
   },
   {
@@ -3081,7 +3081,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Three Outline Vertical",
     library: 'phosphor',
     componentName: "DotsThreeOutlineVertical",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","three","outline","vertical"],
   },
   {
@@ -3089,7 +3089,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Dots Three Vertical",
     library: 'phosphor',
     componentName: "DotsThreeVertical",
-    category: 'other',
+    category: 'ui',
     tags: ["dots","three","vertical"],
   },
   {
@@ -4081,7 +4081,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Gender Female",
     library: 'phosphor',
     componentName: "GenderFemale",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","female"],
   },
   {
@@ -4089,7 +4089,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Gender Intersex",
     library: 'phosphor',
     componentName: "GenderIntersex",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","intersex"],
   },
   {
@@ -4097,7 +4097,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Gender Male",
     library: 'phosphor',
     componentName: "GenderMale",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","male"],
   },
   {
@@ -4105,7 +4105,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Gender Neuter",
     library: 'phosphor',
     componentName: "GenderNeuter",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","neuter"],
   },
   {
@@ -4113,7 +4113,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Gender Nonbinary",
     library: 'phosphor',
     componentName: "GenderNonbinary",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","nonbinary"],
   },
   {
@@ -4121,7 +4121,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Gender Transgender",
     library: 'phosphor',
     componentName: "GenderTransgender",
-    category: 'other',
+    category: 'symbols',
     tags: ["gender","transgender"],
   },
   {
@@ -4457,7 +4457,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Hash",
     library: 'phosphor',
     componentName: "Hash",
-    category: 'other',
+    category: 'symbols',
     tags: ["hash"],
   },
   {
@@ -4465,7 +4465,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Hash Straight",
     library: 'phosphor',
     componentName: "HashStraight",
-    category: 'other',
+    category: 'symbols',
     tags: ["hash","straight"],
   },
   {
@@ -4873,7 +4873,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Link",
     library: 'phosphor',
     componentName: "Link",
-    category: 'other',
+    category: 'ui',
     tags: ["link","url","connect","chain","href"],
   },
   {
@@ -4881,7 +4881,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Link Break",
     library: 'phosphor',
     componentName: "LinkBreak",
-    category: 'other',
+    category: 'ui',
     tags: ["link","break","url","connect","chain","href"],
   },
   {
@@ -4889,7 +4889,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Link Simple",
     library: 'phosphor',
     componentName: "LinkSimple",
-    category: 'other',
+    category: 'ui',
     tags: ["link","simple","url","connect","chain","href"],
   },
   {
@@ -4897,7 +4897,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Link Simple Break",
     library: 'phosphor',
     componentName: "LinkSimpleBreak",
-    category: 'other',
+    category: 'ui',
     tags: ["link","simple","break","url","connect","chain","href"],
   },
   {
@@ -4905,7 +4905,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Link Simple Horizontal",
     library: 'phosphor',
     componentName: "LinkSimpleHorizontal",
-    category: 'other',
+    category: 'ui',
     tags: ["link","simple","horizontal","url","connect","chain","href"],
   },
   {
@@ -4913,7 +4913,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Link Simple Horizontal Break",
     library: 'phosphor',
     componentName: "LinkSimpleHorizontalBreak",
-    category: 'other',
+    category: 'ui',
     tags: ["link","simple","horizontal","break","url","connect","chain","href"],
   },
   {
@@ -5537,7 +5537,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Eight",
     library: 'phosphor',
     componentName: "NumberEight",
-    category: 'other',
+    category: 'text',
     tags: ["number","eight"],
   },
   {
@@ -5545,7 +5545,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Five",
     library: 'phosphor',
     componentName: "NumberFive",
-    category: 'other',
+    category: 'text',
     tags: ["number","five"],
   },
   {
@@ -5553,7 +5553,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Four",
     library: 'phosphor',
     componentName: "NumberFour",
-    category: 'other',
+    category: 'text',
     tags: ["number","four"],
   },
   {
@@ -5561,7 +5561,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Nine",
     library: 'phosphor',
     componentName: "NumberNine",
-    category: 'other',
+    category: 'text',
     tags: ["number","nine"],
   },
   {
@@ -5569,7 +5569,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number One",
     library: 'phosphor',
     componentName: "NumberOne",
-    category: 'other',
+    category: 'text',
     tags: ["number","one"],
   },
   {
@@ -5577,7 +5577,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Seven",
     library: 'phosphor',
     componentName: "NumberSeven",
-    category: 'other',
+    category: 'text',
     tags: ["number","seven"],
   },
   {
@@ -5585,7 +5585,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Six",
     library: 'phosphor',
     componentName: "NumberSix",
-    category: 'other',
+    category: 'text',
     tags: ["number","six"],
   },
   {
@@ -5593,7 +5593,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Eight",
     library: 'phosphor',
     componentName: "NumberSquareEight",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","eight"],
   },
   {
@@ -5601,7 +5601,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Five",
     library: 'phosphor',
     componentName: "NumberSquareFive",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","five"],
   },
   {
@@ -5609,7 +5609,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Four",
     library: 'phosphor',
     componentName: "NumberSquareFour",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","four"],
   },
   {
@@ -5617,7 +5617,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Nine",
     library: 'phosphor',
     componentName: "NumberSquareNine",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","nine"],
   },
   {
@@ -5625,7 +5625,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square One",
     library: 'phosphor',
     componentName: "NumberSquareOne",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","one"],
   },
   {
@@ -5633,7 +5633,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Seven",
     library: 'phosphor',
     componentName: "NumberSquareSeven",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","seven"],
   },
   {
@@ -5641,7 +5641,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Six",
     library: 'phosphor',
     componentName: "NumberSquareSix",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","six"],
   },
   {
@@ -5649,7 +5649,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Three",
     library: 'phosphor',
     componentName: "NumberSquareThree",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","three"],
   },
   {
@@ -5657,7 +5657,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Two",
     library: 'phosphor',
     componentName: "NumberSquareTwo",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","two"],
   },
   {
@@ -5665,7 +5665,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Square Zero",
     library: 'phosphor',
     componentName: "NumberSquareZero",
-    category: 'other',
+    category: 'text',
     tags: ["number","square","zero"],
   },
   {
@@ -5673,7 +5673,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Three",
     library: 'phosphor',
     componentName: "NumberThree",
-    category: 'other',
+    category: 'text',
     tags: ["number","three"],
   },
   {
@@ -5681,7 +5681,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Two",
     library: 'phosphor',
     componentName: "NumberTwo",
-    category: 'other',
+    category: 'text',
     tags: ["number","two"],
   },
   {
@@ -5689,7 +5689,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Number Zero",
     library: 'phosphor',
     componentName: "NumberZero",
-    category: 'other',
+    category: 'text',
     tags: ["number","zero"],
   },
   {
@@ -6913,7 +6913,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Smiley",
     library: 'phosphor',
     componentName: "Smiley",
-    category: 'other',
+    category: 'symbols',
     tags: ["smiley"],
   },
   {
@@ -6921,7 +6921,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Smiley Blank",
     library: 'phosphor',
     componentName: "SmileyBlank",
-    category: 'other',
+    category: 'symbols',
     tags: ["smiley","blank"],
   },
   {
@@ -6929,7 +6929,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Smiley Meh",
     library: 'phosphor',
     componentName: "SmileyMeh",
-    category: 'other',
+    category: 'symbols',
     tags: ["smiley","meh"],
   },
   {
@@ -6937,7 +6937,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Smiley Nervous",
     library: 'phosphor',
     componentName: "SmileyNervous",
-    category: 'other',
+    category: 'symbols',
     tags: ["smiley","nervous"],
   },
   {
@@ -6945,7 +6945,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Smiley Sad",
     library: 'phosphor',
     componentName: "SmileySad",
-    category: 'other',
+    category: 'symbols',
     tags: ["smiley","sad"],
   },
   {
@@ -6953,7 +6953,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Smiley Sticker",
     library: 'phosphor',
     componentName: "SmileySticker",
-    category: 'other',
+    category: 'symbols',
     tags: ["smiley","sticker"],
   },
   {
@@ -7145,7 +7145,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Square",
     library: 'phosphor',
     componentName: "Square",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -7153,7 +7153,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Square Half",
     library: 'phosphor',
     componentName: "SquareHalf",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","half"],
   },
   {
@@ -7161,7 +7161,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Square Half Bottom",
     library: 'phosphor',
     componentName: "SquareHalfBottom",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","half","bottom"],
   },
   {
@@ -7177,7 +7177,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Squares Four",
     library: 'phosphor',
     componentName: "SquaresFour",
-    category: 'other',
+    category: 'shapes',
     tags: ["squares","four"],
   },
   {
@@ -7185,7 +7185,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Stack",
     library: 'phosphor',
     componentName: "Stack",
-    category: 'other',
+    category: 'ui',
     tags: ["stack"],
   },
   {
@@ -7201,7 +7201,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Stack Simple",
     library: 'phosphor',
     componentName: "StackSimple",
-    category: 'other',
+    category: 'ui',
     tags: ["stack","simple"],
   },
   {
@@ -7497,7 +7497,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Aa",
     library: 'phosphor',
     componentName: "TextAa",
-    category: 'other',
+    category: 'text',
     tags: ["text","aa"],
   },
   {
@@ -7505,7 +7505,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Align Center",
     library: 'phosphor',
     componentName: "TextAlignCenter",
-    category: 'other',
+    category: 'text',
     tags: ["text","align","center"],
   },
   {
@@ -7513,7 +7513,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Align Justify",
     library: 'phosphor',
     componentName: "TextAlignJustify",
-    category: 'other',
+    category: 'text',
     tags: ["text","align","justify"],
   },
   {
@@ -7537,7 +7537,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Bolder",
     library: 'phosphor',
     componentName: "TextBolder",
-    category: 'other',
+    category: 'text',
     tags: ["text","bolder"],
   },
   {
@@ -7545,7 +7545,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H",
     library: 'phosphor',
     componentName: "TextH",
-    category: 'other',
+    category: 'text',
     tags: ["text"],
   },
   {
@@ -7553,7 +7553,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H Five",
     library: 'phosphor',
     componentName: "TextHFive",
-    category: 'other',
+    category: 'text',
     tags: ["text","five"],
   },
   {
@@ -7561,7 +7561,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H Four",
     library: 'phosphor',
     componentName: "TextHFour",
-    category: 'other',
+    category: 'text',
     tags: ["text","four"],
   },
   {
@@ -7569,7 +7569,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H One",
     library: 'phosphor',
     componentName: "TextHOne",
-    category: 'other',
+    category: 'text',
     tags: ["text","one"],
   },
   {
@@ -7577,7 +7577,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H Six",
     library: 'phosphor',
     componentName: "TextHSix",
-    category: 'other',
+    category: 'text',
     tags: ["text","six"],
   },
   {
@@ -7585,7 +7585,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H Three",
     library: 'phosphor',
     componentName: "TextHThree",
-    category: 'other',
+    category: 'text',
     tags: ["text","three"],
   },
   {
@@ -7593,7 +7593,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text H Two",
     library: 'phosphor',
     componentName: "TextHTwo",
-    category: 'other',
+    category: 'text',
     tags: ["text","two"],
   },
   {
@@ -7601,7 +7601,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Indent",
     library: 'phosphor',
     componentName: "TextIndent",
-    category: 'other',
+    category: 'text',
     tags: ["text","indent"],
   },
   {
@@ -7609,7 +7609,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Italic",
     library: 'phosphor',
     componentName: "TextItalic",
-    category: 'other',
+    category: 'text',
     tags: ["text","italic"],
   },
   {
@@ -7617,7 +7617,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Outdent",
     library: 'phosphor',
     componentName: "TextOutdent",
-    category: 'other',
+    category: 'text',
     tags: ["text","outdent"],
   },
   {
@@ -7625,7 +7625,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Strikethrough",
     library: 'phosphor',
     componentName: "TextStrikethrough",
-    category: 'other',
+    category: 'text',
     tags: ["text","strikethrough"],
   },
   {
@@ -7633,7 +7633,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text T",
     library: 'phosphor',
     componentName: "TextT",
-    category: 'other',
+    category: 'text',
     tags: ["text"],
   },
   {
@@ -7641,7 +7641,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Text Underline",
     library: 'phosphor',
     componentName: "TextUnderline",
-    category: 'other',
+    category: 'text',
     tags: ["text","underline"],
   },
   {
@@ -7649,7 +7649,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Textbox",
     library: 'phosphor',
     componentName: "Textbox",
-    category: 'other',
+    category: 'text',
     tags: ["textbox"],
   },
   {
@@ -7841,7 +7841,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Trash",
     library: 'phosphor',
     componentName: "Trash",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","delete","remove","bin","garbage"],
   },
   {
@@ -7849,7 +7849,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "Trash Simple",
     library: 'phosphor',
     componentName: "TrashSimple",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","simple","delete","remove","bin","garbage"],
   },
   {
@@ -8369,7 +8369,7 @@ export const phosphorIconsFull: IconDescriptor[] = [
     name: "X Square",
     library: 'phosphor',
     componentName: "XSquare",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {

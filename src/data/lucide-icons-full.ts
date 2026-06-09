@@ -129,7 +129,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Center Horizontal",
     library: 'lucide',
     componentName: "AlignCenterHorizontal",
-    category: 'other',
+    category: 'text',
     tags: ["align","center","horizontal"],
   },
   {
@@ -137,7 +137,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Center Vertical",
     library: 'lucide',
     componentName: "AlignCenterVertical",
-    category: 'other',
+    category: 'text',
     tags: ["align","center","vertical"],
   },
   {
@@ -145,7 +145,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Center",
     library: 'lucide',
     componentName: "AlignCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","center"],
   },
   {
@@ -153,7 +153,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align End Horizontal",
     library: 'lucide',
     componentName: "AlignEndHorizontal",
-    category: 'other',
+    category: 'text',
     tags: ["align","end","horizontal"],
   },
   {
@@ -161,7 +161,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align End Vertical",
     library: 'lucide',
     componentName: "AlignEndVertical",
-    category: 'other',
+    category: 'text',
     tags: ["align","end","vertical"],
   },
   {
@@ -169,7 +169,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Horizontal Distribute Center",
     library: 'lucide',
     componentName: "AlignHorizontalDistributeCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","horizontal","distribute","center"],
   },
   {
@@ -177,7 +177,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Horizontal Distribute End",
     library: 'lucide',
     componentName: "AlignHorizontalDistributeEnd",
-    category: 'other',
+    category: 'text',
     tags: ["align","horizontal","distribute","end"],
   },
   {
@@ -193,7 +193,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Horizontal Justify Center",
     library: 'lucide',
     componentName: "AlignHorizontalJustifyCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","horizontal","justify","center"],
   },
   {
@@ -201,7 +201,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Horizontal Justify End",
     library: 'lucide',
     componentName: "AlignHorizontalJustifyEnd",
-    category: 'other',
+    category: 'text',
     tags: ["align","horizontal","justify","end"],
   },
   {
@@ -233,7 +233,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Justify",
     library: 'lucide',
     componentName: "AlignJustify",
-    category: 'other',
+    category: 'text',
     tags: ["align","justify"],
   },
   {
@@ -273,7 +273,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Vertical Distribute Center",
     library: 'lucide',
     componentName: "AlignVerticalDistributeCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","vertical","distribute","center"],
   },
   {
@@ -281,7 +281,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Vertical Distribute End",
     library: 'lucide',
     componentName: "AlignVerticalDistributeEnd",
-    category: 'other',
+    category: 'text',
     tags: ["align","vertical","distribute","end"],
   },
   {
@@ -297,7 +297,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Vertical Justify Center",
     library: 'lucide',
     componentName: "AlignVerticalJustifyCenter",
-    category: 'other',
+    category: 'text',
     tags: ["align","vertical","justify","center"],
   },
   {
@@ -305,7 +305,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Align Vertical Justify End",
     library: 'lucide',
     componentName: "AlignVerticalJustifyEnd",
-    category: 'other',
+    category: 'text',
     tags: ["align","vertical","justify","end"],
   },
   {
@@ -345,7 +345,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Ampersand",
     library: 'lucide',
     componentName: "Ampersand",
-    category: 'other',
+    category: 'symbols',
     tags: ["ampersand"],
   },
   {
@@ -353,7 +353,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Ampersands",
     library: 'lucide',
     componentName: "Ampersands",
-    category: 'other',
+    category: 'symbols',
     tags: ["ampersands"],
   },
   {
@@ -817,7 +817,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Asterisk",
     library: 'lucide',
     componentName: "Asterisk",
-    category: 'other',
+    category: 'symbols',
     tags: ["asterisk"],
   },
   {
@@ -1417,7 +1417,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Bold",
     library: 'lucide',
     componentName: "Bold",
-    category: 'other',
+    category: 'text',
     tags: ["bold"],
   },
   {
@@ -3457,7 +3457,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Component",
     library: 'lucide',
     componentName: "Component",
-    category: 'other',
+    category: 'ui',
     tags: ["component"],
   },
   {
@@ -3481,7 +3481,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Cone",
     library: 'lucide',
     componentName: "Cone",
-    category: 'other',
+    category: 'shapes',
     tags: ["cone"],
   },
   {
@@ -3761,7 +3761,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Cylinder",
     library: 'lucide',
     componentName: "Cylinder",
-    category: 'other',
+    category: 'shapes',
     tags: ["cylinder"],
   },
   {
@@ -3825,7 +3825,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Diamond Minus",
     library: 'lucide',
     componentName: "DiamondMinus",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond","minus","remove","delete","subtract"],
   },
   {
@@ -3841,7 +3841,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Diamond Plus",
     library: 'lucide',
     componentName: "DiamondPlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond","plus","add","create","new","insert"],
   },
   {
@@ -3849,7 +3849,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Diamond",
     library: 'lucide',
     componentName: "Diamond",
-    category: 'other',
+    category: 'shapes',
     tags: ["diamond"],
   },
   {
@@ -4249,7 +4249,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "External Link",
     library: 'lucide',
     componentName: "ExternalLink",
-    category: 'other',
+    category: 'ui',
     tags: ["external","link","url","connect","chain","href"],
   },
   {
@@ -5841,7 +5841,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Hash",
     library: 'lucide',
     componentName: "Hash",
-    category: 'other',
+    category: 'symbols',
     tags: ["hash"],
   },
   {
@@ -6185,7 +6185,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Indent Decrease",
     library: 'lucide',
     componentName: "IndentDecrease",
-    category: 'other',
+    category: 'text',
     tags: ["indent","decrease"],
   },
   {
@@ -6193,7 +6193,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Indent Increase",
     library: 'lucide',
     componentName: "IndentIncrease",
-    category: 'other',
+    category: 'text',
     tags: ["indent","increase"],
   },
   {
@@ -6241,7 +6241,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Italic",
     library: 'lucide',
     componentName: "Italic",
-    category: 'other',
+    category: 'text',
     tags: ["italic"],
   },
   {
@@ -6457,7 +6457,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Layers2",
     library: 'lucide',
     componentName: "Layers2",
-    category: 'other',
+    category: 'ui',
     tags: ["layers2"],
   },
   {
@@ -6465,7 +6465,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Layers3",
     library: 'lucide',
     componentName: "Layers3",
-    category: 'other',
+    category: 'ui',
     tags: ["layers3"],
   },
   {
@@ -6473,7 +6473,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Layers",
     library: 'lucide',
     componentName: "Layers",
-    category: 'other',
+    category: 'ui',
     tags: ["layers"],
   },
   {
@@ -6553,7 +6553,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Letter Text",
     library: 'lucide',
     componentName: "LetterText",
-    category: 'other',
+    category: 'text',
     tags: ["letter","text"],
   },
   {
@@ -6609,7 +6609,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Link2 Off",
     library: 'lucide',
     componentName: "Link2Off",
-    category: 'other',
+    category: 'ui',
     tags: ["link2","off"],
   },
   {
@@ -6617,7 +6617,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Link2",
     library: 'lucide',
     componentName: "Link2",
-    category: 'other',
+    category: 'ui',
     tags: ["link2"],
   },
   {
@@ -6625,7 +6625,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Link",
     library: 'lucide',
     componentName: "Link",
-    category: 'other',
+    category: 'ui',
     tags: ["link","url","connect","chain","href"],
   },
   {
@@ -6633,7 +6633,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Linkedin",
     library: 'lucide',
     componentName: "Linkedin",
-    category: 'other',
+    category: 'ui',
     tags: ["linkedin"],
   },
   {
@@ -10169,7 +10169,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Activity",
     library: 'lucide',
     componentName: "SquareActivity",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","activity","health","fitness","pulse","heartbeat"],
   },
   {
@@ -10273,7 +10273,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Asterisk",
     library: 'lucide',
     componentName: "SquareAsterisk",
-    category: 'other',
+    category: 'symbols',
     tags: ["square","asterisk"],
   },
   {
@@ -10361,7 +10361,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Dashed Bottom",
     library: 'lucide',
     componentName: "SquareDashedBottom",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","dashed","bottom"],
   },
   {
@@ -10385,7 +10385,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Dashed",
     library: 'lucide',
     componentName: "SquareDashed",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","dashed"],
   },
   {
@@ -10401,7 +10401,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Dot",
     library: 'lucide',
     componentName: "SquareDot",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","dot"],
   },
   {
@@ -10409,7 +10409,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Equal",
     library: 'lucide',
     componentName: "SquareEqual",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","equal"],
   },
   {
@@ -10441,7 +10441,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square M",
     library: 'lucide',
     componentName: "SquareM",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -10457,7 +10457,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Minus",
     library: 'lucide',
     componentName: "SquareMinus",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","minus","remove","delete","subtract"],
   },
   {
@@ -10505,7 +10505,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Pi",
     library: 'lucide',
     componentName: "SquarePi",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","pi"],
   },
   {
@@ -10513,7 +10513,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Pilcrow",
     library: 'lucide',
     componentName: "SquarePilcrow",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","pilcrow"],
   },
   {
@@ -10529,7 +10529,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Plus",
     library: 'lucide',
     componentName: "SquarePlus",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","plus","add","create","new","insert"],
   },
   {
@@ -10537,7 +10537,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Power",
     library: 'lucide',
     componentName: "SquarePower",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","power"],
   },
   {
@@ -10545,7 +10545,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Radical",
     library: 'lucide',
     componentName: "SquareRadical",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","radical"],
   },
   {
@@ -10561,7 +10561,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Sigma",
     library: 'lucide',
     componentName: "SquareSigma",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","sigma"],
   },
   {
@@ -10569,7 +10569,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Slash",
     library: 'lucide',
     componentName: "SquareSlash",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","slash"],
   },
   {
@@ -10577,7 +10577,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Split Horizontal",
     library: 'lucide',
     componentName: "SquareSplitHorizontal",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","split","horizontal"],
   },
   {
@@ -10585,7 +10585,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Split Vertical",
     library: 'lucide',
     componentName: "SquareSplitVertical",
-    category: 'other',
+    category: 'shapes',
     tags: ["square","split","vertical"],
   },
   {
@@ -10593,7 +10593,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Square",
     library: 'lucide',
     componentName: "SquareSquare",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -10601,7 +10601,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square Stack",
     library: 'lucide',
     componentName: "SquareStack",
-    category: 'other',
+    category: 'ui',
     tags: ["square","stack"],
   },
   {
@@ -10633,7 +10633,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square X",
     library: 'lucide',
     componentName: "SquareX",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -10641,7 +10641,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Square",
     library: 'lucide',
     componentName: "Square",
-    category: 'other',
+    category: 'shapes',
     tags: ["square"],
   },
   {
@@ -10761,7 +10761,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Strikethrough",
     library: 'lucide',
     componentName: "Strikethrough",
-    category: 'other',
+    category: 'text',
     tags: ["strikethrough"],
   },
   {
@@ -11121,7 +11121,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Text Quote",
     library: 'lucide',
     componentName: "TextQuote",
-    category: 'other',
+    category: 'text',
     tags: ["text","quote"],
   },
   {
@@ -11145,7 +11145,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Text",
     library: 'lucide',
     componentName: "Text",
-    category: 'other',
+    category: 'text',
     tags: ["text"],
   },
   {
@@ -11417,7 +11417,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Trash2",
     library: 'lucide',
     componentName: "Trash2",
-    category: 'other',
+    category: 'ui',
     tags: ["trash2"],
   },
   {
@@ -11425,7 +11425,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Trash",
     library: 'lucide',
     componentName: "Trash",
-    category: 'other',
+    category: 'ui',
     tags: ["trash","delete","remove","bin","garbage"],
   },
   {
@@ -11617,7 +11617,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Underline",
     library: 'lucide',
     componentName: "Underline",
-    category: 'other',
+    category: 'text',
     tags: ["underline"],
   },
   {
@@ -11681,7 +11681,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Unlink2",
     library: 'lucide',
     componentName: "Unlink2",
-    category: 'other',
+    category: 'ui',
     tags: ["unlink2"],
   },
   {
@@ -11689,7 +11689,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Unlink",
     library: 'lucide',
     componentName: "Unlink",
-    category: 'other',
+    category: 'ui',
     tags: ["unlink"],
   },
   {
@@ -12265,7 +12265,7 @@ export const lucideIconsFull: IconDescriptor[] = [
     name: "Wrap Text",
     library: 'lucide',
     componentName: "WrapText",
-    category: 'other',
+    category: 'text',
     tags: ["wrap","text"],
   },
   {

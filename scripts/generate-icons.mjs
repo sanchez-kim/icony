@@ -42,6 +42,9 @@ function splitWords(name) {
 // Category detection — maps word tokens to a primary category slug
 // ---------------------------------------------------------------------------
 const CATEGORY_RULES = [
+  // 'brand' is distinctive (Tabler prefixes every logo icon with "Brand ...").
+  // Kept first so a brand logo never falls through to code/network/etc.
+  { category: 'brands',         keywords: ['brand'] },
   { category: 'arrows',         keywords: ['arrow', 'chevron', 'caret', 'angle', 'sort', 'direction', 'next', 'prev', 'previous', 'back', 'forward', 'up', 'down', 'left', 'right', 'move', 'transfer', 'exchange', 'swap', 'turn', 'rotate', 'loop', 'repeat', 'undo', 'redo', 'refresh', 'sync', 'reload', 'cycle', 'revert', 'reply', 'return'] },
   { category: 'users',          keywords: ['user', 'person', 'people', 'profile', 'account', 'avatar', 'human', 'man', 'woman', 'boy', 'girl', 'child', 'baby', 'team', 'group', 'crowd', 'friend', 'contact', 'member', 'id', 'badge', 'face', 'head', 'body'] },
   { category: 'files',          keywords: ['file', 'folder', 'document', 'doc', 'page', 'paper', 'archive', 'zip', 'pdf', 'note', 'notebook', 'clipboard', 'board', 'form', 'contract', 'spreadsheet', 'presentation', 'slide', 'book', 'books', 'reading', 'library'] },
@@ -63,7 +66,14 @@ const CATEGORY_RULES = [
   { category: 'time',           keywords: ['clock', 'time', 'alarm', 'watch', 'timer', 'stopwatch', 'hourglass', 'calendar', 'schedule', 'event', 'date', 'day', 'week', 'month', 'year', 'hour', 'minute', 'second', 'deadline', 'history', 'past', 'future', 'now', 'present', 'morning', 'evening', 'night', 'midnight', 'noon'] },
   { category: 'location',       keywords: ['map', 'location', 'place', 'position', 'gps', 'navigation', 'direction', 'compass', 'marker', 'pin', 'flag', 'destination', 'address', 'coordinates', 'latitude', 'longitude', 'route', 'path', 'road', 'street', 'highway', 'signpost', 'waypoint', 'landmark', 'city', 'country', 'region', 'area', 'zone', 'border', 'globe'] },
   { category: 'code',           keywords: ['code', 'coding', 'programming', 'developer', 'development', 'terminal', 'console', 'command', 'script', 'bug', 'debug', 'git', 'branch', 'commit', 'merge', 'fork', 'pull', 'push', 'repo', 'repository', 'database', 'api', 'server', 'backend', 'frontend', 'html', 'css', 'javascript', 'typescript', 'python', 'java', 'rust', 'go', 'ruby', 'php', 'swift', 'kotlin', 'react', 'vue', 'angular', 'node', 'docker', 'container', 'kubernetes', 'cloud', 'devops', 'ci', 'cd', 'deploy', 'build', 'test', 'lint', 'format', 'bracket', 'function', 'variable', 'class', 'object', 'array', 'string', 'integer', 'boolean'] },
-  { category: 'ui',             keywords: ['home', 'menu', 'search', 'settings', 'gear', 'cog', 'bell', 'notification', 'heart', 'like', 'star', 'favorite', 'bookmark', 'tag', 'filter', 'sort', 'view', 'grid', 'list', 'sidebar', 'panel', 'modal', 'dialog', 'popup', 'tooltip', 'tab', 'button', 'toggle', 'switch', 'checkbox', 'radio', 'input', 'select', 'dropdown', 'slider', 'scroll', 'resize', 'fullscreen', 'minimize', 'maximize', 'close', 'open', 'expand', 'collapse', 'show', 'hide', 'eye', 'copy', 'paste', 'cut', 'undo', 'redo', 'zoom', 'focus', 'cursor', 'pointer', 'drag', 'drop', 'select', 'highlight', 'theme', 'dark', 'light', 'color', 'paint', 'brush', 'pen', 'eraser', 'tool', 'toolbar', 'layout', 'page', 'window', 'app', 'application'] },
+  { category: 'ui',             keywords: ['home', 'menu', 'search', 'settings', 'gear', 'cog', 'bell', 'notification', 'heart', 'like', 'star', 'favorite', 'bookmark', 'tag', 'filter', 'sort', 'view', 'grid', 'list', 'sidebar', 'panel', 'modal', 'dialog', 'popup', 'tooltip', 'tab', 'button', 'toggle', 'switch', 'checkbox', 'radio', 'input', 'select', 'dropdown', 'slider', 'scroll', 'resize', 'fullscreen', 'minimize', 'maximize', 'close', 'open', 'expand', 'collapse', 'show', 'hide', 'eye', 'copy', 'paste', 'cut', 'undo', 'redo', 'zoom', 'focus', 'cursor', 'pointer', 'drag', 'drop', 'select', 'highlight', 'theme', 'dark', 'light', 'color', 'paint', 'brush', 'pen', 'eraser', 'tool', 'toolbar', 'layout', 'page', 'window', 'app', 'application', 'adjustments', 'adjustment', 'dashboard', 'widget', 'dots', 'layers', 'stack', 'component', 'components', 'trash', 'link', 'unlink'] },
+  // Symbols / emoji / glyphs (checked after ui so e.g. "Mood" → symbols, not other)
+  { category: 'symbols',        keywords: ['mood', 'smiley', 'emoji', 'emoticon', 'gender', 'male', 'female', 'transgender', 'zodiac', 'asterisk', 'ampersand', 'hash'] },
+  // Text / typography / formatting
+  { category: 'text',           keywords: ['letter', 'align', 'text', 'heading', 'paragraph', 'bold', 'italic', 'underline', 'strikethrough', 'typography', 'font', 'indent', 'blockquote', 'superscript', 'subscript', 'number', 'numbers', 'abc'] },
+  // Geometric shapes — last (lowest priority) so "Heart Circle" → ui, only bare
+  // "Square"/"Circle" style primitives land here.
+  { category: 'shapes',         keywords: ['square', 'circle', 'triangle', 'hexagon', 'pentagon', 'octagon', 'rectangle', 'polygon', 'rosette', 'rhombus', 'diamond', 'oval', 'ellipse', 'cube', 'sphere', 'cylinder', 'cone'] },
 ];
 
 function detectCategory(words) {
@@ -336,6 +346,33 @@ function generatePhosphor() {
 }
 
 // ===========================================================================
+// PHOSPHOR FILL — mirror of phosphor-icons-full with weight='fill'
+// Derived by transforming the generated phosphor file so categories/tags stay
+// perfectly in sync; only id prefix and library key differ.
+// ===========================================================================
+function generatePhosphorFill() {
+  const srcPath = path.join(ROOT, 'src/data/phosphor-icons-full.ts');
+  const src = fs.readFileSync(srcPath, 'utf-8');
+
+  const exportIdx = src.indexOf('export const phosphorIconsFull');
+  if (exportIdx === -1) throw new Error('phosphor-icons-full.ts export not found');
+
+  const body = src
+    .slice(exportIdx)
+    .replace('export const phosphorIconsFull', 'export const phosphorFillDescriptors')
+    .replace(/id: "phosphor-/g, 'id: "phosphor-fill-')
+    .replace(/library: 'phosphor'/g, "library: 'phosphor-fill'");
+
+  const output =
+    "// AUTO-GENERATED from phosphor-icons-full.ts — same components, weight='fill'\n\n" +
+    "import type { IconDescriptor } from '../types/icon';\n\n" +
+    body;
+
+  fs.writeFileSync(path.join(ROOT, 'src/data/phosphor-fill-descriptors.ts'), output, 'utf-8');
+  return (body.match(/id: "phosphor-fill-/g) || []).length;
+}
+
+// ===========================================================================
 // Main
 // ===========================================================================
 console.log('Generating icon descriptor files...\n');
@@ -359,6 +396,13 @@ try {
   console.log(`✓ Phosphor: ${phosphorCount} icons → src/data/phosphor-icons-full.ts`);
 } catch (e) {
   console.error('✗ Phosphor failed:', e.message);
+}
+
+try {
+  const phosphorFillCount = generatePhosphorFill();
+  console.log(`✓ Phosphor Fill: ${phosphorFillCount} icons → src/data/phosphor-fill-descriptors.ts`);
+} catch (e) {
+  console.error('✗ Phosphor Fill failed:', e.message);
 }
 
 console.log('\nDone.');
