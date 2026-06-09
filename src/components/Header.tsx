@@ -23,13 +23,13 @@ export function Header({ onHelpClick }: HeaderProps) {
               <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
                 {t.header.appName}
               </h1>
-              <p className="text-xs text-gray-600 dark:text-gray-400 transition-colors">
+              <p className="hidden sm:block text-xs text-gray-600 dark:text-gray-400 transition-colors">
                 {t.header.subtitle}
               </p>
             </div>
           </Link>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             {onHelpClick && (
               <button
                 onClick={onHelpClick}
@@ -44,7 +44,7 @@ export function Header({ onHelpClick }: HeaderProps) {
             <ThemeToggle />
             <Link
               href="/"
-              className="px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              className="hidden sm:block px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               {t.header.backToHome}
             </Link>

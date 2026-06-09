@@ -76,20 +76,20 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-100 via-purple-50 to-accent-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
       {/* Header */}
-      <header className="container mx-auto px-6 py-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl transition-colors">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <header className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl transition-colors">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3">
             <IconyLogo size={40} />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
               Icony
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <ThemeToggle />
             <Link
               href="/app"
-              className="px-6 py-2.5 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-all duration-200 shadow-md hover:shadow-lg"
+              className="px-4 sm:px-6 py-2.5 bg-primary-600 text-white rounded-lg font-semibold text-sm sm:text-base whitespace-nowrap hover:bg-primary-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               {t.landing.header.launchApp}
             </Link>
@@ -98,7 +98,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 text-center">
+      <section className="container mx-auto px-6 py-14 sm:py-20 text-center">
         <div
           ref={heroAnimation.ref}
           className={`max-w-4xl mx-auto space-y-8 transition-all duration-1000 ${
@@ -110,7 +110,7 @@ export default function LandingPage() {
             <span>{t.landing.tagline}</span>
           </div>
 
-          <h1 className="text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight break-keep">
             {t.landing.hero.title}
             <br />
             <span className="bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
@@ -118,21 +118,21 @@ export default function LandingPage() {
             </span>
           </h1>
 
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed break-keep">
             {t.landing.hero.description}
           </p>
 
-          <div className="flex items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-4">
             <Link
               href="/app"
-              className="group flex items-center gap-2 px-8 py-4 bg-primary-600 text-white rounded-xl font-bold text-lg hover:bg-primary-700 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-primary-600 text-white rounded-xl font-bold text-base sm:text-lg hover:bg-primary-700 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
             >
               <span>{t.landing.hero.getStarted}</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href="#features"
-              className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-lg border-2 border-gray-200 dark:border-gray-700"
+              className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl font-bold text-base sm:text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-lg border-2 border-gray-200 dark:border-gray-700"
             >
               {t.landing.hero.learnMore}
             </a>
