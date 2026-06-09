@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { LucideIcon, Star, Check } from 'lucide-react';
+import { Star, Check } from 'lucide-react';
 import { Icon } from '../../types';
 import { cn } from '../../utils/cn';
 import { useIconContext } from '../../context/IconContext';
@@ -27,46 +27,45 @@ function renderIconComponent(
   className: string,
 ): React.ReactElement | null {
   const comp = icon.component;
-  // Detect placeholder (will have displayName or be the skeleton fn)
-  const name = (comp as any).displayName ?? (comp as any).name ?? '';
-  if (name === 'IconPlaceholder') {
+  // Detect the lazy-loading placeholder by its explicit displayName.
+  if (comp.displayName === 'IconPlaceholder') {
     return (
       <div className={cn(className, 'rounded bg-gray-200 dark:bg-gray-700 animate-pulse')} />
     );
   }
 
-  const type = icon.type as string;
+  const type = icon.type;
 
   if (type === 'lucide') {
-    return React.createElement(comp as LucideIcon, {
+    return React.createElement(comp, {
       className,
       strokeWidth: 1.5,
     });
   }
 
   if (type === 'tabler') {
-    return React.createElement(comp as React.ComponentType<any>, {
+    return React.createElement(comp, {
       className,
       stroke: 1.5,
     });
   }
 
   if (type === 'phosphor') {
-    return React.createElement(comp as React.ComponentType<any>, {
+    return React.createElement(comp, {
       className,
       weight: 'regular',
     });
   }
 
   if (type === 'phosphor-fill') {
-    return React.createElement(comp as React.ComponentType<any>, {
+    return React.createElement(comp, {
       className,
       weight: 'fill',
     });
   }
 
   // heroicons, heroicons-solid, bootstrap, radix, and any future library
-  return React.createElement(comp as React.ComponentType<any>, {
+  return React.createElement(comp, {
     className,
   });
 }
@@ -82,7 +81,7 @@ export const IconCard = React.memo(function IconCard({
   const { t } = useLanguage();
   const favorite = isFavorite(icon.id);
 
-  const handleFavoriteClick = (e: React.MouseEvent) => {
+  const handleFavoriteClick = (e: React.SyntheticEvent) => {
     e.stopPropagation();
     toggleFavorite(icon.id);
   };
@@ -124,7 +123,7 @@ export const IconCard = React.memo(function IconCard({
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              handleFavoriteClick(e as any);
+              handleFavoriteClick(e);
             }
           }}
           className="absolute top-1 right-1 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-opacity duration-200 focus:outline-none cursor-pointer"

@@ -61,7 +61,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
 
   const libraryFiltered = useMemo(() => {
     if (selectedLibrary === 'all') return searchFiltered;
-    return searchFiltered.filter((icon) => (icon.type as string) === selectedLibrary);
+    return searchFiltered.filter((icon) => icon.type === selectedLibrary);
   }, [searchFiltered, selectedLibrary]);
 
   const categoryFiltered = useMemo(() => {

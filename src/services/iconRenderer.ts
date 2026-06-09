@@ -1,5 +1,4 @@
 import { renderToString } from 'react-dom/server';
-import { LucideIcon } from 'lucide-react';
 import { createElement } from 'react';
 import { Icon } from '../types';
 
@@ -17,7 +16,7 @@ export class IconRenderer {
     if (iconData.type === 'lucide') {
       // Render Lucide icon to SVG string
       return renderToString(
-        createElement(iconData.component as LucideIcon, {
+        createElement(iconData.component, {
           size,
           color,
           strokeWidth: strokeWeight,
@@ -26,7 +25,7 @@ export class IconRenderer {
     } else if (iconData.type === 'tabler') {
       // Render Tabler icon to SVG string
       return renderToString(
-        createElement(iconData.component as React.ComponentType<any>, {
+        createElement(iconData.component, {
           size,
           color,
           stroke: strokeWeight,
@@ -36,7 +35,7 @@ export class IconRenderer {
       // Render Phosphor icon to SVG string
       const weight = strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
       return renderToString(
-        createElement(iconData.component as React.ComponentType<any>, {
+        createElement(iconData.component, {
           size,
           color,
           weight,
@@ -45,7 +44,7 @@ export class IconRenderer {
     } else {
       // heroicons, bootstrap, radix — pass size and color as generic props
       return renderToString(
-        createElement(iconData.component as React.ComponentType<any>, {
+        createElement(iconData.component, {
           width: size,
           height: size,
           color,
@@ -81,14 +80,14 @@ export class IconRenderer {
     strokeWeight: number = 2
   ): Promise<Blob> {
     if (iconData.type === 'lucide') {
-      return this.lucideIconToPng(iconData.component as LucideIcon, size, color, strokeWeight);
+      return this.lucideIconToPng(iconData.component, size, color, strokeWeight);
     } else if (iconData.type === 'tabler') {
-      return this.tablerIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
+      return this.tablerIconToPng(iconData.component, size, color, strokeWeight);
     } else if (iconData.type === 'phosphor') {
-      return this.phosphorIconToPng(iconData.component as React.ComponentType<any>, size, color, strokeWeight);
+      return this.phosphorIconToPng(iconData.component, size, color, strokeWeight);
     } else {
       // heroicons, bootstrap, radix — generic renderer
-      return this.genericIconToPng(iconData.component as React.ComponentType<any>, size, color);
+      return this.genericIconToPng(iconData.component, size, color);
     }
   }
 
@@ -96,7 +95,7 @@ export class IconRenderer {
    * Convert Lucide React icon component to PNG Blob
    */
   private async lucideIconToPng(
-    IconComponent: LucideIcon,
+    IconComponent: React.ComponentType<any>,
     size: number,
     color: string,
     strokeWeight: number = 2

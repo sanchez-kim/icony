@@ -17,10 +17,10 @@ export function StrokeWeightSelector() {
 
   if (!selectedIcon) return null;
 
-  const supportsStroke = STROKE_SUPPORTED_LIBS.includes(selectedIcon.type as string);
+  const supportsStroke = STROKE_SUPPORTED_LIBS.includes(selectedIcon.type);
 
   if (!supportsStroke) {
-    const customMsg = NO_STROKE_LIBS_MSG[selectedIcon.type as string];
+    const customMsg = NO_STROKE_LIBS_MSG[selectedIcon.type];
     return (
       <div className="space-y-2">
         <label className="block text-sm font-semibold text-gray-400 dark:text-gray-600">

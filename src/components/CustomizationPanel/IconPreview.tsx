@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { LucideIcon } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
@@ -71,7 +70,7 @@ export function IconPreview() {
   if (!selectedIcon) return null;
 
   const selectedBg = BACKGROUND_OPTIONS.find((bg) => bg.id === background);
-  const libInfo = LIBRARY_INFO[selectedIcon.type as string];
+  const libInfo = LIBRARY_INFO[selectedIcon.type];
 
   return (
     <div className="flex flex-col items-center space-y-6">
@@ -133,35 +132,35 @@ export function IconPreview() {
         }}
       >
         {selectedIcon.type === 'lucide' ? (
-          React.createElement(selectedIcon.component as LucideIcon, {
+          React.createElement(selectedIcon.component, {
             size,
             color,
             strokeWidth: strokeWeight,
             className: 'transition-all duration-300',
           })
         ) : selectedIcon.type === 'tabler' ? (
-          React.createElement(selectedIcon.component as React.ComponentType<any>, {
+          React.createElement(selectedIcon.component, {
             size,
             color,
             stroke: strokeWeight,
             className: 'transition-all duration-300',
           })
         ) : selectedIcon.type === 'phosphor-fill' ? (
-          React.createElement(selectedIcon.component as React.ComponentType<any>, {
+          React.createElement(selectedIcon.component, {
             size,
             color,
             weight: 'fill',
             className: 'transition-all duration-300',
           })
         ) : selectedIcon.type === 'phosphor' ? (
-          React.createElement(selectedIcon.component as React.ComponentType<any>, {
+          React.createElement(selectedIcon.component, {
             size,
             color,
             weight: strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light',
             className: 'transition-all duration-300',
           })
         ) : (
-          React.createElement(selectedIcon.component as React.ComponentType<any>, {
+          React.createElement(selectedIcon.component, {
             size,
             color,
             className: 'transition-all duration-300',

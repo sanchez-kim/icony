@@ -43,6 +43,9 @@ function IconPlaceholder() {
     <div className="w-full h-full rounded bg-gray-200 dark:bg-gray-700 animate-pulse" />
   );
 }
+// Explicit displayName so placeholder detection survives production minification
+// (which would otherwise mangle the function's .name).
+IconPlaceholder.displayName = 'IconPlaceholder';
 
 /**
  * Converts an IconDescriptor into a legacy Icon shape.
@@ -62,7 +65,7 @@ function descriptorToIcon(
     category: descriptor.category,
     tags: descriptor.tags,
     // Map 'library' → 'type' for backward-compat (legacy Icon uses IconType)
-    type: descriptor.library as any,
+    type: descriptor.library,
     component,
     // Precompute lowercase search fields once, so useIconSearch never has to
     // re-lowercase 10k+ names/tags on every keystroke.
@@ -170,7 +173,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
         // Plain utility functions (createLucideIcon, createReactComponent, etc.)
         // do NOT have $$typeof and must be excluded to prevent render crashes.
         for (const [name, comp] of Object.entries(components)) {
-          if (comp != null && !!(comp as any).$$typeof) {
+          if (comp != null && !!(comp as { $$typeof?: unknown }).$$typeof) {
             map.set(`${libKey}::${name}`, comp as React.ComponentType<any>);
           }
         }

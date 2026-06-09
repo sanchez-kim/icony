@@ -1,5 +1,3 @@
-import { LucideIcon } from 'lucide-react';
-
 // ---------------------------------------------------------------------------
 // Re-export type system from icon.ts
 // ---------------------------------------------------------------------------
@@ -14,8 +12,10 @@ export type {
   LibraryState,
 } from './icon';
 
-// Generic icon component type that works for all libraries
-export type IconComponent = LucideIcon | React.ComponentType<any>;
+// Generic icon component type that works for all libraries.
+// All icon packages expose forwardRef/function components, so a single
+// ComponentType<any> covers every library and avoids per-library casts.
+export type IconComponent = React.ComponentType<any>;
 
 /**
  * Icon is the runtime type used by all components and hooks.
