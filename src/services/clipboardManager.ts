@@ -11,6 +11,24 @@ export class ClipboardManager {
   }
 
   /**
+   * Copy a plain-text string (e.g. SVG markup or JSX) to the clipboard.
+   */
+  async copyText(text: string): Promise<void> {
+    if (!navigator.clipboard?.writeText) {
+      throw new Error('Clipboard API not supported in this browser');
+    }
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (error) {
+      if (error instanceof Error && error.name === 'NotAllowedError') {
+        throw new Error('Clipboard permission denied');
+      }
+      throw error;
+    }
+  }
+
+  /**
    * Copy image Blob to clipboard
    */
   async copyImage(blob: Blob): Promise<void> {

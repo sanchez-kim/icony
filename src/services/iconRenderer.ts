@@ -5,19 +5,18 @@ import { Icon } from '../types';
 
 export class IconRenderer {
   /**
-   * Convert icon to SVG Blob
+   * Render an icon to an SVG markup string with color/size/stroke applied.
+   * Shared by SVG export, PNG rasterisation, and copy-as-code.
    */
-  async iconToSvg(
+  iconToSvgString(
     iconData: Icon,
     size: number,
     color: string,
     strokeWeight: number = 2
-  ): Promise<Blob> {
-    let svgString: string;
-
+  ): string {
     if (iconData.type === 'lucide') {
       // Render Lucide icon to SVG string
-      svgString = renderToString(
+      return renderToString(
         createElement(iconData.component as LucideIcon, {
           size,
           color,
@@ -26,7 +25,7 @@ export class IconRenderer {
       );
     } else if (iconData.type === 'tabler') {
       // Render Tabler icon to SVG string
-      svgString = renderToString(
+      return renderToString(
         createElement(iconData.component as React.ComponentType<any>, {
           size,
           color,
@@ -36,7 +35,7 @@ export class IconRenderer {
     } else if (iconData.type === 'phosphor') {
       // Render Phosphor icon to SVG string
       const weight = strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
-      svgString = renderToString(
+      return renderToString(
         createElement(iconData.component as React.ComponentType<any>, {
           size,
           color,
@@ -45,7 +44,7 @@ export class IconRenderer {
       );
     } else {
       // heroicons, bootstrap, radix — pass size and color as generic props
-      svgString = renderToString(
+      return renderToString(
         createElement(iconData.component as React.ComponentType<any>, {
           width: size,
           height: size,
@@ -53,6 +52,18 @@ export class IconRenderer {
         })
       );
     }
+  }
+
+  /**
+   * Convert icon to SVG Blob
+   */
+  async iconToSvg(
+    iconData: Icon,
+    size: number,
+    color: string,
+    strokeWeight: number = 2
+  ): Promise<Blob> {
+    const svgString = this.iconToSvgString(iconData, size, color, strokeWeight);
 
     // Create SVG Blob
     return new Blob([svgString], {

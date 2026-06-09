@@ -32,6 +32,7 @@ import { IconRenderer } from '../services/iconRenderer';
 import { ClipboardManager } from '../services/clipboardManager';
 import { ExportManager } from '../services/exportManager';
 import { StorageManager } from '../utils/storage';
+import { buildSvgCode, buildJsxCode } from '../utils/svgCode';
 
 type IconLibrary = 'all' | 'lucide' | 'tabler' | 'phosphor' | 'phosphor-fill' | 'heroicons' | 'heroicons-solid' | 'bootstrap' | 'radix';
 type SortOption = 'name-asc' | 'name-desc' | 'recent' | 'popular';
@@ -92,6 +93,8 @@ interface IconContextValue {
   downloadPng: () => Promise<void>;
   downloadSvg: () => Promise<void>;
   copyToClipboard: () => Promise<void>;
+  copySvgCode: () => Promise<void>;
+  copyJsxCode: () => Promise<void>;
   isExporting: boolean;
 }
 
@@ -319,6 +322,40 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     }
   }, [selectedIcon, size, color, strokeWeight, renderer, clipboard]);
 
+  // Copy raw SVG markup (with current color/size/stroke) to the clipboard
+  const copySvgCode = useCallback(async () => {
+    if (!selectedIcon) {
+      toast.error('Please select an icon first');
+      return;
+    }
+
+    try {
+      const svg = renderer.iconToSvgString(selectedIcon, size, color, strokeWeight);
+      await clipboard.copyText(buildSvgCode(svg));
+      toast.success('SVG code copied!');
+    } catch (error) {
+      console.error('Copy SVG failed:', error);
+      toast.error('Copy failed');
+    }
+  }, [selectedIcon, size, color, strokeWeight, renderer, clipboard]);
+
+  // Copy a ready-to-use React (JSX) component to the clipboard
+  const copyJsxCode = useCallback(async () => {
+    if (!selectedIcon) {
+      toast.error('Please select an icon first');
+      return;
+    }
+
+    try {
+      const svg = renderer.iconToSvgString(selectedIcon, size, color, strokeWeight);
+      await clipboard.copyText(buildJsxCode(svg, selectedIcon.name));
+      toast.success('JSX component copied!');
+    } catch (error) {
+      console.error('Copy JSX failed:', error);
+      toast.error('Copy failed');
+    }
+  }, [selectedIcon, size, color, strokeWeight, renderer, clipboard]);
+
   const value: IconContextValue = {
     icons,
     selectedIcon,
@@ -340,6 +377,8 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     downloadPng,
     downloadSvg,
     copyToClipboard,
+    copySvgCode,
+    copyJsxCode,
     isExporting,
   };
 

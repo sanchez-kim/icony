@@ -1,12 +1,12 @@
 'use client';
 
-import { Download, Copy, Loader2, Share2 } from 'lucide-react';
+import { Download, Copy, Loader2, Share2, Code2, Braces } from 'lucide-react';
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 import toast from 'react-hot-toast';
 
 export function ExportButtons() {
-  const { downloadPng, downloadSvg, copyToClipboard, isExporting, selectedIcon, color, size } = useIconContext();
+  const { downloadPng, downloadSvg, copyToClipboard, copySvgCode, copyJsxCode, isExporting, selectedIcon, color, size } = useIconContext();
   const { t } = useLanguage();
 
   const handleShare = () => {
@@ -87,6 +87,27 @@ export function ExportButtons() {
           </>
         )}
       </button>
+
+      {/* Copy as code — for developers */}
+      <div className="grid grid-cols-2 gap-3">
+        <button
+          onClick={copySvgCode}
+          className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-xl font-semibold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          aria-label={t.ui.copySVG}
+        >
+          <Code2 size={18} />
+          <span>{t.ui.copySVG}</span>
+        </button>
+
+        <button
+          onClick={copyJsxCode}
+          className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-xl font-semibold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          aria-label={t.ui.copyJSX}
+        >
+          <Braces size={18} />
+          <span>{t.ui.copyJSX}</span>
+        </button>
+      </div>
 
       <button
         onClick={handleShare}

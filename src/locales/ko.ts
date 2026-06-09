@@ -139,6 +139,8 @@ export const ko = {
     downloadPNG: 'PNG 다운로드',
     downloadSVG: 'SVG 다운로드',
     copyClipboard: '클립보드에 복사',
+    copySVG: 'SVG 코드',
+    copyJSX: 'JSX 코드',
     share: '공유',
     favorites: '즐겨찾기',
     recent: '최근 사용',

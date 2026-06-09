@@ -139,6 +139,8 @@ export const en = {
     downloadPNG: 'Download PNG',
     downloadSVG: 'Download SVG',
     copyClipboard: 'Copy to Clipboard',
+    copySVG: 'Copy SVG',
+    copyJSX: 'Copy JSX',
     share: 'Share',
     favorites: 'Favorites',
     recent: 'Recent',
