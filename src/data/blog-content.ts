@@ -59,6 +59,16 @@ const CODE = {
     '<button class="btn">\n  <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" width="20">\n    <path d="M5 12h14M12 5l7 7-7 7" />\n  </svg>\n  Next\n</button>',
   imgTag: '<img src="/icons/arrow-right.svg" alt="Next" width="20" height="20" />',
   lucideImport: "import { ArrowRight } from 'lucide-react';\n\n<button>Next <ArrowRight size={20} /></button>",
+  faviconHtml:
+    '<!-- SVG primary (Chrome, Firefox, Edge) -->\n<link rel="icon" href="/favicon.svg" type="image/svg+xml" />\n<!-- Fallback for Safari / older browsers -->\n<link rel="icon" href="/favicon.ico" sizes="32x32" />\n<!-- iOS home screen -->\n<link rel="apple-touch-icon" href="/apple-touch-icon.png" /> <!-- 180×180 -->',
+  iconSizeCss:
+    '/* Match the icon box to your design grid */\n.icon { width: 20px; height: 20px; }\n\n/* Size by text so icons scale with their label */\n.icon { width: 1em; height: 1em; }',
+  a11yDecorative: '<!-- Decorative: text already conveys the meaning -->\n<button>Delete <svg aria-hidden="true">…</svg></button>',
+  a11yInformative: '<!-- Standalone, meaningful icon -->\n<svg role="img" aria-label="Verified account">\n  <title>Verified account</title>\n  …\n</svg>',
+  a11yButton: '<!-- Icon-only control: label the button, hide the icon -->\n<button aria-label="Close dialog">\n  <svg aria-hidden="true">…</svg>\n</button>',
+  svgoCmd: '# optimize a single file (overwrites it)\nnpx svgo icon.svg\n\n# optimize a whole folder\nnpx svgo -f ./icons',
+  svgNoColor:
+    '<!-- Invisible: no fill color and no stroke set -->\n<svg fill="none"><path d="…" /></svg>\n\n<!-- Fixed: give it a color (or currentColor) -->\n<svg fill="currentColor"><path d="…" /></svg>',
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -494,6 +504,396 @@ export const BLOG_POSTS: BlogPost[] = [
           '정적 이미지 + 가장 단순한 마크업 → <img>.',
           '아이콘이 가득한 앱 전체 → 컴포넌트 라이브러리.',
         ] },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'icon-sizes-guide',
+    category: 'how-to',
+    readingMinutes: 5,
+    updated: '2026-06-09',
+    related: ['svg-stroke-width', 'fix-blurry-svg-icons', 'svg-vs-png-icons'],
+    title: {
+      en: 'What Size Should Your Icons Be?',
+      ko: '아이콘 크기, 몇 px이 맞을까?',
+    },
+    description: {
+      en: 'Common UI icon sizes, why a 24px grid is the default, and how to size icons so they stay crisp and aligned with text.',
+      ko: '자주 쓰는 UI 아이콘 크기, 24px 그리드가 기본인 이유, 그리고 텍스트와 정렬되고 선명하게 크기를 잡는 법.',
+    },
+    metaTitle: {
+      en: 'What Size Should Icons Be? UI Icon Size Guide | Icony',
+      ko: '아이콘 크기 가이드: UI 아이콘은 몇 px? | Icony',
+    },
+    metaDescription: {
+      en: 'A practical guide to icon sizes — 16/20/24px UI conventions, the 24px grid, em-based sizing, and keeping icons sharp.',
+      ko: '아이콘 크기 실전 가이드 — 16/20/24px 관례, 24px 그리드, em 기반 크기, 선명함 유지까지.',
+    },
+    blocks: {
+      en: [
+        { type: 'p', text: 'There is no single correct icon size, but there are strong conventions. Picking from them keeps your UI consistent and your icons crisp.' },
+        { type: 'h2', text: 'Common UI sizes' },
+        { type: 'ul', items: [
+          '**16px** — dense UI: inline with small text, table cells, menus.',
+          '**20px** — buttons, form fields, compact toolbars.',
+          '**24px** — the default for most app icons and navigation.',
+          '**32px and up** — feature highlights, empty states, marketing.',
+        ] },
+        { type: 'h2', text: 'Why 24px is the default' },
+        { type: 'p', text: 'Most modern icon sets (Lucide, Tabler, Heroicons) are drawn on a **24×24 grid**. Displaying them at 24px — or a clean multiple like 48px — means each path lands on whole pixels, so the icon stays sharp. Odd sizes like 23px or 25px can blur thin strokes.' },
+        { type: 'tip', text: 'Prefer sizes that divide evenly from the 24px grid (16, 24, 32, 48). They scale cleanly and avoid sub-pixel fuzz.' },
+        { type: 'h2', text: 'Size icons relative to text' },
+        { type: 'p', text: 'For icons that sit next to text, sizing in `em` lets them scale with the font automatically:' },
+        { type: 'code', lang: 'css', code: CODE.iconSizeCss },
+        { type: 'h2', text: 'Match optical weight, not just box size' },
+        { type: 'p', text: 'Two icons at the same pixel size can look unbalanced if one is dense and the other is sparse. Adjust slightly by eye so icons feel the same visual weight in a row — the box size is a starting point, not the final answer.' },
+        { type: 'p', text: 'In Icony you can preview an icon at the exact pixel size you need and export it at that size, so what you see is what ships.' },
+      ],
+      ko: [
+        { type: 'p', text: '아이콘 크기에 정답은 없지만, 강한 관례는 있습니다. 그 관례에서 고르면 UI가 일관되고 아이콘이 선명하게 유지됩니다.' },
+        { type: 'h2', text: '자주 쓰는 UI 크기' },
+        { type: 'ul', items: [
+          '**16px** — 밀도 높은 UI: 작은 텍스트 옆, 표 셀, 메뉴.',
+          '**20px** — 버튼, 폼 필드, 컴팩트 툴바.',
+          '**24px** — 대부분의 앱 아이콘과 내비게이션의 기본.',
+          '**32px 이상** — 기능 강조, 빈 상태, 마케팅.',
+        ] },
+        { type: 'h2', text: '24px가 기본인 이유' },
+        { type: 'p', text: '대부분의 최신 아이콘 세트(Lucide·Tabler·Heroicons)는 **24×24 그리드**로 그려집니다. 24px(또는 48px 같은 깔끔한 배수)로 표시하면 각 path가 정수 픽셀에 떨어져 선명함이 유지됩니다. 23px·25px 같은 어중간한 크기는 얇은 선을 흐리게 만들 수 있습니다.' },
+        { type: 'tip', text: '24px 그리드에서 정수로 나뉘는 크기(16, 24, 32, 48)를 선호하세요. 깔끔하게 확대되고 반픽셀 흐림을 피합니다.' },
+        { type: 'h2', text: '텍스트에 상대적인 크기' },
+        { type: 'p', text: '텍스트 옆에 놓이는 아이콘은 `em` 단위로 크기를 주면 폰트에 맞춰 자동으로 커집니다:' },
+        { type: 'code', lang: 'css', code: CODE.iconSizeCss },
+        { type: 'h2', text: '상자 크기가 아니라 시각적 무게를 맞추기' },
+        { type: 'p', text: '같은 픽셀 크기라도 하나는 빽빽하고 하나는 성기면 나란히 놓았을 때 불균형해 보입니다. 한 줄에서 같은 시각적 무게로 느껴지도록 눈으로 살짝 조정하세요 — 상자 크기는 출발점일 뿐 정답이 아닙니다.' },
+        { type: 'p', text: 'Icony에서는 필요한 정확한 픽셀 크기로 아이콘을 미리 보고 그 크기로 내보낼 수 있어, 보이는 그대로 적용됩니다.' },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'svg-stroke-width',
+    category: 'how-to',
+    readingMinutes: 5,
+    updated: '2026-06-09',
+    related: ['icon-sizes-guide', 'change-svg-icon-color', 'lucide-vs-tabler-vs-heroicons'],
+    title: {
+      en: 'SVG Stroke Width: What It Is and How to Choose',
+      ko: 'SVG 선 두께(stroke width): 개념과 고르는 법',
+    },
+    description: {
+      en: 'How stroke-width works in outline icons, why it scales with size, and how to pick a weight that matches your typography.',
+      ko: '외곽선 아이콘에서 stroke-width가 동작하는 방식, 크기에 따라 함께 커지는 이유, 타이포그래피에 맞는 두께 고르는 법.',
+    },
+    metaTitle: {
+      en: 'SVG Stroke Width Explained: How to Choose Icon Weight | Icony',
+      ko: 'SVG 선 두께 완벽 이해: 아이콘 굵기 고르는 법 | Icony',
+    },
+    metaDescription: {
+      en: 'Understand SVG stroke-width — how it scales, why outline icons need it, and how to match icon weight to your UI.',
+      ko: 'SVG stroke-width 이해 — 확대 방식, 외곽선 아이콘에 필요한 이유, UI에 맞춰 아이콘 굵기를 맞추는 법.',
+    },
+    blocks: {
+      en: [
+        { type: 'p', text: 'Outline icons (Lucide, Tabler, Heroicons outline) are drawn as **strokes**, not fills. The `stroke-width` attribute controls how thick those lines are — and it has a big effect on how an icon feels.' },
+        { type: 'h2', text: 'How stroke-width works' },
+        { type: 'p', text: 'In SVG, `stroke-width` is measured in the icon’s own coordinate units. On a 24×24 grid, a `stroke-width` of 2 means a line 2 units thick. Because SVG is vector, that thickness **scales with the icon**: render the same icon larger and the stroke grows proportionally.' },
+        { type: 'tip', text: 'This is why a 1.5px-looking stroke at 24px becomes visually heavier at 64px — the stroke is relative to the icon, not to screen pixels.' },
+        { type: 'h2', text: 'Choosing a weight' },
+        { type: 'ul', items: [
+          '**1–1.5** — light, elegant; pairs with thin/regular type and larger sizes.',
+          '**2** — the most common default; balanced and legible at small sizes.',
+          '**2.5–3** — bold; good for emphasis, small targets, or matching heavy headings.',
+        ] },
+        { type: 'p', text: 'The guiding principle: **match the icon’s weight to your text’s weight.** A 2px icon next to bold 14px text can look thin; a 1px icon next to a light heading can look just right.' },
+        { type: 'h2', text: 'A caveat' },
+        { type: 'p', text: 'Stroke width only applies to **outline** icons. Filled/solid sets (Heroicons solid, Phosphor fill) have no stroke to adjust — their weight is baked into the shape. If a stroke control does nothing, the icon is probably a filled variant.' },
+        { type: 'p', text: 'Icony lets you drag the stroke weight on supported libraries (Lucide, Tabler, Phosphor) and preview it live before exporting.' },
+      ],
+      ko: [
+        { type: 'p', text: '외곽선 아이콘(Lucide·Tabler·Heroicons outline)은 채움이 아니라 **선(stroke)**으로 그려집니다. `stroke-width` 속성이 그 선의 굵기를 정하는데, 아이콘의 인상에 큰 영향을 줍니다.' },
+        { type: 'h2', text: 'stroke-width가 동작하는 방식' },
+        { type: 'p', text: 'SVG에서 `stroke-width`는 아이콘 자체의 좌표 단위로 측정됩니다. 24×24 그리드에서 `stroke-width` 2는 2단위 굵기의 선을 뜻합니다. SVG는 벡터이기 때문에 이 굵기는 **아이콘과 함께 확대**됩니다 — 같은 아이콘을 더 크게 그리면 선도 비례해서 두꺼워집니다.' },
+        { type: 'tip', text: '24px에서 1.5px처럼 보이던 선이 64px에서 더 두껍게 보이는 이유가 이것입니다 — 선은 화면 픽셀이 아니라 아이콘에 상대적입니다.' },
+        { type: 'h2', text: '두께 고르기' },
+        { type: 'ul', items: [
+          '**1–1.5** — 가볍고 우아함; 얇은/보통 굵기 글꼴과 큰 크기에 어울림.',
+          '**2** — 가장 흔한 기본값; 작은 크기에서도 균형 있고 가독성 좋음.',
+          '**2.5–3** — 굵음; 강조, 작은 타깃, 두꺼운 제목과 맞출 때 좋음.',
+        ] },
+        { type: 'p', text: '핵심 원칙: **아이콘 굵기를 텍스트 굵기에 맞춰라.** 굵은 14px 텍스트 옆의 2px 아이콘은 얇아 보일 수 있고, 가는 제목 옆의 1px 아이콘은 딱 맞을 수 있습니다.' },
+        { type: 'h2', text: '주의점' },
+        { type: 'p', text: '선 두께는 **외곽선** 아이콘에만 적용됩니다. 채움/솔리드 세트(Heroicons solid, Phosphor fill)는 조절할 선이 없습니다 — 굵기가 형태에 박혀 있습니다. 선 두께 조절이 아무 변화가 없다면 채움형 변형일 가능성이 큽니다.' },
+        { type: 'p', text: 'Icony에서는 지원 라이브러리(Lucide·Tabler·Phosphor)에서 선 두께를 드래그로 조절하고 내보내기 전에 실시간으로 미리 볼 수 있습니다.' },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'make-a-favicon',
+    category: 'how-to',
+    readingMinutes: 6,
+    updated: '2026-06-09',
+    related: ['svg-vs-png-icons', 'reduce-svg-file-size', 'add-icons-to-website'],
+    title: {
+      en: 'How to Make a Favicon from an Icon',
+      ko: '아이콘으로 파비콘 만드는 방법',
+    },
+    description: {
+      en: 'The modern, minimal favicon setup in 2026 — one SVG, a PNG/ICO fallback, and a 180px Apple touch icon — plus the markup to wire it up.',
+      ko: '2026년 기준 현대적·최소 파비콘 세팅 — SVG 하나, PNG/ICO 폴백, 180px Apple 터치 아이콘 — 그리고 연결 마크업까지.',
+    },
+    metaTitle: {
+      en: 'How to Make a Favicon from an Icon (2026 Guide) | Icony',
+      ko: '아이콘으로 파비콘 만들기 (2026 가이드) | Icony',
+    },
+    metaDescription: {
+      en: 'Create a favicon the modern way: an SVG icon, a PNG/ICO fallback, an Apple touch icon, and the <link> markup — with sizes that matter.',
+      ko: 'SVG 아이콘, PNG/ICO 폴백, Apple 터치 아이콘과 <link> 마크업으로 현대적인 파비콘을 만드는 법 — 꼭 필요한 사이즈까지.',
+    },
+    blocks: {
+      en: [
+        { type: 'p', text: 'Favicons used to need a dozen files. In 2026 you can cover almost every browser with **three**: an SVG, a raster fallback, and an Apple touch icon.' },
+        { type: 'h2', text: 'The files you actually need' },
+        { type: 'ul', items: [
+          '**favicon.svg** — primary icon. Chrome, Firefox, and Edge render SVG favicons crisply at any size.',
+          '**favicon.ico (or a 32px PNG)** — fallback for Safari and older browsers, which do not support SVG favicons yet.',
+          '**apple-touch-icon.png (180×180)** — the icon iOS uses when a site is added to the home screen.',
+        ] },
+        { type: 'h2', text: 'The markup' },
+        { type: 'p', text: 'Add these to the `<head>`:' },
+        { type: 'code', lang: 'html', code: CODE.faviconHtml },
+        { type: 'tip', text: 'An ICO file can bundle 16×16, 32×32, and 48×48 in one file — handy for the fallback. But a single 32×32 PNG is fine for most sites.' },
+        { type: 'h2', text: 'Design tips for tiny sizes' },
+        { type: 'ul', items: [
+          'Simplify. A favicon is often rendered at 16px — fine detail disappears, so reduce the icon to its essential shape.',
+          'Use a solid, high-contrast silhouette rather than thin outlines, which blur at small sizes.',
+          'Test on both light and dark browser themes; consider a version that works on each.',
+        ] },
+        { type: 'h2', text: 'Making one from an icon' },
+        { type: 'p', text: 'Pick a simple, recognizable icon, give it a bold color, and export it. In Icony you can export the same icon as a clean SVG (for `favicon.svg`) and as a 180px PNG (for the Apple touch icon) — then drop both into your site root and add the markup above.' },
+      ],
+      ko: [
+        { type: 'p', text: '예전엔 파비콘에 파일이 십수 개 필요했습니다. 2026년에는 **세 개**로 거의 모든 브라우저를 커버할 수 있습니다 — SVG, 래스터 폴백, Apple 터치 아이콘.' },
+        { type: 'h2', text: '실제로 필요한 파일' },
+        { type: 'ul', items: [
+          '**favicon.svg** — 기본 아이콘. Chrome·Firefox·Edge는 SVG 파비콘을 어떤 크기에서도 선명하게 렌더합니다.',
+          '**favicon.ico (또는 32px PNG)** — 아직 SVG 파비콘을 지원하지 않는 Safari·구형 브라우저용 폴백.',
+          '**apple-touch-icon.png (180×180)** — iOS에서 홈 화면에 추가할 때 쓰는 아이콘.',
+        ] },
+        { type: 'h2', text: '마크업' },
+        { type: 'p', text: '`<head>`에 다음을 추가하세요:' },
+        { type: 'code', lang: 'html', code: CODE.faviconHtml },
+        { type: 'tip', text: 'ICO 파일은 16×16·32×32·48×48을 하나에 묶을 수 있어 폴백에 유용합니다. 하지만 대부분의 사이트는 32×32 PNG 하나로 충분합니다.' },
+        { type: 'h2', text: '작은 크기를 위한 디자인 팁' },
+        { type: 'ul', items: [
+          '단순화하세요. 파비콘은 종종 16px로 렌더돼 미세한 디테일이 사라지니, 본질적인 형태만 남기세요.',
+          '작은 크기에서 흐려지는 얇은 외곽선보다, 대비 높은 단단한 실루엣을 쓰세요.',
+          '밝은/어두운 브라우저 테마 양쪽에서 테스트하고, 각각에 맞는 버전을 고려하세요.',
+        ] },
+        { type: 'h2', text: '아이콘으로 만들기' },
+        { type: 'p', text: '단순하고 알아보기 쉬운 아이콘을 골라 선명한 색을 주고 내보내세요. Icony에서는 같은 아이콘을 깔끔한 SVG(`favicon.svg`용)와 180px PNG(Apple 터치 아이콘용)로 내보낼 수 있습니다 — 둘 다 사이트 루트에 넣고 위 마크업을 추가하면 됩니다.' },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'reduce-svg-file-size',
+    category: 'how-to',
+    readingMinutes: 5,
+    updated: '2026-06-09',
+    related: ['svg-vs-png-icons', 'make-a-favicon', 'svg-not-showing'],
+    title: {
+      en: 'How to Reduce SVG File Size',
+      ko: 'SVG 파일 크기 줄이는 방법',
+    },
+    description: {
+      en: 'Editor exports are bloated with metadata and excess precision. Here is how to shrink an SVG with SVGO and a few manual cleanups.',
+      ko: '에디터에서 내보낸 SVG는 메타데이터와 과한 정밀도로 무겁습니다. SVGO와 몇 가지 수동 정리로 줄이는 법을 정리했습니다.',
+    },
+    metaTitle: {
+      en: 'How to Reduce SVG File Size with SVGO | Icony',
+      ko: 'SVGO로 SVG 파일 크기 줄이는 법 | Icony',
+    },
+    metaDescription: {
+      en: 'Shrink bloated SVGs: run SVGO, trim path precision, drop editor metadata and hidden layers — without losing quality.',
+      ko: 'SVGO 실행, path 정밀도 축소, 에디터 메타데이터·숨은 레이어 제거로 품질 손실 없이 SVG를 줄이는 법.',
+    },
+    blocks: {
+      en: [
+        { type: 'p', text: 'An SVG exported from a design tool is often 5–10× bigger than it needs to be. The extra weight is editor metadata, hidden layers, and absurd coordinate precision — none of which the browser needs.' },
+        { type: 'h2', text: 'The fast win: SVGO' },
+        { type: 'p', text: '**SVGO** is the standard SVG optimizer. You can run it without installing anything via `npx`:' },
+        { type: 'code', lang: 'bash', code: CODE.svgoCmd },
+        { type: 'p', text: 'On a typical editor export, SVGO alone often cuts 40–70% of the file size with no visible change.' },
+        { type: 'h2', text: 'What is actually bloating the file' },
+        { type: 'ul', items: [
+          '**Editor metadata** — `<!-- Generator -->` comments, `sodipodi`/`inkscape` namespaces, XML declarations.',
+          '**Coordinate precision** — paths like `d="M12.000001 …"`; 2–3 decimals is plenty.',
+          '**Hidden or empty elements** — invisible layers, empty groups, unused `<defs>`.',
+          '**Inline styles that repeat** — can often collapse to a presentation attribute.',
+        ] },
+        { type: 'tip', text: 'Be careful auto-removing `viewBox`, `id`s used by CSS/JS, or `<title>` needed for accessibility. SVGO is configurable — disable plugins that strip things you rely on.' },
+        { type: 'h2', text: 'Manual cleanups' },
+        { type: 'ol', items: [
+          'Flatten the artwork in your editor before exporting (merge layers, expand strokes if needed).',
+          'Crop the canvas tight to the icon so the viewBox is not oversized.',
+          'Remove unused gradients, filters, and masks.',
+        ] },
+        { type: 'p', text: 'Icons from Icony are already clean, minimal SVGs from their source libraries — so when you copy or export one, there is little left to optimize.' },
+      ],
+      ko: [
+        { type: 'p', text: '디자인 툴에서 내보낸 SVG는 필요한 것보다 5~10배 큰 경우가 많습니다. 그 무게는 에디터 메타데이터, 숨은 레이어, 말도 안 되는 좌표 정밀도 — 브라우저가 전혀 필요로 하지 않는 것들입니다.' },
+        { type: 'h2', text: '빠른 해결: SVGO' },
+        { type: 'p', text: '**SVGO**는 표준 SVG 최적화 도구입니다. `npx`로 설치 없이 바로 실행할 수 있습니다:' },
+        { type: 'code', lang: 'bash', code: CODE.svgoCmd },
+        { type: 'p', text: '일반적인 에디터 출력물에서는 SVGO만으로도 눈에 띄는 변화 없이 파일 크기를 40~70% 줄이는 경우가 많습니다.' },
+        { type: 'h2', text: '무엇이 파일을 무겁게 하나' },
+        { type: 'ul', items: [
+          '**에디터 메타데이터** — `<!-- Generator -->` 주석, `sodipodi`/`inkscape` 네임스페이스, XML 선언.',
+          '**좌표 정밀도** — `d="M12.000001 …"` 같은 path; 소수점 2~3자리면 충분합니다.',
+          '**숨거나 빈 요소** — 보이지 않는 레이어, 빈 그룹, 사용하지 않는 `<defs>`.',
+          '**반복되는 인라인 스타일** — 종종 표현 속성 하나로 줄일 수 있습니다.',
+        ] },
+        { type: 'tip', text: 'CSS/JS가 쓰는 `id`, 접근성에 필요한 `<title>`, `viewBox`를 자동 제거하지 않도록 주의하세요. SVGO는 설정 가능하니 의존하는 것을 제거하는 플러그인은 끄세요.' },
+        { type: 'h2', text: '수동 정리' },
+        { type: 'ol', items: [
+          '내보내기 전에 에디터에서 아트워크를 평탄화하세요(레이어 병합, 필요하면 선 확장).',
+          '캔버스를 아이콘에 딱 맞게 잘라 viewBox가 과하게 크지 않게 하세요.',
+          '사용하지 않는 그라디언트·필터·마스크를 제거하세요.',
+        ] },
+        { type: 'p', text: 'Icony의 아이콘은 원본 라이브러리에서 온 이미 깔끔하고 최소화된 SVG라, 복사하거나 내보낼 때 추가로 최적화할 것이 거의 없습니다.' },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'accessible-svg-icons',
+    category: 'how-to',
+    readingMinutes: 6,
+    updated: '2026-06-09',
+    related: ['svg-to-react-component', 'add-icons-to-website', 'svg-not-showing'],
+    title: {
+      en: 'How to Make SVG Icons Accessible',
+      ko: '접근성 있는 SVG 아이콘 만드는 법',
+    },
+    description: {
+      en: 'Decorative vs informative icons, when to hide them from screen readers, and how to label icon-only buttons the right way.',
+      ko: '장식용 vs 정보용 아이콘, 스크린 리더에서 숨겨야 할 때, 그리고 아이콘만 있는 버튼을 올바르게 레이블하는 법.',
+    },
+    metaTitle: {
+      en: 'Accessible SVG Icons: aria-hidden, role, and Labels | Icony',
+      ko: '접근성 있는 SVG 아이콘: aria-hidden·role·레이블 | Icony',
+    },
+    metaDescription: {
+      en: 'Make SVG icons accessible: hide decorative icons, label informative ones with role/aria-label, and name icon-only buttons.',
+      ko: '접근성 있는 SVG 아이콘: 장식용은 숨기고, 정보용은 role/aria-label로 레이블하고, 아이콘 전용 버튼에 이름을 주는 법.',
+    },
+    blocks: {
+      en: [
+        { type: 'p', text: 'Whether an icon needs accessibility markup depends on one question: **does it carry meaning that the surrounding text does not?** Answer that, and the rest follows.' },
+        { type: 'h2', text: 'Decorative icons: hide them' },
+        { type: 'p', text: 'If the icon just decorates text that already says everything (a trash icon next to the word “Delete”), screen readers should skip it. Add `aria-hidden="true"`:' },
+        { type: 'code', lang: 'html', code: CODE.a11yDecorative },
+        { type: 'h2', text: 'Informative icons: label them' },
+        { type: 'p', text: 'If the icon conveys meaning on its own (a checkmark that means “verified”, with no nearby text), give it `role="img"` and a label:' },
+        { type: 'code', lang: 'html', code: CODE.a11yInformative },
+        { type: 'h2', text: 'Icon-only buttons: name the button' },
+        { type: 'p', text: 'This is the most common mistake. An icon-only button (a bare × to close) is unusable by screen readers unless the **control** is labeled. Put the label on the button and hide the icon:' },
+        { type: 'code', lang: 'html', code: CODE.a11yButton },
+        { type: 'tip', text: 'You no longer need `focusable="false"`. It was a workaround for Internet Explorer and old Edge; current browsers do not put SVGs in the tab order. Modern icon libraries also set `aria-hidden` for you on decorative icons.' },
+        { type: 'h2', text: 'Quick checklist' },
+        { type: 'ol', items: [
+          'Icon repeats nearby text → `aria-hidden="true"`.',
+          'Icon stands alone and means something → `role="img"` + `aria-label` (or a `<title>`).',
+          'Icon-only button/link → `aria-label` on the button, `aria-hidden` on the icon.',
+          'Never label the same thing twice — that makes screen readers announce it doubly.',
+        ] },
+      ],
+      ko: [
+        { type: 'p', text: '아이콘에 접근성 마크업이 필요한지는 한 가지 질문에 달려 있습니다: **주변 텍스트에 없는 의미를 이 아이콘이 담고 있는가?** 이것만 답하면 나머지는 따라옵니다.' },
+        { type: 'h2', text: '장식용 아이콘: 숨긴다' },
+        { type: 'p', text: '이미 모든 것을 말해 주는 텍스트를 꾸미기만 하는 아이콘이라면(“삭제”라는 글자 옆의 휴지통 아이콘), 스크린 리더는 건너뛰어야 합니다. `aria-hidden="true"`를 추가하세요:' },
+        { type: 'code', lang: 'html', code: CODE.a11yDecorative },
+        { type: 'h2', text: '정보용 아이콘: 레이블을 단다' },
+        { type: 'p', text: '아이콘이 그 자체로 의미를 전달한다면(주변 텍스트 없이 “인증됨”을 뜻하는 체크표시), `role="img"`과 레이블을 주세요:' },
+        { type: 'code', lang: 'html', code: CODE.a11yInformative },
+        { type: 'h2', text: '아이콘 전용 버튼: 버튼에 이름을 준다' },
+        { type: 'p', text: '가장 흔한 실수입니다. 아이콘만 있는 버튼(닫기용 × 하나)은 **컨트롤**에 레이블이 없으면 스크린 리더로 쓸 수 없습니다. 버튼에 레이블을 주고 아이콘은 숨기세요:' },
+        { type: 'code', lang: 'html', code: CODE.a11yButton },
+        { type: 'tip', text: '`focusable="false"`는 더 이상 필요 없습니다. Internet Explorer와 구형 Edge를 위한 우회책이었고, 최신 브라우저는 SVG를 탭 순서에 넣지 않습니다. 최신 아이콘 라이브러리도 장식용 아이콘에 `aria-hidden`을 대신 설정해 줍니다.' },
+        { type: 'h2', text: '빠른 체크리스트' },
+        { type: 'ol', items: [
+          '아이콘이 주변 텍스트를 반복한다 → `aria-hidden="true"`.',
+          '아이콘이 단독으로 의미를 가진다 → `role="img"` + `aria-label`(또는 `<title>`).',
+          '아이콘 전용 버튼/링크 → 버튼에 `aria-label`, 아이콘에 `aria-hidden`.',
+          '같은 것을 두 번 레이블하지 마세요 — 스크린 리더가 중복해서 읽습니다.',
+        ] },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'svg-not-showing',
+    category: 'troubleshooting',
+    readingMinutes: 5,
+    updated: '2026-06-09',
+    related: ['fix-blurry-svg-icons', 'change-svg-icon-color', 'add-icons-to-website'],
+    title: {
+      en: 'SVG Not Showing? Common Causes and Fixes',
+      ko: 'SVG가 안 보일 때: 흔한 원인과 해결법',
+    },
+    description: {
+      en: 'An SVG that renders as nothing usually has one of a few causes — no dimensions, a missing color, a broken viewBox, or a server MIME-type issue.',
+      ko: '아무것도 안 보이는 SVG는 보통 몇 가지 원인 중 하나입니다 — 크기 없음, 색 없음, 깨진 viewBox, 서버 MIME 타입 문제.',
+    },
+    metaTitle: {
+      en: 'SVG Not Showing? How to Fix Invisible SVGs | Icony',
+      ko: 'SVG가 안 보일 때 해결법 | Icony',
+    },
+    metaDescription: {
+      en: 'Fix an SVG that will not display: missing width/height, no fill/stroke color, broken viewBox, wrong MIME type, or markup errors.',
+      ko: 'SVG가 표시되지 않을 때 해결: 크기 누락, fill/stroke 색 없음, 깨진 viewBox, MIME 타입 오류, 마크업 오류.',
+    },
+    blocks: {
+      en: [
+        { type: 'p', text: 'An SVG that takes up no space or shows nothing at all is almost always one of these. Check them in order.' },
+        { type: 'h2', text: '1. No dimensions' },
+        { type: 'p', text: 'An inline `<svg>` with no `width`/`height` and no `viewBox` can collapse to zero size. Give it a `viewBox` (so it has an aspect ratio) and a size in CSS or attributes.' },
+        { type: 'h2', text: '2. No visible color' },
+        { type: 'p', text: 'If the icon uses `fill="none"` or `fill="currentColor"` but nothing sets a color, it renders invisibly. Give it a fill (or a `color` for `currentColor`):' },
+        { type: 'code', lang: 'html', code: CODE.svgNoColor },
+        { type: 'h2', text: '3. Broken or mismatched viewBox' },
+        { type: 'p', text: 'If the `viewBox` does not match where the paths actually are, the artwork can sit outside the visible area — present in the DOM but off-screen. Make sure the viewBox encloses the path coordinates.' },
+        { type: 'h2', text: '4. Wrong server MIME type' },
+        { type: 'p', text: 'When loaded via `<img>` or as a background, an `.svg` must be served as `image/svg+xml`. If your server sends `text/plain` or `application/octet-stream`, browsers refuse to render it. Fix the server config or content type.' },
+        { type: 'tip', text: 'Loading an external SVG via `<object>`/`<img>` from another origin can also fail on CORS. Same-origin or a permissive header fixes it.' },
+        { type: 'h2', text: '5. Invalid markup' },
+        { type: 'p', text: 'SVG is XML, so it is strict: an unclosed tag or a stray character can break the whole file silently. Open the `.svg` directly in a browser — if it shows an XML parse error, that is your culprit.' },
+        { type: 'p', text: 'Icons exported from Icony come as valid, self-contained SVG with a correct `viewBox` and color applied — which avoids causes 1–3 and 5 entirely.' },
+      ],
+      ko: [
+        { type: 'p', text: '공간을 전혀 차지하지 않거나 아무것도 안 보이는 SVG는 거의 항상 아래 중 하나입니다. 순서대로 확인하세요.' },
+        { type: 'h2', text: '1. 크기 없음' },
+        { type: 'p', text: '`width`/`height`도 `viewBox`도 없는 인라인 `<svg>`는 크기가 0으로 무너질 수 있습니다. `viewBox`(종횡비 확보)와 CSS·속성으로 크기를 주세요.' },
+        { type: 'h2', text: '2. 보이는 색이 없음' },
+        { type: 'p', text: '아이콘이 `fill="none"` 또는 `fill="currentColor"`를 쓰는데 아무 색도 지정되지 않으면 투명하게 렌더됩니다. fill을 주거나(`currentColor`라면 `color`를) 지정하세요:' },
+        { type: 'code', lang: 'html', code: CODE.svgNoColor },
+        { type: 'h2', text: '3. 깨졌거나 안 맞는 viewBox' },
+        { type: 'p', text: '`viewBox`가 실제 path 위치와 안 맞으면 아트워크가 보이는 영역 밖에 놓일 수 있습니다 — DOM엔 있지만 화면 밖에 있는 것이죠. viewBox가 path 좌표를 감싸는지 확인하세요.' },
+        { type: 'h2', text: '4. 잘못된 서버 MIME 타입' },
+        { type: 'p', text: '`<img>`나 배경으로 불러올 때 `.svg`는 `image/svg+xml`로 제공돼야 합니다. 서버가 `text/plain`이나 `application/octet-stream`으로 보내면 브라우저가 렌더를 거부합니다. 서버 설정이나 콘텐츠 타입을 고치세요.' },
+        { type: 'tip', text: '다른 출처에서 `<object>`/`<img>`로 외부 SVG를 불러올 때 CORS로 실패할 수도 있습니다. 동일 출처로 두거나 허용 헤더를 추가하면 해결됩니다.' },
+        { type: 'h2', text: '5. 유효하지 않은 마크업' },
+        { type: 'p', text: 'SVG는 XML이라 엄격합니다 — 닫히지 않은 태그나 엉뚱한 문자 하나가 파일 전체를 조용히 깨뜨릴 수 있습니다. `.svg`를 브라우저에서 직접 열어 보세요. XML 파싱 오류가 보이면 그게 원인입니다.' },
+        { type: 'p', text: 'Icony에서 내보낸 아이콘은 올바른 `viewBox`와 색이 적용된 유효한 독립 SVG라, 1~3번과 5번 원인을 아예 피합니다.' },
       ],
     },
   },
