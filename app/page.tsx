@@ -310,6 +310,12 @@ export default function LandingPage() {
                 {language === 'ko' ? '아이콘 라이브러리' : 'Icon Libraries'}
               </Link>
               <Link
+                href="/blog"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {language === 'ko' ? '블로그' : 'Blog'}
+              </Link>
+              <Link
                 href="/about"
                 className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
