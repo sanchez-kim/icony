@@ -16,6 +16,7 @@ import { useLanguage } from '../src/context/LanguageContext';
 import { LanguageSwitcher } from '../src/components/LanguageSwitcher';
 import { ThemeToggle } from '../src/components/ThemeToggle';
 import { IconyLogo } from '../src/components/IconyLogo';
+import { HeroLottie } from '../src/components/HeroLottie';
 import { useScrollAnimation } from '../src/hooks/useScrollAnimation';
 import { useCounterAnimation } from '../src/hooks/useCounterAnimation';
 
@@ -105,6 +106,8 @@ export default function LandingPage() {
             heroAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
+          <HeroLottie className="w-32 h-32 sm:w-40 sm:h-40 mx-auto -mb-2" />
+
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold transition-colors">
             <Sparkles size={16} />
             <span>{t.landing.tagline}</span>
