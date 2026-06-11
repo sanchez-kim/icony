@@ -17,6 +17,7 @@ import { LanguageSwitcher } from '../src/components/LanguageSwitcher';
 import { ThemeToggle } from '../src/components/ThemeToggle';
 import { IconyLogo } from '../src/components/IconyLogo';
 import { HeroLottie } from '../src/components/HeroLottie';
+import { PromoVideo } from '../src/components/PromoVideo';
 import { useScrollAnimation } from '../src/hooks/useScrollAnimation';
 import { useCounterAnimation } from '../src/hooks/useCounterAnimation';
 
@@ -169,6 +170,23 @@ export default function LandingPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Demo video */}
+      <section className="container mx-auto px-6 py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+            {language === 'ko' ? '직접 보세요' : 'See how it works'}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400">
+            {language === 'ko'
+              ? '검색부터 커스터마이즈, 내보내기까지 — 몇 초면 끝납니다.'
+              : 'From search to customize to export — in seconds.'}
+          </p>
+        </div>
+        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+          <PromoVideo />
         </div>
       </section>
 
