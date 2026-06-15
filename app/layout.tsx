@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  alternates: { canonical: '/' },
   icons: { icon: '/favicon.svg' },
   other: {
     'google-adsense-account': 'ca-pub-4776602848700794',
@@ -41,6 +42,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko" suppressHydrationWarning>
       <body className="!m-0 !p-0">
+        {/* Apply theme before first paint to avoid a dark/light flash now that
+            the app no longer hides its content until mount. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('icony_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <Providers>{children}</Providers>
         <script
           type="application/ld+json"

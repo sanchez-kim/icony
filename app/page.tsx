@@ -24,8 +24,8 @@ import { useCounterAnimation } from '../src/hooks/useCounterAnimation';
 export default function LandingPage() {
   const { t, language } = useLanguage();
 
-  // Scroll animations for different sections
-  const heroAnimation = useScrollAnimation({ threshold: 0.2 });
+  // Scroll animations for below-the-fold sections. The hero is NOT gated on
+  // scroll visibility — it's the LCP element and must paint immediately.
   const statsAnimation = useScrollAnimation({ threshold: 0.3 });
   const featuresAnimation = useScrollAnimation({ threshold: 0.1 });
   const howItWorksAnimation = useScrollAnimation({ threshold: 0.2 });
@@ -101,12 +101,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-14 sm:py-20 text-center">
-        <div
-          ref={heroAnimation.ref}
-          className={`max-w-4xl mx-auto space-y-8 transition-all duration-1000 ${
-            heroAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="max-w-4xl mx-auto space-y-8">
           <HeroLottie className="w-32 h-32 sm:w-40 sm:h-40 mx-auto -mb-2" />
 
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold transition-colors">

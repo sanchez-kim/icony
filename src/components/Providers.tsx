@@ -1,25 +1,16 @@
 'use client';
 
-import { useState, useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { ThemeProvider } from '../context/ThemeContext';
 import { LanguageProvider } from '../context/LanguageContext';
 
 export function Providers({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  // Children render immediately (no visibility gate) so the SSR'd HTML is
+  // visible to crawlers and paints fast for LCP. The dark-theme flash is
+  // prevented by the inline pre-paint script in app/layout.tsx instead.
   return (
     <ThemeProvider>
-      <LanguageProvider>
-        {!mounted ? (
-          <div style={{ visibility: 'hidden' }}>{children}</div>
-        ) : (
-          children
-        )}
-      </LanguageProvider>
+      <LanguageProvider>{children}</LanguageProvider>
     </ThemeProvider>
   );
 }

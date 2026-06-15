@@ -42,3 +42,6 @@ temp/
 # Auto-generated files
 next-env.d.ts
 tsconfig.tsbuildinfo
+
+# Serena MCP
+.serena/

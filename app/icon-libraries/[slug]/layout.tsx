@@ -20,9 +20,17 @@ export async function generateMetadata({
     };
   }
 
+  const url = `https://iconyapp.com/icon-libraries/${slug}`;
   return {
     title: lib.metaTitle,
     description: lib.metaDescription,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      url,
+      title: lib.metaTitle,
+      description: lib.metaDescription,
+    },
   };
 }
 

@@ -6,6 +6,12 @@
       "has": [{ "type": "host", "value": "icony.vercel.app" }],
       "destination": "https://iconyapp.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.iconyapp.com" }],
+      "destination": "https://iconyapp.com/:path*",
+      "permanent": true
     }
   ]
 }
