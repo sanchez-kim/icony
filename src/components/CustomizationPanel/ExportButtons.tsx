@@ -7,7 +7,9 @@ import toast from 'react-hot-toast';
 
 export function ExportButtons() {
   const { downloadPng, downloadSvg, copyToClipboard, copySvgCode, copyJsxCode, isExporting, selectedIcon, color, size } = useIconContext();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const ko = language === 'ko';
+  const sectionLabel = 'text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500';
 
   const handleShare = () => {
     if (!selectedIcon) {
@@ -38,6 +40,7 @@ export function ExportButtons() {
 
   return (
     <div className="space-y-4">
+      <p className={sectionLabel}>{ko ? '파일로 다운로드' : 'Download file'}</p>
       <div className="grid grid-cols-2 gap-3">
         <button
           onClick={downloadPng}
@@ -72,11 +75,13 @@ export function ExportButtons() {
         </button>
       </div>
 
+      <p className={sectionLabel}>{ko ? '클립보드로 복사' : 'Copy to clipboard'}</p>
       <button
         onClick={copyToClipboard}
         disabled={isExporting}
+        title={ko ? 'PNG 이미지를 클립보드에 복사합니다 (문서·채팅에 붙여넣기)' : 'Copies a PNG image to your clipboard (paste into docs / chat)'}
         className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded-xl font-semibold text-sm hover:bg-green-700 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-        aria-label={t.ui.copyClipboard}
+        aria-label={`${t.ui.copyClipboard} — ${ko ? 'PNG 이미지' : 'PNG image'}`}
       >
         {isExporting ? (
           <Loader2 className="animate-spin" size={18} />
@@ -84,11 +89,13 @@ export function ExportButtons() {
           <>
             <Copy size={18} />
             <span>{t.ui.copyClipboard}</span>
+            <span className="text-green-200 font-normal">· {ko ? '이미지' : 'image'}</span>
           </>
         )}
       </button>
 
       {/* Copy as code — for developers */}
+      <p className={sectionLabel}>{ko ? '코드로 복사 (개발자용)' : 'Copy as code (for developers)'}</p>
       <div className="grid grid-cols-2 gap-3">
         <button
           onClick={copySvgCode}

@@ -99,6 +99,9 @@ interface IconContextValue {
   copySvgCode: () => Promise<void>;
   copyJsxCode: () => Promise<void>;
   isExporting: boolean;
+  // True until the primary (Lucide) library has loaded — lets the gallery show
+  // a loading state instead of a misleading "No icons found" on cold start.
+  isLoadingIcons: boolean;
   // Batch selection / export
   selectionMode: boolean;
   toggleSelectionMode: () => void;
@@ -127,6 +130,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
   const [selectedLibrary, setSelectedLibrary] = useState<IconLibrary>('all');
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [isExporting, setIsExporting] = useState(false);
+  const [isLoadingIcons, setIsLoadingIcons] = useState(true);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [recentIcons, setRecentIcons] = useState<string[]>([]);
 
@@ -192,6 +196,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
       // 1. Load the default library first → gallery interactive ASAP
       await ingestLibrary(PRIMARY_LIBRARY);
       if (cancelled) return;
+      setIsLoadingIcons(false);
 
       // 2. Stream in the remaining libraries during idle time, one at a time,
       //    so heavy parses (e.g. Tabler ~6k icons) don't jank the main thread.
@@ -457,6 +462,7 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
     copySvgCode,
     copyJsxCode,
     isExporting,
+    isLoadingIcons,
     selectionMode,
     toggleSelectionMode,
     selectedIds,

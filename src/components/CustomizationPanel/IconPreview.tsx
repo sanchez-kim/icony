@@ -121,14 +121,17 @@ export function IconPreview() {
 
       <div
         className={cn(
-          'flex items-center justify-center rounded-2xl border shadow-sm transition-all duration-300',
+          'flex items-center justify-center rounded-2xl border shadow-sm transition-all duration-300 max-w-full mx-auto overflow-auto',
           selectedBg?.bgClass,
           selectedBg?.borderClass,
           background === 'transparent' && 'checkerboard'
         )}
         style={{
+          // Cap the visual box to the available column width so large icon
+          // sizes (e.g. 512px) never force horizontal page scroll on mobile;
+          // the box stays square and scrolls internally if the icon is bigger.
           width: size + 100,
-          height: size + 100,
+          aspectRatio: '1 / 1',
         }}
       >
         {selectedIcon.type === 'lucide' ? (

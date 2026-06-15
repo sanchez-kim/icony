@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { X, Palette, Download, Heart, Search, Zap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -12,6 +12,8 @@ interface OnboardingModalProps {
 export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const { t } = useLanguage();
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   const steps = [
     {
@@ -69,18 +71,73 @@ export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
     handleClose();
   };
 
+  // Accessibility: trap focus, close on Escape, lock body scroll, and move
+  // focus into the dialog when it opens.
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        handleClose();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const panel = panelRef.current;
+        if (!panel) return;
+        const focusables = panel.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeBtnRef.current?.focus();
+
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+    // handleClose is recreated each render; intentionally keyed on isOpen only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const step = steps[currentStep];
   const Icon = step.icon;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={handleClose}
+    >
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="onboarding-title"
+        aria-describedby="onboarding-desc"
+        className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full p-8 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
+          ref={closeBtnRef}
           onClick={handleClose}
-          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg"
           aria-label="Close"
         >
           <X size={20} />
@@ -94,12 +151,12 @@ export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
           </div>
 
           {/* Title */}
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 id="onboarding-title" className="text-2xl font-bold text-gray-900 dark:text-white">
             {step.title}
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p id="onboarding-desc" className="text-gray-600 dark:text-gray-400 leading-relaxed">
             {step.description}
           </p>
 

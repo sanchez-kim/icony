@@ -23,7 +23,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
   const {
     icons, selectedIcon, selectIcon, favorites, recentIcons, selectedLibrary, sortBy,
     selectionMode, toggleSelectionMode, selectedIds, toggleSelected, clearSelected, isSelected,
-    downloadZip, isExporting,
+    downloadZip, isExporting, isLoadingIcons,
   } = useIconContext();
   const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -149,7 +149,9 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
       {/* Results Count + Selection toggle */}
       <div className="flex items-center justify-between gap-3">
         <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
-          {filteredIcons.length} {filteredIcons.length === 1 ? 'icon' : 'icons'} found
+          {isLoadingIcons && icons.length === 0
+            ? (language === 'ko' ? '아이콘 불러오는 중…' : 'Loading icons…')
+            : `${filteredIcons.length} ${filteredIcons.length === 1 ? 'icon' : 'icons'} found`}
         </div>
         <button
           onClick={toggleSelectionMode}
@@ -216,10 +218,30 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
         className="max-h-[650px] overflow-y-auto pr-2 custom-scrollbar p-1"
         style={{ opacity: isSearching ? 0.6 : 1, transition: 'opacity 150ms ease' }}
       >
-        {filteredIcons.length === 0 ? (
+        {isLoadingIcons && icons.length === 0 ? (
+          // Cold start: libraries still streaming in. Show a skeleton grid so
+          // users don't see a misleading "No icons found" on a fresh load.
+          <div
+            className="grid gap-3 p-1"
+            style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
+            aria-busy="true"
+            aria-label={language === 'ko' ? '아이콘 불러오는 중' : 'Loading icons'}
+          >
+            {Array.from({ length: cols * 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="h-20 rounded-xl bg-gray-100 dark:bg-gray-800 animate-pulse"
+              />
+            ))}
+          </div>
+        ) : filteredIcons.length === 0 ? (
           <div className="text-center py-16 text-gray-400 dark:text-gray-600">
-            <p className="text-lg font-medium">No icons found</p>
-            <p className="text-sm mt-2">Try different keywords or categories</p>
+            <p className="text-lg font-medium">
+              {language === 'ko' ? '아이콘을 찾을 수 없습니다' : 'No icons found'}
+            </p>
+            <p className="text-sm mt-2">
+              {language === 'ko' ? '다른 키워드나 카테고리를 시도해보세요' : 'Try different keywords or categories'}
+            </p>
           </div>
         ) : (
           <div

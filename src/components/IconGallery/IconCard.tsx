@@ -90,44 +90,47 @@ export const IconCard = React.memo(function IconCard({
   const highlighted = selectionMode ? batchSelected : selected;
 
   return (
-    <button
-      onClick={onClick}
-      className={cn(
-        'relative group h-20 w-full flex items-center justify-center border-2 rounded-xl transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-        highlighted
-          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-lg ring-2 ring-primary-400'
-          : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50/50 dark:hover:bg-primary-900/20'
-      )}
-      title={icon.name}
-      aria-label={selectionMode ? `Toggle ${icon.name} icon` : `Select ${icon.name} icon`}
-      aria-pressed={highlighted}
-    >
-      {selectionMode ? (
-        // Checkbox indicator (top-left) for batch selection
-        <span
-          className={cn(
-            'absolute top-1 left-1 w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200',
-            batchSelected
-              ? 'bg-primary-600 border-primary-600 text-white'
-              : 'bg-white/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600'
-          )}
-          aria-hidden="true"
-        >
-          {batchSelected && <Check size={12} strokeWidth={3} />}
-        </span>
-      ) : (
-        <span
+    // Wrapper so the favorite toggle is a *sibling* button, not nested inside
+    // the select button (interactive-in-button is invalid HTML and breaks
+    // keyboard/screen-reader use).
+    <div className="relative group h-20 w-full">
+      <button
+        onClick={onClick}
+        className={cn(
+          'h-20 w-full flex items-center justify-center border-2 rounded-xl transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+          highlighted
+            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 shadow-lg ring-2 ring-primary-400'
+            : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-primary-50/50 dark:hover:bg-primary-900/20'
+        )}
+        title={icon.name}
+        aria-label={selectionMode ? `Toggle ${icon.name} icon` : `Select ${icon.name} icon`}
+        aria-pressed={highlighted}
+      >
+        {selectionMode && (
+          // Checkbox indicator (top-left) for batch selection
+          <span
+            className={cn(
+              'absolute top-1 left-1 w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-200',
+              batchSelected
+                ? 'bg-primary-600 border-primary-600 text-white'
+                : 'bg-white/80 dark:bg-gray-900/80 border-gray-300 dark:border-gray-600'
+            )}
+            aria-hidden="true"
+          >
+            {batchSelected && <Check size={12} strokeWidth={3} />}
+          </span>
+        )}
+        {renderIconComponent(icon, 'w-9 h-9 text-gray-700 dark:text-gray-300')}
+      </button>
+
+      {!selectionMode && (
+        <button
+          type="button"
           onClick={handleFavoriteClick}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              handleFavoriteClick(e);
-            }
-          }}
-          className="absolute top-1 right-1 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-opacity duration-200 focus:outline-none cursor-pointer"
+          // Visible on hover AND keyboard focus, so it's reachable without a mouse.
+          className="absolute top-1 right-1 p-1 rounded-full opacity-0 group-hover:opacity-100 focus:opacity-100 hover:bg-gray-100 dark:hover:bg-gray-700 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 z-10"
           aria-label={favorite ? t.ui.removeFromFavorites : t.ui.addToFavorites}
+          aria-pressed={favorite}
         >
           <Star
             size={14}
@@ -136,9 +139,8 @@ export const IconCard = React.memo(function IconCard({
               favorite ? 'fill-yellow-400 text-yellow-400' : 'text-gray-400'
             )}
           />
-        </span>
+        </button>
       )}
-      {renderIconComponent(icon, 'w-9 h-9 text-gray-700 dark:text-gray-300')}
-    </button>
+    </div>
   );
 });
