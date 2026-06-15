@@ -27,7 +27,9 @@ export interface BlogPost {
   slug: string;
   category: BlogCategory;
   readingMinutes: number;
-  /** ISO date (absolute). */
+  /** ISO date the post was first published (absolute). */
+  published: string;
+  /** ISO date the post was last reviewed/updated (absolute). */
   updated: string;
   related: string[];
   title: L<string>;
@@ -60,7 +62,7 @@ const CODE = {
   imgTag: '<img src="/icons/arrow-right.svg" alt="Next" width="20" height="20" />',
   lucideImport: "import { ArrowRight } from 'lucide-react';\n\n<button>Next <ArrowRight size={20} /></button>",
   faviconHtml:
-    '<!-- SVG primary (Chrome, Firefox, Edge) -->\n<link rel="icon" href="/favicon.svg" type="image/svg+xml" />\n<!-- Fallback for Safari / older browsers -->\n<link rel="icon" href="/favicon.ico" sizes="32x32" />\n<!-- iOS home screen -->\n<link rel="apple-touch-icon" href="/apple-touch-icon.png" /> <!-- 180×180 -->',
+    '<!-- SVG primary (all modern browsers, incl. Safari 17+) -->\n<link rel="icon" href="/favicon.svg" type="image/svg+xml" />\n<!-- Fallback for older browsers (Safari < 17, IE) -->\n<link rel="icon" href="/favicon.ico" sizes="32x32" />\n<!-- iOS home screen -->\n<link rel="apple-touch-icon" href="/apple-touch-icon.png" /> <!-- 180×180 -->',
   iconSizeCss:
     '/* Match the icon box to your design grid */\n.icon { width: 20px; height: 20px; }\n\n/* Size by text so icons scale with their label */\n.icon { width: 1em; height: 1em; }',
   a11yDecorative: '<!-- Decorative: text already conveys the meaning -->\n<button>Delete <svg aria-hidden="true">…</svg></button>',
@@ -77,6 +79,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'svg-vs-png-icons',
     category: 'comparison',
     readingMinutes: 5,
+    published: '2026-02-12',
     updated: '2026-06-09',
     related: ['change-svg-icon-color', 'fix-blurry-svg-icons', 'add-icons-to-website'],
     title: {
@@ -148,6 +151,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'change-svg-icon-color',
     category: 'how-to',
     readingMinutes: 6,
+    published: '2026-02-26',
     updated: '2026-06-09',
     related: ['svg-vs-png-icons', 'svg-to-react-component', 'fix-blurry-svg-icons'],
     title: {
@@ -207,6 +211,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'svg-to-react-component',
     category: 'how-to',
     readingMinutes: 6,
+    published: '2026-03-12',
     updated: '2026-06-09',
     related: ['change-svg-icon-color', 'svg-vs-png-icons', 'lucide-vs-tabler-vs-heroicons'],
     title: {
@@ -276,6 +281,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'lucide-vs-tabler-vs-heroicons',
     category: 'comparison',
     readingMinutes: 7,
+    published: '2026-03-26',
     updated: '2026-06-09',
     related: ['svg-to-react-component', 'add-icons-to-website', 'svg-vs-png-icons'],
     title: {
@@ -365,6 +371,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'fix-blurry-svg-icons',
     category: 'troubleshooting',
     readingMinutes: 5,
+    published: '2026-04-09',
     updated: '2026-06-09',
     related: ['svg-vs-png-icons', 'change-svg-icon-color', 'add-icons-to-website'],
     title: {
@@ -424,6 +431,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'add-icons-to-website',
     category: 'how-to',
     readingMinutes: 6,
+    published: '2026-04-23',
     updated: '2026-06-09',
     related: ['svg-to-react-component', 'lucide-vs-tabler-vs-heroicons', 'svg-vs-png-icons'],
     title: {
@@ -513,6 +521,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'icon-sizes-guide',
     category: 'how-to',
     readingMinutes: 5,
+    published: '2026-05-07',
     updated: '2026-06-09',
     related: ['svg-stroke-width', 'fix-blurry-svg-icons', 'svg-vs-png-icons'],
     title: {
@@ -578,6 +587,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'svg-stroke-width',
     category: 'how-to',
     readingMinutes: 5,
+    published: '2026-05-14',
     updated: '2026-06-09',
     related: ['icon-sizes-guide', 'change-svg-icon-color', 'lucide-vs-tabler-vs-heroicons'],
     title: {
@@ -637,6 +647,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'make-a-favicon',
     category: 'how-to',
     readingMinutes: 6,
+    published: '2026-05-21',
     updated: '2026-06-09',
     related: ['svg-vs-png-icons', 'reduce-svg-file-size', 'add-icons-to-website'],
     title: {
@@ -660,8 +671,8 @@ export const BLOG_POSTS: BlogPost[] = [
         { type: 'p', text: 'Favicons used to need a dozen files. In 2026 you can cover almost every browser with **three**: an SVG, a raster fallback, and an Apple touch icon.' },
         { type: 'h2', text: 'The files you actually need' },
         { type: 'ul', items: [
-          '**favicon.svg** — primary icon. Chrome, Firefox, and Edge render SVG favicons crisply at any size.',
-          '**favicon.ico (or a 32px PNG)** — fallback for Safari and older browsers, which do not support SVG favicons yet.',
+          '**favicon.svg** — primary icon. Every modern browser renders SVG favicons crisply at any size, including Safari since version 17 (2023).',
+          '**favicon.ico (or a 32px PNG)** — fallback for older browsers that predate SVG favicon support (Safari 16 and earlier, Internet Explorer).',
           '**apple-touch-icon.png (180×180)** — the icon iOS uses when a site is added to the home screen.',
         ] },
         { type: 'h2', text: 'The markup' },
@@ -681,8 +692,8 @@ export const BLOG_POSTS: BlogPost[] = [
         { type: 'p', text: '예전엔 파비콘에 파일이 십수 개 필요했습니다. 2026년에는 **세 개**로 거의 모든 브라우저를 커버할 수 있습니다 — SVG, 래스터 폴백, Apple 터치 아이콘.' },
         { type: 'h2', text: '실제로 필요한 파일' },
         { type: 'ul', items: [
-          '**favicon.svg** — 기본 아이콘. Chrome·Firefox·Edge는 SVG 파비콘을 어떤 크기에서도 선명하게 렌더합니다.',
-          '**favicon.ico (또는 32px PNG)** — 아직 SVG 파비콘을 지원하지 않는 Safari·구형 브라우저용 폴백.',
+          '**favicon.svg** — 기본 아이콘. 모든 최신 브라우저가 SVG 파비콘을 어떤 크기에서도 선명하게 렌더합니다. Safari도 17 버전(2023)부터 지원합니다.',
+          '**favicon.ico (또는 32px PNG)** — SVG 파비콘 지원 이전의 구형 브라우저(Safari 16 이하, 인터넷 익스플로러)용 폴백.',
           '**apple-touch-icon.png (180×180)** — iOS에서 홈 화면에 추가할 때 쓰는 아이콘.',
         ] },
         { type: 'h2', text: '마크업' },
@@ -706,6 +717,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'reduce-svg-file-size',
     category: 'how-to',
     readingMinutes: 5,
+    published: '2026-05-28',
     updated: '2026-06-09',
     related: ['svg-vs-png-icons', 'make-a-favicon', 'svg-not-showing'],
     title: {
@@ -777,6 +789,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'accessible-svg-icons',
     category: 'how-to',
     readingMinutes: 6,
+    published: '2026-06-04',
     updated: '2026-06-09',
     related: ['svg-to-react-component', 'add-icons-to-website', 'svg-not-showing'],
     title: {
@@ -844,6 +857,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'svg-not-showing',
     category: 'troubleshooting',
     readingMinutes: 5,
+    published: '2026-06-09',
     updated: '2026-06-09',
     related: ['fix-blurry-svg-icons', 'change-svg-icon-color', 'add-icons-to-website'],
     title: {

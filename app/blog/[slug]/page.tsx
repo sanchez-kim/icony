@@ -140,7 +140,9 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     blog: lang === 'ko' ? '블로그' : 'Blog',
     allGuides: lang === 'ko' ? '전체 가이드' : 'All Guides',
     readTime: lang === 'ko' ? `${post.readingMinutes}분 읽기` : `${post.readingMinutes} min read`,
+    published: lang === 'ko' ? `${formatDate(post.published, lang)} 발행` : `Published ${formatDate(post.published, lang)}`,
     updated: lang === 'ko' ? `${formatDate(post.updated, lang)} 업데이트` : `Updated ${formatDate(post.updated, lang)}`,
+    byline: lang === 'ko' ? 'Icony 팀' : 'Icony Team',
     related: lang === 'ko' ? '관련 가이드' : 'Related guides',
     ctaTitle: lang === 'ko' ? 'Icony에서 사용해 보세요' : 'Try it in Icony',
     ctaBody:
@@ -150,25 +152,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     ctaBtn: lang === 'ko' ? '아이콘 커스터마이저 열기' : 'Open the icon customizer',
   };
 
-  // Structured data uses English (consistent with the page's static metadata).
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title.en,
-    description: post.metaDescription.en,
-    dateModified: post.updated,
-    author: { '@type': 'Organization', name: 'Icony' },
-    publisher: { '@type': 'Organization', name: 'Icony' },
-    mainEntityOfPage: `https://iconyapp.com/blog/${post.slug}`,
-  };
+  // Article JSON-LD is emitted server-side in this route's layout.tsx.
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* Header */}
       <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-6 py-4">
@@ -212,8 +199,6 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
               <Clock size={14} />
               {t.readTime}
             </span>
-            <span className="text-gray-400 dark:text-gray-600">·</span>
-            <span className="text-gray-500 dark:text-gray-500">{t.updated}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
             {post.title[lang]}
@@ -221,6 +206,20 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {post.description[lang]}
           </p>
+          {/* Byline + dates (E-E-A-T trust signals) */}
+          <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-500 dark:text-gray-500">
+            <Link href="/about" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              {t.byline}
+            </Link>
+            <span className="text-gray-400 dark:text-gray-600">·</span>
+            <span>{t.published}</span>
+            {post.updated !== post.published && (
+              <>
+                <span className="text-gray-400 dark:text-gray-600">·</span>
+                <span>{t.updated}</span>
+              </>
+            )}
+          </div>
         </div>
 
         {/* Article body */}
