@@ -5,7 +5,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
 
 const STROKE_WEIGHTS = [1, 1.5, 2, 2.5, 3];
-const STROKE_SUPPORTED_LIBS = ['lucide', 'tabler', 'phosphor'];
+const STROKE_SUPPORTED_LIBS = ['lucide', 'tabler', 'phosphor', 'heroicons'];
 const NO_STROKE_LIBS_MSG: Record<string, { en: string; ko: string }> = {
   'phosphor-fill':   { en: 'Filled variant — stroke weight does not apply.', ko: '채워진 아이콘 — 선 두께가 적용되지 않습니다.' },
   'heroicons-solid': { en: 'Solid variant — stroke weight does not apply.', ko: '솔리드 아이콘 — 선 두께가 적용되지 않습니다.' },
@@ -30,8 +30,8 @@ export function StrokeWeightSelector() {
           {customMsg
             ? (language === 'ko' ? customMsg.ko : customMsg.en)
             : (language === 'ko'
-                ? '이 아이콘은 선 두께를 지원하지 않습니다.\n(Lucide, Tabler, Phosphor만 지원)'
-                : 'This icon does not support stroke weight.\n(Lucide, Tabler, Phosphor only)')}
+                ? '이 아이콘은 선 두께를 지원하지 않습니다.\n(Lucide, Tabler, Phosphor, Heroicons만 지원)'
+                : 'This icon does not support stroke weight.\n(Lucide, Tabler, Phosphor, Heroicons only)')}
         </p>
       </div>
     );

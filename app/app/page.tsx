@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Toaster } from 'react-hot-toast';
 import { IconProvider, useIconContext } from '../../src/context/IconContext';
@@ -26,30 +26,39 @@ function AppPageInner() {
     }
   }, []);
 
-  // Load state from URL parameters
+  // Color/size from URL — apply once on mount. (Independent of the icon list,
+  // which streams in over several renders as libraries load.)
+  const appliedParamsRef = useRef(false);
   useEffect(() => {
-    const iconId = searchParams.get('icon');
+    if (appliedParamsRef.current) return;
+    appliedParamsRef.current = true;
+
     const colorParam = searchParams.get('color');
+    if (colorParam) setColor(`#${colorParam}`);
+
     const sizeParam = searchParams.get('size');
-
-    if (iconId) {
-      const icon = icons.find((i) => i.id === iconId);
-      if (icon) {
-        selectIcon(icon);
-      }
-    }
-
-    if (colorParam) {
-      setColor(`#${colorParam}`);
-    }
-
     if (sizeParam) {
       const size = parseInt(sizeParam, 10);
-      if (size >= 16 && size <= 512) {
-        setSize(size);
-      }
+      if (size >= 16 && size <= 512) setSize(size);
     }
-  }, [searchParams, icons, selectIcon, setColor, setSize]);
+  }, [searchParams, setColor, setSize]);
+
+  // Icon from URL — apply exactly once, as soon as it resolves. Deep-linked
+  // icons may belong to a deferred library that loads seconds after mount, and
+  // `icons` changes on every library load; without this guard the effect would
+  // re-select on each change and repeatedly pollute the "recent" list.
+  const appliedIconRef = useRef(false);
+  useEffect(() => {
+    if (appliedIconRef.current) return;
+    const iconId = searchParams.get('icon');
+    if (!iconId) return;
+
+    const icon = icons.find((i) => i.id === iconId);
+    if (icon) {
+      selectIcon(icon);
+      appliedIconRef.current = true;
+    }
+  }, [searchParams, icons, selectIcon]);
 
   const handleHelpClick = () => {
     setShowOnboarding(true);

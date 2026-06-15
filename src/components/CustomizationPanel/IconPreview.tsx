@@ -160,9 +160,13 @@ export function IconPreview() {
             className: 'transition-all duration-300',
           })
         ) : (
+          // heroicons (outline) / heroicons-solid / bootstrap / radix.
+          // strokeWidth drives Heroicons outline; no-op for fill-based libs.
           React.createElement(selectedIcon.component, {
-            size,
+            width: size,
+            height: size,
             color,
+            strokeWidth: strokeWeight,
             className: 'transition-all duration-300',
           })
         )}

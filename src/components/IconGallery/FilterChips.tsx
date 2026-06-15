@@ -8,6 +8,11 @@ const LIBRARY_NAMES: Record<string, { en: string; ko: string }> = {
   lucide: { en: 'Lucide', ko: 'Lucide' },
   tabler: { en: 'Tabler', ko: 'Tabler' },
   phosphor: { en: 'Phosphor', ko: 'Phosphor' },
+  'phosphor-fill': { en: 'Phosphor Filled', ko: 'Phosphor (채움)' },
+  heroicons: { en: 'Heroicons', ko: 'Heroicons' },
+  'heroicons-solid': { en: 'Heroicons Solid', ko: 'Heroicons (솔리드)' },
+  bootstrap: { en: 'Bootstrap', ko: 'Bootstrap' },
+  radix: { en: 'Radix', ko: 'Radix' },
 };
 
 export function FilterChips() {
@@ -34,9 +39,9 @@ export function FilterChips() {
       {selectedLibrary !== 'all' && (
         <div className="flex items-center gap-1.5 px-3 py-1.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-xs font-semibold">
           <span>
-            {language === 'ko'
+            {(language === 'ko'
               ? LIBRARY_NAMES[selectedLibrary]?.ko
-              : LIBRARY_NAMES[selectedLibrary]?.en}
+              : LIBRARY_NAMES[selectedLibrary]?.en) ?? selectedLibrary}
           </span>
           <button
             onClick={() => setSelectedLibrary('all')}

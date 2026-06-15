@@ -29,9 +29,15 @@ export class ClipboardManager {
   }
 
   /**
-   * Copy image Blob to clipboard
+   * Copy a PNG image to the clipboard.
+   *
+   * Accepts a Blob *or a Promise<Blob>*. Safari only keeps the clipboard write
+   * authorised when `navigator.clipboard.write` is reached synchronously within
+   * the user gesture — so the caller must pass the un-awaited rasterisation
+   * promise and let ClipboardItem resolve it, rather than `await`-ing the Blob
+   * first (which would drop the gesture and throw NotAllowedError in Safari).
    */
-  async copyImage(blob: Blob): Promise<void> {
+  async copyImage(blob: Blob | Promise<Blob>): Promise<void> {
     if (!this.isSupported()) {
       throw new Error('Clipboard API not supported in this browser');
     }

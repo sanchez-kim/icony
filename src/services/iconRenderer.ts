@@ -42,12 +42,15 @@ export class IconRenderer {
         })
       );
     } else {
-      // heroicons, bootstrap, radix — pass size and color as generic props
+      // heroicons (outline), heroicons-solid, bootstrap, radix — generic props.
+      // strokeWidth overrides Heroicons outline's fixed 1.5 stroke; it's an
+      // inert no-op for fill-based libraries (no stroke to apply it to).
       return renderToString(
         createElement(iconData.component, {
           width: size,
           height: size,
           color,
+          strokeWidth: strokeWeight,
         })
       );
     }

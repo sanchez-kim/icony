@@ -320,14 +320,16 @@ export function IconProvider({ children }: { children: React.ReactNode }) {
 
     setIsExporting(true);
     try {
-      const blob = await renderer.iconToPng(
+      // Pass the un-awaited rasterisation promise so ClipboardItem resolves it
+      // inside the clipboard write — required for Safari (see copyImage docs).
+      const blobPromise = renderer.iconToPng(
         selectedIcon,
         size,
         color,
         strokeWeight
       );
 
-      await clipboard.copyImage(blob);
+      await clipboard.copyImage(blobPromise);
       toast.success('Copied to clipboard!');
     } catch (error) {
       console.error('Copy failed:', error);
