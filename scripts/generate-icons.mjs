@@ -317,11 +317,15 @@ function generateTabler() {
 // PHOSPHOR
 // ===========================================================================
 function generatePhosphor() {
-  const srcDir = path.join(ROOT, 'node_modules/phosphor-react/src/icons');
-  const files = fs.readdirSync(srcDir).filter(f => f.endsWith('.tsx'));
-
-  // Each file is named like "ArrowRight.tsx" — component name is filename stem
-  const componentNames = files.map(f => path.basename(f, '.tsx'));
+  // @phosphor-icons/react ships one CSR module per icon (e.g. "House.es.js").
+  // The filename stem is the bare component export name (House, Gear, …); the
+  // package also exports *Icon aliases, but those live inside the same files,
+  // so the .es.js stems are exactly the canonical icon-name list.
+  const srcDir = path.join(ROOT, 'node_modules/@phosphor-icons/react/dist/csr');
+  const componentNames = fs.readdirSync(srcDir)
+    .filter(f => f.endsWith('.es.js'))
+    .map(f => f.slice(0, -'.es.js'.length))
+    .filter(n => /^[A-Z]/.test(n));
 
   const descriptors = componentNames.sort().map(componentName => {
     const words = splitWords(componentName);

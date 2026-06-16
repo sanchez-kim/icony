@@ -38,7 +38,7 @@ export const FAQ_KO: FaqSection[] = [
       {
         question: '어떤 아이콘 라이브러리를 지원하나요?',
         answer:
-          'Lucide Icons (1,539개), Tabler Icons (5,986개), Phosphor Icons (1,047개), Phosphor Fill (1,047개), Heroicons (175개), Heroicons Solid (175개), Bootstrap Icons (325개), Radix Icons (218개) — 총 10,512개의 아이콘을 지원합니다.',
+          'Lucide Icons (1,539개), Tabler Icons (5,986개), Phosphor Icons (1,512개), Phosphor Fill (1,512개), Heroicons (175개), Heroicons Solid (175개), Bootstrap Icons (325개), Radix Icons (218개) — 총 11,442개의 아이콘을 지원합니다.',
       },
       {
         question: '다운로드한 아이콘을 상업적으로 사용할 수 있나요?',
@@ -121,7 +121,7 @@ export const FAQ_EN: FaqSection[] = [
       {
         question: 'Which icon libraries does Icony support?',
         answer:
-          'Icony includes 8 libraries: Lucide Icons (1,539), Tabler Icons (5,986), Phosphor Icons (1,047), Phosphor Fill (1,047), Heroicons (175), Heroicons Solid (175), Bootstrap Icons (325), and Radix Icons (218) — totaling 10,512 icons.',
+          'Icony includes 8 libraries: Lucide Icons (1,539), Tabler Icons (5,986), Phosphor Icons (1,512), Phosphor Fill (1,512), Heroicons (175), Heroicons Solid (175), Bootstrap Icons (325), and Radix Icons (218) — totaling 11,442 icons.',
       },
       {
         question: 'Can I use downloaded icons commercially?',

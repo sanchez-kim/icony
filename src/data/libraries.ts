@@ -38,9 +38,9 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     name: 'Phosphor Icons',
     shortName: 'Phosphor',
     license: 'MIT',
-    version: '1.x',
+    version: '2.x',
     url: 'https://phosphoricons.com',
-    iconCount: 1047,
+    iconCount: 1512,
     available: true,
   },
   'phosphor-fill': {
@@ -48,9 +48,9 @@ export const LIBRARIES: Record<LibraryKey, LibraryMeta> = {
     name: 'Phosphor Icons (Filled)',
     shortName: 'Phosphor Fill',
     license: 'MIT',
-    version: '1.x',
+    version: '2.x',
     url: 'https://phosphoricons.com',
-    iconCount: 1047,
+    iconCount: 1512,
     available: true,
   },
   heroicons: {

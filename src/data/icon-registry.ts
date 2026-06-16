@@ -35,13 +35,13 @@ async function loadTabler(): Promise<LibraryComponents> {
 }
 
 async function loadPhosphor(): Promise<LibraryComponents> {
-  const mod = await import('phosphor-react');
+  const mod = await import('@phosphor-icons/react');
   return mod as unknown as LibraryComponents;
 }
 
 // phosphor-fill reuses the same components — weight="fill" is set at render time
 async function loadPhosphorFill(): Promise<LibraryComponents> {
-  const mod = await import('phosphor-react');
+  const mod = await import('@phosphor-icons/react');
   return mod as unknown as LibraryComponents;
 }
 

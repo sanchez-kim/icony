@@ -126,8 +126,8 @@ export default function App() {
     tagline: 'Flexible icons with 6 weight variants',
     description:
       'Phosphor Icons sets itself apart with a unique multi-weight system. Each of the 1,000+ icons comes in six distinct weights: Thin, Light, Regular, Bold, Fill, and Duotone. This flexibility makes Phosphor ideal for design systems that require subtle visual hierarchy — use lighter weights for decorative elements and heavier weights for primary actions.',
-    npm: 'phosphor-react',
-    iconCount: 1047,
+    npm: '@phosphor-icons/react',
+    iconCount: 1512,
     license: 'MIT',
     url: 'https://phosphoricons.com',
     color: 'from-purple-500 to-pink-500',
@@ -145,8 +145,8 @@ export default function App() {
       'Brand identities requiring expressive icons',
       'Applications with active/inactive state icons',
     ],
-    installCmd: 'npm install phosphor-react',
-    usageCode: `import { House, MagnifyingGlass, Gear } from 'phosphor-react';
+    installCmd: 'npm install @phosphor-icons/react',
+    usageCode: `import { House, MagnifyingGlass, Gear } from '@phosphor-icons/react';
 
 export default function App() {
   return (
@@ -174,8 +174,8 @@ export default function App() {
     tagline: 'Phosphor icons in solid filled style',
     description:
       'The filled weight variant of Phosphor Icons. All 1,000+ Phosphor icons rendered in a solid, filled style — ideal for active states, selected navigation items, or any scenario where you need strong visual emphasis. Pairs perfectly with Phosphor Regular to indicate active vs. inactive states.',
-    npm: 'phosphor-react',
-    iconCount: 1047,
+    npm: '@phosphor-icons/react',
+    iconCount: 1512,
     license: 'MIT',
     url: 'https://phosphoricons.com',
     color: 'from-violet-500 to-purple-600',
@@ -193,8 +193,8 @@ export default function App() {
       'Emphasis icons in call-to-action buttons',
       'Notification badges and status indicators',
     ],
-    installCmd: 'npm install phosphor-react',
-    usageCode: `import { House, MagnifyingGlass, Gear } from 'phosphor-react';
+    installCmd: 'npm install @phosphor-icons/react',
+    usageCode: `import { House, MagnifyingGlass, Gear } from '@phosphor-icons/react';
 
 export default function NavItem({ isActive }: { isActive: boolean }) {
   return (

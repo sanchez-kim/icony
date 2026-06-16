@@ -64,8 +64,8 @@ export default function AboutPage() {
   const libraries = [
     { name: 'Lucide Icons', count: '1,539', slug: 'lucide' },
     { name: 'Tabler Icons', count: '5,986', slug: 'tabler' },
-    { name: 'Phosphor Icons', count: '1,047', slug: 'phosphor' },
-    { name: 'Phosphor Fill', count: '1,047', slug: 'phosphor-fill' },
+    { name: 'Phosphor Icons', count: '1,512', slug: 'phosphor' },
+    { name: 'Phosphor Fill', count: '1,512', slug: 'phosphor-fill' },
     { name: 'Heroicons', count: '175', slug: 'heroicons' },
     { name: 'Heroicons Solid', count: '175', slug: 'heroicons-solid' },
     { name: 'Bootstrap Icons', count: '325', slug: 'bootstrap' },
