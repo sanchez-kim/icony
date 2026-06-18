@@ -45,3 +45,6 @@ tsconfig.tsbuildinfo
 
 # Serena MCP
 .serena/
+
+# OMC tooling
+.omc/
