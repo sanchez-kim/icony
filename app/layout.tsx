@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   },
 };
 
+// GA4 measurement ID (G-XXXXXXXXXX). Must be NEXT_PUBLIC_ to reach the client;
+// Next inlines it at build time. GA only loads in production when set.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" suppressHydrationWarning>
@@ -67,6 +71,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {process.env.NODE_ENV === 'production' && (
           <>
+            {GA_ID && (
+              <>
+                <Script
+                  src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                  strategy="afterInteractive"
+                />
+                <Script id="ga4-init" strategy="afterInteractive">
+                  {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+                </Script>
+              </>
+            )}
             <Script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4776602848700794"
