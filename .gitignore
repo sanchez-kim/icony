@@ -48,3 +48,6 @@ tsconfig.tsbuildinfo
 
 # OMC tooling
 .omc/
+
+# Design docs (local only)
+ROADMAP.md
