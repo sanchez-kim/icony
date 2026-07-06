@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   icons: { icon: '/favicon.svg' },
   other: {
-    'google-adsense-account': 'ca-pub-4776602848700794',
+    'google-adsense-account': 'ca-pub-6112301907073111',
   },
 };
 
@@ -87,7 +87,7 @@ gtag('config', '${GA_ID}');`}
             )}
             <Script
               async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4776602848700794"
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6112301907073111"
               crossOrigin="anonymous"
               strategy="afterInteractive"
             />
