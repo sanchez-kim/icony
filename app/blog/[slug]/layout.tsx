@@ -63,7 +63,7 @@ export default async function BlogPostLayout({
     description: post.metaDescription.en,
     datePublished: post.published,
     dateModified: post.updated,
-    image: ['https://iconyapp.com/opengraph-image'],
+    image: [`https://iconyapp.com/blog/${slug}/opengraph-image`],
     author: { '@type': 'Organization', name: 'Icony', url: 'https://iconyapp.com' },
     publisher: {
       '@type': 'Organization',

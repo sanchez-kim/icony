@@ -1,0 +1,41 @@
+# Icony
+
+> Icony is a free, open-source icon customizer and exporter. Browse 10,000+ icons across 8 open-source libraries (Lucide, Tabler, Phosphor, Phosphor Filled, Heroicons, Heroicons Solid, Bootstrap Icons, Radix Icons), customize color, size, and stroke weight, and export as PNG or SVG — no account, no watermark, no cost. All icon libraries are used under their original open-source licenses (ISC/MIT); see /icon-libraries/[slug] for per-library license and attribution.
+
+## Product
+- [Icon Editor](https://iconyapp.com/app): The customization tool — search, filter by library, adjust color/size/stroke, and export as PNG or SVG (single icon or batch ZIP).
+- [Icon Libraries](https://iconyapp.com/icon-libraries): Overview of all 8 supported icon libraries.
+- [FAQ](https://iconyapp.com/faq): Supported formats, licensing/commercial use, pricing (free), and customization questions.
+- [About](https://iconyapp.com/about): What Icony is and which libraries it bundles.
+
+## Libraries
+- [Lucide Icons — 1,500+ Free React Icons | Icony](https://iconyapp.com/icon-libraries/lucide): Lucide Icons: 1,500+ beautiful open-source SVG icons for React. ISC license, TypeScript support, adjustable stroke width.
+- [Tabler Icons — 5,900+ Free React Icons | Icony](https://iconyapp.com/icon-libraries/tabler): Tabler Icons: 5,900+ open-source SVG icons for React. MIT license, consistent design, the largest icon library on Icony.
+- [Phosphor Icons — 1,000+ Free React Icons with 6 Weights | Icony](https://iconyapp.com/icon-libraries/phosphor): Phosphor Icons: 1,000+ flexible SVG icons in 6 weights (Thin, Light, Regular, Bold, Fill, Duotone). MIT license.
+- [Phosphor Icons Filled — 1,000+ Solid React Icons | Icony](https://iconyapp.com/icon-libraries/phosphor-fill): Phosphor Icons Filled: 1,000+ solid SVG icons for React, ideal for active states and emphasis. MIT license.
+- [Heroicons — Free React Icons by Tailwind CSS Team | Icony](https://iconyapp.com/icon-libraries/heroicons): Heroicons: hand-crafted SVG icons by the Tailwind CSS team. MIT license, outline & solid styles.
+- [Heroicons Solid — Free Solid React Icons | Icony](https://iconyapp.com/icon-libraries/heroicons-solid): Heroicons Solid: filled SVG icons by the Tailwind CSS team, perfect for active states. MIT license.
+- [Bootstrap Icons — 2,000+ Free React Icons | Icony](https://iconyapp.com/icon-libraries/bootstrap): Bootstrap Icons: 2,000+ official SVG icons from the Bootstrap team. MIT license, clean consistent design.
+- [Radix Icons — Free React Icons for shadcn/ui | Icony](https://iconyapp.com/icon-libraries/radix): Radix Icons: 300+ crisp SVG icons for Radix UI and shadcn/ui. MIT license, 15×15 grid.
+
+## Guides (Blog)
+- [SVG vs PNG Icons: Which Format Should You Use?](https://iconyapp.com/blog/svg-vs-png-icons): Comparison of SVG and PNG icons — scalability, file size, color control, and the right format for web, apps, and email.
+- [How to Change the Color of an SVG Icon (4 Ways)](https://iconyapp.com/blog/change-svg-icon-color): Recolor an SVG icon with CSS currentColor, fill/stroke attributes, inline styles, or a tool.
+- [How to Use an SVG Icon as a React Component](https://iconyapp.com/blog/svg-to-react-component): Convert an SVG into a React/JSX component: camelCase attributes, currentColor, prop spreading, and SVGR.
+- [Lucide vs Tabler vs Heroicons: Icon Library Comparison](https://iconyapp.com/blog/lucide-vs-tabler-vs-heroicons): Compare Lucide, Tabler, and Heroicons by icon count, style, stroke control, and license.
+- [Why Are My SVG Icons Blurry? How to Fix Fuzzy Icons](https://iconyapp.com/blog/fix-blurry-svg-icons): Fix blurry icons: missing viewBox, sub-pixel positioning, missing width/height, and accidental PNG exports.
+- [How to Add Icons to Your Website (3 Practical Ways)](https://iconyapp.com/blog/add-icons-to-website): Add icons via inline SVG, an img tag, or a component/icon library, with pros, cons, and examples.
+- [What Size Should Icons Be? UI Icon Size Guide](https://iconyapp.com/blog/icon-sizes-guide): 16/20/24px UI conventions, the 24px grid, em-based sizing, and keeping icons sharp.
+- [SVG Stroke Width Explained: How to Choose Icon Weight](https://iconyapp.com/blog/svg-stroke-width): How stroke-width scales, why outline icons need it, and matching icon weight to your UI.
+- [How to Make a Favicon from an Icon (2026 Guide)](https://iconyapp.com/blog/make-a-favicon): Building a favicon: SVG icon, PNG/ICO fallback, Apple touch icon, and the required <link> markup.
+- [How to Reduce SVG File Size with SVGO](https://iconyapp.com/blog/reduce-svg-file-size): Shrink bloated SVGs with SVGO, trimmed path precision, and removed editor metadata.
+- [Accessible SVG Icons: aria-hidden, role, and Labels](https://iconyapp.com/blog/accessible-svg-icons): Hide decorative icons, label informative ones with role/aria-label, and name icon-only buttons.
+- [SVG Not Showing? How to Fix Invisible SVGs](https://iconyapp.com/blog/svg-not-showing): Fix an SVG that won't display: missing width/height, no fill/stroke, broken viewBox, or wrong MIME type.
+- [How to Convert SVG to PNG (4 Ways)](https://iconyapp.com/blog/convert-svg-to-png): Export resolution, transparency, and avoiding blur — online tools, browser canvas, sharp, ImageMagick, and Inkscape.
+- [How to Animate SVG Icons with CSS](https://iconyapp.com/blog/animate-svg-icons): Hover transitions, a spinning loader, and the stroke-dashoffset "draw" effect, plus reduced-motion support.
+- [SVG Sprites with <symbol> and <use>](https://iconyapp.com/blog/svg-sprites): Define each icon once, reference it anywhere, theme it with currentColor, and ship one cacheable file.
+- [Best Free Icon Libraries (2026)](https://iconyapp.com/blog/best-free-icon-libraries-2026): Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, Radix, Material Symbols, and Remix Icon compared.
+
+## Notes
+- Icony is a client-side browser tool: icons are rendered and exported locally, no upload or account required.
+- All 10,000+ icons are free for personal and commercial use under their respective open-source licenses (see each library's page for exact license and attribution requirements).

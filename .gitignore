@@ -36,6 +36,7 @@ scripts/.archive/
 !package.json
 !tsconfig.json
 !public/ads.txt
+!public/llms.txt
 
 temp/
 
