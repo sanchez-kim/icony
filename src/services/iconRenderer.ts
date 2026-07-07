@@ -2,6 +2,18 @@ import { renderToString } from 'react-dom/server';
 import { createElement } from 'react';
 import { Icon } from '../types';
 
+/**
+ * Maps the 0.5-4 stroke weight slider onto Phosphor's non-fill weights.
+ * Phosphor also offers 'duotone', but that's a distinct visual style rather
+ * than a point on the thin→bold spectrum, so it's intentionally not mapped.
+ */
+export function phosphorWeightForStroke(strokeWeight: number): 'thin' | 'light' | 'regular' | 'bold' {
+  if (strokeWeight > 2.5) return 'bold';
+  if (strokeWeight > 1.75) return 'regular';
+  if (strokeWeight > 1) return 'light';
+  return 'thin';
+}
+
 export class IconRenderer {
   /**
    * Render an icon to an SVG markup string with color/size/stroke applied.
@@ -37,7 +49,7 @@ export class IconRenderer {
       // falls back to Phosphor's default (outline) weight.
       const weight = iconData.type === 'phosphor-fill'
         ? 'fill'
-        : strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
+        : phosphorWeightForStroke(strokeWeight);
       return renderToString(
         createElement(iconData.component, {
           size,
@@ -100,7 +112,7 @@ export class IconRenderer {
       );
     } else {
       // heroicons, bootstrap, radix — generic renderer
-      return this.genericIconToPng(iconData.component, size, color);
+      return this.genericIconToPng(iconData.component, size, color, strokeWeight);
     }
   }
 
@@ -171,9 +183,7 @@ export class IconRenderer {
     // Map strokeWeight to Phosphor weight values. phosphor-fill reuses the
     // same components as phosphor — weight must be forced to 'fill' here or
     // it falls back to Phosphor's default (outline) weight.
-    const weight = isFill
-      ? 'fill'
-      : strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
+    const weight = isFill ? 'fill' : phosphorWeightForStroke(strokeWeight);
 
     // 1. Render React component to SVG string
     const svgString = renderToString(
@@ -194,18 +204,22 @@ export class IconRenderer {
   }
 
   /**
-   * Generic PNG renderer for heroicons, bootstrap, radix and future libraries
+   * Generic PNG renderer for heroicons, bootstrap, radix and future libraries.
+   * strokeWidth overrides Heroicons outline's fixed 1.5 stroke, matching the
+   * SVG export path; it's an inert no-op for fill-based libraries.
    */
   private async genericIconToPng(
     IconComponent: React.ComponentType<any>,
     size: number,
     color: string,
+    strokeWeight: number = 2,
   ): Promise<Blob> {
     const svgString = renderToString(
       createElement(IconComponent, {
         width: size,
         height: size,
         color,
+        strokeWidth: strokeWeight,
       })
     );
 
@@ -213,21 +227,25 @@ export class IconRenderer {
       type: 'image/svg+xml;charset=utf-8',
     });
 
-    return this.svgBlobToPng(svgBlob, size, 2);
+    return this.svgBlobToPng(svgBlob, size, strokeWeight);
   }
 
   /**
    * Convert SVG Blob to PNG Blob using Canvas API
    */
   private async svgBlobToPng(svgBlob: Blob, size: number, strokeWeight: number = 2): Promise<Blob> {
-    // Add generous padding to prevent clipping - more padding for thicker strokes
-    // Using percentage-based padding for better scaling with larger icons
-    const paddingPercent = 0.15; // 15% padding on each side
+    // Shrink the glyph inward (rather than inflating the canvas) so the
+    // exported PNG is exactly `size` pixels — matching the SVG export and
+    // the size the user selected — while still leaving room for thick
+    // strokes to avoid clipping at the edges.
+    const paddingPercent = 0.15; // 15% inset on each side
     const strokePadding = strokeWeight * 6;
     const padding = Math.max(size * paddingPercent, strokePadding);
-    const canvasSize = size + padding * 2;
+    const canvasSize = size;
+    const glyphSize = Math.max(size - padding * 2, 1);
+    const offset = (canvasSize - glyphSize) / 2;
 
-    // Create canvas with padding
+    // Create canvas at the exact export size
     const canvas = document.createElement('canvas');
     canvas.width = canvasSize;
     canvas.height = canvasSize;
@@ -250,8 +268,8 @@ export class IconRenderer {
       img.src = url;
     });
 
-    // Draw to canvas with padding (centered)
-    ctx.drawImage(img, padding, padding, size, size);
+    // Draw to canvas, inset and centered
+    ctx.drawImage(img, offset, offset, glyphSize, glyphSize);
     URL.revokeObjectURL(url);
 
     // Export as PNG Blob

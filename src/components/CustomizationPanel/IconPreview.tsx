@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useIconContext } from '../../context/IconContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { cn } from '../../utils/cn';
+import { phosphorWeightForStroke } from '../../services/iconRenderer';
 
 const LIBRARY_INFO: Record<string, { name: string; license: string; url: string }> = {
   lucide:           { name: 'Lucide Icons',          license: 'ISC', url: 'https://lucide.dev' },
@@ -159,7 +160,7 @@ export function IconPreview() {
           React.createElement(selectedIcon.component, {
             size,
             color,
-            weight: strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light',
+            weight: phosphorWeightForStroke(strokeWeight),
             className: 'transition-all duration-300',
           })
         ) : (
