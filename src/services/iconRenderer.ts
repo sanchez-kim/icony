@@ -31,9 +31,13 @@ export class IconRenderer {
           stroke: strokeWeight,
         })
       );
-    } else if (iconData.type === 'phosphor') {
-      // Render Phosphor icon to SVG string
-      const weight = strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
+    } else if (iconData.type === 'phosphor' || iconData.type === 'phosphor-fill') {
+      // Render Phosphor icon to SVG string. phosphor-fill reuses the same
+      // components as phosphor — weight must be forced to 'fill' here or it
+      // falls back to Phosphor's default (outline) weight.
+      const weight = iconData.type === 'phosphor-fill'
+        ? 'fill'
+        : strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
       return renderToString(
         createElement(iconData.component, {
           size,
@@ -86,8 +90,14 @@ export class IconRenderer {
       return this.lucideIconToPng(iconData.component, size, color, strokeWeight);
     } else if (iconData.type === 'tabler') {
       return this.tablerIconToPng(iconData.component, size, color, strokeWeight);
-    } else if (iconData.type === 'phosphor') {
-      return this.phosphorIconToPng(iconData.component, size, color, strokeWeight);
+    } else if (iconData.type === 'phosphor' || iconData.type === 'phosphor-fill') {
+      return this.phosphorIconToPng(
+        iconData.component,
+        size,
+        color,
+        strokeWeight,
+        iconData.type === 'phosphor-fill'
+      );
     } else {
       // heroicons, bootstrap, radix — generic renderer
       return this.genericIconToPng(iconData.component, size, color);
@@ -155,10 +165,15 @@ export class IconRenderer {
     IconComponent: React.ComponentType<any>,
     size: number,
     color: string,
-    strokeWeight: number = 2
+    strokeWeight: number = 2,
+    isFill: boolean = false
   ): Promise<Blob> {
-    // Map strokeWeight to Phosphor weight values
-    const weight = strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
+    // Map strokeWeight to Phosphor weight values. phosphor-fill reuses the
+    // same components as phosphor — weight must be forced to 'fill' here or
+    // it falls back to Phosphor's default (outline) weight.
+    const weight = isFill
+      ? 'fill'
+      : strokeWeight > 2 ? 'bold' : strokeWeight > 1.5 ? 'regular' : 'light';
 
     // 1. Render React component to SVG string
     const svgString = renderToString(
