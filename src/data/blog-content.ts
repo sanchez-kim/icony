@@ -46,6 +46,22 @@ export const CATEGORY_LABEL: Record<BlogCategory, L<string>> = {
   troubleshooting: { en: 'Troubleshooting', ko: '트러블슈팅' },
 };
 
+/**
+ * Curated blog-slug → related icon-library slugs for cross-silo internal
+ * linking. Only maps posts where a library is genuinely on-topic (a
+ * comparison, a library round-up, or a technique a specific library exposes)
+ * — irrelevant links dilute crawl signal rather than help it. Slugs are kept
+ * as plain strings to avoid coupling this module to library-content's types.
+ */
+export const RELATED_LIBRARIES: Record<string, string[]> = {
+  'lucide-vs-tabler-vs-heroicons': ['lucide', 'tabler', 'heroicons'],
+  'best-free-icon-libraries-2026': ['lucide', 'tabler', 'phosphor', 'heroicons', 'bootstrap', 'radix'],
+  'svg-stroke-width': ['lucide', 'tabler', 'phosphor', 'heroicons'],
+  'svg-to-react-component': ['lucide', 'heroicons', 'radix'],
+  'add-icons-to-website': ['lucide', 'heroicons', 'bootstrap'],
+  'change-svg-icon-color': ['lucide', 'phosphor'],
+};
+
 // ── Shared, language-agnostic code samples ─────────────────────────────────
 const CODE = {
   currentColorCss: '.icon { color: #ff5500; }   /* the SVG follows the text color */',

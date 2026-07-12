@@ -389,3 +389,21 @@ export default function App() {
 };
 
 export const ALL_LIBRARY_SLUGS = Object.keys(LIBRARY_CONTENT) as LibrarySlug[];
+
+/**
+ * Curated library-slug → related blog-post slugs for cross-silo internal
+ * linking (the reverse of blog-content's RELATED_LIBRARIES). Points each
+ * library page at the guides most relevant to it so crawlers — and readers —
+ * can cross from the reference pages into the how-to content. Post slugs are
+ * plain strings to avoid coupling this module to blog-content.
+ */
+export const RELATED_POSTS: Record<LibrarySlug, string[]> = {
+  lucide: ['lucide-vs-tabler-vs-heroicons', 'svg-stroke-width', 'best-free-icon-libraries-2026'],
+  tabler: ['lucide-vs-tabler-vs-heroicons', 'svg-stroke-width', 'best-free-icon-libraries-2026'],
+  phosphor: ['svg-stroke-width', 'change-svg-icon-color', 'best-free-icon-libraries-2026'],
+  'phosphor-fill': ['svg-vs-png-icons', 'change-svg-icon-color', 'best-free-icon-libraries-2026'],
+  heroicons: ['lucide-vs-tabler-vs-heroicons', 'svg-to-react-component', 'best-free-icon-libraries-2026'],
+  'heroicons-solid': ['svg-to-react-component', 'change-svg-icon-color', 'best-free-icon-libraries-2026'],
+  bootstrap: ['add-icons-to-website', 'svg-vs-png-icons', 'best-free-icon-libraries-2026'],
+  radix: ['svg-to-react-component', 'add-icons-to-website', 'best-free-icon-libraries-2026'],
+};

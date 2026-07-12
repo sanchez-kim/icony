@@ -11,10 +11,12 @@ import { useLanguage } from '../../../src/context/LanguageContext';
 import {
   getBlogPost,
   CATEGORY_LABEL,
+  RELATED_LIBRARIES,
   type BlogBlock,
   type BlogLang,
   type BlogPost,
 } from '../../../src/data/blog-content';
+import { LIBRARY_CONTENT, type LibrarySlug } from '../../../src/data/library-content';
 
 function CodeBlock({ code, language = 'bash' }: { code: string; language?: string }) {
   const [copied, setCopied] = useState(false);
@@ -135,6 +137,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     .map((s) => getBlogPost(s))
     .filter((p): p is BlogPost => Boolean(p));
 
+  const relatedLibraries = (RELATED_LIBRARIES[post.slug] ?? [])
+    .map((s) => LIBRARY_CONTENT[s as LibrarySlug])
+    .filter(Boolean);
+
   const t = {
     home: lang === 'ko' ? '홈' : 'Home',
     blog: lang === 'ko' ? '블로그' : 'Blog',
@@ -144,6 +150,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     updated: lang === 'ko' ? `${formatDate(post.updated, lang)} 업데이트` : `Updated ${formatDate(post.updated, lang)}`,
     byline: lang === 'ko' ? 'Icony 팀' : 'Icony Team',
     related: lang === 'ko' ? '관련 가이드' : 'Related guides',
+    relatedLibraries: lang === 'ko' ? '관련 아이콘 라이브러리' : 'Related icon libraries',
     ctaTitle: lang === 'ko' ? 'Icony에서 사용해 보세요' : 'Try it in Icony',
     ctaBody:
       lang === 'ko'
@@ -261,6 +268,32 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                     </div>
                     <div className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug">
                       {r.title[lang]}
+                    </div>
+                  </div>
+                  <ArrowRight size={16} className="text-gray-400 group-hover:text-primary-500 transition-colors shrink-0 mt-1" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related libraries (cross-silo internal links → reference pages) */}
+        {relatedLibraries.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">{t.relatedLibraries}</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {relatedLibraries.map((lib) => (
+                <Link
+                  key={lib.slug}
+                  href={`/icon-libraries/${lib.slug}`}
+                  className="flex items-start justify-between gap-3 p-5 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-md transition-all group"
+                >
+                  <div>
+                    <div className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug">
+                      {lib.name}
+                    </div>
+                    <div className="text-sm text-gray-500 dark:text-gray-500 mt-0.5">
+                      {lib.iconCount.toLocaleString()} icons · {lib.license}
                     </div>
                   </div>
                   <ArrowRight size={16} className="text-gray-400 group-hover:text-primary-500 transition-colors shrink-0 mt-1" />

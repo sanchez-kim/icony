@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { ALL_LIBRARY_SLUGS } from '../src/data/library-content';
-import { ALL_BLOG_SLUGS } from '../src/data/blog-content';
+import { BLOG_POSTS } from '../src/data/blog-content';
 
 const BASE_URL = 'https://iconyapp.com';
 
@@ -12,9 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = ALL_BLOG_SLUGS.map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
-    lastModified: new Date(),
+  // Use each post's real `updated` date, not the build time — a stable,
+  // content-driven lastmod is a stronger signal than "everything changed on
+  // the last deploy," which Google learns to ignore.
+  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.updated),
     changeFrequency: 'monthly',
     priority: 0.6,
   }));

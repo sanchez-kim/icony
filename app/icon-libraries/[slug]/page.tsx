@@ -10,8 +10,10 @@ import { ThemeToggle } from '../../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../../src/components/LanguageSwitcher';
 import {
   LIBRARY_CONTENT,
+  RELATED_POSTS,
   type LibrarySlug,
 } from '../../../src/data/library-content';
+import { getBlogPost } from '../../../src/data/blog-content';
 
 function CodeBlock({ code, language = 'bash' }: { code: string; language?: string }) {
   const [copied, setCopied] = useState(false);
@@ -49,6 +51,9 @@ export default function LibraryDetailPage({
   if (!lib) notFound();
 
   const relatedLibs = lib.relatedSlugs.map((s) => LIBRARY_CONTENT[s]).filter(Boolean);
+  const relatedGuides = (RELATED_POSTS[slug as LibrarySlug] ?? [])
+    .map((s) => getBlogPost(s))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
@@ -219,6 +224,27 @@ export default function LibraryDetailPage({
                     </div>
                   </div>
                   <ArrowRight size={16} className="text-gray-400 group-hover:text-primary-500 transition-colors" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related guides (cross-silo internal links → how-to content) */}
+        {relatedGuides.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">Related Guides</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {relatedGuides.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="flex items-start justify-between gap-3 p-5 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-md transition-all group"
+                >
+                  <div className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug">
+                    {post.title.en}
+                  </div>
+                  <ArrowRight size={16} className="text-gray-400 group-hover:text-primary-500 transition-colors shrink-0 mt-1" />
                 </Link>
               ))}
             </div>

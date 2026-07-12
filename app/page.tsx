@@ -20,9 +20,24 @@ import { HeroLottie } from '../src/components/HeroLottie';
 import { PromoVideo } from '../src/components/PromoVideo';
 import { useScrollAnimation } from '../src/hooks/useScrollAnimation';
 import { useCounterAnimation } from '../src/hooks/useCounterAnimation';
+import { getBlogPost, type BlogLang } from '../src/data/blog-content';
+
+// Curated evergreen guides surfaced on the homepage so the site's
+// highest-authority page links straight into deep content (helps crawl
+// priority + indexing), instead of only pointing at the section indexes.
+const FEATURED_GUIDE_SLUGS = [
+  'best-free-icon-libraries-2026',
+  'lucide-vs-tabler-vs-heroicons',
+  'change-svg-icon-color',
+  'svg-to-react-component',
+  'convert-svg-to-png',
+  'svg-vs-png-icons',
+];
 
 export default function LandingPage() {
   const { t, language } = useLanguage();
+  const lang: BlogLang = language === 'ko' ? 'ko' : 'en';
+  const featuredGuides = FEATURED_GUIDE_SLUGS.map(getBlogPost).filter(Boolean);
 
   // Scroll animations for below-the-fold sections. The hero is NOT gated on
   // scroll visibility — it's the LCP element and must paint immediately.
@@ -295,6 +310,59 @@ export default function LandingPage() {
             <span>{t.landing.cta.startNow}</span>
             <ArrowRight size={20} />
           </Link>
+        </div>
+      </section>
+
+      {/* Guides & Libraries — homepage links into deep content */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                {language === 'ko' ? '아이콘 가이드' : 'Icon guides'}
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                {language === 'ko'
+                  ? 'SVG·아이콘 작업을 위한 실용 가이드와 라이브러리 비교.'
+                  : 'Practical guides and library comparisons for working with SVG and icons.'}
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <Link
+                href="/blog"
+                className="text-sm font-semibold text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap"
+              >
+                {language === 'ko' ? '전체 가이드 →' : 'All guides →'}
+              </Link>
+              <Link
+                href="/icon-libraries"
+                className="text-sm font-semibold text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap"
+              >
+                {language === 'ko' ? '라이브러리 →' : 'Libraries →'}
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {featuredGuides.map((post) => (
+              <Link
+                key={post!.slug}
+                href={`/blog/${post!.slug}`}
+                className="flex flex-col p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-lg transition-all group"
+              >
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug mb-2">
+                  {post!.title[lang]}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
+                  {post!.description[lang]}
+                </p>
+                <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-600 dark:text-primary-400">
+                  {language === 'ko' ? '읽기' : 'Read'}
+                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
