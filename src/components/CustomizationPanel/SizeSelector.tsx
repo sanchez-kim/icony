@@ -10,10 +10,6 @@ export function SizeSelector() {
   const { size, setSize } = useIconContext();
   const { t } = useLanguage();
 
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSize(Number(e.target.value));
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
     if (value >= 16 && value <= 512) {
