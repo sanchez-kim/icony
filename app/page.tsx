@@ -412,6 +412,12 @@ export default function LandingPage() {
                 FAQ
               </Link>
               <Link
+                href="/contact"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {language === 'ko' ? '문의하기' : 'Contact'}
+              </Link>
+              <Link
                 href="/terms"
                 className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
