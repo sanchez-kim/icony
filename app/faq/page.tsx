@@ -20,7 +20,10 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
           className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden"
         >
           <button
+            type="button"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            aria-expanded={openIndex === i}
+            aria-controls={`faq-answer-${i}`}
             className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
           >
             <span className="font-semibold text-gray-900 dark:text-white pr-4">{item.question}</span>
@@ -29,11 +32,17 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
               className={`shrink-0 text-gray-400 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
             />
           </button>
-          {openIndex === i && (
-            <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
-              {item.answer}
-            </div>
-          )}
+          {/* Always rendered, collapsed via `hidden` rather than unmounted: a
+              conditionally-rendered answer is absent from the prerendered HTML,
+              which left this page with only the questions for crawlers. */}
+          <div
+            id={`faq-answer-${i}`}
+            role="region"
+            hidden={openIndex !== i}
+            className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+          >
+            {item.answer}
+          </div>
         </div>
       ))}
     </div>
@@ -126,6 +135,7 @@ export default function FaqPage() {
             <Link href="/blog" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Blog</Link>
             <Link href="/icon-libraries" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Libraries</Link>
             <Link href="/about" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Contact</Link>
             <Link href="/terms" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Terms</Link>
             <Link href="/privacy" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Privacy</Link>
           </div>

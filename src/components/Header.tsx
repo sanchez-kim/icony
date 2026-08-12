@@ -20,9 +20,11 @@ export function Header({ onHelpClick }: HeaderProps) {
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <IconyLogo size={40} />
             <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
+              {/* The logo is a wordmark, not the page heading — the page's own
+                  <h1> lives in the static intro section. */}
+              <span className="block text-xl font-bold text-gray-900 dark:text-white transition-colors">
                 {t.header.appName}
-              </h1>
+              </span>
               <p className="hidden sm:block text-xs text-gray-600 dark:text-gray-400 transition-colors">
                 {t.header.subtitle}
               </p>
