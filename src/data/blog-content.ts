@@ -960,7 +960,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: 'Turn a vector SVG into a crisp PNG — online, in the browser with canvas, or on the command line with sharp, ImageMagick, or Inkscape.',
       ko: '벡터 SVG를 선명한 PNG로 — 온라인, 브라우저 canvas, 또는 sharp·ImageMagick·Inkscape 커맨드라인으로 변환하는 법.',
     },
-    metaTitle: { en: 'How to Convert SVG to PNG (4 Ways)', ko: 'SVG를 PNG로 변환하는 4가지 방법' },
+    metaTitle: { en: 'How to Convert SVG to PNG (4 Ways) | Icony', ko: 'SVG를 PNG로 변환하는 4가지 방법 | Icony' },
     metaDescription: {
       en: 'Convert SVG to PNG the right way: pick the export resolution, keep transparency, and avoid blur. Online, browser canvas, sharp, ImageMagick, and Inkscape methods.',
       ko: 'SVG를 PNG로 제대로 변환하기: 해상도 선택, 투명 유지, 흐릿함 방지. 온라인·브라우저 canvas·sharp·ImageMagick·Inkscape 방법을 정리했습니다.',
@@ -1020,7 +1020,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: 'Add motion to SVG icons with pure CSS — hover effects, spinners, and a line-drawing animation — plus the one rule that makes it all work.',
       ko: '순수 CSS로 SVG 아이콘에 모션을 — 호버 효과, 스피너, 라인 드로잉 애니메이션 — 그리고 이 모든 걸 가능하게 하는 한 가지 규칙.',
     },
-    metaTitle: { en: 'How to Animate SVG Icons with CSS', ko: 'CSS로 SVG 아이콘 애니메이션 만들기' },
+    metaTitle: { en: 'How to Animate SVG Icons with CSS | Icony', ko: 'CSS로 SVG 아이콘 애니메이션 만들기 | Icony' },
     metaDescription: {
       en: 'Animate SVG icons with CSS: hover transitions, a spinning loader, and the stroke-dashoffset "draw" effect. Plus why the SVG must be inline and how to respect reduced motion.',
       ko: 'CSS로 SVG 아이콘에 애니메이션 적용하기: 호버 트랜지션, 회전 로더, stroke-dashoffset 드로잉 효과. 인라인 SVG가 필요한 이유와 reduced motion 대응까지.',
@@ -1078,7 +1078,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: 'Define an icon once and reuse it anywhere with an SVG sprite — less markup, easy theming with currentColor, and one cached file.',
       ko: '아이콘을 한 번 정의하고 SVG 스프라이트로 어디서나 재사용 — 마크업 절감, currentColor 테마, 캐시되는 단일 파일.',
     },
-    metaTitle: { en: 'SVG Sprites with <symbol> and <use>', ko: 'SVG 스프라이트(<symbol>·<use>) 사용법' },
+    metaTitle: { en: 'SVG Sprites with <symbol> and <use> | Icony', ko: 'SVG 스프라이트(<symbol>·<use>) 사용법 | Icony' },
     metaDescription: {
       en: 'Build an SVG sprite with <symbol> and <use>: define each icon once, reference it anywhere, theme it with currentColor, and ship one cacheable file. With browser-support notes.',
       ko: '<symbol>과 <use>로 SVG 스프라이트 만들기: 아이콘을 한 번 정의해 어디서나 참조하고 currentColor로 테마, 캐시되는 단일 파일로 제공. 브라우저 지원 메모 포함.',
@@ -1138,7 +1138,7 @@ export const BLOG_POSTS: BlogPost[] = [
       en: 'A practical roundup of the best free, open-source icon libraries in 2026 — what each is good at, the license, and how to choose.',
       ko: '2026년 최고의 무료 오픈소스 아이콘 라이브러리 정리 — 각각의 강점, 라이선스, 선택 기준까지.',
     },
-    metaTitle: { en: 'Best Free Icon Libraries (2026)', ko: '2026 무료 아이콘 라이브러리 추천' },
+    metaTitle: { en: 'Best Free Icon Libraries (2026) | Icony', ko: '2026 무료 아이콘 라이브러리 추천 | Icony' },
     metaDescription: {
       en: 'The best free open-source icon libraries in 2026: Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, Radix, Material Symbols, and Remix Icon — strengths, licenses, and how to pick.',
       ko: '2026년 최고의 무료 오픈소스 아이콘 라이브러리: Lucide·Tabler·Phosphor·Heroicons·Bootstrap·Radix·Material Symbols·Remix Icon의 강점과 라이선스, 선택법.',

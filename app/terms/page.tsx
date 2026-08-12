@@ -18,9 +18,9 @@ export default function TermsPage() {
             <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <IconyLogo size={40} />
               <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">
+                <span className="block text-xl font-bold text-gray-900 dark:text-white transition-colors">
                   Icony
-                </h1>
+                </span>
               </div>
             </Link>
             <div className="flex items-center gap-4">
