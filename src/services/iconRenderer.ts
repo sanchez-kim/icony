@@ -1,6 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import { createElement } from 'react';
-import { Icon } from '../types';
+import { Icon, LibraryKey } from '../types';
 
 /**
  * Maps the 0.5-4 stroke weight slider onto Phosphor's non-fill weights.
@@ -12,6 +12,52 @@ export function phosphorWeightForStroke(strokeWeight: number): 'thin' | 'light' 
   if (strokeWeight > 1.75) return 'regular';
   if (strokeWeight > 1) return 'light';
   return 'thin';
+}
+
+/**
+ * Native stroke width (in viewBox units) of the stroke-based libraries whose
+ * stroke the user can change. Each library's artwork is designed to fit its
+ * viewBox at this width. Libraries not listed are fill-based (Phosphor's
+ * weights are separate filled outlines; Heroicons solid, Bootstrap and Radix
+ * are fills), so the stroke slider can't push them past their viewBox.
+ */
+export const NATIVE_STROKE_WIDTH: Partial<Record<LibraryKey, number>> = {
+  lucide: 2,
+  tabler: 2,
+  heroicons: 1.5,
+};
+
+/**
+ * How far (viewBox units, per side) a stroke can extend past the viewBox when
+ * the user thickens it beyond the library's native width. A stroke straddles
+ * its path, so going from native width n to s pushes every outer edge out by
+ * (s - n) / 2. Artwork that fits at n therefore fits inside a viewBox widened
+ * by that much on each side. Zero for thinner strokes and fill libraries.
+ */
+export function strokeOverflow(library: LibraryKey, strokeWeight: number): number {
+  const native = NATIVE_STROKE_WIDTH[library];
+  if (native === undefined || !Number.isFinite(strokeWeight)) return 0;
+  return Math.max(0, (strokeWeight - native) / 2);
+}
+
+/**
+ * Widen the root <svg>'s viewBox by `margin` viewBox units on every side,
+ * keeping the rendered width/height. The artwork shrinks by
+ * viewBoxSize / (viewBoxSize + 2 * margin) and stays centered. Returns the
+ * markup unchanged when margin is 0 or there is no viewBox to widen.
+ */
+export function expandViewBox(svg: string, margin: number): string {
+  if (!(margin > 0)) return svg;
+  const rootTag = svg.match(/^<svg\b[^>]*>/)?.[0];
+  if (!rootTag) return svg;
+  const viewBoxAttr = rootTag.match(/\sviewBox="([^"]*)"/);
+  if (!viewBoxAttr) return svg;
+  const parts = viewBoxAttr[1].trim().split(/[\s,]+/).map(Number);
+  if (parts.length !== 4 || parts.some((n) => !Number.isFinite(n))) return svg;
+  const [x, y, w, h] = parts;
+  const expanded = [x - margin, y - margin, w + margin * 2, h + margin * 2].join(' ');
+  const newRootTag = rootTag.replace(viewBoxAttr[0], ` viewBox="${expanded}"`);
+  return newRootTag + svg.slice(rootTag.length);
 }
 
 export class IconRenderer {
@@ -90,7 +136,9 @@ export class IconRenderer {
   }
 
   /**
-   * Convert icon to PNG Blob
+   * Convert icon to PNG Blob. Shared by PNG download, clipboard copy and ZIP
+   * export. Rasterises the same markup as SVG export (iconToSvgString), with
+   * the viewBox widened only as far as a user-thickened stroke can overflow.
    */
   async iconToPng(
     iconData: Icon,
@@ -98,157 +146,27 @@ export class IconRenderer {
     color: string,
     strokeWeight: number = 2
   ): Promise<Blob> {
-    if (iconData.type === 'lucide') {
-      return this.lucideIconToPng(iconData.component, size, color, strokeWeight);
-    } else if (iconData.type === 'tabler') {
-      return this.tablerIconToPng(iconData.component, size, color, strokeWeight);
-    } else if (iconData.type === 'phosphor' || iconData.type === 'phosphor-fill') {
-      return this.phosphorIconToPng(
-        iconData.component,
-        size,
-        color,
-        strokeWeight,
-        iconData.type === 'phosphor-fill'
-      );
-    } else {
-      // heroicons, bootstrap, radix — generic renderer
-      return this.genericIconToPng(iconData.component, size, color, strokeWeight);
-    }
-  }
-
-  /**
-   * Convert Lucide React icon component to PNG Blob
-   */
-  private async lucideIconToPng(
-    IconComponent: React.ComponentType<any>,
-    size: number,
-    color: string,
-    strokeWeight: number = 2
-  ): Promise<Blob> {
-    // 1. Render React component to SVG string
-    const svgString = renderToString(
-      createElement(IconComponent, {
-        size,
-        color,
-        strokeWidth: strokeWeight,
-      })
+    const svgString = expandViewBox(
+      this.iconToSvgString(iconData, size, color, strokeWeight),
+      strokeOverflow(iconData.type, strokeWeight)
     );
-
-    // 2. Create SVG Blob
     const svgBlob = new Blob([svgString], {
       type: 'image/svg+xml;charset=utf-8',
     });
-
-    // 3. Convert to PNG via Canvas
-    return this.svgBlobToPng(svgBlob, size, strokeWeight);
+    return this.svgBlobToPng(svgBlob, size);
   }
 
   /**
-   * Convert Tabler React icon component to PNG Blob
+   * Convert SVG Blob to PNG Blob using Canvas API. The SVG is drawn edge to
+   * edge: an SVG rasterised as an image is clipped to its own viewport, so any
+   * room for overflowing strokes must already be in its viewBox (see
+   * expandViewBox) — shrinking the image on the canvas cannot recover it.
    */
-  private async tablerIconToPng(
-    IconComponent: React.ComponentType<any>,
-    size: number,
-    color: string,
-    strokeWeight: number = 2
-  ): Promise<Blob> {
-    // 1. Render React component to SVG string
-    const svgString = renderToString(
-      createElement(IconComponent, {
-        size,
-        color,
-        stroke: strokeWeight,
-      })
-    );
-
-    // 2. Create SVG Blob
-    const svgBlob = new Blob([svgString], {
-      type: 'image/svg+xml;charset=utf-8',
-    });
-
-    // 3. Convert to PNG via Canvas
-    return this.svgBlobToPng(svgBlob, size, strokeWeight);
-  }
-
-  /**
-   * Convert Phosphor React icon component to PNG Blob
-   */
-  private async phosphorIconToPng(
-    IconComponent: React.ComponentType<any>,
-    size: number,
-    color: string,
-    strokeWeight: number = 2,
-    isFill: boolean = false
-  ): Promise<Blob> {
-    // Map strokeWeight to Phosphor weight values. phosphor-fill reuses the
-    // same components as phosphor — weight must be forced to 'fill' here or
-    // it falls back to Phosphor's default (outline) weight.
-    const weight = isFill ? 'fill' : phosphorWeightForStroke(strokeWeight);
-
-    // 1. Render React component to SVG string
-    const svgString = renderToString(
-      createElement(IconComponent, {
-        size,
-        color,
-        weight,
-      })
-    );
-
-    // 2. Create SVG Blob
-    const svgBlob = new Blob([svgString], {
-      type: 'image/svg+xml;charset=utf-8',
-    });
-
-    // 3. Convert to PNG via Canvas
-    return this.svgBlobToPng(svgBlob, size, strokeWeight);
-  }
-
-  /**
-   * Generic PNG renderer for heroicons, bootstrap, radix and future libraries.
-   * strokeWidth overrides Heroicons outline's fixed 1.5 stroke, matching the
-   * SVG export path; it's an inert no-op for fill-based libraries.
-   */
-  private async genericIconToPng(
-    IconComponent: React.ComponentType<any>,
-    size: number,
-    color: string,
-    strokeWeight: number = 2,
-  ): Promise<Blob> {
-    const svgString = renderToString(
-      createElement(IconComponent, {
-        width: size,
-        height: size,
-        color,
-        strokeWidth: strokeWeight,
-      })
-    );
-
-    const svgBlob = new Blob([svgString], {
-      type: 'image/svg+xml;charset=utf-8',
-    });
-
-    return this.svgBlobToPng(svgBlob, size, strokeWeight);
-  }
-
-  /**
-   * Convert SVG Blob to PNG Blob using Canvas API
-   */
-  private async svgBlobToPng(svgBlob: Blob, size: number, strokeWeight: number = 2): Promise<Blob> {
-    // Shrink the glyph inward (rather than inflating the canvas) so the
-    // exported PNG is exactly `size` pixels — matching the SVG export and
-    // the size the user selected — while still leaving room for thick
-    // strokes to avoid clipping at the edges.
-    const paddingPercent = 0.15; // 15% inset on each side
-    const strokePadding = strokeWeight * 6;
-    const padding = Math.max(size * paddingPercent, strokePadding);
-    const canvasSize = size;
-    const glyphSize = Math.max(size - padding * 2, 1);
-    const offset = (canvasSize - glyphSize) / 2;
-
-    // Create canvas at the exact export size
+  private async svgBlobToPng(svgBlob: Blob, size: number): Promise<Blob> {
+    // Canvas at the exact export size, matching SVG export and the user's selection
     const canvas = document.createElement('canvas');
-    canvas.width = canvasSize;
-    canvas.height = canvasSize;
+    canvas.width = size;
+    canvas.height = size;
     const ctx = canvas.getContext('2d');
 
     if (!ctx) {
@@ -256,21 +174,23 @@ export class IconRenderer {
     }
 
     // Fill with transparent background
-    ctx.clearRect(0, 0, canvasSize, canvasSize);
+    ctx.clearRect(0, 0, size, size);
 
     // Load SVG as image
     const url = URL.createObjectURL(svgBlob);
     const img = new Image();
 
-    await new Promise<void>((resolve, reject) => {
-      img.onload = () => resolve();
-      img.onerror = () => reject(new Error('Failed to load SVG'));
-      img.src = url;
-    });
+    try {
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = () => reject(new Error('Failed to load SVG'));
+        img.src = url;
+      });
 
-    // Draw to canvas, inset and centered
-    ctx.drawImage(img, offset, offset, glyphSize, glyphSize);
-    URL.revokeObjectURL(url);
+      ctx.drawImage(img, 0, 0, size, size);
+    } finally {
+      URL.revokeObjectURL(url);
+    }
 
     // Export as PNG Blob
     return new Promise((resolve, reject) => {
