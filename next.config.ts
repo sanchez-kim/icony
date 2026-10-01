@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       'lucide-react',
       '@tabler/icons-react',
-      'phosphor-react',
+      '@phosphor-icons/react',
       '@heroicons/react',
       'react-bootstrap-icons',
       '@radix-ui/react-icons',
