@@ -40,6 +40,27 @@ function CodeBlock({ code, language = 'bash' }: { code: string; language?: strin
   );
 }
 
+/** Renders `code` spans inside plain content strings. */
+function Inline({ text }: { text: string }) {
+  const parts = text.split(/(`[^`]+`)/g);
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.startsWith('`') && part.endsWith('`') && part.length > 1 ? (
+          <code
+            key={i}
+            className="px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-[0.9em] font-mono text-gray-800 dark:text-gray-200"
+          >
+            {part.slice(1, -1)}
+          </code>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
+
 export default function LibraryDetailPage({
   params,
 }: {
@@ -128,9 +149,52 @@ export default function LibraryDetailPage({
         <section className="mb-10">
           <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-7">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Overview</h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{lib.description}</p>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed"><Inline text={lib.description} /></p>
           </div>
         </section>
+
+        {/* At a glance (measured facts) */}
+        {lib.specs.length > 0 && (
+          <section className="mb-10">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-7">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">At a Glance</h2>
+              <dl className="divide-y divide-gray-100 dark:divide-gray-800">
+                {lib.specs.map((spec) => (
+                  <div key={spec.label} className="grid sm:grid-cols-3 gap-1 sm:gap-4 py-2.5 text-sm">
+                    <dt className="font-medium text-gray-900 dark:text-white"><Inline text={spec.label} /></dt>
+                    <dd className="sm:col-span-2 text-gray-600 dark:text-gray-400"><Inline text={spec.value} /></dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
+
+        {/* Long-form sections */}
+        {lib.sections.map((section) => (
+          <section key={section.heading} className="mb-10">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-7">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{section.heading}</h2>
+              {section.paragraphs?.map((para, i) => (
+                <p key={i} className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4 last:mb-0">
+                  <Inline text={para} />
+                </p>
+              ))}
+              {section.bullets && (
+                <ul className={`list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed ${section.paragraphs ? 'mt-4' : ''}`}>
+                  {section.bullets.map((item, i) => (
+                    <li key={i}><Inline text={item} /></li>
+                  ))}
+                </ul>
+              )}
+              {section.code && (
+                <div className="mt-5">
+                  <CodeBlock code={section.code} language="tsx" />
+                </div>
+              )}
+            </div>
+          </section>
+        ))}
 
         {/* Features */}
         <section className="mb-10">
@@ -142,7 +206,7 @@ export default function LibraryDetailPage({
                   <span className={`w-5 h-5 rounded-full bg-gradient-to-br ${lib.color} flex items-center justify-center shrink-0 mt-0.5`}>
                     <Check size={11} className="text-white" />
                   </span>
-                  {feature}
+                  <span><Inline text={feature} /></span>
                 </li>
               ))}
             </ul>
@@ -178,12 +242,29 @@ export default function LibraryDetailPage({
                   key={i}
                   className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm"
                 >
-                  {useCase}
+                  <Inline text={useCase} />
                 </span>
               ))}
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        {lib.faq.length > 0 && (
+          <section className="mb-10">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-7">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-5">Common Questions</h2>
+              <div className="space-y-5">
+                {lib.faq.map((item) => (
+                  <div key={item.q}>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1.5"><Inline text={item.q} /></h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed"><Inline text={item.a} /></p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="mb-10">

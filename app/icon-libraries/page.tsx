@@ -44,7 +44,7 @@ export default function IconLibrariesPage() {
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Icony supports 8 of the most popular open-source React icon libraries.
-            All icons are free, MIT-licensed, and ready to customize.
+            All icons are free, open-source (MIT or ISC), and ready to customize.
           </p>
         </div>
 
