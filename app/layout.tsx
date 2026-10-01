@@ -32,7 +32,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: { canonical: '/' },
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
   other: {
     'google-adsense-account': 'ca-pub-6112301907073111',
   },
