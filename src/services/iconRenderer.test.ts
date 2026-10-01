@@ -114,17 +114,37 @@ describe('export viewBox per library (rendered markup)', () => {
   ];
 
   for (const { lib, component, native } of cases) {
-    it(`${lib}: renders its native grid and widens only by the stroke overflow`, () => {
+    it(`${lib}: SVG export widens the native grid only by the stroke overflow`, () => {
       const icon = makeIcon(lib, component);
       for (const sw of [0.5, 1, 2, 3, 4]) {
         const svg = renderer.iconToSvgString(icon, 32, '#000000', sw);
-        expect(viewBoxOf(svg)).toEqual(native);
         const m = strokeOverflow(lib, sw);
         const [x, y, w, h] = native;
-        expect(viewBoxOf(expandViewBox(svg, m))).toEqual([x - m, y - m, w + 2 * m, h + 2 * m]);
+        expect(viewBoxOf(svg)).toEqual([x - m, y - m, w + 2 * m, h + 2 * m]);
+        // Rendered size is unchanged; only the viewBox grows.
+        expect(svg).toMatch(/^<svg\b[^>]*\swidth="32"/);
       }
     });
+
+    it(`${lib}: SVG Blob export carries the same markup as iconToSvgString`, async () => {
+      const icon = makeIcon(lib, component);
+      const blob = await renderer.iconToSvg(icon, 32, '#000000', 4);
+      expect(await blob.text()).toBe(renderer.iconToSvgString(icon, 32, '#000000', 4));
+    });
   }
+
+  it('stroke libs: expanded viewBox beyond native stroke, unchanged at native', () => {
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('lucide', Home), 32, '#000', 4))).toEqual([-1, -1, 26, 26]);
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('tabler', IconHome), 32, '#000', 3))).toEqual([-0.5, -0.5, 25, 25]);
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('heroicons', HomeIcon), 32, '#000', 4))).toEqual([-1.25, -1.25, 26.5, 26.5]);
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('lucide', Home), 32, '#000', 2))).toEqual([0, 0, 24, 24]);
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('heroicons', HomeIcon), 32, '#000', 1.5))).toEqual([0, 0, 24, 24]);
+  });
+
+  it('fill libs: viewBox unchanged at any stroke', () => {
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('radix', RadixHomeIcon), 32, '#000', 4))).toEqual([0, 0, 15, 15]);
+    expect(viewBoxOf(renderer.iconToSvgString(makeIcon('phosphor-fill', House), 32, '#000', 4))).toEqual([0, 0, 256, 256]);
+  });
 
   it('stroke libraries render with the stroke width the overflow math assumes', () => {
     // The overflow formula relies on stroke-width being in viewBox units and on

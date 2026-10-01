@@ -63,9 +63,25 @@ export function expandViewBox(svg: string, margin: number): string {
 export class IconRenderer {
   /**
    * Render an icon to an SVG markup string with color/size/stroke applied.
-   * Shared by SVG export, PNG rasterisation, and copy-as-code.
+   * Single source for SVG download, clipboard copy, ZIP entries, copy-as-code
+   * and PNG rasterisation. When the user thickens a stroke past the library's
+   * native width the viewBox is widened (see expandViewBox) so the stroke isn't
+   * clipped; at native width or below, and for fill libraries, it is untouched.
    */
   iconToSvgString(
+    iconData: Icon,
+    size: number,
+    color: string,
+    strokeWeight: number = 2
+  ): string {
+    return expandViewBox(
+      this.renderSvgMarkup(iconData, size, color, strokeWeight),
+      strokeOverflow(iconData.type, strokeWeight)
+    );
+  }
+
+  /** Raw react-dom/server output with the library's own viewBox. */
+  private renderSvgMarkup(
     iconData: Icon,
     size: number,
     color: string,
@@ -137,8 +153,8 @@ export class IconRenderer {
 
   /**
    * Convert icon to PNG Blob. Shared by PNG download, clipboard copy and ZIP
-   * export. Rasterises the same markup as SVG export (iconToSvgString), with
-   * the viewBox widened only as far as a user-thickened stroke can overflow.
+   * export. Rasterises the same markup as SVG export (iconToSvgString), whose
+   * viewBox is already widened as far as a user-thickened stroke can overflow.
    */
   async iconToPng(
     iconData: Icon,
@@ -146,10 +162,8 @@ export class IconRenderer {
     color: string,
     strokeWeight: number = 2
   ): Promise<Blob> {
-    const svgString = expandViewBox(
-      this.iconToSvgString(iconData, size, color, strokeWeight),
-      strokeOverflow(iconData.type, strokeWeight)
-    );
+    // iconToSvgString already widens the viewBox; don't expand again here.
+    const svgString = this.iconToSvgString(iconData, size, color, strokeWeight);
     const svgBlob = new Blob([svgString], {
       type: 'image/svg+xml;charset=utf-8',
     });
@@ -160,7 +174,7 @@ export class IconRenderer {
    * Convert SVG Blob to PNG Blob using Canvas API. The SVG is drawn edge to
    * edge: an SVG rasterised as an image is clipped to its own viewport, so any
    * room for overflowing strokes must already be in its viewBox (see
-   * expandViewBox) — shrinking the image on the canvas cannot recover it.
+   * expandViewBox, applied in iconToSvgString) — shrinking the image on the canvas cannot recover it.
    */
   private async svgBlobToPng(svgBlob: Blob, size: number): Promise<Blob> {
     // Canvas at the exact export size, matching SVG export and the user's selection

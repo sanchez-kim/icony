@@ -140,7 +140,7 @@ export const post: BlogPost = {
         "**Sandboxed rendering.** An SVG drawn through `<img>` can't load external fonts, images, or stylesheets, and scripts inside it don't run. Everything the icon needs must be inside the markup.",
         "**Why not `devicePixelRatio`?** When you export a file, you choose the pixel count directly. `devicePixelRatio` only matters when you draw a canvas that stays on screen.",
       ] },
-      { type: 'p', text: "Icony's PNG export works the same way. It renders the icon component to an SVG string, loads it as an image, and draws it onto a canvas that is exactly the size you picked, cleared to transparent. If you've raised the stroke above the icon set's native width, it first widens the SVG's viewBox by half the extra width on each side, because the image is clipped to its viewBox before it ever reaches the canvas. At the native width or below, the icon fills the canvas exactly as it does in the SVG export." },
+      { type: 'p', text: "Icony's PNG export works the same way. It renders the icon component to an SVG string, loads it as an image, and draws it onto a canvas that is exactly the size you picked, cleared to transparent. If you've raised the stroke above the icon set's native width, it first widens the SVG's viewBox by half the extra width on each side, because the image is clipped to its viewBox before it ever reaches the canvas. At the native width or below, the icon fills the canvas exactly. Icony’s SVG export uses the same widened viewBox, so the SVG and PNG match." },
 
       { type: 'h2', text: 'Method 2: Node.js with sharp' },
       { type: 'p', text: "For build scripts and servers, sharp (which uses libvips, and librsvg for SVG) is fast and has no browser dependency. This script exports one icon at several sizes:" },
@@ -220,7 +220,7 @@ export const post: BlogPost = {
         "**격리된 렌더링.** `<img>`로 그리는 SVG는 외부 폰트·이미지·스타일시트를 불러올 수 없고, 안의 스크립트도 실행되지 않습니다. 아이콘에 필요한 건 전부 마크업 안에 있어야 합니다.",
         "**`devicePixelRatio`는 왜 안 쓰나요?** 파일로 내보낼 때는 픽셀 수를 직접 정하면 됩니다. `devicePixelRatio`는 canvas를 화면에 계속 띄워 둘 때만 의미가 있습니다.",
       ] },
-      { type: 'p', text: "Icony의 PNG 내보내기도 같은 방식입니다. 아이콘 컴포넌트를 SVG 문자열로 렌더링해 이미지로 불러온 뒤, 사용자가 고른 크기와 정확히 같은 canvas에 투명 배경으로 그립니다. 선 두께를 아이콘 세트의 기본값보다 올렸다면 먼저 SVG의 viewBox를 사방으로 늘어난 두께의 절반만큼 넓힙니다. 이미지는 canvas에 닿기 전에 이미 viewBox에서 잘리기 때문입니다. 기본 두께 이하라면 SVG 내보내기와 똑같이 canvas를 꽉 채웁니다." },
+      { type: 'p', text: "Icony의 PNG 내보내기도 같은 방식입니다. 아이콘 컴포넌트를 SVG 문자열로 렌더링해 이미지로 불러온 뒤, 사용자가 고른 크기와 정확히 같은 canvas에 투명 배경으로 그립니다. 선 두께를 아이콘 세트의 기본값보다 올렸다면 먼저 SVG의 viewBox를 사방으로 늘어난 두께의 절반만큼 넓힙니다. 이미지는 canvas에 닿기 전에 이미 viewBox에서 잘리기 때문입니다. 기본 두께 이하라면 canvas를 꽉 채웁니다. Icony의 SVG 내보내기도 같은 viewBox를 쓰므로 SVG와 PNG가 일치합니다." },
 
       { type: 'h2', text: '방법 2: Node.js와 sharp' },
       { type: 'p', text: "빌드 스크립트나 서버에서는 sharp(libvips 기반이며 SVG는 librsvg로 처리)가 빠르고, 브라우저도 필요 없습니다. 다음 스크립트는 아이콘 하나를 여러 크기로 내보냅니다." },

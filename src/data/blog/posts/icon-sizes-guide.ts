@@ -149,7 +149,7 @@ export const post: BlogPost = {
         '**Web app manifest**: 192×192 and 512×512.',
         '**Email and docs**: export at 2× or 3× the display size, then set the display size in HTML (`width="24"` for a 48px or 72px file), so it stays sharp on high-density screens.',
       ] },
-      { type: 'p', text: 'Many exporters also add transparent padding around the glyph. Icony’s PNG export keeps the file at exactly the size you choose (16 to 512px) and draws the icon’s whole grid edge to edge, so the transparent margin you see is the one the icon set builds into its grid. Only when you raise the stroke above the set’s native width does it widen the viewBox slightly, by half the extra width on each side, so thick strokes don’t get clipped at the edges. When you line exported icons up against other artwork, measure the visible glyph, not the canvas.' },
+      { type: 'p', text: 'Many exporters also add transparent padding around the glyph. Icony’s PNG export keeps the file at exactly the size you choose (16 to 512px) and draws the icon’s whole grid edge to edge, so the transparent margin you see is the one the icon set builds into its grid. Only when you raise the stroke above the set’s native width does it widen the viewBox slightly, by half the extra width on each side, so thick strokes don’t get clipped at the edges. SVG downloads, copies, ZIP entries and copied code get the same widened viewBox. When you line exported icons up against other artwork, measure the visible glyph, not the canvas.' },
       { type: 'h2', text: 'Common mistakes' },
       { type: 'ul', items: [
         '**Scaling a small-grid icon up.** A 16px micro icon at 24px looks crude, because it was simplified for its small size. Use the 24px drawing instead.',
@@ -228,7 +228,7 @@ export const post: BlogPost = {
         '**웹 앱 매니페스트**: 192×192와 512×512.',
         '**이메일·문서**: 표시 크기의 2배나 3배로 내보낸 뒤 HTML에서 표시 크기를 지정하세요(48px나 72px 파일에 `width="24"`). 고밀도 화면에서도 선명하게 유지됩니다.',
       ] },
-      { type: 'p', text: '많은 내보내기 도구가 도형 주위에 투명한 여백을 넣습니다. Icony의 PNG 내보내기는 파일 크기를 고른 값(16~512px) 그대로 유지하고 아이콘 격자 전체를 가장자리까지 꽉 채워 그리므로, 보이는 투명 여백은 아이콘 세트가 격자 안에 원래 둔 여백입니다. 선 두께를 세트의 기본값보다 올렸을 때만 늘어난 두께의 절반만큼 viewBox를 사방으로 살짝 넓혀, 굵은 선이 가장자리에서 잘리지 않게 합니다. 내보낸 아이콘을 다른 그래픽과 줄 맞출 때는 캔버스가 아니라 눈에 보이는 도형을 기준으로 재세요.' },
+      { type: 'p', text: '많은 내보내기 도구가 도형 주위에 투명한 여백을 넣습니다. Icony의 PNG 내보내기는 파일 크기를 고른 값(16~512px) 그대로 유지하고 아이콘 격자 전체를 가장자리까지 꽉 채워 그리므로, 보이는 투명 여백은 아이콘 세트가 격자 안에 원래 둔 여백입니다. 선 두께를 세트의 기본값보다 올렸을 때만 늘어난 두께의 절반만큼 viewBox를 사방으로 살짝 넓혀, 굵은 선이 가장자리에서 잘리지 않게 합니다. SVG 다운로드·복사·ZIP·코드 복사에도 같은 viewBox가 적용됩니다. 내보낸 아이콘을 다른 그래픽과 줄 맞출 때는 캔버스가 아니라 눈에 보이는 도형을 기준으로 재세요.' },
       { type: 'h2', text: '흔한 실수' },
       { type: 'ul', items: [
         '**작은 그리드 아이콘을 키워 쓰기.** 16px micro 아이콘은 작은 크기에 맞게 단순화된 것이라 24px로 키우면 투박해 보입니다. 24px용 그림을 쓰세요.',

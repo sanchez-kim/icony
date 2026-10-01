@@ -63,6 +63,10 @@ const BACKGROUND_OPTIONS: BackgroundOption[] = [
   },
 ];
 
+// Thick strokes extend past the icon's viewBox; inline <svg> clips there by
+// default. Let the preview paint them (the surrounding box has room).
+const STROKE_OVERFLOW_STYLE: React.CSSProperties = { overflow: 'visible' };
+
 export function IconPreview() {
   const { selectedIcon, color, size, strokeWeight } = useIconContext();
   const { language } = useLanguage();
@@ -141,6 +145,7 @@ export function IconPreview() {
             color,
             strokeWidth: strokeWeight,
             className: 'transition-all duration-300',
+            style: STROKE_OVERFLOW_STYLE,
           })
         ) : selectedIcon.type === 'tabler' ? (
           React.createElement(selectedIcon.component, {
@@ -148,6 +153,7 @@ export function IconPreview() {
             color,
             stroke: strokeWeight,
             className: 'transition-all duration-300',
+            style: STROKE_OVERFLOW_STYLE,
           })
         ) : selectedIcon.type === 'phosphor-fill' ? (
           React.createElement(selectedIcon.component, {
@@ -172,6 +178,7 @@ export function IconPreview() {
             color,
             strokeWidth: strokeWeight,
             className: 'transition-all duration-300',
+            style: STROKE_OVERFLOW_STYLE,
           })
         )}
       </div>
