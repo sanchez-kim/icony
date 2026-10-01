@@ -96,6 +96,7 @@ export default function BlogIndexPage() {
           </Link>
           <div className="flex items-center gap-6">
             <Link href="/icon-libraries" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Libraries</Link>
+            <Link href="/favicon-generator" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Favicon Generator</Link>
             <Link href="/about" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">About</Link>
             <Link href="/faq" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">FAQ</Link>
             <Link href="/contact" className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">Contact</Link>

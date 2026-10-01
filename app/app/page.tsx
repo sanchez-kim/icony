@@ -154,13 +154,13 @@ function AppIntro() {
             <>
               모든 아이콘은 MIT 또는 ISC 라이선스로 배포되어 상업적 프로젝트에도 자유롭게 쓸 수 있습니다.
               라이브러리별 설명은 <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">아이콘 라이브러리</Link> 페이지에,
-              자주 묻는 질문은 <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link>에 정리돼 있습니다.
+              자주 묻는 질문은 <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link>에 정리돼 있습니다. 앱 아이콘이나 파비콘이 필요하다면 <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">파비콘 생성기</Link>가 아이콘 하나로 favicon.ico, SVG, 터치 아이콘을 한 번에 만들어 줍니다.
             </>
           ) : (
             <>
               Every icon is MIT or ISC licensed, so you can use it freely in commercial work. See the{' '}
               <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">icon libraries</Link> page
-              for what each set is good for, or the <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link> for common questions.
+              for what each set is good for, or the <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link> for common questions. Need a favicon or app icon? The <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">Favicon Generator</Link> turns any icon into favicon.ico, SVG, and touch icons in one ZIP.
             </>
           )}
         </p>
@@ -186,6 +186,13 @@ function AppFooter() {
 
           <div className="text-center space-y-3">
             <div>
+              <Link
+                href="/favicon-generator"
+                className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"
+              >
+                {language === 'ko' ? '파비콘 생성기' : 'Favicon Generator'}
+              </Link>
+              <span className="mx-2 text-gray-300 dark:text-gray-700">·</span>
               <Link
                 href="/contact"
                 className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors font-medium"

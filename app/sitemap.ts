@@ -19,6 +19,7 @@ const UPDATED = {
   blogIndex: '2026-07-12',
   terms: '2026-07-12',
   privacy: '2026-07-12',
+  faviconGenerator: '2026-10-01',
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -43,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL, lastModified: new Date(UPDATED.home), changeFrequency: 'weekly', priority: 1 },
     { url: `${BASE_URL}/app`, lastModified: new Date(UPDATED.app), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE_URL}/icon-libraries`, lastModified: new Date(UPDATED.iconLibraries), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/favicon-generator`, lastModified: new Date(UPDATED.faviconGenerator), changeFrequency: 'monthly', priority: 0.8 },
     ...libraryPages,
     { url: `${BASE_URL}/blog`, lastModified: new Date(UPDATED.blogIndex), changeFrequency: 'weekly', priority: 0.7 },
     ...blogPages,
