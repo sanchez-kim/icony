@@ -21,8 +21,9 @@ export async function generateMetadata({
   }
 
   const url = `https://iconyapp.com/blog/${post.slug}`;
-  // Static page metadata uses the English copy (consistent, global-SEO friendly);
-  // the visible article language follows the in-app language toggle.
+  // Static page metadata uses the English copy, matching the English body in the
+  // prerendered HTML; after hydration the visible article follows the in-app
+  // language toggle (LanguageContext).
   return {
     title: post.metaTitle.en,
     description: post.metaDescription.en,
@@ -61,6 +62,7 @@ export default async function BlogPostLayout({
     '@type': 'Article',
     headline: post.title.en,
     description: post.metaDescription.en,
+    inLanguage: 'en',
     datePublished: post.published,
     dateModified: post.updated,
     image: [`https://iconyapp.com/blog/${slug}/opengraph-image`],

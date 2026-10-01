@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     template: '%s | Icony',
   },
   description: 'Customize and export 10,000+ open-source icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix. Change colors, sizes, stroke weights. Free PNG & SVG export.',
-  keywords: ['icon', 'icon customizer', 'icon editor', 'free icons', 'SVG icons', 'PNG export', 'Lucide', 'Tabler Icons', 'Phosphor', 'Heroicons', 'Bootstrap Icons', 'open source icons', '아이콘', '아이콘 편집기', '무료 아이콘'],
+  keywords: ['icon', 'icon customizer', 'icon editor', 'free icons', 'SVG icons', 'PNG export', 'Lucide', 'Tabler Icons', 'Phosphor', 'Heroicons', 'Bootstrap Icons', 'open source icons'],
   authors: [{ name: 'Icony' }],
   openGraph: {
     type: 'website',
-    locale: 'ko_KR',
-    alternateLocale: 'en_US',
+    locale: 'en_US',
+    alternateLocale: 'ko_KR',
     url: 'https://iconyapp.com',
     siteName: 'Icony',
     title: 'Icony - Free Icon Customizer & Exporter',
@@ -44,7 +44,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className="!m-0 !p-0">
         {/* Apply theme before first paint to avoid a dark/light flash now that
             the app no longer hides its content until mount. */}
@@ -63,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Icony',
               url: 'https://iconyapp.com',
               description: 'Customize and export 10,000+ open-source icons',
+              inLanguage: 'en',
               applicationCategory: 'DesignApplication',
               operatingSystem: 'Web',
               offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
