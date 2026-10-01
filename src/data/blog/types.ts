@@ -6,7 +6,8 @@ export type BlogBlock =
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
   | { type: 'code'; lang?: string; code: string }
-  | { type: 'tip'; text: string };
+  | { type: 'tip'; text: string }
+  | { type: 'link'; href: string; text: string };
 
 export type BlogCategory = 'how-to' | 'comparison' | 'troubleshooting';
 

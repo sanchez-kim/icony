@@ -164,7 +164,15 @@ export class IconRenderer {
   ): Promise<Blob> {
     // iconToSvgString already widens the viewBox; don't expand again here.
     const svgString = this.iconToSvgString(iconData, size, color, strokeWeight);
-    const svgBlob = new Blob([svgString], {
+    return this.svgStringToPng(svgString, size);
+  }
+
+  /**
+   * Rasterise an SVG markup string to a PNG Blob at size x size. The markup is
+   * drawn as-is, edge to edge (see svgBlobToPng).
+   */
+  async svgStringToPng(svg: string, size: number): Promise<Blob> {
+    const svgBlob = new Blob([svg], {
       type: 'image/svg+xml;charset=utf-8',
     });
     return this.svgBlobToPng(svgBlob, size);
