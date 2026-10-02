@@ -22,7 +22,7 @@ interface IconCardProps {
  * Falls back to a generic render (className only) for unknown libraries
  * so new libraries work without code changes.
  */
-function renderIconComponent(
+export function renderIconComponent(
   icon: Icon,
   className: string,
 ): React.ReactElement | null {

@@ -90,7 +90,7 @@ export const post: BlogPost = {
   category: 'how-to',
   readingMinutes: 7,
   published: '2026-05-21',
-  updated: '2026-09-30',
+  updated: '2026-10-01',
   related: ['svg-vs-png-icons', 'reduce-svg-file-size', 'add-icons-to-website'],
   title: {
     en: 'How to Make a Favicon from an Icon',
@@ -145,6 +145,7 @@ export const post: BlogPost = {
       { type: 'code', lang: 'javascript', code: GENERATE },
       { type: 'p', text: "We ran this script on Icony's own 637-byte `favicon.svg`. `file` identified the output as \"MS Windows icon resource - 3 icons, 16x16 with PNG image data…\", and macOS `sips` reads it without complaint. The output sizes were: `favicon.ico` 3,036 B (all three sizes), `apple-touch-icon.png` 4,953 B, `icon-192.png` 6,250 B, `icon-512.png` 21,246 B. With sharp 0.34.5, `resize()` re-renders the vector at each target size, so the 16px image is drawn fresh, not downscaled from a large bitmap." },
       { type: 'tip', text: "If your icon has detail that disappears at 16px, you can make a simplified SVG just for the 16 and 32px ICO entries and use the full version for larger sizes. Just pass a different input to the `png()` helper for those sizes." },
+      { type: 'link', href: '/favicon-generator', text: "Skip the script: build all of these files from any icon in your browser with the Favicon Generator." },
 
       { type: 'h2', text: 'Step 4: add the markup' },
       { type: 'p', text: "Put the files in your site root and add this to the `<head>` of every page, or at least the home page:" },
@@ -224,6 +225,7 @@ export const post: BlogPost = {
       { type: 'code', lang: 'javascript', code: GENERATE },
       { type: 'p', text: "이 스크립트를 Icony의 637바이트짜리 `favicon.svg`로 돌려 봤습니다. `file` 명령은 결과를 \"MS Windows icon resource - 3 icons, 16x16 with PNG image data…\"로 인식했고, macOS `sips`도 문제없이 읽었습니다. 결과 파일 크기는 `favicon.ico` 3,036 B(세 크기 전부), `apple-touch-icon.png` 4,953 B, `icon-192.png` 6,250 B, `icon-512.png` 21,246 B였습니다. sharp 0.34.5에서는 `resize()`가 목표 크기마다 벡터를 새로 렌더링하므로, 16px 이미지도 큰 비트맵을 줄인 게 아니라 새로 그린 것입니다." },
       { type: 'tip', text: "16px에서 사라지는 디테일이 있다면, ICO의 16·32px 항목에만 쓸 단순화한 SVG를 따로 만들고 큰 크기에는 원래 버전을 쓰세요. 해당 크기에서만 `png()` 헬퍼에 다른 입력을 넘기면 됩니다." },
+      { type: 'link', href: '/favicon-generator', text: "스크립트 없이도 됩니다. 파비콘 생성기에서 아이콘 하나로 이 파일들을 브라우저에서 바로 만들어 보세요." },
 
       { type: 'h2', text: '4단계: 마크업 추가하기' },
       { type: 'p', text: "파일을 사이트 루트에 두고 모든 페이지의 `<head>`에, 최소한 홈페이지에는 아래를 넣으세요." },

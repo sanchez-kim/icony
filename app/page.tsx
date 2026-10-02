@@ -400,6 +400,12 @@ export default function LandingPage() {
                 {language === 'ko' ? '블로그' : 'Blog'}
               </Link>
               <Link
+                href="/favicon-generator"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {language === 'ko' ? '파비콘 생성기' : 'Favicon Generator'}
+              </Link>
+              <Link
                 href="/about"
                 className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >

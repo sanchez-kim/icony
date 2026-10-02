@@ -4,6 +4,7 @@
 
 ## Product
 - [Icon Editor](https://iconyapp.com/app): The customization tool — search, filter by library, adjust color/size/stroke, and export as PNG or SVG (single icon or batch ZIP).
+- [Favicon Generator](https://iconyapp.com/favicon-generator): Turn any icon into a favicon bundle — favicon.ico, SVG, Apple touch icon, 192/512 and maskable PNGs, web manifest, and a ready-to-paste head snippet — as one ZIP, generated in the browser.
 - [Icon Libraries](https://iconyapp.com/icon-libraries): Overview of all 8 supported icon libraries.
 - [FAQ](https://iconyapp.com/faq): Supported formats, licensing/commercial use, pricing (free), and customization questions.
 - [About](https://iconyapp.com/about): What Icony is and which libraries it bundles.
