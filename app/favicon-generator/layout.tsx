@@ -3,7 +3,7 @@ import { FAVICON_GENERATOR_FAQ_EN } from '../../src/data/favicon-generator-conte
 
 const title = 'Favicon Generator — favicon.ico, SVG & App Icons';
 const description =
-  'Free favicon generator: turn any of 10,000+ open-source icons into favicon.ico, SVG, Apple touch icon, Android/PWA icons, and a web manifest. Runs in your browser, no upload, no signup.';
+  'Free favicon generator. Turn any of 10,000+ open-source icons into favicon.ico, SVG, Apple touch, Android and PWA icons plus a manifest, all in your browser.';
 
 export const metadata: Metadata = {
   title,

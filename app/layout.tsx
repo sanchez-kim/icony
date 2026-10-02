@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'Icony - Free Icon Customizer & Exporter',
     template: '%s | Icony',
   },
-  description: 'Customize and export 10,000+ open-source icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix. Change colors, sizes, stroke weights. Free PNG & SVG export.',
+  description: 'Customize 10,000+ open-source icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix. Set color, size, and stroke, then export PNG or SVG.',
   keywords: ['icon', 'icon customizer', 'icon editor', 'free icons', 'SVG icons', 'PNG export', 'Lucide', 'Tabler Icons', 'Phosphor', 'Heroicons', 'Bootstrap Icons', 'open source icons'],
   authors: [{ name: 'Icony' }],
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: 'https://iconyapp.com',
     siteName: 'Icony',
     title: 'Icony - Free Icon Customizer & Exporter',
-    description: 'Customize and export 10,000+ open-source icons. Change colors, sizes, stroke weights. Free PNG & SVG.',
+    description: 'Customize and export 10,000+ open-source icons. Set the color, size, and stroke width, then download a free PNG or SVG.',
   },
   twitter: {
     card: 'summary_large_image',

@@ -8,6 +8,7 @@ import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
 import { Block } from '../../src/components/ContentBlocks';
 import { useLanguage } from '../../src/context/LanguageContext';
+import { SentenceLines } from '../../src/components/SentenceLines';
 import { FAVICON_GENERATOR_CONTENT } from '../../src/data/favicon-generator-content';
 
 // The interactive tool is client-only and code-split: it needs canvas, the
@@ -65,7 +66,10 @@ export default function FaviconGeneratorPage() {
 
         <div className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{t.faviconGenerator.title}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{t.faviconGenerator.intro}</p>
+          <SentenceLines
+            text={t.faviconGenerator.intro}
+            className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+          />
         </div>
 
         <FaviconGenerator />

@@ -240,7 +240,7 @@ export function IconGallery({ searchQuery }: IconGalleryProps) {
               {language === 'ko' ? '아이콘을 찾을 수 없습니다' : 'No icons found'}
             </p>
             <p className="text-sm mt-2">
-              {language === 'ko' ? '다른 키워드나 카테고리를 시도해보세요' : 'Try different keywords or categories'}
+              {language === 'ko' ? '다른 키워드나 카테고리로 찾아보세요' : 'Try a different keyword or category'}
             </p>
           </div>
         ) : (

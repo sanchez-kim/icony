@@ -47,16 +47,14 @@ export default function PrivacyPage() {
               <section className="space-y-6 text-gray-700 dark:text-gray-300">
                 <div>
                   <p className="leading-relaxed">
-                    Icony(이하 &quot;서비스&quot;)는 이용자의 개인정보를 중요하게 생각합니다. 본 개인정보처리방침은
-                    서비스가 어떤 정보를 수집하고, 쿠키 및 제3자 광고를 어떻게 활용하는지 설명합니다.
+                    Icony(이하 &quot;서비스&quot;)는 이용자의 개인정보를 중요하게 생각합니다. 본 개인정보처리방침은 서비스가 어떤 정보를 수집하는지, 쿠키와 제3자 광고를 어떻게 활용하는지 설명합니다.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. 수집하는 정보</h2>
                   <p className="leading-relaxed mb-3">
-                    Icony는 회원가입이나 로그인이 필요 없으며, 이름·이메일·전화번호 등 <strong>직접적으로 식별 가능한
-                    개인정보를 수집하지 않습니다.</strong> 다만 다음 정보가 자동으로 처리될 수 있습니다:
+                    Icony는 회원가입이나 로그인이 필요 없으며 이름·이메일·전화번호 등 <strong>직접적으로 식별 가능한 개인정보를 수집하지 않습니다.</strong> 다만 다음 정보가 자동으로 처리될 수 있습니다:
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li><strong>로컬 스토리지</strong>: 즐겨찾기·최근 사용 아이콘·테마(다크/라이트)·언어 설정은 귀하의 브라우저에만 저장되며 외부 서버로 전송되지 않습니다.</li>
@@ -90,16 +88,14 @@ export default function PrivacyPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. 분석 도구</h2>
                   <p className="leading-relaxed">
-                    본 서비스는 익명 트래픽 분석을 위해 Cloudflare Web Analytics를 사용할 수 있습니다. 이 도구는
-                    개인을 식별하지 않으며 쿠키 없이 집계된 방문 통계만 수집합니다.
+                    본 서비스는 익명 트래픽 분석을 위해 Cloudflare Web Analytics를 사용할 수 있습니다. 이 도구는 개인을 식별하지 않으며 쿠키 없이 집계된 방문 통계만 수집합니다.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. 정보의 보관 및 제어</h2>
                   <p className="leading-relaxed">
-                    로컬 스토리지에 저장된 데이터는 언제든지 브라우저의 캐시·사이트 데이터 삭제 기능을 통해 직접
-                    제거할 수 있습니다. Icony는 이 데이터에 접근하거나 수집하지 않습니다.
+                    로컬 스토리지에 저장된 데이터는 언제든지 브라우저의 캐시·사이트 데이터 삭제 기능으로 직접 제거할 수 있습니다. Icony는 이 데이터에 접근하거나 수집하지 않습니다.
                   </p>
                 </div>
 
@@ -140,17 +136,14 @@ export default function PrivacyPage() {
               <section className="space-y-6 text-gray-700 dark:text-gray-300">
                 <div>
                   <p className="leading-relaxed">
-                    Icony (&quot;the Service&quot;) takes your privacy seriously. This Privacy Policy explains what
-                    information the Service collects and how it uses cookies and third-party advertising.
+                    Icony (&quot;the Service&quot;) respects your privacy. This Privacy Policy explains what information the Service collects and how it uses cookies and third-party advertising.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Information We Collect</h2>
                   <p className="leading-relaxed mb-3">
-                    Icony requires no sign-up or login and does <strong>not collect directly identifiable personal
-                    information</strong> such as your name, email, or phone number. However, the following may be
-                    processed automatically:
+                    Icony requires no sign-up or login and does <strong>not collect directly identifiable personal information</strong> such as your name, email, or phone number. However, the following may be processed automatically:
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li><strong>Local storage</strong>: Favorites, recent icons, theme (dark/light), and language preferences are stored only in your browser and are never sent to any external server.</li>
@@ -182,24 +175,21 @@ export default function PrivacyPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Analytics</h2>
                   <p className="leading-relaxed">
-                    This Service may use Cloudflare Web Analytics for anonymous traffic analysis. This tool does not
-                    identify individuals and collects only aggregated visit statistics without cookies.
+                    This Service may use Cloudflare Web Analytics for anonymous traffic analysis. This tool does not identify individuals and collects only aggregated visit statistics without cookies.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Data Retention and Control</h2>
                   <p className="leading-relaxed">
-                    Data stored in local storage can be removed at any time by clearing your browser&apos;s cache and
-                    site data. Icony does not access or collect this data.
+                    Data stored in local storage can be removed at any time by clearing your browser&apos;s cache and site data. Icony does not access or collect this data.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Children&apos;s Privacy</h2>
                   <p className="leading-relaxed">
-                    This Service is not directed to children under 14 and does not knowingly collect personal
-                    information from children.
+                    This Service is not directed to children under 14 and does not knowingly collect personal information from children.
                   </p>
                 </div>
 

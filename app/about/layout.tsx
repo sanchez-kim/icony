@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 const title = 'About Icony — Free Icon Customization Tool';
 const description =
-  'Learn about Icony — a free, open-source icon customizer tool. Browse 10,000+ icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap, and Radix. Customize colors and sizes, export as PNG or SVG.';
+  'Icony is a free icon customizer run by one person. Browse 10,000+ icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap, and Radix, then export PNG or SVG.';
 
 export const metadata: Metadata = {
   title,

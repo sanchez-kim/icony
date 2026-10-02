@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 // title.template ('%s | Icony') appends it.
 const title = 'Contact — Icon Support, Bug Reports & Licensing';
 const description =
-  'Contact Icony: report a bug, request an icon library, or ask about licensing and commercial use. Email help@iconyapp.com — replies within a few business days.';
+  'Contact Icony: report a bug, request an icon library, or ask about licensing and commercial use. Email help@iconyapp.com; replies take a few business days.';
 
 export const metadata: Metadata = {
   title,

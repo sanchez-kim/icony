@@ -6,6 +6,7 @@ import { IconyLogo } from '../../src/components/IconyLogo';
 import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
 import { useLanguage } from '../../src/context/LanguageContext';
+import { SentenceLines } from '../../src/components/SentenceLines';
 import { BLOG_POSTS, CATEGORY_LABEL, type BlogLang } from '../../src/data/blog-content';
 
 export default function BlogIndexPage() {
@@ -17,8 +18,8 @@ export default function BlogIndexPage() {
     title: lang === 'ko' ? '블로그' : 'Blog',
     intro:
       lang === 'ko'
-        ? '아이콘과 SVG 작업을 위한 실용 가이드·팁·트러블슈팅 — 색상, 크기, React 컴포넌트, 그리고 라이브러리 선택까지.'
-        : 'Practical guides, tips, and troubleshooting for working with icons and SVG — color, sizing, React components, and choosing the right library.',
+        ? '아이콘과 SVG를 다룰 때 필요한 가이드와 팁, 트러블슈팅을 모았습니다. 색상·크기·React 컴포넌트부터 라이브러리 선택까지 다룹니다.'
+        : 'Guides, tips, and fixes for working with icons and SVG. They cover color, sizing, React components, and picking a library.',
     read: lang === 'ko' ? '가이드 읽기' : 'Read guide',
     min: lang === 'ko' ? '분' : 'min',
   };
@@ -52,7 +53,7 @@ export default function BlogIndexPage() {
         {/* Hero */}
         <div className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">{t.title}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">{t.intro}</p>
+          <SentenceLines text={t.intro} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl" />
         </div>
 
         {/* Post list */}
@@ -75,9 +76,10 @@ export default function BlogIndexPage() {
               <h2 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug mb-2">
                 {post.title[lang]}
               </h2>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
-                {post.description[lang]}
-              </p>
+              <SentenceLines
+                text={post.description[lang]}
+                className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1"
+              />
               <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-600 dark:text-primary-400">
                 {t.read}
                 <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />

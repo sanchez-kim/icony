@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 // produced 'Icon Libraries — … | Icony | Icony'.
 const title = 'Icon Libraries — 10,000+ Free React SVG Icons';
 const description =
-  'Explore 8 open-source icon libraries available in Icony: Lucide, Tabler, Phosphor, Heroicons, Bootstrap, and Radix Icons. Customize colors, sizes, and download as PNG or SVG for free.';
+  'Compare the 8 open-source icon libraries in Icony including Lucide, Tabler, Phosphor, Heroicons, Bootstrap, and Radix. Recolor, resize, and download PNG or SVG.';
 
 export const metadata: Metadata = {
   title,

@@ -3,9 +3,9 @@ export const en = {
   landing: {
     tagline: 'Free Icon Customization Tool',
     hero: {
-      title: 'Customize Icons',
-      subtitle: 'In Seconds',
-      description: 'Choose from 10,000+ professional icons, customize colors and sizes, then download instantly in PNG or SVG format. Perfect for designers and developers.',
+      title: 'Customize icons',
+      subtitle: 'in seconds',
+      description: 'Pick one of 10,000+ icons, change its color and size, and download it as PNG or SVG right away. Built for designers and developers.',
       getStarted: 'Get Started Free',
       learnMore: 'Learn More',
     },
@@ -16,56 +16,56 @@ export const en = {
       categories: 'Categories',
     },
     features: {
-      title: 'Everything You Need',
-      subtitle: 'Powerful features designed to make icon customization effortless',
+      title: 'Features',
+      subtitle: 'Recolor, resize, and export icons without opening a design tool.',
       customizeColors: {
         title: 'Customize Colors',
-        description: 'Choose any color with our intuitive color picker and see real-time preview',
+        description: 'Pick any color and the preview updates as you go.',
       },
       lightningFast: {
-        title: 'Lightning Fast',
-        description: 'Instant icon preview and download with optimized performance',
+        title: 'Fast',
+        description: 'The preview changes instantly, and downloads start as soon as you click.',
       },
       multipleFormats: {
         title: 'Multiple Formats',
-        description: 'Export your icons as PNG or SVG in any size from 16px to 512px',
+        description: 'Export PNG or SVG at any size from 16px to 512px.',
       },
       saveFavorites: {
         title: 'Save Favorites',
-        description: 'Mark your favorite icons and access them quickly anytime',
+        description: 'Star the icons you use often and they stay one click away.',
       },
       recentHistory: {
         title: 'Recent History',
-        description: 'Automatically tracks your recently used icons for easy access',
+        description: 'Icons you used recently are listed automatically, so they are easy to find again.',
       },
       developerFriendly: {
         title: 'Developer Friendly',
-        description: 'Clean SVG code optimized for web and mobile applications',
+        description: 'Clean SVG code you can drop into web and mobile apps.',
       },
     },
     howItWorks: {
-      title: 'Simple 3-Step Process',
-      subtitle: 'Get your customized icon in just three easy steps',
+      title: 'Three Steps',
+      subtitle: 'Find an icon, adjust it, download it.',
       step1: {
         title: 'Choose Icon',
         description: 'Browse 10,000+ icons across 33 categories',
       },
       step2: {
         title: 'Customize',
-        description: 'Pick colors, adjust size, preview instantly',
+        description: 'Pick a color and size and see the result right away',
       },
       step3: {
         title: 'Download',
-        description: 'Export as PNG or SVG in any size',
+        description: 'Export as PNG or SVG at any size',
       },
     },
     cta: {
-      title: 'Ready to Get Started?',
-      description: 'Join thousands of designers and developers customizing icons with Icony',
+      title: 'Try It Now',
+      description: 'Thousands of designers and developers already customize their icons with Icony.',
       noSignup: 'No signup required',
-      free: '100% free forever',
+      free: 'Always free',
       instant: 'Instant download',
-      startNow: 'Start Customizing Now',
+      startNow: 'Open the Editor',
     },
     footer: {
       tagline: 'Customize 10,000+ open-source icons for free.',
@@ -75,7 +75,7 @@ export const en = {
       copyright: 'All icons are open-source.',
     },
     header: {
-      launchApp: 'Launch App',
+      launchApp: 'Open App',
     },
   },
 
@@ -84,27 +84,27 @@ export const en = {
     steps: [
       {
         title: 'Search & Select Icon',
-        description: 'Search through thousands of icons and click to select the one you want.',
-        tip: 'Use category filters to find icons faster!',
+        description: 'Search thousands of icons and click the one you want.',
+        tip: 'Category filters help you find icons faster.',
       },
       {
         title: 'Customize Color',
-        description: 'Choose from color swatches or create your own with the custom color picker.',
-        tip: 'Recent colors and palettes can be saved.',
+        description: 'Pick a swatch, or mix your own color with the custom picker.',
+        tip: 'You can save your recent colors as a palette.',
       },
       {
         title: 'Adjust Size',
-        description: 'Use the slider from 16px to 512px or use preset buttons.',
-        tip: 'You can also type the number directly!',
+        description: 'Drag the slider anywhere from 16px to 512px, or use a preset button.',
+        tip: 'You can also type the number in directly.',
       },
       {
         title: 'Download & Share',
-        description: 'Download as PNG or SVG, copy to clipboard, or generate a shareable link.',
-        tip: 'Share links save your configuration for easy sharing.',
+        description: 'Download a PNG or SVG, or copy it to the clipboard. You can also create a share link.',
+        tip: 'A share link carries your current settings, so others see exactly what you made.',
       },
       {
         title: 'Favorites & History',
-        description: 'Add frequently used icons to favorites and quickly find recently used icons.',
+        description: 'Star the icons you use often, and find recent ones in your history.',
         tip: 'Favorites and recent icons are saved automatically.',
       },
     ],
@@ -128,7 +128,7 @@ export const en = {
   ui: {
     searchPlaceholder: 'Search thousands of icons...',
     selectIcon: 'Select an icon to customize',
-    selectIconDesc: 'Choose from thousands of icons in the gallery',
+    selectIconDesc: 'Pick one of the thousands of icons in the gallery',
     color: 'Color',
     size: 'Image Size',
     export: 'Export',
@@ -165,30 +165,30 @@ export const en = {
   toast: {
     copiedToClipboard: 'Copied to clipboard!',
     linkCopied: 'Share link copied!',
-    downloadSuccess: 'Download successful!',
+    downloadSuccess: 'Downloaded',
     selectIconFirst: 'Select an icon first',
     colorPicked: 'Color picked',
     paletteSaved: 'Palette saved!',
     paletteDeleted: 'Palette deleted',
     enterPaletteName: 'Please enter a palette name',
     noColorsToSave: 'No colors to save',
-    eyeDropperNotSupported: 'EyeDropper API is not supported in this browser. Please use Chrome, Edge, or Opera.',
+    eyeDropperNotSupported: 'This browser does not support the EyeDropper API. Try Chrome, Edge, or Opera.',
     failedToPickColor: 'Failed to pick color from screen',
   },
 
   // EyeDropper Warning
   eyeDropper: {
     notAvailable: 'EyeDropper not available',
-    requirements: 'Screen color picker requires:',
+    requirements: 'The screen color picker needs:',
     browser: 'Chrome, Edge, or Opera browser',
     https: 'HTTPS or localhost access',
-    tryLocalhost: 'Try: instead of IP address',
+    tryLocalhost: 'Open this address instead of the IP address:',
   },
 
   // Favicon Generator
   faviconGenerator: {
     title: 'Favicon Generator',
-    intro: 'Turn any icon into a complete favicon and app icon bundle: favicon.ico, SVG, Apple touch icon, and Android and PWA icons. Everything is generated in your browser.',
+    intro: 'Turn any icon into a full set of favicon and app icon files: favicon.ico, SVG, an Apple touch icon, and Android and PWA icons. Everything is generated in your browser.',
     mainIcon: 'Main icon',
     badgeIcon: 'Badge icon',
     library: 'Library',

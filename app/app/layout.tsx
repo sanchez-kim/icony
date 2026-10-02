@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const title = 'Icon Editor';
-const description = 'Browse and customize 10,000+ icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix. Change colors, sizes, stroke weights and export as PNG or SVG.';
+const description = 'Customize 10,000+ icons from Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix. Set the color, size, and stroke width, then export PNG or SVG.';
 
 export const metadata: Metadata = {
   title,

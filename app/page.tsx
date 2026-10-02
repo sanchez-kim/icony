@@ -18,6 +18,7 @@ import { ThemeToggle } from '../src/components/ThemeToggle';
 import { IconyLogo } from '../src/components/IconyLogo';
 import { HeroLottie } from '../src/components/HeroLottie';
 import { PromoVideo } from '../src/components/PromoVideo';
+import { SentenceLines } from '../src/components/SentenceLines';
 import { useScrollAnimation } from '../src/hooks/useScrollAnimation';
 import { useCounterAnimation } from '../src/hooks/useCounterAnimation';
 import { getBlogPost, type BlogLang } from '../src/data/blog-content';
@@ -125,16 +126,16 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight break-keep">
-            {t.landing.hero.title}
-            <br />
+            {t.landing.hero.title}{' '}
             <span className="bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
               {t.landing.hero.subtitle}
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed break-keep">
-            {t.landing.hero.description}
-          </p>
+          <SentenceLines
+            text={t.landing.hero.description}
+            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed break-keep"
+          />
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-4">
             <Link
@@ -189,11 +190,14 @@ export default function LandingPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
             {language === 'ko' ? '직접 보세요' : 'See how it works'}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            {language === 'ko'
-              ? '검색부터 커스터마이즈, 내보내기까지 — 몇 초면 끝납니다.'
-              : 'From search to customize to export — in seconds.'}
-          </p>
+          <SentenceLines
+            text={
+              language === 'ko'
+                ? '검색부터 커스터마이즈, 내보내기까지 몇 초면 끝납니다.'
+                : 'Search, customize, and export in a few seconds.'
+            }
+            className="text-gray-600 dark:text-gray-400"
+          />
         </div>
         <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
           <PromoVideo />
@@ -212,9 +216,10 @@ export default function LandingPage() {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t.landing.features.title}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            {t.landing.features.subtitle}
-          </p>
+          <SentenceLines
+            text={t.landing.features.subtitle}
+            className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -231,9 +236,10 @@ export default function LandingPage() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {feature.description}
-                </p>
+                <SentenceLines
+                  text={feature.description}
+                  className="text-gray-600 dark:text-gray-400 leading-relaxed"
+                />
               </div>
             );
           })}
@@ -251,9 +257,10 @@ export default function LandingPage() {
           <h2 className="text-4xl font-bold text-white mb-4">
             {t.landing.howItWorks.title}
           </h2>
-          <p className="text-xl text-primary-100 max-w-2xl mx-auto">
-            {t.landing.howItWorks.subtitle}
-          </p>
+          <SentenceLines
+            text={t.landing.howItWorks.subtitle}
+            className="text-xl text-primary-100 max-w-2xl mx-auto"
+          />
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -267,7 +274,7 @@ export default function LandingPage() {
                 {item.step}
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-primary-100">{item.desc}</p>
+              <SentenceLines text={item.desc} className="text-primary-100" />
             </div>
           ))}
         </div>
@@ -284,9 +291,10 @@ export default function LandingPage() {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
             {t.landing.cta.title}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            {t.landing.cta.description}
-          </p>
+          <SentenceLines
+            text={t.landing.cta.description}
+            className="text-xl text-gray-600 dark:text-gray-400"
+          />
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
@@ -321,11 +329,14 @@ export default function LandingPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 {language === 'ko' ? '아이콘 가이드' : 'Icon guides'}
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                {language === 'ko'
-                  ? 'SVG·아이콘 작업을 위한 실용 가이드와 라이브러리 비교.'
-                  : 'Practical guides and library comparisons for working with SVG and icons.'}
-              </p>
+              <SentenceLines
+                text={
+                  language === 'ko'
+                    ? 'SVG·아이콘 작업에 바로 쓰는 가이드와 라이브러리 비교입니다.'
+                    : 'Hands-on guides to working with SVG and icons, plus library comparisons.'
+                }
+                className="text-gray-600 dark:text-gray-400"
+              />
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <Link
@@ -353,9 +364,10 @@ export default function LandingPage() {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug mb-2">
                   {post!.title[lang]}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
-                  {post!.description[lang]}
-                </p>
+                <SentenceLines
+                  text={post!.description[lang]}
+                  className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1"
+                />
                 <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-primary-600 dark:text-primary-400">
                   {language === 'ko' ? '읽기' : 'Read'}
                   <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -377,9 +389,10 @@ export default function LandingPage() {
                 <IconyLogo size={32} />
                 <span className="text-lg font-bold text-gray-700 dark:text-gray-300">Icony</span>
               </div>
-              <p className="text-sm text-gray-500 dark:text-gray-500 max-w-xs">
-                {t.landing.footer.tagline}
-              </p>
+              <SentenceLines
+                text={t.landing.footer.tagline}
+                className="text-sm text-gray-500 dark:text-gray-500 max-w-xs"
+              />
             </div>
 
             {/* Links */}

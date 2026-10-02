@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import { SentenceLines } from '../src/components/SentenceLines';
 
 export default function Error({
   error,
@@ -17,9 +18,10 @@ export default function Error({
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-950 px-6 text-center">
       <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Something went wrong</h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-md">
-        An unexpected error occurred. You can try again, or head back to the homepage.
-      </p>
+      <SentenceLines
+        text="An unexpected error occurred. You can try again, or head back to the homepage."
+        className="mt-2 text-gray-600 dark:text-gray-400 max-w-md"
+      />
       <div className="mt-8 flex items-center gap-3">
         <button
           onClick={reset}
