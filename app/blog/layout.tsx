@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Blog — Icon & SVG Guides',
   description:
-    'Practical guides, tips, and troubleshooting for working with icons and SVG: color, sizing, React components, library comparisons, and more.',
+    'Guides, tips, and fixes for working with icons and SVG, covering color, sizing, React components, and how the popular icon libraries compare.',
   alternates: { canonical: 'https://iconyapp.com/blog' },
   openGraph: {
     type: 'website',
     url: 'https://iconyapp.com/blog',
     title: 'Icony Blog — Icon & SVG Guides',
     description:
-      'Practical guides and troubleshooting for icons and SVG — color, sizing, React components, and library comparisons.',
+      'Guides and fixes for icons and SVG: color, sizing, React components, and library comparisons.',
   },
 };
 

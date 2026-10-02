@@ -16,48 +16,48 @@ export default function AboutPage() {
       title: language === 'ko' ? '색상 커스터마이징' : 'Color Customization',
       description:
         language === 'ko'
-          ? '직관적인 색상 피커로 아이콘 색상을 자유롭게 변경하고 실시간으로 미리보세요.'
-          : 'Change icon colors freely with an intuitive color picker and preview in real time.',
+          ? '색상 피커로 아이콘 색상을 바꾸면 미리보기에 바로 반영됩니다.'
+          : 'Change an icon\'s color with the picker and watch the preview update live.',
     },
     {
       icon: Download,
       title: language === 'ko' ? 'PNG & SVG 내보내기' : 'PNG & SVG Export',
       description:
         language === 'ko'
-          ? '16px부터 512px까지 원하는 크기로 PNG 또는 SVG 형식으로 즉시 다운로드하세요.'
-          : 'Download instantly as PNG or SVG in any size from 16px to 512px.',
+          ? '16px부터 512px까지 원하는 크기를 정해 PNG나 SVG로 바로 다운로드하세요.'
+          : 'Download a PNG or SVG at any size from 16px to 512px.',
     },
     {
       icon: Zap,
       title: language === 'ko' ? '빠른 탐색' : 'Fast Search',
       description:
         language === 'ko'
-          ? '10,000개 이상의 아이콘을 키워드, 카테고리, 라이브러리로 즉시 검색하세요.'
-          : 'Search 10,000+ icons instantly by keyword, category, or library.',
+          ? '10,000개가 넘는 아이콘을 키워드·카테고리·라이브러리로 바로 검색하세요.'
+          : 'Search 10,000+ icons by keyword, category, or library.',
     },
     {
       icon: Heart,
       title: language === 'ko' ? '즐겨찾기' : 'Favorites',
       description:
         language === 'ko'
-          ? '자주 사용하는 아이콘을 즐겨찾기에 저장하고 언제든지 빠르게 접근하세요.'
-          : 'Save your frequently used icons to favorites for quick access anytime.',
+          ? '자주 쓰는 아이콘은 즐겨찾기에 저장해 두고 언제든 꺼내 쓰세요.'
+          : 'Keep the icons you use often in your favorites, one click away.',
     },
     {
       icon: Shield,
       title: language === 'ko' ? '프라이버시 보호' : 'Privacy First',
       description:
         language === 'ko'
-          ? '계정 불필요, 데이터 수집 없음. 모든 설정은 브라우저에만 저장됩니다.'
-          : 'No account required. No data collection. All settings are stored locally in your browser.',
+          ? '계정이 필요 없고 데이터도 수집하지 않습니다. 설정은 모두 브라우저에만 저장됩니다.'
+          : 'You don\'t need an account, and no data is collected. Your settings are stored only in your browser.',
     },
     {
       icon: Globe,
       title: language === 'ko' ? '한국어 / English' : 'Korean & English',
       description:
         language === 'ko'
-          ? '한국어와 영어를 지원합니다. 언제든지 언어를 전환할 수 있습니다.'
-          : 'Supports Korean and English. Switch languages anytime.',
+          ? '한국어와 영어를 지원하며 언어는 언제든 바꿀 수 있습니다.'
+          : 'Available in Korean and English. Switch at any time.',
     },
   ];
 
@@ -123,29 +123,25 @@ export default function AboutPage() {
               {language === 'ko' ? (
                 <>
                   <p>
-                    아이콘을 사용할 때마다 반복되는 과정이 있었습니다. 여러 라이브러리를 돌아다니며 아이콘을 찾고,
-                    디자인 툴에서 색상을 바꾸고, 크기를 조정한 후, PNG로 내보내는 과정이죠.
+                    아이콘이 필요할 때마다 같은 과정을 되풀이했습니다. 여러 라이브러리를 돌며 아이콘을 찾고 디자인 툴에서 색상과 크기를 바꾼 다음 PNG로 내보내는 과정이죠.
                   </p>
                   <p>
-                    Icony는 이 과정을 하나의 도구로 통합하기 위해 만들어졌습니다. 10,000개 이상의 아이콘을
-                    한 곳에서 탐색하고, 색상과 크기를 실시간으로 커스터마이징하고, PNG 또는 SVG로 즉시 다운로드할 수 있습니다.
+                    Icony는 이 과정을 도구 하나로 끝내려고 만들었습니다. 10,000개가 넘는 아이콘을 한 곳에서 둘러보고 색상과 크기를 실시간으로 커스터마이징한 뒤 PNG나 SVG로 바로 다운로드할 수 있습니다.
                   </p>
                   <p>
-                    가입 불필요, 완전 무료입니다.
+                    가입할 필요 없고 완전히 무료입니다.
                   </p>
                 </>
               ) : (
                 <>
                   <p>
-                    Every time you needed an icon, there was a familiar routine: search across multiple libraries,
-                    open a design tool to change the color, export it in the right size, then move on.
+                    Every time you needed an icon, it was the same routine. Search several libraries, open a design tool to change the color, export at the right size, then get back to work.
                   </p>
                   <p>
-                    Icony was built to consolidate this into a single tool. Browse 10,000+ icons from the most
-                    popular open-source libraries, customize colors and sizes in real time, and export as PNG or SVG instantly.
+                    Icony puts all of that in one place. Browse 10,000+ icons from popular open-source libraries, change colors and sizes with a live preview, and export a PNG or SVG.
                   </p>
                   <p>
-                    No account needed. Completely free.
+                    You don&apos;t need an account, and it&apos;s free.
                   </p>
                 </>
               )}
@@ -187,8 +183,8 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-500 dark:text-gray-500 mb-6 text-sm">
               {language === 'ko'
-                ? '모든 아이콘은 MIT 또는 ISC 라이선스로 상업적 이용이 가능합니다.'
-                : 'All icons are MIT or ISC licensed and free for commercial use.'}
+                ? '모든 아이콘이 MIT 또는 ISC 라이선스라 상업적으로도 쓸 수 있습니다.'
+                : 'Every icon is MIT or ISC licensed, so commercial use is fine.'}
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {libraries.map((lib) => (
@@ -211,12 +207,12 @@ export default function AboutPage() {
         <section className="mb-12">
           <div className="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-3">
-              {language === 'ko' ? '완전 무료로 사용하세요' : '100% Free to Use'}
+              {language === 'ko' ? '완전히 무료입니다' : 'Free to Use'}
             </h2>
             <p className="text-primary-100 mb-6 max-w-xl mx-auto">
               {language === 'ko'
-                ? 'Icony는 영원히 무료입니다. 가입 없이, 제한 없이 사용하세요. 아이콘도 모두 오픈소스 라이선스입니다.'
-                : 'Icony is free forever. No signup, no limits. All icons are open-source licensed.'}
+                ? 'Icony는 앞으로도 무료입니다. 가입도 사용 제한도 없습니다. 아이콘 역시 모두 오픈소스 라이선스입니다.'
+                : 'Icony will stay free, with no signup and no usage limits. Every icon is under an open-source license.'}
             </p>
             <Link
               href="/app"
@@ -232,12 +228,12 @@ export default function AboutPage() {
         <section className="mb-4">
           <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 text-center">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              {language === 'ko' ? '개발을 응원해주세요' : 'Support the Project'}
+              {language === 'ko' ? '개발을 응원해 주세요' : 'Support the Project'}
             </h2>
             <p className="text-sm text-gray-500 dark:text-gray-500 mb-6 max-w-md mx-auto">
               {language === 'ko'
-                ? 'Icony는 혼자 개발하고 운영합니다. 후원은 서비스를 유지하고 더 나은 기능을 만드는 데 큰 힘이 됩니다.'
-                : 'Icony is built and maintained by one person. Your support helps keep it running and improving.'}
+                ? 'Icony는 혼자 개발하고 운영합니다. 후원은 서비스를 유지하고 기능을 개선하는 데 큰 힘이 됩니다.'
+                : 'Icony is built and maintained by one person. Sponsorship helps keep it online and getting better.'}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a

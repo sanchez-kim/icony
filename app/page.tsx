@@ -125,8 +125,7 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight break-keep">
-            {t.landing.hero.title}
-            <br />
+            {t.landing.hero.title}{' '}
             <span className="bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
               {t.landing.hero.subtitle}
             </span>
@@ -191,8 +190,8 @@ export default function LandingPage() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
             {language === 'ko'
-              ? '검색부터 커스터마이즈, 내보내기까지 — 몇 초면 끝납니다.'
-              : 'From search to customize to export — in seconds.'}
+              ? '검색부터 커스터마이즈, 내보내기까지 몇 초면 끝납니다.'
+              : 'Search, customize, and export in a few seconds.'}
           </p>
         </div>
         <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
@@ -323,8 +322,8 @@ export default function LandingPage() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
                 {language === 'ko'
-                  ? 'SVG·아이콘 작업을 위한 실용 가이드와 라이브러리 비교.'
-                  : 'Practical guides and library comparisons for working with SVG and icons.'}
+                  ? 'SVG·아이콘 작업에 바로 쓰는 가이드와 라이브러리 비교입니다.'
+                  : 'Hands-on guides to working with SVG and icons, plus library comparisons.'}
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">

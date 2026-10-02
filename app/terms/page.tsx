@@ -55,8 +55,7 @@ export default function TermsPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. 아이콘 라이선스</h2>
                   <p className="leading-relaxed mb-4">
-                    본 서비스에서 제공하는 모든 아이콘은 <strong>MIT 또는 ISC 라이선스</strong>를 따릅니다.
-                    이는 상업적 이용, 수정, 배포 모두 가능하며, 출처 표기가 법적으로 요구되지 않습니다.
+                    본 서비스에서 제공하는 모든 아이콘은 <strong>MIT 또는 ISC 라이선스</strong>를 따릅니다. 두 라이선스 모두 상업적 이용·수정·배포를 허용하며 출처 표기를 법적으로 요구하지 않습니다.
                   </p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm border-collapse">
@@ -92,7 +91,7 @@ export default function TermsPage() {
                     </table>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
-                    ℹ️ MIT/ISC 라이선스는 상업적 프로젝트 포함 어디서든 자유롭게 사용할 수 있습니다. 출처 표기는 법적 의무가 아니지만 오픈소스 생태계 기여 차원에서 권장됩니다.
+                    ℹ️ MIT/ISC 라이선스 아이콘은 상업적 프로젝트를 포함해 어디서든 자유롭게 사용할 수 있습니다. 출처 표기는 법적 의무가 아니지만 오픈소스 생태계에 기여하는 차원에서 권장합니다.
                   </p>
                 </div>
 
@@ -109,16 +108,14 @@ export default function TermsPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. 면책 조항</h2>
                   <p className="leading-relaxed">
-                    본 서비스는 "있는 그대로" 제공됩니다. Icony는 서비스의 정확성, 신뢰성, 가용성에 대해 어떠한 보증도 하지 않으며,
-                    서비스 이용으로 인한 직간접적 손해에 대해 책임지지 않습니다.
+                    본 서비스는 "있는 그대로" 제공됩니다. Icony는 서비스의 정확성, 신뢰성, 가용성에 대해 어떠한 보증도 하지 않으며, 서비스 이용으로 인한 직간접적 손해에 대해 책임지지 않습니다.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. 개인정보 보호</h2>
                   <p className="leading-relaxed">
-                    Icony는 사용자의 개인정보를 수집하지 않습니다. 즐겨찾기 및 최근 사용 아이콘은 귀하의 브라우저 로컬 스토리지에만 저장되며,
-                    외부 서버로 전송되지 않습니다.
+                    Icony는 사용자의 개인정보를 수집하지 않습니다. 즐겨찾기 및 최근 사용 아이콘은 귀하의 브라우저 로컬 스토리지에만 저장되며 외부 서버로 전송되지 않습니다.
                   </p>
                 </div>
 
@@ -158,8 +155,7 @@ export default function TermsPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. Icon Licenses</h2>
                   <p className="leading-relaxed mb-4">
-                    All icons provided through this service are licensed under <strong>MIT or ISC licenses</strong>.
-                    This permits commercial use, modification, and redistribution. Attribution is not legally required.
+                    All icons provided through this service are licensed under <strong>MIT or ISC licenses</strong>. This permits commercial use, modification, and redistribution. Attribution is not legally required.
                   </p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm border-collapse">
@@ -212,16 +208,14 @@ export default function TermsPage() {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Disclaimer</h2>
                   <p className="leading-relaxed">
-                    This service is provided "as is". Icony makes no warranties regarding the accuracy, reliability, or availability of the service,
-                    and shall not be liable for any direct or indirect damages resulting from use of the service.
+                    This service is provided "as is". Icony makes no warranties regarding the accuracy, reliability, or availability of the service, and shall not be liable for any direct or indirect damages resulting from use of the service.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Privacy</h2>
                   <p className="leading-relaxed">
-                    Icony does not collect personal information. Favorites and recent icons are stored only in your browser's local storage
-                    and are not transmitted to external servers.
+                    Icony does not collect personal information. Favorites and recent icons are stored only in your browser's local storage and are not transmitted to external servers.
                   </p>
                 </div>
 

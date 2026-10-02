@@ -52,3 +52,4 @@ tsconfig.tsbuildinfo
 
 # Design docs (local only)
 ROADMAP.md
+_workspace/

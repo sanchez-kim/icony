@@ -75,7 +75,7 @@ export const LIBRARY_CONTENT: Record<LibrarySlug, LibraryContent> = {
     name: 'Lucide Icons',
     tagline: 'Stroke-based 24×24 icons with a line weight you can actually change',
     description:
-      'Lucide is a stroke-based icon set that began as a community fork of Feather Icons and has grown to about 1,500 icons. Every icon is drawn as open lines on a 24×24 canvas with a default 2px stroke and rounded caps and joins, so a toolbar built from Lucide looks like one person drew it. Because the lines are real SVG strokes, you can make the whole set thinner or bolder with a single prop — something fill-based libraries cannot do.',
+      'Lucide is a stroke-based icon set that began as a community fork of Feather Icons and has grown to about 1,500 icons. Every icon is drawn as open lines on a 24×24 canvas with a default 2px stroke and rounded caps and joins, so a toolbar built from Lucide looks like one person drew it. The lines are real SVG strokes, which means one prop makes the whole set thinner or bolder. Fill-based libraries can’t do that.',
     npm: 'lucide-react',
     iconCount: 1539,
     license: 'ISC',
@@ -87,7 +87,7 @@ export const LIBRARY_CONTENT: Record<LibrarySlug, LibraryContent> = {
       'One ES module per icon and `sideEffects: false` for tree-shaking',
       'Three export names per icon (`House`, `HouseIcon`, `LucideHouse`)',
       'Packages for React, Vue, Svelte and plain JavaScript',
-      'ISC license — permissive, no attribution in your UI',
+      'ISC license: permissive, no attribution needed in your UI',
     ],
     useCases: [
       'SaaS dashboards and admin tools',
@@ -135,19 +135,19 @@ export function Toolbar() {
         paragraphs: [
           'Render `<House />` to static markup and you get one `<svg>` with `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2"`, and both `stroke-linecap` and `stroke-linejoin` set to `round`. Inside are just two `<path>` elements: the door and the outer walls. Outer corners are drawn with 2-unit arcs (`a2 2 0 0 1`) and the door with 1-unit arcs, which is why Lucide reads as soft without looking bubbly.',
           'Because every shape is a stroke rather than a filled outline, line thickness is a live attribute. Pass `strokeWidth={1.5}` and every line in the icon thins uniformly. Fill-based sets such as Phosphor, Bootstrap Icons and Radix Icons bake the line thickness into the path geometry, so the same prop does nothing there.',
-          'The flip side is that Lucide has exactly one style. There is no official filled or duotone version. Setting `fill="currentColor"` fills whatever closed shapes happen to exist — fine for a circle or a heart, strange for anything built from open lines like a house or a gear.',
+          'The catch is that Lucide has exactly one style, with no official filled or duotone version. Setting `fill="currentColor"` fills whatever closed shapes happen to exist. That works for a circle or a heart and looks strange on anything built from open lines, like a house or a gear.',
         ],
       },
       {
         heading: 'What Lucide does well, and where it falls short',
         bullets: [
-          'Strength — adjustable stroke. `absoluteStrokeWidth` divides the stroke by the scale factor (`strokeWidth × 24 / size`), so at `size={48}` the default stroke of 2 is emitted as `stroke-width="1"` and still looks 2px on screen.',
-          'Strength — small per-icon modules. The ES module for `House` is 594 bytes before minification (385 gzipped), and the package declares `sideEffects: false`, so bundlers drop icons you never import.',
-          'Strength — solid coverage for product UI: arrows, files, text formatting, charts, devices, and general-purpose symbols.',
-          'Caveat — brand marks are going away. `Github`, `Figma` and a few other logos still ship, but they are marked `@deprecated` and slated for removal in v1.0, so do not build on them; use a dedicated brand-icon set instead.',
-          'Weakness — one style only. If your design uses filled icons for active states, you need a second library or hand-made SVGs.',
-          'Weakness — renames. Lucide renames icons over time and keeps the old name as an alias. In 0.460.0, 203 of the 1,742 icon files are aliases; `home.js`, for example, just re-exports `house.js`. Old tutorials still compile, but the docs only list the new name.',
-          'Weakness — 2px is heavy at 16px. At that size the default stroke is one eighth of the icon, which can look bold next to 14px body text. Many teams drop to 1.5 for dense layouts.',
+          'You can adjust the stroke. `absoluteStrokeWidth` divides the stroke by the scale factor (`strokeWidth × 24 / size`), so at `size={48}` the default stroke of 2 is emitted as `stroke-width="1"` and still looks 2px on screen.',
+          'Each icon is a small module. The ES module for `House` is 594 bytes before minification (385 gzipped), and the package declares `sideEffects: false`, so bundlers drop icons you never import.',
+          'Coverage for product UI is good: arrows, files, text formatting, charts, devices and general-purpose symbols.',
+          'Brand marks are on their way out. `Github`, `Figma` and a few other logos still ship, but they are marked `@deprecated` and slated for removal in v1.0. Don’t build on them; use a dedicated brand-icon set.',
+          'There is only one style. If your design uses filled icons for active states, you need a second library or hand-made SVGs.',
+          'Icons get renamed. Lucide renames icons over time and keeps the old name as an alias. In 0.460.0, 203 of the 1,742 icon files are aliases; `home.js`, for example, just re-exports `house.js`. Old tutorials still compile, but the docs only list the new name.',
+          '2px is heavy at 16px. At that size the default stroke is one eighth of the icon, which can look bold next to 14px body text. Many teams drop to 1.5 for dense layouts.',
         ],
       },
       {
@@ -161,8 +161,8 @@ export function Toolbar() {
       {
         heading: 'Lucide vs. Tabler vs. Heroicons Outline',
         paragraphs: [
-          'Lucide and Tabler render nearly identical root attributes — 24×24, 2px strokes, round caps and joins — so they can share an interface without clashing. The practical differences are catalogue size (about 1,500 vs. 5,986), the prop that sets line weight (`strokeWidth` in Lucide, `stroke` in Tabler), and naming (`House` vs. `IconHome`). Tabler also offers about 1,000 filled variants; Lucide offers none.',
-          'Heroicons Outline uses a 1.5 stroke and has 324 icons. Mixed with Lucide at default settings, Heroicons will look noticeably lighter; set Lucide to `strokeWidth={1.5}` if you must combine them.',
+          'Lucide and Tabler render nearly identical root attributes (24×24, 2px strokes, round caps and joins), so they can share an interface without clashing. The practical differences are catalogue size (about 1,500 vs. 5,986), the prop that sets line weight (`strokeWidth` in Lucide, `stroke` in Tabler), and naming (`House` vs. `IconHome`). Tabler also offers about 1,000 filled variants; Lucide offers none.',
+          'Heroicons Outline uses a 1.5 stroke and has 324 icons. Next to Lucide at default settings it looks noticeably lighter, so set Lucide to `strokeWidth={1.5}` if you have to combine them.',
         ],
       },
       {
@@ -194,7 +194,8 @@ export function CmsIcon({ name }: { name: Name }) {
       {
         heading: 'License: ISC and the Feather lineage',
         paragraphs: [
-          'Lucide uses the ISC license, which is functionally equivalent to MIT: you may use, modify and ship the icons in commercial products without paying or asking. The one obligation is to keep the copyright and license notice with copies of the software — in practice, the LICENSE file in your repository or a third-party notices page. Because Lucide grew out of Feather Icons, that notice also carries Feather’s MIT copyright for the portions it inherited, so keep both lines. You do not have to credit Lucide in your interface.',
+          'Lucide uses the ISC license, which works like MIT: you can use, modify and ship the icons in commercial products without paying or asking. The one obligation is to keep the copyright and license notice with copies of the software. In practice that means the LICENSE file in your repository or a third-party notices page.',
+          'Lucide grew out of Feather Icons, so the notice also carries Feather’s MIT copyright for the inherited parts. Keep both lines. You don’t have to credit Lucide in your interface.',
         ],
       },
     ],
@@ -218,9 +219,9 @@ export function CmsIcon({ name }: { name: Name }) {
   tabler: {
     slug: 'tabler',
     name: 'Tabler Icons',
-    tagline: '5,986 icons — the widest coverage of any library in Icony',
+    tagline: '5,986 icons, the widest coverage of any library in Icony',
     description:
-      'Tabler Icons is the largest set in Icony: 4,985 outline icons and 1,001 filled icons in the React package, all on a 24×24 grid. The outline style uses the same 2px round-capped strokes as Lucide, so the two look like siblings, but Tabler goes much further into specialist territory — medical, finance, hardware, weather, maps and hundreds of brand logos. It is the library to reach for when you are tired of drawing the one icon your set is missing.',
+      'Tabler Icons is the largest set in Icony: 4,985 outline icons and 1,001 filled icons in the React package, all on a 24×24 grid. The outline style uses the same 2px round-capped strokes as Lucide, so the two look like siblings, but Tabler goes much further into specialist territory: medical, finance, hardware, weather, maps and hundreds of brand logos. Reach for it when you’re tired of drawing the one icon your set is missing.',
     npm: '@tabler/icons-react',
     iconCount: 5986,
     license: 'MIT',
@@ -259,7 +260,7 @@ export function Nav({ active }: { active: boolean }) {
     relatedSlugs: ['lucide', 'bootstrap'],
     metaTitle: 'Tabler Icons — 5,900+ Free React Icons | Icony',
     metaDescription:
-      'Tabler Icons in depth: 4,985 outline + 1,001 filled icons, 24×24 grid, the stroke prop, Filled components, bundle behaviour and MIT license — measured from the package.',
+      'Tabler Icons in depth: 4,985 outline + 1,001 filled icons, 24×24 grid, the stroke prop, Filled components, bundle behaviour and MIT license, measured from the package.',
     specs: [
       { label: 'Version examined', value: '@tabler/icons-react 3.36.1' },
       { label: 'Icons in the package', value: '5,986 (4,985 outline, 1,001 filled)' },
@@ -274,41 +275,43 @@ export function Nav({ active }: { active: boolean }) {
       {
         heading: 'Design language',
         paragraphs: [
-          'A rendered `<IconHome />` has the same root attributes as a Lucide icon: `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2"`, round caps and joins. The drawing is more geometric, though. The house is three paths — roof, walls, door — written mostly as straight line commands (`l9 -9l9 9`), with rounded corners only where walls meet the floor. Tabler shapes tend to be built from simple primitives, which keeps 5,000+ icons looking related.',
-          'The raw SVG files in the companion `@tabler/icons` package contain one extra element: `<path stroke="none" d="M0 0h24v24H0z" fill="none"/>`, an invisible 24×24 box that keeps the bounding box stable in design tools. The React components leave it out, so do not be surprised if a file copied from the website differs slightly from what React renders.',
-          'Filled icons are a different drawing model. `IconHomeFilled` renders `fill="currentColor"` and `stroke="none"`, with the door cut out of a single solid path. Only 1,001 icons — roughly one in six — have a filled version, so a fully filled UI is not realistic with Tabler alone.',
+          'A rendered `<IconHome />` has the same root attributes as a Lucide icon: `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2"`, round caps and joins. The drawing is more geometric, though.',
+          'The house is three paths (roof, walls, door), written mostly as straight line commands (`l9 -9l9 9`), with rounded corners only where walls meet the floor. Tabler shapes tend to be built from simple primitives, which keeps 5,000+ icons looking related.',
+          'The raw SVG files in the companion `@tabler/icons` package contain one extra element: `<path stroke="none" d="M0 0h24v24H0z" fill="none"/>`, an invisible 24×24 box that keeps the bounding box stable in design tools. The React components leave it out, so a file copied from the website can differ slightly from what React renders.',
+          'Filled icons are a different drawing model. `IconHomeFilled` renders `fill="currentColor"` and `stroke="none"`, with the door cut out of a single solid path. Only 1,001 icons (roughly one in six) have a filled version, so you can’t build a fully filled UI from Tabler alone.',
         ],
       },
       {
         heading: 'Coverage, cost and trade-offs',
         bullets: [
-          'Strength — coverage. With 5,986 icons, the chance that a niche concept already exists (a specific medical device, a payment brand, a chart type) is far higher than in any other set here.',
-          'Strength — adjustable strokes, like Lucide. The `stroke` prop maps directly to `stroke-width`.',
-          'Strength — small per-icon modules: `IconHome.mjs` is 651 bytes (385 gzipped), and the package is marked `sideEffects: false`.',
-          'Weakness — size of the install. `@tabler/icons-react` occupies about 74 MB in `node_modules`. It does not reach your users, but it slows fresh installs and CI caches.',
-          'Weakness — uneven filled coverage. Mixing outline and filled states works only for the icons that have both.',
-          'Weakness — in a catalogue this large, some specialised icons carry more detail than the core set and get busy at 16px.',
+          'Coverage. With 5,986 icons, a niche concept (a specific medical device, a payment brand, a chart type) is far more likely to exist here than in any other set on this site.',
+          'Strokes are adjustable, as in Lucide. The `stroke` prop maps directly to `stroke-width`.',
+          'Per-icon modules are small: `IconHome.mjs` is 651 bytes (385 gzipped), and the package is marked `sideEffects: false`.',
+          'The install is big. `@tabler/icons-react` takes about 74 MB in `node_modules`. Your users never download it, but it slows fresh installs and CI caches.',
+          'Filled coverage is uneven. Switching between outline and filled states only works for icons that have both.',
+          'In a catalogue this large, some specialised icons carry more detail than the core set and get busy at 16px.',
         ],
       },
       {
         heading: 'Cases where Tabler is overkill',
         bullets: [
           'You need every icon in both outline and solid: Phosphor or Heroicons cover that fully.',
-          'Your UI only needs 50–100 common icons and you want the most polished small set; Heroicons or Lucide will do and are easier to browse.',
-          'You render primarily below 16px, where a 24-unit grid with 2-unit strokes gets muddy; a 16×16 set like Bootstrap Icons holds up better.',
+          'Your UI only needs 50–100 common icons and you want the most polished small set. Heroicons or Lucide will do, and they are easier to browse.',
+          'You mostly render below 16px, where a 24-unit grid with 2-unit strokes gets muddy. A 16×16 set like Bootstrap Icons holds up better.',
         ],
       },
       {
         heading: 'Tabler vs. Lucide vs. Bootstrap Icons',
         paragraphs: [
-          'Tabler and Lucide are visually compatible, so the choice is mostly about catalogue size and API. Lucide calls the prop `strokeWidth`; Tabler calls it `stroke`. Lucide exports `House`; Tabler exports `IconHome` — the `Icon` prefix means Tabler names almost never collide with your own components.',
-          'Bootstrap Icons is the other large set (2,078 components) but draws on a 16×16 grid with filled outlines instead of strokes, so line weight is fixed. Pick Tabler if you want to tune stroke weight; pick Bootstrap if you want small-size crispness and a more traditional look.',
+          'Tabler and Lucide are visually compatible, so the choice is mostly about catalogue size and API. Lucide calls the prop `strokeWidth`; Tabler calls it `stroke`. Lucide exports `House`; Tabler exports `IconHome`.',
+          'That `Icon` prefix means Tabler names almost never collide with your own components.',
+          'Bootstrap Icons is the other large set (2,078 components), but it draws on a 16×16 grid with filled outlines instead of strokes, so line weight is fixed. Pick Tabler to tune stroke weight. Pick Bootstrap for crisp small sizes and a more traditional look.',
         ],
       },
       {
         heading: 'Installation gotchas',
         bullets: [
-          'The React package is `@tabler/icons-react`. The companion `@tabler/icons` package holds the raw SVG files and JSON icon data — useful outside React or in build scripts, not what you import in components.',
+          'The React package is `@tabler/icons-react`. The companion `@tabler/icons` package holds the raw SVG files and JSON icon data. That’s useful outside React or in build scripts, but it isn’t what you import in components.',
           'Next.js 16 includes `@tabler/icons-react` in its default `optimizePackageImports`, so named imports stay cheap in development. In other setups, import named components and avoid namespace imports.',
           'Use `stroke`, not `strokeWidth`. Passing `strokeWidth` also works because extra props are spread onto the `<svg>` last, but it bypasses the component’s own prop and is easy to miss in reviews.',
           'Filled components ignore `stroke`. Size them with `size` and colour them with `color` like any other icon.',
@@ -318,7 +321,8 @@ export function Nav({ active }: { active: boolean }) {
       {
         heading: 'License: MIT, no credit required',
         paragraphs: [
-          'Tabler Icons is MIT-licensed, which is unusually generous for a set of nearly 6,000 icons: use them in commercial and closed-source products, modify them, and redistribute them. Keep the copyright and license notice with the code you ship; a notices file is enough, and no credit is required in the interface. The license covers the whole catalogue, including the brand-logo icons’ drawings — the trademarks themselves remain the property of their owners.',
+          'Tabler Icons is MIT-licensed. For a set of nearly 6,000 icons that is unusually generous: you can use them in commercial and closed-source products, modify them and redistribute them. Keep the copyright and license notice with the code you ship. A notices file is enough, and no credit is required in the interface.',
+          'The license covers the whole catalogue, including the drawings of the brand-logo icons. The trademarks themselves still belong to their owners.',
         ],
       },
     ],
@@ -344,7 +348,7 @@ export function Nav({ active }: { active: boolean }) {
     name: 'Phosphor Icons',
     tagline: '1,512 icons, each in six hand-drawn weights',
     description:
-      'Phosphor Icons gives each of its 1,512 icons six weights — thin, light, regular, bold, fill and duotone — selected with a single weight prop. Unlike Lucide or Tabler, Phosphor does not use SVG strokes: every weight is a separately drawn filled outline on a 256×256 canvas. That makes the weights look better balanced than a stroke slider, but it also means the line thickness is fixed to those four line weights.',
+      'Phosphor Icons gives each of its 1,512 icons six weights (thin, light, regular, bold, fill and duotone), selected with a single weight prop. Unlike Lucide or Tabler, Phosphor does not use SVG strokes: every weight is a separately drawn filled outline on a 256×256 canvas. The weights end up better balanced than a stroke slider would make them, but line thickness is limited to those four line weights.',
     npm: '@phosphor-icons/react',
     iconCount: 1512,
     license: 'MIT',
@@ -399,24 +403,24 @@ export function Toolbar() {
           'A rendered Phosphor icon has `viewBox="0 0 256 256"`, `fill="currentColor"` and no stroke attributes at all. What looks like a line is the space between two filled contours. For `House`, each weight is a different path: thin, light, regular and bold move the contours apart by different amounts, fill is a solid shape, and duotone stacks a background shape at `opacity="0.2"` under the regular outline.',
           'You can read the line weights straight from the `House` paths by comparing the outer and inner wall contours: thin is 8 units thick, light 12, regular 16 and bold 24. On a 256-unit canvas rendered at 24px that is roughly 0.75px, 1.1px, 1.5px and 2.25px. Regular therefore matches the 1.5px line of Heroicons Outline, not the 2px default of Lucide and Tabler.',
           'Measured on `House`, the rendered SVG is 427 bytes for thin, 436 for light, 387 for regular, 414 for bold, 324 for fill and 521 for duotone. The large canvas lets Phosphor use whole-number coordinates (`M219.31,108.68l-80-80…`) and gentle 8- to 16-unit corner radii, which gives the set its friendly, slightly rounded feel.',
-          'The consequence is that a continuous stroke slider does not exist. Icony’s stroke control, for example, maps its 0.5–4 range onto Phosphor weights: 1 or below becomes thin, up to 1.75 becomes light, up to 2.5 becomes regular, and anything higher becomes bold. Duotone is left out of that mapping because it is a different style, not a heavier line.',
+          'So there is no continuous stroke slider. Icony’s stroke control, for example, maps its 0.5–4 range onto Phosphor weights: 1 or below becomes thin, up to 1.75 becomes light, up to 2.5 becomes regular, and anything higher becomes bold. Duotone is left out of that mapping because it is a different style, not a heavier line.',
         ],
       },
       {
         heading: 'Strengths and weaknesses',
         bullets: [
-          'Strength — every icon has every weight. You can use light icons in body content, bold icons in a toolbar and fill for selected states without mixing libraries.',
-          'Strength — duotone gives a two-tone look using only `currentColor` and opacity, so it still follows your text colour and dark mode.',
-          'Strength — `IconContext` sets defaults once instead of repeating props on every icon.',
-          'Weakness — per-icon weight. Each icon’s definition file carries all six weights: `defs/House.es.js` is 2,662 bytes (772 gzipped), even if you only render regular. That is roughly double what a single Lucide icon costs.',
-          'Weakness — no fine stroke control. If your design system specifies a 1.25px line, Phosphor cannot match it exactly.',
-          'Weakness — `1em` default size. Icons silently change size when the parent font size changes; set `size` or an `IconContext` default.',
+          'Every icon has every weight. You can use light icons in body content, bold icons in a toolbar and fill for selected states without mixing libraries.',
+          'Duotone gives a two-tone look using only `currentColor` and opacity, so it still follows your text colour and dark mode.',
+          '`IconContext` sets defaults once, so you don’t repeat props on every icon.',
+          'Each icon costs more. Its definition file carries all six weights: `defs/House.es.js` is 2,662 bytes (772 gzipped), even if you only render regular. That is roughly double what a single Lucide icon costs.',
+          'There is no fine stroke control. If your design system specifies a 1.25px line, Phosphor cannot match it exactly.',
+          'The default size is `1em`. Icons silently change size when the parent font size changes, so set `size` or an `IconContext` default.',
         ],
       },
       {
         heading: 'Situations where Phosphor is a poor fit',
         bullets: [
-          'You ship hundreds of icons on a single route and bundle size is tightly budgeted — a stroke set with one style per module is lighter.',
+          'You ship hundreds of icons on a single route on a tight bundle budget. A stroke set with one style per module is lighter.',
           'Your design tokens define stroke width as an exact value that must match other line art.',
           'You need very specialised or brand icons in bulk; Tabler’s catalogue is much larger.',
         ],
@@ -424,8 +428,9 @@ export function Toolbar() {
       {
         heading: 'Phosphor vs. Lucide',
         paragraphs: [
-          'At 24px, Phosphor regular is lighter than Lucide’s default: its lines are 1.5px against Lucide’s 2px. Set Lucide to `strokeWidth={1.5}` and they match closely, but the construction still differs. Lucide lets you pick any stroke value and keeps one small module per icon. Phosphor offers fewer choices, but each weight is drawn by hand, so small counters and joins stay open at bold weights where a thickened stroke would clog. If you need solid states, Phosphor wins outright; Lucide has no fill style.',
-          'Naming also differs: Phosphor uses descriptive nouns (`House`, `MagnifyingGlass`, `Gear`), not actions (`Home`, `Search`, `Settings`). Search by object, not by function.',
+          'At 24px, Phosphor regular is lighter than Lucide’s default: its lines are 1.5px against Lucide’s 2px. Set Lucide to `strokeWidth={1.5}` and they match closely, but the construction still differs.',
+          'Lucide lets you pick any stroke value and keeps one small module per icon. Phosphor offers fewer choices, but each weight is drawn by hand, so small counters and joins stay open at bold weights where a thickened stroke would clog. If you need solid states, Phosphor wins outright, because Lucide has no fill style.',
+          'Naming differs too. Phosphor uses descriptive nouns (`House`, `MagnifyingGlass`, `Gear`), not actions (`Home`, `Search`, `Settings`). Search by object, not by function.',
         ],
       },
       {
@@ -435,7 +440,7 @@ export function Toolbar() {
           'The default entry uses React context, so in the Next.js App Router it only works inside client components. For server components, import from `@phosphor-icons/react/ssr`, which renders without context (and therefore ignores `IconContext`).',
           'Every icon is exported twice, as `House` and `HouseIcon`. Use the `…Icon` form if the short name clashes with one of your components.',
           'The `alt` prop renders a `<title>` inside the SVG. Phosphor does not add `aria-hidden`, so set it on decorative icons.',
-          'For right-to-left layouts, `mirrored` flips the icon with `transform="scale(-1, 1)"` — use it for arrows and chat bubbles, not for icons with text or clocks.',
+          'For right-to-left layouts, `mirrored` flips the icon with `transform="scale(-1, 1)"`. Use it for arrows and chat bubbles, not for icons with text or clocks.',
         ],
         code: `// app/page.tsx — a server component in the Next.js App Router
 import { House } from '@phosphor-icons/react/ssr';
@@ -462,7 +467,7 @@ export default function Page() {
       },
       {
         q: 'What is the difference between this page and Phosphor Filled?',
-        a: 'Same package and icons. This page covers the weight system as a whole; the Filled page covers the `fill` weight specifically — how it is drawn and how to use solid icons well.',
+        a: 'Same package, same icons. This page covers the weight system as a whole. The Filled page is about the `fill` weight: how it is drawn and how to use solid icons well.',
       },
     ],
   },
@@ -471,9 +476,9 @@ export default function Page() {
   'phosphor-fill': {
     slug: 'phosphor-fill',
     name: 'Phosphor Icons (Filled)',
-    tagline: 'A solid version of all 1,512 Phosphor icons — redrawn, not just filled in',
+    tagline: 'A solid version of all 1,512 Phosphor icons, redrawn rather than filled in',
     description:
-      'Phosphor Fill is the weight="fill" style of Phosphor Icons. What makes it unusual is coverage: all 1,512 Phosphor icons have a fill version, which is rare among free libraries. The fill shapes are separately drawn, not the outline with the inside painted — details such as a house’s door or a gear’s hub are cut out of the solid shape so the icon stays readable. Icony lists it as its own library so you can browse and export solid icons directly.',
+      'Phosphor Fill is the weight="fill" style of Phosphor Icons. The unusual part is coverage: all 1,512 Phosphor icons have a fill version, which is rare among free libraries. The fill shapes are drawn separately rather than painted inside the outline. Details such as a house’s door or a gear’s hub are cut out of the solid shape so the icon stays readable. Icony lists it as its own library so you can browse and export solid icons directly.',
     npm: '@phosphor-icons/react',
     iconCount: 1512,
     license: 'MIT',
@@ -482,7 +487,7 @@ export default function Page() {
     features: [
       'Fill version exists for all 1,512 icons (checked in the package)',
       'Solid shapes redrawn with cut-out details',
-      'Same component as the outline — switch with `weight`',
+      'Same component as the outline; switch with `weight`',
       'Identical bounding box across weights, so no layout shift',
       'Often a smaller SVG than the outline version',
       'MIT license, same package as Phosphor',
@@ -538,8 +543,9 @@ export function TabBar({ pathname }: { pathname: string }) {
       {
         heading: 'How the fill shapes are drawn',
         paragraphs: [
-          'Compare the regular and fill markup for `House`. Regular is one path made of an outer contour and an inner contour — the gap between them is the “line”. Fill is a single contour describing the silhouette, with the door notched out (`V164a4,4,0,0,0-4-4H108a4,4…`). The same pattern appears in `Gear`: the fill version is the silhouette with a circular hole for the hub, and its path is about half as long as the regular one (1,024 vs. 2,008 rendered bytes).',
-          'Because details are cut out rather than drawn as lines, fill icons stay legible at sizes where thin lines start to disappear, and they hold up on saturated button backgrounds. The trade-off is that fine interior detail is simplified; icons whose meaning depends on inner strokes (a document with text lines, a detailed chart) carry less information in fill form.',
+          'Compare the regular and fill markup for `House`. Regular is one path made of an outer contour and an inner contour, and the gap between them is the “line”. Fill is a single contour describing the silhouette, with the door notched out (`V164a4,4,0,0,0-4-4H108a4,4…`).',
+          '`Gear` follows the same pattern. The fill version is the silhouette with a circular hole for the hub, and its path is about half as long as the regular one (1,024 vs. 2,008 rendered bytes).',
+          'Because details are cut out rather than drawn as lines, fill icons stay legible at sizes where thin lines start to disappear, and they hold up on saturated button backgrounds. The cost is simpler interior detail. Icons whose meaning depends on inner strokes (a document with text lines, a detailed chart) say less in fill form.',
         ],
       },
       {
@@ -555,30 +561,31 @@ export function TabBar({ pathname }: { pathname: string }) {
         heading: 'When not to use the fill style',
         bullets: [
           'As the only style for a whole interface. Large areas of solid icons feel heavy, and without an outline counterpart you lose the easy way to show state.',
-          'For icons that rely on internal detail — maps, charts, documents — where outline weights communicate more.',
-          'When state is shown by icon style alone. Filled versus outline is a visual cue; also set `aria-current`, `aria-pressed` or text so the state is available to assistive technology.',
+          'For icons that rely on internal detail, such as maps, charts and documents. Outline weights show more there.',
+          'When icon style is the only sign of state. Filled versus outline is a visual cue, so also set `aria-current`, `aria-pressed` or text for assistive technology.',
         ],
       },
       {
         heading: 'Phosphor Fill vs. other solid sets',
         paragraphs: [
-          'Heroicons Solid is the closest alternative: 324 icons on a 24×24 grid with names matching its outline set, plus separately drawn 20px and 16px solid sets. It is smaller but very polished. Tabler has 1,001 filled icons alongside 4,985 outline ones, so only some outline icons have a solid partner. Bootstrap Icons has 670 `…Fill` variants out of 2,078 components. Phosphor is the only one of these where every icon has a solid form, which makes it the safest choice if your design depends on outline/solid pairs.',
-          'Phosphor Fill also sits a little lighter than Heroicons Solid because of its larger corner radii; if you combine them, check side by side at your target size.',
+          'Heroicons Solid is the closest alternative: 324 icons on a 24×24 grid with names matching its outline set, plus separately drawn 20px and 16px solid sets. It is smaller but very polished.',
+          'Tabler has 1,001 filled icons alongside 4,985 outline ones, so only some outline icons have a solid partner. Bootstrap Icons has 670 `…Fill` variants out of 2,078 components. Phosphor is the only one of these where every icon has a solid form, so it is the safest choice if your design depends on outline/solid pairs.',
+          'Phosphor Fill also looks a little lighter than Heroicons Solid because of its larger corner radii. If you combine them, compare them side by side at your target size.',
         ],
       },
       {
         heading: 'Usage notes',
         bullets: [
-          'There is nothing extra to install: fill is a weight of the same `@phosphor-icons/react` components.',
+          'Nothing extra to install. Fill is a weight of the same `@phosphor-icons/react` components.',
           'Set `weight="fill"` per icon, or once with `IconContext.Provider` in client components. In server components, import from `@phosphor-icons/react/ssr` and pass `weight` directly.',
-          'Stroke settings do not apply. In Icony, the stroke slider has no effect on this library; the renderer forces `weight="fill"` whatever the slider says.',
+          'Stroke settings don’t apply. In Icony, the stroke slider has no effect on this library, because the renderer forces `weight="fill"` whatever the slider says.',
           'Colour the icon with `color` or CSS `color`; the fill uses `currentColor`.',
         ],
       },
       {
         heading: 'License: same package, same terms',
         paragraphs: [
-          'There is no separate license for the fill style: `weight="fill"` is drawn from the same MIT-licensed Phosphor package, so the terms are the ones that cover the regular weight. Commercial use, modification and redistribution are allowed as long as the license notice stays with your source.',
+          'The fill style has no separate license. `weight="fill"` comes from the same MIT-licensed Phosphor package, so the same terms as the regular weight apply. Commercial use, modification and redistribution are allowed as long as the license notice stays with your source.',
         ],
       },
     ],
@@ -589,7 +596,7 @@ export function TabBar({ pathname }: { pathname: string }) {
       },
       {
         q: 'Can I colour the cut-out parts differently?',
-        a: 'Not with the fill weight — the cut-outs are holes, so the background shows through. For a two-tone look, use the `duotone` weight instead.',
+        a: 'Not with the fill weight. The cut-outs are holes, so the background shows through. For a two-tone look, use the `duotone` weight.',
       },
       {
         q: 'Will switching between regular and fill cause layout shift?',
@@ -604,7 +611,7 @@ export function TabBar({ pathname }: { pathname: string }) {
     name: 'Heroicons',
     tagline: 'A compact, polished 1.5px outline set from the makers of Tailwind CSS',
     description:
-      'Heroicons is a set of 324 icons from Tailwind Labs, published in four styles: 24px outline, 24px solid, 20px solid (“mini”) and 16px solid (“micro”). This page covers the outline style, which draws every icon with a 1.5 stroke on a 24×24 canvas — lighter than the 2px default of Lucide and Tabler. The set is small by design and consistently finished, and its components are made to be sized with CSS classes rather than props.',
+      'Heroicons is a set of 324 icons from Tailwind Labs, published in four styles: 24px outline, 24px solid, 20px solid (“mini”) and 16px solid (“micro”). This page covers the outline style, which draws every icon with a 1.5 stroke on a 24×24 canvas. That is lighter than the 2px default of Lucide and Tabler. The set is deliberately small and evenly finished, and you size its components with CSS classes rather than props.',
     npm: '@heroicons/react',
     iconCount: 175,
     license: 'MIT',
@@ -613,7 +620,7 @@ export function TabBar({ pathname }: { pathname: string }) {
     features: [
       '324 outline icons with a 1.5 stroke on a 24×24 grid',
       'Identical names across outline and solid styles',
-      'Sized with CSS classes — no `size` prop',
+      'Sized with CSS classes (there is no `size` prop)',
       '`aria-hidden="true"` and `data-slot="icon"` on every SVG',
       'Optional `title` / `titleId` props',
       'MIT license from Tailwind Labs',
@@ -658,49 +665,50 @@ export function Toolbar() {
         heading: 'Design language',
         paragraphs: [
           'The rendered `<HomeIcon />` from `24/outline` has `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"` and `stroke-width="1.5"`. The icon is one path, and its coordinates are full of quarter and eighth values (`M2.25 12`, `v10.125`, `c.621 0 1.125.504…`). That is deliberate: with a 1.5 stroke, placing lines on .75 and .125 offsets keeps edges aligned to the pixel grid at 24px, which is a large part of why Heroicons look sharp.',
-          'The 1.5 line makes the set feel lighter and more refined than Lucide or Tabler at their 2px defaults. Corners are softly rounded and shapes are slightly more literal — the home icon has a separate roofline and a floor line, for example.',
-          'Two attributes are always present on the SVG: `aria-hidden="true"` and `data-slot="icon"`. The first treats every icon as decorative by default. The second gives parent components a stable hook, so a button can style any icon inside it with a `[data-slot=icon]` selector.',
+          'The 1.5 line makes the set feel lighter and more refined than Lucide or Tabler at their 2px defaults. Corners are softly rounded and shapes are a bit more literal. The home icon, for example, has a separate roofline and a floor line.',
+          'Every SVG carries two attributes: `aria-hidden="true"` and `data-slot="icon"`. The first treats every icon as decorative by default. The second gives parent components a stable hook, so a button can style any icon inside it with a `[data-slot=icon]` selector.',
         ],
       },
       {
         heading: 'Strengths and weaknesses',
         bullets: [
-          'Strength — consistency. With 324 icons from a single team, there are no odd ones out.',
-          'Strength — outline and solid are true pairs. The file lists of `24/outline` and `24/solid` are identical, so state switching never hits a missing icon.',
-          'Strength — accessible default. Decorative icons are hidden from screen readers without you remembering to do it.',
-          'Weakness — small catalogue. 324 icons cover general app UI, but domain-specific concepts are often missing.',
-          'Weakness — no `size` prop. The SVG has no `width` or `height`; without a class it expands to fill its container.',
-          'Weakness — the 1.5 line can look faint at 16px or in light grey. The mini and micro solid sets exist for small sizes instead.',
+          'Consistency. 324 icons from a single team, and none of them look out of place.',
+          'Outline and solid are true pairs. The file lists of `24/outline` and `24/solid` are identical, so state switching never hits a missing icon.',
+          'Decorative icons are hidden from screen readers by default, so you don’t have to remember to do it.',
+          'The catalogue is small. 324 icons cover general app UI, but domain-specific concepts are often missing.',
+          'There is no `size` prop. The SVG has no `width` or `height`, so without a class it expands to fill its container.',
+          'The 1.5 line can look faint at 16px or in light grey. For small sizes, use the mini and micro solid sets.',
         ],
       },
       {
         heading: 'Reasons to look elsewhere',
         bullets: [
-          'You need hundreds of domain icons — Tabler or Lucide cover far more ground.',
+          'You need hundreds of domain icons. Tabler or Lucide cover far more ground.',
           'You do not use utility CSS and prefer a `size` prop API; Lucide and Tabler fit better.',
-          'Your icons are mostly 16px — use Heroicons’ own `16/solid` set or a small-grid library instead.',
+          'Your icons are mostly 16px. Use Heroicons’ own `16/solid` set or a small-grid library.',
         ],
       },
       {
         heading: 'Heroicons vs. Lucide',
         paragraphs: [
-          'Both are stroke-based on 24×24, and both accept `strokeWidth`, so you can set Heroicons to 2 or Lucide to 1.5 to make them match. The differences are catalogue size (324 vs. about 1,500), API (class-based sizing vs. a `size` prop), accessibility defaults (Heroicons hides icons by default; Lucide 0.460.0 does not), and the availability of designed solid versions, which Lucide lacks.',
+          'Both are stroke-based on 24×24, and both accept `strokeWidth`, so you can set Heroicons to 2 or Lucide to 1.5 to make them match.',
+          'They differ in catalogue size (324 vs. about 1,500) and API (class-based sizing vs. a `size` prop). Accessibility defaults differ too: Heroicons hides icons by default, Lucide 0.460.0 does not. And Heroicons has designed solid versions, which Lucide lacks.',
         ],
       },
       {
         heading: 'Setup notes',
         bullets: [
           'You must import from a style path: `@heroicons/react/24/outline`, `24/solid`, `20/solid` or `16/solid`. Importing from the package root throws a runtime error that tells you exactly this.',
-          'Old tutorials import from `@heroicons/react/outline`. That is the v1 path; with v2 installed it throws an error suggesting you install v1. Update the path instead, and check names — v2 renamed many icons: there is no `MenuIcon` or `SearchIcon` in v2 — they are `Bars3Icon` and `MagnifyingGlassIcon`.',
+          'Old tutorials import from `@heroicons/react/outline`. That is the v1 path, and with v2 installed it throws an error suggesting you install v1. Update the path instead, and check the names, because v2 renamed many icons. There is no `MenuIcon` or `SearchIcon` in v2; they are now `Bars3Icon` and `MagnifyingGlassIcon`.',
           'All names end in `Icon`. Import both styles with aliases: `import { HomeIcon as HomeOutline } from …/24/outline`.',
-          'The `title` prop adds a `<title>` and `aria-labelledby`, but the SVG keeps `aria-hidden="true"`. For a meaningful standalone icon, also pass `aria-hidden={false}` — or better, label the button that contains it.',
+          'The `title` prop adds a `<title>` and `aria-labelledby`, but the SVG keeps `aria-hidden="true"`. For a meaningful standalone icon, also pass `aria-hidden={false}`. Better still, label the button that contains it.',
           'Next.js 16 lists `@heroicons/react/24/outline`, `24/solid` and `20/solid` in its default `optimizePackageImports`; `16/solid` is not on that list.',
         ],
       },
       {
         heading: 'License: MIT from Tailwind Labs',
         paragraphs: [
-          'Heroicons is MIT-licensed and published by Tailwind Labs, the makers of Tailwind CSS. Using it does not require Tailwind, and the license applies the same way in any stack: commercial use, modification and redistribution are allowed, and the notice stays with your source. No credit is needed in your UI.',
+          'Heroicons is MIT-licensed and published by Tailwind Labs, the makers of Tailwind CSS. You don’t need Tailwind to use it, and the license works the same in any stack: commercial use, modification and redistribution are allowed, and the notice stays with your source. No credit is needed in your UI.',
         ],
       },
     ],
@@ -726,7 +734,7 @@ export function Toolbar() {
     name: 'Heroicons (Solid)',
     tagline: 'Filled Heroicons in three separately drawn sizes: 24, 20 and 16px',
     description:
-      'Heroicons Solid is the filled side of the Tailwind Labs icon set, and it is really three sets: 24px solid (324 icons), 20px “mini” (324) and 16px “micro” (316). Each size is drawn on its own grid rather than scaled down, so the 16px home icon is a different, simpler shape from the 24px one. Names match the outline set exactly, which makes outline-to-solid state changes a one-line swap.',
+      'Heroicons Solid is the filled side of the Tailwind Labs icon set. It is really three sets: 24px solid (324 icons), 20px “mini” (324) and 16px “micro” (316). Each size is drawn on its own grid rather than scaled down, so the 16px home icon is a different, simpler shape from the 24px one. Names match the outline set exactly, so switching from outline to solid for a state change is a one-line swap.',
     npm: '@heroicons/react',
     iconCount: 175,
     license: 'MIT',
@@ -787,57 +795,59 @@ export function SaveButton() {
       {
         heading: 'Three sizes, three drawings',
         paragraphs: [
-          'Most libraries give you one drawing and let you scale it. Heroicons Solid does not. The 24px `HomeIcon` is two paths — a separate roof chevron and a body with a doorway — built on .75 and .125 offsets. The 20px mini version is a single path on whole-pixel coordinates (`M9.293 2.293a1 1 0 0 1 1.414 0l7 7…`) with a squarer, simpler shape. The 16px micro version is simpler still: one compact shape with a small rounded door opening. Each is tuned so its edges land on whole pixels at its native size.',
-          'That is the main reason to choose Heroicons Solid over scaling any filled icon down: at 16 and 20px, a drawing made for that grid is visibly crisper than a 24px drawing scaled by 0.67 or 0.83.',
-          'Complex icons use `fill-rule="evenodd"` and `clip-rule="evenodd"` to punch holes, as in `Cog6ToothIcon`, where the centre of the gear is a hole rather than a second shape. That means the background shows through — keep this in mind when placing icons on images or gradients.',
+          'Most libraries give you one drawing and let you scale it. Heroicons Solid does not.',
+          'The 24px `HomeIcon` is two paths, a separate roof chevron and a body with a doorway, built on .75 and .125 offsets. The 20px mini version is a single path on whole-pixel coordinates (`M9.293 2.293a1 1 0 0 1 1.414 0l7 7…`) with a squarer, simpler shape. The 16px micro version is simpler still: one compact shape with a small rounded door opening.',
+          'Each is tuned so its edges land on whole pixels at its native size.',
+          'That is the main reason to pick Heroicons Solid over scaling a filled icon down. At 16 and 20px, a drawing made for that grid is visibly crisper than a 24px drawing scaled by 0.67 or 0.83.',
+          'Complex icons use `fill-rule="evenodd"` and `clip-rule="evenodd"` to punch holes, as in `Cog6ToothIcon`, where the centre of the gear is a hole rather than a second shape. The background shows through, so keep that in mind when you place icons on images or gradients.',
         ],
       },
       {
         heading: 'Which size to use',
         bullets: [
-          '`24/solid` — primary navigation, tab bars, and anywhere the solid icon swaps with a 24px outline icon.',
-          '`20/solid` — inside buttons, form fields, dropdown items and menus, next to 14–16px text.',
-          '`16/solid` — dense tables, tags, badges and inline status. Note it has 316 icons, not 324: eight older icons such as `ArrowSmallUpIcon` and `PlusSmallIcon` are not drawn at this size.',
+          '`24/solid` for primary navigation, tab bars, and anywhere the solid icon swaps with a 24px outline icon.',
+          '`20/solid` inside buttons, form fields, dropdown items and menus, next to 14–16px text.',
+          '`16/solid` for dense tables, tags, badges and inline status. It has 316 icons, not 324: eight older icons such as `ArrowSmallUpIcon` and `PlusSmallIcon` are not drawn at this size.',
         ],
       },
       {
         heading: 'Trade-offs of the solid sets',
         bullets: [
-          'Strength — size-specific drawings, which almost no other free library provides.',
-          'Strength — exact name parity with the outline set at 24px, so `active ? Solid : Outline` never fails.',
-          'Strength — accessible default: every SVG carries `aria-hidden="true"`.',
-          'Weakness — the same 324-icon catalogue as the outline set; niche concepts are missing.',
-          'Weakness — solid icons have no stroke, so `strokeWidth` does nothing. In Icony, the stroke slider is inert for this library.',
-          'Weakness — no `size` prop and no default width/height; you must size icons with classes or CSS.',
+          'Each size has its own drawing. Almost no other free library does this.',
+          'Names match the outline set exactly at 24px, so `active ? Solid : Outline` never fails.',
+          'Every SVG carries `aria-hidden="true"` by default.',
+          'It shares the outline set’s 324-icon catalogue, so niche concepts are missing.',
+          'Solid icons have no stroke, so `strokeWidth` does nothing. In Icony, the stroke slider is inert for this library.',
+          'There is no `size` prop and no default width/height. You have to size icons with classes or CSS.',
         ],
       },
       {
         heading: 'When Solid falls short',
         bullets: [
-          'You need a solid style for more than a few hundred concepts — Phosphor Fill covers all 1,512 Phosphor icons.',
-          'You want solid icons at large display sizes with a rounder, friendlier look — Phosphor Fill’s larger corner radii suit that better.',
+          'You need a solid style for more than a few hundred concepts. Phosphor Fill covers all 1,512 Phosphor icons.',
+          'You want solid icons at large display sizes with a rounder, friendlier look. Phosphor Fill’s larger corner radii suit that better.',
           'You need solid icons with a two-tone effect; use Phosphor’s duotone weight.',
         ],
       },
       {
         heading: 'Heroicons Solid vs. Phosphor Fill',
         paragraphs: [
-          'Heroicons Solid wins on small-size crispness (thanks to the 20 and 16px sets) and on consistency. Phosphor Fill wins on breadth, a single component API (`weight="fill"` rather than a different import path), and zero layout risk when switching weights. If your product is Tailwind-based and needs under a few hundred icons, Heroicons is the tidier choice; otherwise Phosphor is safer.',
+          'Heroicons Solid wins on small-size crispness (thanks to the 20 and 16px sets) and on consistency. Phosphor Fill wins on breadth, a single component API (`weight="fill"` rather than a different import path), and zero layout risk when switching weights. For a Tailwind-based product that needs fewer than a few hundred icons, Heroicons is the tidier choice. Otherwise Phosphor is safer.',
         ],
       },
       {
         heading: 'Gotchas',
         bullets: [
-          'The size is in the import path. `HomeIcon` from `20/solid` is a different component from `HomeIcon` from `24/solid`; do not mix them up with auto-imports.',
-          'Always alias when importing both outline and solid, otherwise the names collide.',
+          'The size is in the import path. `HomeIcon` from `20/solid` is a different component from `HomeIcon` from `24/solid`, and auto-imports can easily grab the wrong one.',
+          'Alias the imports when you use both outline and solid, or the names collide.',
           'Mini and micro icons are designed for their native size. Rendering a `16/solid` icon at 24px throws away the reason to use it.',
-          'Showing state only by outline versus solid is not enough for assistive technology; add `aria-current` or `aria-pressed` as well.',
+          'Outline versus solid alone doesn’t tell assistive technology about state. Add `aria-current` or `aria-pressed` as well.',
         ],
       },
       {
         heading: 'License: one package, three sets',
         paragraphs: [
-          'Outline, 24px solid, 20px solid and 16px solid all ship in the same MIT-licensed `@heroicons/react` package, so there is one license to track no matter which of the sets you mix. Commercial use, modification and redistribution are allowed; keep the notice with your source.',
+          'Outline, 24px solid, 20px solid and 16px solid all ship in the same MIT-licensed `@heroicons/react` package, so there is one license to track whichever sets you mix. Commercial use, modification and redistribution are allowed; keep the notice with your source.',
         ],
       },
     ],
@@ -863,7 +873,7 @@ export function SaveButton() {
     name: 'Bootstrap Icons',
     tagline: 'A 2,000+ icon set drawn on a 16px grid, with outline and fill pairs',
     description:
-      'Bootstrap Icons is the icon library of the Bootstrap project: about 2,000 icons drawn on a 16×16 grid, with around a third of them available in a -fill variant. You do not need Bootstrap CSS to use them. In React, the common route is react-bootstrap-icons, a community wrapper that turns each SVG into a component; the version in this repo exposes 2,078 components. The small grid makes these icons unusually crisp at 16px and a little plain when blown up.',
+      'Bootstrap Icons is the icon library of the Bootstrap project: about 2,000 icons drawn on a 16×16 grid, with around a third of them available in a -fill variant. You don’t need Bootstrap CSS to use them. In React, most people use react-bootstrap-icons, a community wrapper that turns each SVG into a component; the version in this repo exposes 2,078 components. The small grid makes the icons unusually crisp at 16px and a little plain when blown up.',
     npm: 'react-bootstrap-icons',
     iconCount: 325,
     license: 'MIT',
@@ -871,7 +881,7 @@ export function SaveButton() {
     color: 'from-purple-600 to-indigo-700',
     features: [
       '2,078 React components, 670 of them `…Fill` variants',
-      '16×16 grid — sharp at small sizes',
+      '16×16 grid, sharp at small sizes',
       'Default size `1em`, so icons follow text size',
       'Brand logos included (GitHub, Google, Apple, Slack…)',
       'Works without Bootstrap CSS',
@@ -918,34 +928,36 @@ export function Example({ active }: { active: boolean }) {
       {
         heading: 'Design language',
         paragraphs: [
-          'A rendered `<House />` has `viewBox="0 0 16 16"`, `width="1em"`, `height="1em"`, `fill="currentColor"` and a `class="bi bi-house"`. There is no stroke: the walls are the gap between an outer and inner contour. On the house, that gap is exactly 1 unit (the outer floor sits at y=15, the inner at y=14), which works out to 1/16 of the icon — 1px at 16px, 1.5px at 24px.',
+          'A rendered `<House />` has `viewBox="0 0 16 16"`, `width="1em"`, `height="1em"`, `fill="currentColor"` and a `class="bi bi-house"`. There is no stroke: the walls are the gap between an outer and inner contour. On the house, that gap is exactly 1 unit (the outer floor sits at y=15, the inner at y=14). That is 1/16 of the icon: 1px at 16px, 1.5px at 24px.',
           'Drawing at 16 units means most edges fall on whole or half pixels at 16px, so the set looks crisp in tables, inputs and inline text. At 32px and above the same drawings start to look simple, because there are only 16 units of detail to scale up.',
-          'Outline and solid are separate icons. `HouseFill` is a different drawing — a roof line plus a solid body — not the outline painted in. Only 705 of the 2,078 components have `Fill` in their name, so not every outline icon has a solid partner.',
+          'Outline and solid are separate icons. `HouseFill` is its own drawing (a roof line plus a solid body), not the outline painted in.',
+          'Only 705 of the 2,078 components have `Fill` in their name, so not every outline icon has a solid partner.',
         ],
       },
       {
         heading: 'Pros and cons',
         bullets: [
-          'Strength — breadth plus small-size quality. Among the libraries in Icony, only Tabler is larger, and none is drawn for 16px the way this one is.',
-          'Strength — brand icons. Logos such as GitHub, Google, Apple, Windows, Discord and Slack are included, which many UI sets avoid.',
-          'Strength — `1em` sizing makes inline icons line up with text without extra CSS.',
-          'Weakness — no stroke control. Line weight is fixed; `strokeWidth` does nothing.',
-          'Weakness — the style is neutral and slightly dated next to rounder, trendier sets; it reads as “admin panel”.',
-          'Weakness — heavier modules. Each icon file in `react-bootstrap-icons` inlines Babel helpers and a `prop-types` definition; `house.js` is 2,291 bytes (1,026 gzipped) before minification, several times Lucide’s 594.',
+          'Breadth and small-size quality together. Among the libraries in Icony only Tabler is larger, and none is drawn for 16px the way this one is.',
+          'Brand icons are included. Logos such as GitHub, Google, Apple, Windows, Discord and Slack ship with it, which many UI sets avoid.',
+          '`1em` sizing lines inline icons up with text without extra CSS.',
+          'No stroke control. Line weight is fixed and `strokeWidth` does nothing.',
+          'The style is neutral and a bit dated next to rounder, trendier sets. It reads as “admin panel”.',
+          'Modules are heavier. Each icon file in `react-bootstrap-icons` inlines Babel helpers and a `prop-types` definition; `house.js` is 2,291 bytes (1,026 gzipped) before minification, several times Lucide’s 594.',
         ],
       },
       {
         heading: 'When to pick something else',
         bullets: [
-          'Your UI mainly uses large icons (32px+) in marketing sections — a 24-grid set with more detail will look better.',
-          'Your design needs adjustable line weight or a soft, rounded look — Lucide or Phosphor fit better.',
-          'You need solid versions of everything — Phosphor Fill or Heroicons Solid.',
+          'Your UI mainly uses large icons (32px+) in marketing sections. A 24-grid set with more detail will look better.',
+          'Your design needs adjustable line weight or a soft, rounded look. Lucide or Phosphor fit better.',
+          'You need solid versions of everything. Use Phosphor Fill or Heroicons Solid.',
         ],
       },
       {
         heading: 'Bootstrap Icons vs. Tabler',
         paragraphs: [
-          'Both are large, general-purpose, MIT-licensed sets. Tabler is 24-grid, stroke-based and adjustable; Bootstrap is 16-grid, fill-based and fixed. Tabler has the bigger catalogue (5,986) and an `Icon` prefix on every name; Bootstrap uses bare names like `House` and `Gear`. If most icons appear at 16px in data-heavy screens, Bootstrap tends to look sharper; at 24px and up, Tabler usually looks more modern.',
+          'Both are large, general-purpose, MIT-licensed sets. Tabler is 24-grid, stroke-based and adjustable; Bootstrap is 16-grid, fill-based and fixed.',
+          'Tabler has the bigger catalogue (5,986) and an `Icon` prefix on every name; Bootstrap uses bare names like `House` and `Gear`. If most icons appear at 16px in data-heavy screens, Bootstrap tends to look sharper; at 24px and up, Tabler usually looks more modern.',
         ],
       },
       {
@@ -954,14 +966,14 @@ export function Example({ active }: { active: boolean }) {
           '`react-bootstrap-icons` is a community wrapper maintained outside the Bootstrap team. The official package is `bootstrap-icons`, which ships SVG files, a sprite and an icon font. Use the official package for plain HTML or `<i class="bi bi-house">` markup, and the wrapper for React components.',
           'Names are bare PascalCase: `House`, `Link`, `Image`, `Map`, `Table`, `Window`. These collide with Next.js `Link` and `Image` and with your own components. Alias them: `import { Link as LinkIcon } from \'react-bootstrap-icons\'`.',
           'Icons whose names start with a digit get an `Icon` prefix: the file `0-circle` is exported as `Icon0Circle`.',
-          'The wrapper is not in Next.js 16’s default `optimizePackageImports`. If development builds feel slow, add it to that option in `next.config` yourself.',
-          '`title` renders a `<title>`, but no `aria-hidden` is added by default; set it on decorative icons.',
+          'The wrapper isn’t in Next.js 16’s default `optimizePackageImports`. If development builds feel slow, add it to that option in `next.config` yourself.',
+          '`title` renders a `<title>`, but `aria-hidden` isn’t added by default. Set it on decorative icons.',
         ],
       },
       {
         heading: 'License and logo trademarks',
         paragraphs: [
-          'Both the Bootstrap Icons artwork and the `react-bootstrap-icons` wrapper are MIT-licensed. You can use them commercially and modify them; keep the notices with your source. Brand logos are a separate matter: the MIT license covers the drawing, not the trademark, so follow each company’s brand guidelines when you display its logo.',
+          'Both the Bootstrap Icons artwork and the `react-bootstrap-icons` wrapper are MIT-licensed. You can use them commercially and modify them; keep the notices with your source. Brand logos are a different matter. The MIT license covers the drawing, not the trademark, so follow each company’s brand guidelines when you display its logo.',
         ],
       },
     ],
@@ -987,7 +999,7 @@ export function Example({ active }: { active: boolean }) {
     name: 'Radix Icons',
     tagline: 'A precise 15×15 set built for compact controls and design tools',
     description:
-      'Radix Icons is a set of 318 icons drawn on a 15×15 grid by the team behind Radix UI. The unusual grid is the point: the icons are made to render at exactly 15px inside compact controls such as dropdown triggers, checkboxes and toolbar buttons. The set leans toward interface and editor concepts — alignment, borders, spacing, typography, components — and includes a few tool logos such as Figma, GitHub and Vercel.',
+      'Radix Icons is a set of 318 icons drawn on a 15×15 grid by the team behind Radix UI. The odd grid is deliberate: the icons are meant to render at exactly 15px inside compact controls such as dropdown triggers, checkboxes and toolbar buttons. The set leans toward interface and editor concepts (alignment, borders, spacing, typography, components) and includes a few tool logos such as Figma, GitHub and Vercel.',
     npm: '@radix-ui/react-icons',
     iconCount: 218,
     license: 'MIT',
@@ -1027,7 +1039,7 @@ export function BigGear() {
     relatedSlugs: ['heroicons', 'lucide'],
     metaTitle: 'Radix Icons — 15×15 React Icons for Compact UI | Icony',
     metaDescription:
-      'Radix Icons explained: 318 icons on a 15×15 grid, fixed 15px default, no size prop, filled-outline drawing, bundle behaviour, and MIT license — measured from the package.',
+      'Radix Icons explained: 318 icons on a 15×15 grid, fixed 15px default, no size prop, filled-outline drawing, bundle behaviour, and MIT license, measured from the package.',
     specs: [
       { label: 'Version examined', value: '@radix-ui/react-icons 1.3.2' },
       { label: 'Icons in the package', value: '318' },
@@ -1042,20 +1054,20 @@ export function BigGear() {
       {
         heading: 'Design language',
         paragraphs: [
-          'A rendered `<HomeIcon />` is `width="15" height="15" viewBox="0 0 15 15"` with `fill="none"` on the root and `fill="currentColor"`, `fill-rule="evenodd"` and `clip-rule="evenodd"` on the path. Lines are about 1 unit wide and drawn as filled outlines, so at the native 15px they are 1px lines placed to land cleanly on the pixel grid. The style is thin, square-ish and neutral — closer to the icons in a design tool than to a friendly consumer app.',
-          'Coordinates are written with five decimal places (`M7.07926 0.222253C7.31275…`), which is why a simple house is 808 bytes rendered — about double Lucide’s house — and the gear is 2,834 bytes. At the handful of icons a Radix-style UI typically uses, this does not matter much, but it is noticeable if you inline many of them.',
+          'A rendered `<HomeIcon />` is `width="15" height="15" viewBox="0 0 15 15"` with `fill="none"` on the root and `fill="currentColor"`, `fill-rule="evenodd"` and `clip-rule="evenodd"` on the path. Lines are about 1 unit wide and drawn as filled outlines, so at the native 15px they are 1px lines placed to land cleanly on the pixel grid. The style is thin, square-ish and neutral, closer to a design tool’s icons than to a friendly consumer app.',
+          'Coordinates are written with five decimal places (`M7.07926 0.222253C7.31275…`). That is why a simple house is 808 bytes rendered, about double Lucide’s house, and the gear is 2,834 bytes. A Radix-style UI typically uses a handful of icons, so this rarely matters, but you’ll notice it if you inline many of them.',
           'The catalogue reflects its origin: alignment, border styles, spacing, letter case, component and frame icons sit next to general UI arrows and chevrons. There are 14 logo icons, including GitHub, Figma, Framer, Notion, Discord and Vercel.',
         ],
       },
       {
         heading: 'What works and what does not',
         bullets: [
-          'Strength — crisp at 15px. For chevrons in selects, checks in checkboxes and dots in menus, few sets look as clean at that size.',
-          'Strength — a good vocabulary for editors and design tools (borders, padding, margins, opacity, transforms).',
-          'Strength — small API: apart from `color`, props go straight to the `<svg>`.',
-          'Weakness — small catalogue. 318 icons will not cover e-commerce, media, weather or most domain concepts.',
-          'Weakness — odd grid. 15×15 does not scale evenly to 16, 20 or 24px; scaled icons lose their pixel alignment and can look slightly blurry.',
-          'Weakness — no stroke control and no solid set (a few icons have `Filled` twins, such as `StarFilledIcon` and `HeartFilledIcon`).',
+          'Crisp at 15px. For chevrons in selects, checks in checkboxes and dots in menus, few sets look as clean at that size.',
+          'A good vocabulary for editors and design tools (borders, padding, margins, opacity, transforms).',
+          'A small API. Apart from `color`, props go straight to the `<svg>`.',
+          'The catalogue is small. 318 icons won’t cover e-commerce, media, weather or most domain concepts.',
+          'The grid is odd. 15×15 doesn’t scale evenly to 16, 20 or 24px, so scaled icons lose their pixel alignment and can look slightly blurry.',
+          'No stroke control and no solid set (a few icons have `Filled` twins, such as `StarFilledIcon` and `HeartFilledIcon`).',
         ],
       },
       {
@@ -1069,16 +1081,17 @@ export function BigGear() {
       {
         heading: 'Radix Icons vs. Heroicons vs. Lucide',
         paragraphs: [
-          'Radix and Heroicons both favour a small, carefully finished catalogue, but Heroicons is drawn for 24px (and has redrawn 20 and 16px solid sets) while Radix is drawn for 15px. Lucide is the common pairing when a Radix-based UI outgrows the set: its much larger catalogue covers the gaps, but at 24px with 2px strokes it looks heavier, so if the two appear side by side, render Lucide at `size={15}` with `strokeWidth={1.5}` — about 0.94px on screen, close to Radix’s 1px lines — and check the result visually.',
+          'Radix and Heroicons both favour a small, carefully finished catalogue. Heroicons is drawn for 24px (and has redrawn 20 and 16px solid sets), while Radix is drawn for 15px.',
+          'Lucide is the usual pairing when a Radix-based UI outgrows the set. Its much larger catalogue covers the gaps, but at 24px with 2px strokes it looks heavier. If the two appear side by side, render Lucide at `size={15}` with `strokeWidth={1.5}` (about 0.94px on screen, close to Radix’s 1px lines) and check the result by eye.',
         ],
       },
       {
         heading: 'Installation gotchas',
         bullets: [
           'There is no `size` prop. Pass `width` and `height`, or style the SVG with CSS. The default is a fixed 15px, not `1em`, so the icon will not grow with text.',
-          'Every name ends in `Icon` (`HomeIcon`, `GearIcon`), and numbered variants are common (`Cross1Icon`, `Cross2Icon`, `Pencil1Icon`, `Pencil2Icon`). Check the preview — the numbers are variants, not versions.',
-          'The package ships all 318 icons in one ES module: `react-icons.esm.js` is 492,915 bytes (102,587 gzipped). Each icon is wrapped in `/*#__PURE__*/`, so production bundlers drop unused ones — but only with named imports. `import * as Icons` keeps everything.',
-          'No `aria-hidden` by default; add it to decorative icons and label icon-only buttons.',
+          'Every name ends in `Icon` (`HomeIcon`, `GearIcon`), and numbered variants are common (`Cross1Icon`, `Cross2Icon`, `Pencil1Icon`, `Pencil2Icon`). Check the preview: the numbers are variants, not versions.',
+          'The package ships all 318 icons in one ES module: `react-icons.esm.js` is 492,915 bytes (102,587 gzipped). Each icon is wrapped in `/*#__PURE__*/`, so production bundlers drop unused ones, but only with named imports. `import * as Icons` keeps everything.',
+          'There is no `aria-hidden` by default. Add it to decorative icons and label icon-only buttons.',
         ],
       },
       {

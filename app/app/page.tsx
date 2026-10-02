@@ -116,8 +116,8 @@ function AppIntro() {
       ]
     : [
         ['Find an icon', 'Search by name or filter by library to pick from more than 11,000 icons.'],
-        ['Shape it', 'Set the color and choose a size between 16 and 512px. Lucide, Tabler, Phosphor, and Heroicons also support stroke-width control.'],
-        ['Export', 'Download as PNG or SVG, or copy the icon as SVG or JSX. Select several and take them as a ZIP.'],
+        ['Shape it', 'Set the color and choose a size between 16 and 512px. Lucide, Tabler, Phosphor, and Heroicons also let you change the stroke width.'],
+        ['Export', 'Download as PNG or SVG, or copy the icon as SVG or JSX code. Select several to download them as one ZIP.'],
       ];
 
   return (
@@ -126,11 +126,18 @@ function AppIntro() {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
           {ko ? '무료 아이콘 편집기' : 'Free Icon Editor'}
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-          {ko
-            ? 'Icony는 오픈소스 아이콘을 브라우저에서 바로 커스터마이징하고 내보내는 도구입니다. Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, Radix Icons 등 8개 라이브러리의 아이콘 11,442개를 한 곳에서 검색하고, 색상·크기·선 두께를 조정해 PNG 또는 SVG로 저장할 수 있습니다. 가입도, 설치도, 워터마크도 없습니다.'
-            : 'Icony customizes and exports open-source icons straight from your browser. Search 11,442 icons across 8 libraries — Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix Icons — then adjust color, size, and stroke width and save as PNG or SVG. No signup, no install, no watermark.'}
-        </p>
+        <div className="space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+          <p>
+            {ko
+              ? 'Icony는 오픈소스 아이콘을 브라우저에서 바로 커스터마이징하고 내보내는 도구입니다. Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, Radix Icons 등 8개 라이브러리의 아이콘 11,442개를 한 곳에서 검색하고 색상·크기·선 두께를 조정해 PNG나 SVG로 저장할 수 있습니다.'
+              : 'Icony lets you customize and export open-source icons right in your browser. Search 11,442 icons from 8 libraries, including Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix Icons. Adjust the color, size, and stroke width, then save as PNG or SVG.'}
+          </p>
+          <p>
+            {ko
+              ? '가입이나 설치가 필요 없고 워터마크도 붙지 않습니다.'
+              : 'There is no signup, nothing to install, and no watermark.'}
+          </p>
+        </div>
 
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
           {ko ? '사용법' : 'How it works'}
@@ -149,21 +156,33 @@ function AppIntro() {
           ))}
         </ol>
 
-        <p className="text-sm text-gray-500 dark:text-gray-500 leading-relaxed">
+        <div className="space-y-3 text-sm text-gray-500 dark:text-gray-500 leading-relaxed">
           {ko ? (
             <>
-              모든 아이콘은 MIT 또는 ISC 라이선스로 배포되어 상업적 프로젝트에도 자유롭게 쓸 수 있습니다.
-              라이브러리별 설명은 <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">아이콘 라이브러리</Link> 페이지에,
-              자주 묻는 질문은 <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link>에 정리돼 있습니다. 앱 아이콘이나 파비콘이 필요하다면 <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">파비콘 생성기</Link>가 아이콘 하나로 favicon.ico, SVG, 터치 아이콘을 한 번에 만들어 줍니다.
+              <p>
+                모든 아이콘은 MIT 또는 ISC 라이선스로 배포되므로 상업적 프로젝트에도 자유롭게 쓸 수 있습니다. 라이브러리별 설명은{' '}
+                <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">아이콘 라이브러리</Link> 페이지에, 자주 묻는 질문은{' '}
+                <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link>에 정리돼 있습니다.
+              </p>
+              <p>
+                앱 아이콘이나 파비콘이 필요하다면{' '}
+                <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">파비콘 생성기</Link>가 아이콘 하나로 favicon.ico, SVG, 터치 아이콘을 한 번에 만들어 줍니다.
+              </p>
             </>
           ) : (
             <>
-              Every icon is MIT or ISC licensed, so you can use it freely in commercial work. See the{' '}
-              <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">icon libraries</Link> page
-              for what each set is good for, or the <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link> for common questions. Need a favicon or app icon? The <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">Favicon Generator</Link> turns any icon into favicon.ico, SVG, and touch icons in one ZIP.
+              <p>
+                Every icon is MIT or ISC licensed, so you can use it freely in commercial work. See the{' '}
+                <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">icon libraries</Link> page for what each set is good for, or the{' '}
+                <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link> for common questions.
+              </p>
+              <p>
+                Need a favicon or app icon? The{' '}
+                <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">Favicon Generator</Link> turns any icon into favicon.ico, SVG, and touch icons in one ZIP.
+              </p>
             </>
           )}
-        </p>
+        </div>
       </div>
     </section>
   );

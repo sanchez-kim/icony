@@ -18,29 +18,29 @@ export default function ContactPage() {
       icon: Bug,
       title: ko ? '버그 신고' : 'Bug Reports',
       description: ko
-        ? '아이콘이 안 보이거나, 내보내기 결과가 이상하거나, 특정 브라우저에서 동작이 다르다면 알려주세요. 사용 중인 브라우저와 아이콘 이름을 함께 적어주시면 훨씬 빨리 재현할 수 있습니다.'
-        : 'Icons not rendering, exports coming out wrong, or something behaving differently in your browser? Tell us. Including your browser and the icon name helps us reproduce it much faster.',
+        ? '아이콘이 안 보이거나 내보낸 결과가 이상하거나 특정 브라우저에서 동작이 다르면 알려 주세요. 쓰고 있는 브라우저와 아이콘 이름을 함께 적어 주시면 훨씬 빨리 재현할 수 있습니다.'
+        : 'If an icon won\'t render, an export comes out wrong, or something behaves differently in your browser, let us know. Mention your browser and the icon name and we can reproduce it much faster.',
     },
     {
       icon: Library,
       title: ko ? '아이콘 라이브러리 추가 요청' : 'Icon Library Requests',
       description: ko
-        ? '현재 8개 오픈소스 라이브러리를 지원합니다. 추가했으면 하는 라이브러리가 있다면 이름과 링크를 보내주세요. MIT·ISC 등 재배포가 허용된 라이선스여야 검토가 가능합니다.'
-        : 'We currently bundle 8 open-source libraries. Send the name and link of one you would like added. We can only review libraries under a license that permits redistribution, such as MIT or ISC.',
+        ? '현재 8개 오픈소스 라이브러리를 지원합니다. 추가됐으면 하는 라이브러리가 있다면 이름과 링크를 보내 주세요. MIT·ISC처럼 재배포를 허용하는 라이선스여야 검토할 수 있습니다.'
+        : 'We currently bundle 8 open-source libraries. If you want another one added, send its name and a link. We can only consider libraries whose license allows redistribution, such as MIT or ISC.',
     },
     {
       icon: Scale,
       title: ko ? '라이선스 · 상업적 이용' : 'Licensing & Commercial Use',
       description: ko
-        ? '아이콘은 각 원저작자의 오픈소스 라이선스(MIT 또는 ISC)를 따릅니다. 상업적 사용과 저작자 표시 범위에 대한 질문은 언제든 문의하세요.'
-        : 'Icons remain under their original open-source licenses (MIT or ISC). Ask us anytime about commercial use or how much attribution your project needs.',
+        ? '아이콘은 각 원저작자의 오픈소스 라이선스(MIT 또는 ISC)를 따릅니다. 상업적 사용이나 저작자 표시 범위가 궁금하면 언제든 문의하세요.'
+        : 'Icons stay under their original open-source licenses (MIT or ISC). Ask us anytime about commercial use or how much attribution your project needs.',
     },
     {
       icon: Megaphone,
       title: ko ? '제휴 · 기타 문의' : 'Partnerships & Everything Else',
       description: ko
-        ? '제휴, 인용, 오탈자 제보, 그 외 어떤 이야기든 환영합니다. 서비스 개선 제안은 특히 반갑습니다.'
-        : 'Partnerships, citations, typo reports, or anything else — all welcome. Suggestions for improving the tool are especially appreciated.',
+        ? '제휴, 인용, 오탈자 제보 등 어떤 이야기든 환영합니다. 서비스 개선 제안은 특히 반갑습니다.'
+        : 'Partnerships, citations, typo reports, anything at all. Ideas for improving the tool are especially welcome.',
     },
   ];
 
@@ -82,8 +82,8 @@ export default function ContactPage() {
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {ko
-              ? 'Icony는 한 명이 개발하고 운영하는 서비스입니다. 보내주시는 메일은 전부 직접 읽습니다.'
-              : 'Icony is built and run by one person. Every message you send is read personally.'}
+              ? 'Icony는 한 명이 개발하고 운영하는 서비스입니다. 보내 주시는 메일은 전부 직접 읽습니다.'
+              : 'Icony is built and run by one person, who reads every message personally.'}
           </p>
         </div>
 
@@ -95,8 +95,8 @@ export default function ContactPage() {
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-lg mx-auto">
               {ko
-                ? '아래 주소로 보내주세요. 받은 메일은 순서대로 확인하고 답장드립니다. 1인 운영이라 답장이 바로 가지 못할 수 있는 점 양해 부탁드립니다.'
-                : 'Write to the address below. Messages are read and answered in the order they arrive. Since Icony is run by one person, a reply may not be immediate.'}
+                ? '아래 주소로 보내 주세요. 받은 순서대로 확인하고 답장드립니다. 혼자 운영하는 터라 답장이 바로 가지 못할 수 있으니 양해 부탁드립니다.'
+                : 'Write to the address below. Messages are answered in the order they arrive. With only one person on the other end, a reply may take a while.'}
             </p>
             <a
               href={`mailto:${EMAIL}`}
@@ -108,7 +108,7 @@ export default function ContactPage() {
             <p className="text-xs text-gray-500 dark:text-gray-500 mt-5">
               {ko
                 ? '한국어와 영어 모두 가능합니다.'
-                : 'We correspond in both English and Korean.'}
+                : 'You can write in English or Korean.'}
             </p>
           </div>
         </section>
@@ -120,7 +120,7 @@ export default function ContactPage() {
           </h2>
           <p className="text-gray-500 dark:text-gray-500 mb-6 text-sm">
             {ko
-              ? '어떤 문의든 환영하지만, 아래 내용은 특히 도움이 됩니다.'
+              ? '어떤 문의든 환영하지만 아래 내용이면 특히 도움이 됩니다.'
               : 'Anything is welcome, but these are especially useful to us.'}
           </p>
           <div className="space-y-4">
@@ -150,12 +150,12 @@ export default function ContactPage() {
         <section className="mb-4">
           <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 text-center">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              {ko ? '먼저 FAQ를 확인해보세요' : 'Check the FAQ First'}
+              {ko ? '먼저 FAQ를 확인해 보세요' : 'Check the FAQ First'}
             </h2>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
               {ko
-                ? '가격, 라이선스, 지원 포맷, 내보내기 방법 등 자주 받는 질문은 FAQ에 정리돼 있습니다. 답이 있다면 기다리실 필요가 없습니다.'
-                : 'Pricing, licensing, supported formats, and how exporting works are all answered in the FAQ. If your answer is there, you will not have to wait for a reply.'}
+                ? '가격, 라이선스, 지원 포맷, 내보내기 방법처럼 자주 받는 질문은 FAQ에 정리해 두었습니다. 거기서 답을 찾으면 답장을 기다리실 필요가 없습니다.'
+                : 'The FAQ covers pricing, licensing, supported formats, and how exporting works. If your answer is there, you won\'t have to wait for a reply.'}
             </p>
             <Link
               href="/faq"

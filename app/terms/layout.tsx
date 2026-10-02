@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const title = 'Terms of Service';
-const description = 'Terms of service for Icony, the free icon customizer and exporter tool.';
+const description = 'Terms of service for Icony, the free icon customizer and exporter.';
 
 export const metadata: Metadata = {
   title,

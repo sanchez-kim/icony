@@ -17,8 +17,8 @@ export default function BlogIndexPage() {
     title: lang === 'ko' ? '블로그' : 'Blog',
     intro:
       lang === 'ko'
-        ? '아이콘과 SVG 작업을 위한 실용 가이드·팁·트러블슈팅 — 색상, 크기, React 컴포넌트, 그리고 라이브러리 선택까지.'
-        : 'Practical guides, tips, and troubleshooting for working with icons and SVG — color, sizing, React components, and choosing the right library.',
+        ? '아이콘과 SVG를 다룰 때 필요한 가이드와 팁, 트러블슈팅을 모았습니다. 색상·크기·React 컴포넌트부터 라이브러리 선택까지 다룹니다.'
+        : 'Guides, tips, and fixes for working with icons and SVG. They cover color, sizing, React components, and picking a library.',
     read: lang === 'ko' ? '가이드 읽기' : 'Read guide',
     min: lang === 'ko' ? '분' : 'min',
   };

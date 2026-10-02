@@ -43,8 +43,7 @@ export default function IconLibrariesPage() {
             Icon Libraries
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Icony supports 8 of the most popular open-source React icon libraries.
-            All icons are free, open-source (MIT or ISC), and ready to customize.
+            Icony bundles 8 popular open-source React icon libraries. Every icon is free to use under MIT or ISC, and you can recolor and resize any of them.
           </p>
         </div>
 
@@ -116,10 +115,10 @@ export default function IconLibrariesPage() {
         {/* CTA */}
         <div className="mt-16 text-center p-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-3xl">
           <h2 className="text-2xl font-bold text-white mb-3">
-            Ready to customize icons?
+            Start customizing
           </h2>
           <p className="text-primary-100 mb-6">
-            Pick any icon from all 8 libraries, change colors, adjust size, and export as PNG or SVG.
+            Pick an icon from any of the 8 libraries, set its color and size, and export it as PNG or SVG.
           </p>
           <Link
             href="/app"

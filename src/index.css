@@ -7,6 +7,41 @@ html, body {
   padding: 0;
 }
 
+/* Text wrapping.
+   Korean: break between words (eojeol), not between syllables, so a word is
+   never split across lines. overflow-wrap: break-word is the safety net for a
+   single unbroken string wider than its line (a URL, a file name). It is used
+   instead of `anywhere` at body level because `anywhere` also shrinks the
+   min-content width, which lets tight flex rows squeeze text letter by letter.
+   English keeps the browser's default word breaking. Line breaks come from
+   CSS, not from <br>. */
+@layer base {
+  html:lang(ko) body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p, li, dd, figcaption, blockquote {
+    text-wrap: pretty;
+  }
+
+  /* Long URLs and inline code inside running text wrap anywhere rather than
+     pushing the column wider. */
+  p a, li a, td a, p code, li code, td code {
+    overflow-wrap: anywhere;
+  }
+
+  /* Code blocks scroll horizontally; keep their lines intact. */
+  pre, pre code {
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+}
+
 /* Custom scrollbar styles */
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {

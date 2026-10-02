@@ -3,79 +3,79 @@ export const ko = {
   landing: {
     tagline: '무료 아이콘 커스터마이징 툴',
     hero: {
-      title: '아이콘 커스터마이징',
-      subtitle: '단 몇 초만에',
-      description: '10,000개 이상의 전문 아이콘 중에서 선택하고, 색상과 크기를 커스터마이징한 뒤, PNG 또는 SVG 형식으로 즉시 다운로드하세요. 디자이너와 개발자를 위한 완벽한 도구입니다.',
+      title: '아이콘 커스터마이징,',
+      subtitle: '몇 초면 됩니다',
+      description: '10,000개가 넘는 아이콘에서 하나를 골라 색상과 크기를 바꾸고 PNG나 SVG로 바로 다운로드하세요. 디자이너와 개발자가 쓰기 좋게 만든 도구입니다.',
       getStarted: '무료로 시작하기',
       learnMore: '자세히 알아보기',
     },
     stats: {
       icons: '사용 가능한 아이콘',
-      free: '영원히 무료',
+      free: '완전 무료',
       resolution: '최대 해상도',
       categories: '카테고리',
     },
     features: {
-      title: '필요한 모든 기능',
-      subtitle: '아이콘 커스터마이징을 손쉽게 만드는 강력한 기능들',
+      title: '주요 기능',
+      subtitle: '디자인 툴을 열지 않고도 아이콘 색상과 크기를 바꿔 내보낼 수 있습니다.',
       customizeColors: {
         title: '색상 커스터마이징',
-        description: '직관적인 색상 피커로 원하는 색상을 선택하고 실시간 미리보기를 확인하세요',
+        description: '색상 피커로 원하는 색상을 고르면 미리보기에 바로 반영됩니다.',
       },
       lightningFast: {
         title: '빠른 속도',
-        description: '최적화된 성능으로 즉시 아이콘 미리보기 및 다운로드',
+        description: '미리보기는 즉시 바뀌고 다운로드도 클릭하면 바로 시작됩니다.',
       },
       multipleFormats: {
         title: '다양한 형식',
-        description: '16px부터 512px까지 PNG 또는 SVG로 아이콘 내보내기',
+        description: '16px부터 512px까지 원하는 크기의 PNG나 SVG로 내보냅니다.',
       },
       saveFavorites: {
         title: '즐겨찾기 저장',
-        description: '자주 사용하는 아이콘을 즐겨찾기에 추가하고 언제든지 빠르게 접근',
+        description: '자주 쓰는 아이콘을 즐겨찾기에 넣어 두면 언제든 바로 꺼내 쓸 수 있습니다.',
       },
       recentHistory: {
         title: '최근 기록',
-        description: '최근 사용한 아이콘을 자동으로 추적하여 쉽게 찾기',
+        description: '최근에 쓴 아이콘이 자동으로 기록돼 다시 찾기 쉽습니다.',
       },
       developerFriendly: {
         title: '개발자 친화적',
-        description: '웹 및 모바일 애플리케이션에 최적화된 깔끔한 SVG 코드',
+        description: '웹과 모바일 앱에 바로 넣을 수 있는 깔끔한 SVG 코드를 내보냅니다.',
       },
     },
     howItWorks: {
-      title: '간단한 3단계',
-      subtitle: '단 3단계로 커스터마이징된 아이콘 받기',
+      title: '3단계면 끝',
+      subtitle: '아이콘을 찾아서 다듬은 뒤 내려받으면 됩니다.',
       step1: {
         title: '아이콘 선택',
-        description: '33개 카테고리에서 10,000개 이상의 아이콘 탐색',
+        description: '33개 카테고리, 10,000개 이상의 아이콘 둘러보기',
       },
       step2: {
         title: '커스터마이징',
-        description: '색상 선택, 크기 조정, 즉시 미리보기',
+        description: '색상과 크기를 고르고 바로 미리보기',
       },
       step3: {
         title: '다운로드',
-        description: '원하는 크기의 PNG 또는 SVG로 내보내기',
+        description: '원하는 크기의 PNG나 SVG로 내보내기',
       },
     },
     cta: {
-      title: '시작할 준비가 되셨나요?',
-      description: '수천 명의 디자이너와 개발자들이 Icony로 아이콘을 커스터마이징하고 있습니다',
-      noSignup: '가입 불필요',
-      free: '영원히 무료',
+      title: '지금 써 보세요',
+      description: '수천 명의 디자이너와 개발자가 Icony로 아이콘을 커스터마이징합니다.',
+      noSignup: '가입 없이',
+      free: '완전 무료',
       instant: '즉시 다운로드',
-      startNow: '지금 바로 커스터마이징',
+      startNow: '편집기 열기',
     },
     footer: {
-      tagline: '10,000개 이상의 오픈소스 아이콘을 무료로 커스터마이징하세요.',
+      tagline: '10,000개가 넘는 오픈소스 아이콘을 무료로 커스터마이징하세요.',
       iconsBy: '아이콘 제공',
       links: '링크',
       terms: '이용 약관',
       copyright: '모든 아이콘은 오픈소스입니다.',
     },
     header: {
-      launchApp: '앱 시작하기',
+      launchApp: '앱 열기',
     },
   },
 
@@ -84,27 +84,27 @@ export const ko = {
     steps: [
       {
         title: '아이콘 검색 및 선택',
-        description: '수천 개의 아이콘을 검색하고, 원하는 아이콘을 클릭하여 선택하세요.',
-        tip: '카테고리 필터를 사용하면 더 빠르게 찾을 수 있습니다!',
+        description: '수천 개 아이콘 가운데 원하는 것을 검색해 클릭하세요.',
+        tip: '카테고리 필터를 쓰면 더 빨리 찾을 수 있습니다.',
       },
       {
         title: '색상 커스터마이징',
-        description: '색상 스와치를 선택하거나, 커스텀 색상 피커로 원하는 색상을 만드세요.',
-        tip: '최근 사용한 색상과 팔레트를 저장할 수 있습니다.',
+        description: '색상 스와치에서 고르거나 커스텀 색상 피커로 원하는 색을 직접 만드세요.',
+        tip: '최근 사용한 색상은 팔레트로 저장해 둘 수 있습니다.',
       },
       {
         title: '크기 조정',
-        description: '16px부터 512px까지 슬라이더로 조정하거나 프리셋 버튼을 사용하세요.',
-        tip: '직접 숫자를 입력할 수도 있습니다!',
+        description: '슬라이더로 16px부터 512px까지 조정하거나 프리셋 버튼을 누르세요.',
+        tip: '숫자를 직접 입력할 수도 있습니다.',
       },
       {
         title: '다운로드 & 공유',
-        description: 'PNG 또는 SVG 형식으로 다운로드하거나, 클립보드에 복사, 또는 공유 링크를 생성하세요.',
-        tip: '공유 링크를 사용하면 설정을 저장하고 공유할 수 있습니다.',
+        description: 'PNG나 SVG로 다운로드하거나 클립보드에 복사하세요. 공유 링크도 만들 수 있습니다.',
+        tip: '공유 링크에는 지금 설정이 그대로 담겨서 다른 사람과 나누기 쉽습니다.',
       },
       {
         title: '즐겨찾기 & 히스토리',
-        description: '자주 사용하는 아이콘을 즐겨찾기에 추가하고, 최근 사용한 아이콘을 빠르게 찾으세요.',
+        description: '자주 쓰는 아이콘은 즐겨찾기에 넣고 최근에 쓴 아이콘은 기록에서 바로 찾으세요.',
         tip: '즐겨찾기와 최근 아이콘은 자동으로 저장됩니다.',
       },
     ],
@@ -119,16 +119,16 @@ export const ko = {
   // Header
   header: {
     appName: 'Icony',
-    subtitle: '수천 개의 아이콘 커스터마이징',
-    backToHome: '← 홈으로 돌아가기',
+    subtitle: '아이콘 수천 개를 원하는 대로 커스터마이징',
+    backToHome: '← 홈으로',
     help: '도움말',
   },
 
   // Main UI
   ui: {
     searchPlaceholder: '수천 개의 아이콘 검색...',
-    selectIcon: '커스터마이징할 아이콘 선택',
-    selectIconDesc: '갤러리에서 수천 개의 아이콘 중 선택',
+    selectIcon: '커스터마이징할 아이콘을 고르세요',
+    selectIconDesc: '갤러리의 아이콘 수천 개 중 하나를 고르세요',
     color: '색상',
     size: '이미지 크기',
     export: '내보내기',
@@ -165,30 +165,30 @@ export const ko = {
   toast: {
     copiedToClipboard: '클립보드에 복사되었습니다!',
     linkCopied: '공유 링크가 복사되었습니다!',
-    downloadSuccess: '다운로드 성공!',
+    downloadSuccess: '다운로드했습니다',
     selectIconFirst: '먼저 아이콘을 선택하세요',
     colorPicked: '색상 선택됨',
     paletteSaved: '팔레트가 저장되었습니다!',
     paletteDeleted: '팔레트가 삭제되었습니다',
     enterPaletteName: '팔레트 이름을 입력하세요',
     noColorsToSave: '저장할 색상이 없습니다',
-    eyeDropperNotSupported: 'EyeDropper API가 이 브라우저에서 지원되지 않습니다. Chrome, Edge, 또는 Opera를 사용하세요.',
+    eyeDropperNotSupported: '이 브라우저는 EyeDropper API를 지원하지 않습니다. Chrome, Edge, Opera에서 사용하세요.',
     failedToPickColor: '화면에서 색상을 선택하지 못했습니다',
   },
 
   // EyeDropper Warning
   eyeDropper: {
     notAvailable: 'EyeDropper를 사용할 수 없습니다',
-    requirements: '화면 색상 피커가 필요합니다:',
-    browser: 'Chrome, Edge, 또는 Opera 브라우저',
+    requirements: '화면 색상 피커를 쓰려면 다음이 필요합니다:',
+    browser: 'Chrome, Edge, Opera 브라우저',
     https: 'HTTPS 또는 localhost 접속',
-    tryLocalhost: '시도: IP 주소 대신',
+    tryLocalhost: 'IP 주소 대신 이 주소로 접속해 보세요:',
   },
 
   // Favicon Generator
   faviconGenerator: {
     title: '파비콘 생성기',
-    intro: '아이콘 하나로 favicon.ico, SVG, Apple 터치 아이콘, 안드로이드·PWA 아이콘까지 한 번에 만드세요. 모든 처리는 브라우저 안에서 이루어집니다.',
+    intro: '아이콘 하나로 favicon.ico, SVG, Apple 터치 아이콘, 안드로이드·PWA 아이콘을 한 번에 만듭니다. 모든 처리는 브라우저 안에서 끝납니다.',
     mainIcon: '메인 아이콘',
     badgeIcon: '배지 아이콘',
     library: '라이브러리',
@@ -196,7 +196,7 @@ export const ko = {
     noResults: '검색 결과가 없습니다',
     narrowHint: '처음 200개만 표시합니다. 검색어를 입력해 범위를 좁혀 보세요.',
     filledHint: '채워진 아이콘은 16px에서도 또렷하게 보입니다.',
-    outlineWarning: '외곽선 아이콘은 16px에서 선이 가늘어지고 흐릿해집니다. 더 선명한 파비콘을 원하면 채워진 라이브러리를 고르세요.',
+    outlineWarning: '외곽선 아이콘은 16px에서 선이 가늘어지고 흐릿해집니다. 파비콘을 선명하게 만들려면 채워진 라이브러리를 고르세요.',
     tile: '타일',
     tileColor: '타일 색상',
     shape: '모양',
