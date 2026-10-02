@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { X, Palette, Download, Heart, Search, Zap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { SentenceLines } from './SentenceLines';
 
 interface OnboardingModalProps {
   isOpen: boolean;
@@ -156,9 +157,11 @@ export function OnboardingModal({ isOpen, onClose }: OnboardingModalProps) {
           </h2>
 
           {/* Description */}
-          <p id="onboarding-desc" className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            {step.description}
-          </p>
+          <SentenceLines
+            id="onboarding-desc"
+            text={step.description}
+            className="text-gray-600 dark:text-gray-400 leading-relaxed"
+          />
 
           {/* Tip */}
           <div className="bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-lg p-4">

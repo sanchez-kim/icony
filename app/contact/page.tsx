@@ -6,6 +6,7 @@ import { IconyLogo } from '../../src/components/IconyLogo';
 import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
 import { useLanguage } from '../../src/context/LanguageContext';
+import { SentenceLines } from '../../src/components/SentenceLines';
 
 const EMAIL = 'help@iconyapp.com';
 
@@ -80,11 +81,14 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {ko ? '문의하기' : 'Contact Us'}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            {ko
-              ? 'Icony는 한 명이 개발하고 운영하는 서비스입니다. 보내 주시는 메일은 전부 직접 읽습니다.'
-              : 'Icony is built and run by one person, who reads every message personally.'}
-          </p>
+          <SentenceLines
+            text={
+              ko
+                ? 'Icony는 한 명이 개발하고 운영하는 서비스입니다. 보내 주시는 메일은 전부 직접 읽습니다.'
+                : 'Icony is built and run by one person, who reads every message personally.'
+            }
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          />
         </div>
 
         {/* Email card */}
@@ -93,11 +97,14 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               {ko ? '이메일로 연락하기' : 'Reach Us by Email'}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-lg mx-auto">
-              {ko
-                ? '아래 주소로 보내 주세요. 받은 순서대로 확인하고 답장드립니다. 혼자 운영하는 터라 답장이 바로 가지 못할 수 있으니 양해 부탁드립니다.'
-                : 'Write to the address below. Messages are answered in the order they arrive. With only one person on the other end, a reply may take a while.'}
-            </p>
+            <SentenceLines
+              text={
+                ko
+                  ? '아래 주소로 보내 주세요. 받은 순서대로 확인하고 답장드립니다. 혼자 운영하는 터라 답장이 바로 가지 못할 수 있으니 양해 부탁드립니다.'
+                  : 'Write to the address below. Messages are answered in the order they arrive. With only one person on the other end, a reply may take a while.'
+              }
+              className="text-gray-600 dark:text-gray-400 mb-6 max-w-lg mx-auto"
+            />
             <a
               href={`mailto:${EMAIL}`}
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-colors shadow-lg"
@@ -105,11 +112,14 @@ export default function ContactPage() {
               <Mail size={18} />
               {EMAIL}
             </a>
-            <p className="text-xs text-gray-500 dark:text-gray-500 mt-5">
-              {ko
-                ? '한국어와 영어 모두 가능합니다.'
-                : 'You can write in English or Korean.'}
-            </p>
+            <SentenceLines
+              text={
+                ko
+                  ? '한국어와 영어 모두 가능합니다.'
+                  : 'You can write in English or Korean.'
+              }
+              className="text-xs text-gray-500 dark:text-gray-500 mt-5"
+            />
           </div>
         </section>
 
@@ -118,11 +128,14 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             {ko ? '이런 내용을 보내주세요' : 'What to Write About'}
           </h2>
-          <p className="text-gray-500 dark:text-gray-500 mb-6 text-sm">
-            {ko
-              ? '어떤 문의든 환영하지만 아래 내용이면 특히 도움이 됩니다.'
-              : 'Anything is welcome, but these are especially useful to us.'}
-          </p>
+          <SentenceLines
+            text={
+              ko
+                ? '어떤 문의든 환영하지만 아래 내용이면 특히 도움이 됩니다.'
+                : 'Anything is welcome, but these are especially useful to us.'
+            }
+            className="text-gray-500 dark:text-gray-500 mb-6 text-sm"
+          />
           <div className="space-y-4">
             {topics.map((topic, i) => {
               const Icon = topic.icon;
@@ -136,9 +149,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1.5">{topic.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {topic.description}
-                    </p>
+                    <SentenceLines
+                      text={topic.description}
+                      className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+                    />
                   </div>
                 </div>
               );
@@ -152,11 +166,14 @@ export default function ContactPage() {
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
               {ko ? '먼저 FAQ를 확인해 보세요' : 'Check the FAQ First'}
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
-              {ko
-                ? '가격, 라이선스, 지원 포맷, 내보내기 방법처럼 자주 받는 질문은 FAQ에 정리해 두었습니다. 거기서 답을 찾으면 답장을 기다리실 필요가 없습니다.'
-                : 'The FAQ covers pricing, licensing, supported formats, and how exporting works. If your answer is there, you won\'t have to wait for a reply.'}
-            </p>
+            <SentenceLines
+              text={
+                ko
+                  ? '가격, 라이선스, 지원 포맷, 내보내기 방법처럼 자주 받는 질문은 FAQ에 정리해 두었습니다. 거기서 답을 찾으면 답장을 기다리실 필요가 없습니다.'
+                  : 'The FAQ covers pricing, licensing, supported formats, and how exporting works. If your answer is there, you won\'t have to wait for a reply.'
+              }
+              className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto"
+            />
             <Link
               href="/faq"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-xl font-semibold hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"

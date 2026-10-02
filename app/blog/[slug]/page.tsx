@@ -8,6 +8,7 @@ import { IconyLogo } from '../../../src/components/IconyLogo';
 import { ThemeToggle } from '../../../src/components/ThemeToggle';
 import { Block } from '../../../src/components/ContentBlocks';
 import { LanguageSwitcher } from '../../../src/components/LanguageSwitcher';
+import { SentenceLines } from '../../../src/components/SentenceLines';
 import { useLanguage } from '../../../src/context/LanguageContext';
 import {
   getBlogPost,
@@ -112,9 +113,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
             {post.title[lang]}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            {post.description[lang]}
-          </p>
+          <SentenceLines
+            text={post.description[lang]}
+            className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+          />
           {/* Byline + dates (E-E-A-T trust signals) */}
           <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-500 dark:text-gray-500">
             <Link href="/about" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
@@ -142,7 +144,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         <section className="mb-12">
           <div className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-2">{t.ctaTitle}</h2>
-            <p className="text-white/80 mb-6">{t.ctaBody}</p>
+            <SentenceLines text={t.ctaBody} className="text-white/80 mb-6" />
             <Link
               href="/app"
               className="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg"

@@ -10,6 +10,7 @@ import { useIconSearch } from '../../hooks/useIconSearch';
 import { useLanguage } from '../../context/LanguageContext';
 import { renderIconComponent } from '../IconGallery/IconCard';
 import { cn } from '../../utils/cn';
+import { SentenceLines } from '../SentenceLines';
 
 /** Libraries whose glyphs are thin outlines and lose legibility at 16px. */
 export const OUTLINE_LIBRARIES: ReadonlySet<LibraryKey> = new Set<LibraryKey>([
@@ -113,7 +114,7 @@ export function IconPicker({
         (isOutline ? (
           <p className="flex items-start gap-2 text-xs p-2.5 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 text-yellow-800 dark:text-yellow-200">
             <AlertTriangle size={14} className="flex-shrink-0 mt-0.5" aria-hidden />
-            {fg.outlineWarning}
+            <SentenceLines as="span" text={fg.outlineWarning} />
           </p>
         ) : (
           <p className="text-xs text-gray-500 dark:text-gray-400">{fg.filledHint}</p>
@@ -131,7 +132,7 @@ export function IconPicker({
           </div>
         ) : error ? (
           <div role="alert" className="p-4 text-sm text-red-600 dark:text-red-400 space-y-2">
-            <p>{fg.loadFailed}</p>
+            <SentenceLines text={fg.loadFailed} />
             <button
               type="button"
               onClick={retry}
@@ -171,9 +172,9 @@ export function IconPicker({
       </div>
 
       {!isLoading && results.length > PICKER_RESULT_CAP && (
-        <p className="text-xs text-gray-500 dark:text-gray-400" role="status">
-          {fg.narrowHint}
-        </p>
+        <div role="status">
+          <SentenceLines text={fg.narrowHint} className="text-xs text-gray-500 dark:text-gray-400" />
+        </div>
       )}
     </fieldset>
   );

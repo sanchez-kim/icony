@@ -6,6 +6,7 @@ import { IconyLogo } from '../../src/components/IconyLogo';
 import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
 import { useLanguage } from '../../src/context/LanguageContext';
+import { SentenceLines } from '../../src/components/SentenceLines';
 
 export default function AboutPage() {
   const { language } = useLanguage();
@@ -106,11 +107,14 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {language === 'ko' ? 'Icony 소개' : 'About Icony'}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            {language === 'ko'
-              ? '디자이너와 개발자를 위한 무료 아이콘 커스터마이징 도구입니다.'
-              : 'A free icon customization tool built for designers and developers.'}
-          </p>
+          <SentenceLines
+            text={
+              language === 'ko'
+                ? '디자이너와 개발자를 위한 무료 아이콘 커스터마이징 도구입니다.'
+                : 'A free icon customization tool built for designers and developers.'
+            }
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          />
         </div>
 
         {/* Story */}
@@ -120,31 +124,20 @@ export default function AboutPage() {
               {language === 'ko' ? '왜 만들었나요?' : 'Why Icony?'}
             </h2>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-              {language === 'ko' ? (
-                <>
-                  <p>
-                    아이콘이 필요할 때마다 같은 과정을 되풀이했습니다. 여러 라이브러리를 돌며 아이콘을 찾고 디자인 툴에서 색상과 크기를 바꾼 다음 PNG로 내보내는 과정이죠.
-                  </p>
-                  <p>
-                    Icony는 이 과정을 도구 하나로 끝내려고 만들었습니다. 10,000개가 넘는 아이콘을 한 곳에서 둘러보고 색상과 크기를 실시간으로 커스터마이징한 뒤 PNG나 SVG로 바로 다운로드할 수 있습니다.
-                  </p>
-                  <p>
-                    가입할 필요 없고 완전히 무료입니다.
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p>
-                    Every time you needed an icon, it was the same routine. Search several libraries, open a design tool to change the color, export at the right size, then get back to work.
-                  </p>
-                  <p>
-                    Icony puts all of that in one place. Browse 10,000+ icons from popular open-source libraries, change colors and sizes with a live preview, and export a PNG or SVG.
-                  </p>
-                  <p>
-                    You don&apos;t need an account, and it&apos;s free.
-                  </p>
-                </>
-              )}
+              {(language === 'ko'
+                ? [
+                    '아이콘이 필요할 때마다 같은 과정을 되풀이했습니다. 여러 라이브러리를 돌며 아이콘을 찾고 디자인 툴에서 색상과 크기를 바꾼 다음 PNG로 내보내는 과정이죠.',
+                    'Icony는 이 과정을 도구 하나로 끝내려고 만들었습니다. 10,000개가 넘는 아이콘을 한 곳에서 둘러보고 색상과 크기를 실시간으로 커스터마이징한 뒤 PNG나 SVG로 바로 다운로드할 수 있습니다.',
+                    '가입할 필요 없고 완전히 무료입니다.',
+                  ]
+                : [
+                    'Every time you needed an icon, it was the same routine. Search several libraries, open a design tool to change the color, export at the right size, then get back to work.',
+                    'Icony puts all of that in one place. Browse 10,000+ icons from popular open-source libraries, change colors and sizes with a live preview, and export a PNG or SVG.',
+                    "You don't need an account, and it's free.",
+                  ]
+              ).map((paragraph, i) => (
+                <SentenceLines key={i} text={paragraph} />
+              ))}
             </div>
           </div>
         </section>
@@ -167,7 +160,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white mb-1">{feature.title}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{feature.description}</div>
+                    <SentenceLines as="div" text={feature.description} className="text-sm text-gray-600 dark:text-gray-400" />
                   </div>
                 </div>
               );
@@ -181,11 +174,14 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
               {language === 'ko' ? '지원 아이콘 라이브러리' : 'Supported Icon Libraries'}
             </h2>
-            <p className="text-gray-500 dark:text-gray-500 mb-6 text-sm">
-              {language === 'ko'
-                ? '모든 아이콘이 MIT 또는 ISC 라이선스라 상업적으로도 쓸 수 있습니다.'
-                : 'Every icon is MIT or ISC licensed, so commercial use is fine.'}
-            </p>
+            <SentenceLines
+              text={
+                language === 'ko'
+                  ? '모든 아이콘이 MIT 또는 ISC 라이선스라 상업적으로도 쓸 수 있습니다.'
+                  : 'Every icon is MIT or ISC licensed, so commercial use is fine.'
+              }
+              className="text-gray-500 dark:text-gray-500 mb-6 text-sm"
+            />
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {libraries.map((lib) => (
                 <Link
@@ -209,11 +205,14 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-white mb-3">
               {language === 'ko' ? '완전히 무료입니다' : 'Free to Use'}
             </h2>
-            <p className="text-primary-100 mb-6 max-w-xl mx-auto">
-              {language === 'ko'
-                ? 'Icony는 앞으로도 무료입니다. 가입도 사용 제한도 없습니다. 아이콘 역시 모두 오픈소스 라이선스입니다.'
-                : 'Icony will stay free, with no signup and no usage limits. Every icon is under an open-source license.'}
-            </p>
+            <SentenceLines
+              text={
+                language === 'ko'
+                  ? 'Icony는 앞으로도 무료입니다. 가입도 사용 제한도 없습니다. 아이콘 역시 모두 오픈소스 라이선스입니다.'
+                  : 'Icony will stay free, with no signup and no usage limits. Every icon is under an open-source license.'
+              }
+              className="text-primary-100 mb-6 max-w-xl mx-auto"
+            />
             <Link
               href="/app"
               className="inline-flex items-center gap-2 px-8 py-3 bg-white text-primary-700 rounded-xl font-bold hover:bg-primary-50 transition-colors shadow-lg"
@@ -230,11 +229,14 @@ export default function AboutPage() {
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
               {language === 'ko' ? '개발을 응원해 주세요' : 'Support the Project'}
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-500 mb-6 max-w-md mx-auto">
-              {language === 'ko'
-                ? 'Icony는 혼자 개발하고 운영합니다. 후원은 서비스를 유지하고 기능을 개선하는 데 큰 힘이 됩니다.'
-                : 'Icony is built and maintained by one person. Sponsorship helps keep it online and getting better.'}
-            </p>
+            <SentenceLines
+              text={
+                language === 'ko'
+                  ? 'Icony는 혼자 개발하고 운영합니다. 후원은 서비스를 유지하고 기능을 개선하는 데 큰 힘이 됩니다.'
+                  : 'Icony is built and maintained by one person. Sponsorship helps keep it online and getting better.'
+              }
+              className="text-sm text-gray-500 dark:text-gray-500 mb-6 max-w-md mx-auto"
+            />
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href="https://buymeacoffee.com/sanchezkim7"

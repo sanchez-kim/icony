@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 import { IconyLogo } from '../../src/components/IconyLogo';
 import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
+import { SentenceLines } from '../../src/components/SentenceLines';
 import { LIBRARY_CONTENT, ALL_LIBRARY_SLUGS } from '../../src/data/library-content';
 
 export default function IconLibrariesPage() {
@@ -42,9 +43,10 @@ export default function IconLibrariesPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Icon Libraries
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Icony bundles 8 popular open-source React icon libraries. Every icon is free to use under MIT or ISC, and you can recolor and resize any of them.
-          </p>
+          <SentenceLines
+            text="Icony bundles 8 popular open-source React icon libraries. Every icon is free to use under MIT or ISC, and you can recolor and resize any of them."
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          />
         </div>
 
         {/* Library grid */}
@@ -61,7 +63,7 @@ export default function IconLibrariesPage() {
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                       {lib.name}
                     </h2>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{lib.tagline}</p>
+                    <SentenceLines text={lib.tagline} className="text-sm text-gray-500 dark:text-gray-400" />
                   </div>
                   <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold bg-gradient-to-r ${lib.color} text-white shrink-0 ml-3`}>
                     {lib.license}
@@ -79,9 +81,10 @@ export default function IconLibrariesPage() {
                   </code>
                 </div>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 line-clamp-2">
-                  {lib.description}
-                </p>
+                <SentenceLines
+                  text={lib.description}
+                  className="text-sm text-gray-600 dark:text-gray-400 mb-5 line-clamp-2"
+                />
 
                 <div className="flex items-center gap-3">
                   <Link
@@ -117,9 +120,10 @@ export default function IconLibrariesPage() {
           <h2 className="text-2xl font-bold text-white mb-3">
             Start customizing
           </h2>
-          <p className="text-primary-100 mb-6">
-            Pick an icon from any of the 8 libraries, set its color and size, and export it as PNG or SVG.
-          </p>
+          <SentenceLines
+            text="Pick an icon from any of the 8 libraries, set its color and size, and export it as PNG or SVG."
+            className="text-primary-100 mb-6"
+          />
           <Link
             href="/app"
             className="inline-flex items-center gap-2 px-8 py-3 bg-white text-primary-700 rounded-xl font-bold hover:bg-primary-50 transition-colors shadow-lg"

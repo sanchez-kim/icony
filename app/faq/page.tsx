@@ -7,6 +7,7 @@ import { IconyLogo } from '../../src/components/IconyLogo';
 import { ThemeToggle } from '../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../src/components/LanguageSwitcher';
 import { useLanguage } from '../../src/context/LanguageContext';
+import { SentenceLines } from '../../src/components/SentenceLines';
 import { FAQ_KO, FAQ_EN, type FaqItem, type FaqSection } from '../../src/data/faq-content';
 
 function FaqAccordion({ items }: { items: FaqItem[] }) {
@@ -41,7 +42,7 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
             hidden={openIndex !== i}
             className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
           >
-            {item.answer}
+            <SentenceLines text={item.answer} />
           </div>
         </div>
       ))}
@@ -85,11 +86,14 @@ export default function FaqPage() {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {language === 'ko' ? '자주 묻는 질문' : 'Frequently Asked Questions'}
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            {language === 'ko'
-              ? 'Icony 사용에 관한 궁금한 점을 모았습니다.'
-              : 'Everything you need to know about using Icony.'}
-          </p>
+          <SentenceLines
+            text={
+              language === 'ko'
+                ? 'Icony 사용에 관한 궁금한 점을 모았습니다.'
+                : 'Everything you need to know about using Icony.'
+            }
+            className="text-lg text-gray-600 dark:text-gray-400"
+          />
         </div>
 
         {/* FAQ sections */}
@@ -109,11 +113,14 @@ export default function FaqPage() {
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
             {language === 'ko' ? '더 궁금한 점이 있으신가요?' : 'Still have questions?'}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">
-            {language === 'ko'
-              ? '직접 앱을 사용해보세요. 가입 없이 바로 시작할 수 있습니다.'
-              : 'Try the app yourself — no signup required.'}
-          </p>
+          <SentenceLines
+            text={
+              language === 'ko'
+                ? '직접 앱을 사용해보세요. 가입 없이 바로 시작할 수 있습니다.'
+                : 'Try the app yourself — no signup required.'
+            }
+            className="text-gray-600 dark:text-gray-400 mb-6 text-sm"
+          />
           <Link
             href="/app"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition-colors"

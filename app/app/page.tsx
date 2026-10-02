@@ -11,6 +11,7 @@ import { OnboardingModal } from '../../src/components/OnboardingModal';
 import { IconyLogo } from '../../src/components/IconyLogo';
 import { ErrorBoundary } from '../../src/components/ErrorBoundary';
 import Link from 'next/link';
+import { SentenceLines } from '../../src/components/SentenceLines';
 
 function AppPageInner() {
   const searchParams = useSearchParams();
@@ -127,16 +128,20 @@ function AppIntro() {
           {ko ? '무료 아이콘 편집기' : 'Free Icon Editor'}
         </h1>
         <div className="space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-          <p>
-            {ko
-              ? 'Icony는 오픈소스 아이콘을 브라우저에서 바로 커스터마이징하고 내보내는 도구입니다. Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, Radix Icons 등 8개 라이브러리의 아이콘 11,442개를 한 곳에서 검색하고 색상·크기·선 두께를 조정해 PNG나 SVG로 저장할 수 있습니다.'
-              : 'Icony lets you customize and export open-source icons right in your browser. Search 11,442 icons from 8 libraries, including Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix Icons. Adjust the color, size, and stroke width, then save as PNG or SVG.'}
-          </p>
-          <p>
-            {ko
-              ? '가입이나 설치가 필요 없고 워터마크도 붙지 않습니다.'
-              : 'There is no signup, nothing to install, and no watermark.'}
-          </p>
+          <SentenceLines
+            text={
+              ko
+                ? 'Icony는 오픈소스 아이콘을 브라우저에서 바로 커스터마이징하고 내보내는 도구입니다. Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, Radix Icons 등 8개 라이브러리의 아이콘 11,442개를 한 곳에서 검색하고 색상·크기·선 두께를 조정해 PNG나 SVG로 저장할 수 있습니다.'
+                : 'Icony lets you customize and export open-source icons right in your browser. Search 11,442 icons from 8 libraries, including Lucide, Tabler, Phosphor, Heroicons, Bootstrap Icons, and Radix Icons. Adjust the color, size, and stroke width, then save as PNG or SVG.'
+            }
+          />
+          <SentenceLines
+            text={
+              ko
+                ? '가입이나 설치가 필요 없고 워터마크도 붙지 않습니다.'
+                : 'There is no signup, nothing to install, and no watermark.'
+            }
+          />
         </div>
 
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
@@ -150,7 +155,7 @@ function AppIntro() {
               </span>
               <div>
                 <div className="font-semibold text-gray-900 dark:text-white">{title}</div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{body}</p>
+                <SentenceLines text={body} className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed" />
               </div>
             </li>
           ))}
@@ -160,9 +165,12 @@ function AppIntro() {
           {ko ? (
             <>
               <p>
-                모든 아이콘은 MIT 또는 ISC 라이선스로 배포되므로 상업적 프로젝트에도 자유롭게 쓸 수 있습니다. 라이브러리별 설명은{' '}
-                <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">아이콘 라이브러리</Link> 페이지에, 자주 묻는 질문은{' '}
-                <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link>에 정리돼 있습니다.
+                <span className="block text-balance">모든 아이콘은 MIT 또는 ISC 라이선스로 배포되므로 상업적 프로젝트에도 자유롭게 쓸 수 있습니다.</span>
+                <span className="block text-balance">
+                  라이브러리별 설명은{' '}
+                  <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">아이콘 라이브러리</Link> 페이지에, 자주 묻는 질문은{' '}
+                  <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link>에 정리돼 있습니다.
+                </span>
               </p>
               <p>
                 앱 아이콘이나 파비콘이 필요하다면{' '}
@@ -172,13 +180,19 @@ function AppIntro() {
           ) : (
             <>
               <p>
-                Every icon is MIT or ISC licensed, so you can use it freely in commercial work. See the{' '}
-                <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">icon libraries</Link> page for what each set is good for, or the{' '}
-                <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link> for common questions.
+                <span className="block text-balance">Every icon is MIT or ISC licensed, so you can use it freely in commercial work.</span>
+                <span className="block text-balance">
+                  See the{' '}
+                  <Link href="/icon-libraries" className="text-primary-600 dark:text-primary-400 hover:underline">icon libraries</Link> page for what each set is good for, or the{' '}
+                  <Link href="/faq" className="text-primary-600 dark:text-primary-400 hover:underline">FAQ</Link> for common questions.
+                </span>
               </p>
               <p>
-                Need a favicon or app icon? The{' '}
-                <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">Favicon Generator</Link> turns any icon into favicon.ico, SVG, and touch icons in one ZIP.
+                <span className="block text-balance">Need a favicon or app icon?</span>
+                <span className="block text-balance">
+                  The{' '}
+                  <Link href="/favicon-generator" className="text-primary-600 dark:text-primary-400 hover:underline">Favicon Generator</Link> turns any icon into favicon.ico, SVG, and touch icons in one ZIP.
+                </span>
               </p>
             </>
           )}
@@ -199,9 +213,10 @@ function AppFooter() {
             <span className="text-lg font-bold text-gray-700 dark:text-gray-300">Icony</span>
           </div>
 
-          <p className="text-gray-600 dark:text-gray-400 text-sm text-center">
-            {t.landing.footer.tagline}
-          </p>
+          <SentenceLines
+            text={t.landing.footer.tagline}
+            className="text-gray-600 dark:text-gray-400 text-sm text-center"
+          />
 
           <div className="text-center space-y-3">
             <div>

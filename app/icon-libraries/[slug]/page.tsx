@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { IconyLogo } from '../../../src/components/IconyLogo';
 import { ThemeToggle } from '../../../src/components/ThemeToggle';
 import { LanguageSwitcher } from '../../../src/components/LanguageSwitcher';
+import { SentenceLines } from '../../../src/components/SentenceLines';
 import {
   LIBRARY_CONTENT,
   RELATED_POSTS,
@@ -118,7 +119,7 @@ export default function LibraryDetailPage({
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 {lib.name}
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400">{lib.tagline}</p>
+              <SentenceLines text={lib.tagline} className="text-lg text-gray-600 dark:text-gray-400" />
             </div>
             <a
               href={lib.url}
